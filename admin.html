@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCR-NetFree Hub | Control Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/unpkg/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { slate: { 950: '#030712', 900: '#0b1329', 800: '#1e293b' } }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6 font-sans">
+    
+    <div class="max-w-4xl mx-auto space-y-6">
+        <div class="flex justify-between items-center bg-slate-900/40 p-6 rounded-3xl border border-slate-800">
+            <div>
+                <h2 class="tech-title text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-400">LCR-NETFREE CONTROL PANEL</h2>
+                <p class="text-xs text-slate-400 mt-1">Caricamento moduli, elaborati e presentazioni nel percorso formativo.</p>
+            </div>
+            <a href="index.html" class="px-4 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs font-mono text-purple-400 hover:text-white transition-all">
+                ← Torna al Sito
+            </a>
+        </div>
+
+        <div class="bg-slate-900/40 p-6 rounded-3xl border border-slate-800 space-y-4">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-300 border-b border-slate-800 pb-2">Nuovo Elemento Formativo</h3>
+            
+            <form id="uploadForm" class="space-y-4 text-xs font-mono">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-slate-400 mb-1">Numero Tappa (1-7)</label>
+                        <input type="number" id="tappa_numero" min="1" max="7" required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-purple-500">
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-slate-400 mb-1">Titolo del Modulo Formativo</label>
+                        <input type="text" id="tappa_titolo" placeholder="Es: Fase 1 - Il Risveglio della Sovranità" required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-purple-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-slate-400 mb-1">Categoria Risorsa</label>
+                        <select id="categoria" class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-purple-500">
+                            <option value="approfondimento">Approfondimento (Testo)</option>
+                            <option value="presentazione">Presentazione (Slides/Video)</option>
+                            <option value="elaborato">Elaborato Tecnico (Documenti)</option>
+                            <option value="materiale">Materiale Operativo (Link)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-slate-400 mb-1">Titolo Specifico Elemento</label>
+                        <input type="text" id="titolo" placeholder="Es: Trattato sull'Autodeterminazione" required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-purple-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-slate-400 mb-1">Breve Descrizione / Abstract</label>
+                    <textarea id="descrizione" rows="2" placeholder="Fornisci una sintesi del materiale..." class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-purple-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-slate-400 mb-1">Testo Esteso Fondamentale (Opzionale)</label>
+                    <textarea id="testo_esteso" rows="4" placeholder="Inserisci qui il testo formativo vero e proprio..." class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-purple-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-slate-400 mb-1">URL Risorsa Esterna (PDF / Cloud Drive / Presentazioni)</label>
+                    <input type="url" id="url_risorsa" placeholder="https://drive.google.com/..." class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-purple-500">
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-purple-600 hover:bg-purple-700 font-bold text-white rounded-xl transition-all tracking-widest uppercase">
+                    Pubblica nel Percorso Formativo
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // CONFIGURAZIONE SUPABASE - INCOLLA LE STESSE CHIAVI DI INDEX.HTML
+        const SUPABASE_URL = "INSERISCI_QUI_IL_TUO_PROJECT_URL";
+        const SUPABASE_KEY = "INSERISCI_QUI_LA_TUA_ANON_KEY";
+        const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
+        document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if(!supabase) { alert("Database non configurato."); return; }
+
+            const payload = {
+                tappa_numero: parseInt(document.getElementById('tappa_numero').value),
+                tappa_titolo: document.getElementById('tappa_titolo').value,
+                categoria: document.getElementById('categoria').value,
+                titolo: document.getElementById('titolo').value,
+                descrizione: document.getElementById('descrizione').value,
+                testo_esteso: document.getElementById('testo_esteso').value,
+                url_risorsa: document.getElementById('url_risorsa').value
+            };
+
+            const { data, error } = await supabase.from('lcr_formazione').insert([payload]);
+
+            if(error) {
+                console.error(error);
+                alert("Errore di pubblicazione: " + error.message);
+            } else {
+                alert("Modulo inserito con successo all'interno del Cammino di Autodeterminazione!");
+                document.getElementById('uploadForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>

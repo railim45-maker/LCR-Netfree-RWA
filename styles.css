@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght=400;700;900&family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght=700;900&family=Plus+Jakarta+Sans:wght=300;400;500;600&display=swap');
 
-/* Typography Utilities */
 .tech-title {
     font-family: 'Orbitron', sans-serif;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
 }
 
-/* Dynamic Mesh Background Glow */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #030712;
+}
+
+/* Griglia olografica di sfondo */
 .animated-gradient-bg {
     position: fixed;
     top: 0;
@@ -15,51 +19,40 @@
     height: 100vh;
     z-index: 0;
     pointer-events: none;
-    background: #060a13;
-    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.02) 0%, transparent 75%), #030712;
 }
 
 .animated-gradient-bg::before {
     content: "";
     position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 140%;
-    height: 140%;
-    background: radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
-    filter: blur(60px);
-    animation: meshMovement 20s ease infinite alternate;
+    inset: 0;
+    background-image: 
+        linear-gradient(to right, rgba(30, 41, 59, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(30, 41, 59, 0.15) 1px, transparent 1px);
+    background-size: 35px 35px;
+    mask-image: radial-gradient(circle at 50% 50%, black 10%, transparent 85%);
 }
 
-@keyframes meshMovement {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    100% {
-        transform: translate(4%, 3%) rotate(4deg);
-    }
+/* Transizioni millimetriche ed elastiche della lente frattale contrattile */
+circle {
+    transition: cx 0.75s cubic-bezier(0.25, 1, 0.5, 1),
+                cy 0.75s cubic-bezier(0.25, 1, 0.5, 1),
+                r 0.75s cubic-bezier(0.25, 1, 0.5, 1),
+                fill 0.4s ease;
 }
 
-/* Floating Animation for SVG Elements */
-.animate-float {
-    animation: floatAnimation 4s ease-in-out infinite;
+button, select, input, textarea {
+    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-@keyframes floatAnimation {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-8px) rotate(1deg);
-    }
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
 }
 
-/* Smooth Transitions */
-a, button, input {
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* Linee laterali dei Chakra per i moduli formativi */
+#card-l1 { border-l-color: #E53E3E; }
+#card-l2 { border-l-color: #DD6B20; }
+#card-l3 { border-l-color: #D69E2E; }
+#card-l4 { border-l-color: #38A169; }
+#card-l5 { border-l-color: #3182CE; }
