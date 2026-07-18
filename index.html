@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOTIX | Ecosistema di Tokenizzazione & Abbondanza</title>
-    <!-- Tailwind CSS & Chart.js -->
+    <title>LCR-NetFree | Centro Informativo & Mappatura Frattale</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Supabase JS Client library per il Blog Dinamico -->
+    <script src="https://cdn.jsdelivr.net/unpkg/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
         tailwind.config = {
@@ -14,393 +14,342 @@
             theme: {
                 extend: {
                     colors: {
-                        slate: { 950: '#060a13', 900: '#0b132b', 800: '#1c2541', 700: '#3a506b' },
-                        goldAccent: '#d4af37',
-                        neonCyan: '#00f2fe',
-                        emeraldAccent: '#10b981'
-                    },
-                    boxShadow: {
-                        'neon-cyan': '0 0 20px rgba(6, 182, 212, 0.3)',
-                        'gold-glow': '0 0 20px rgba(212, 175, 55, 0.25)',
-                        'emerald-glow': '0 0 20px rgba(16, 185, 129, 0.25)'
+                        slate: { 950: '#030712', 900: '#0b1329', 800: '#1e293b', 700: '#334155' }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="text-slate-100 min-h-screen selection:bg-cyan-500/30 overflow-x-hidden">
+<body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-purple-500/30">
 
-    <!-- BACKGROUND EFFECTS -->
+    <!-- BACKGROUND GLOW EFFECTS -->
     <div class="animated-gradient-bg"></div>
 
-    <!-- NAVBAR -->
-    <header class="border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-xl sticky top-0 z-50 transition-all duration-300">
+    <!-- NAVBAR ISTITUZIONALE -->
+    <header class="border-b border-slate-900/80 bg-slate-950/70 backdrop-blur-xl sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3 group cursor-pointer">
-                <div class="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-cyan-950 to-slate-950 border border-cyan-500/40 rounded-xl shadow-neon-cyan group-hover:border-cyan-400 transition-all">
-                    <span class="text-cyan-400 font-bold tech-title text-xl tracking-tighter">B</span>
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 flex items-center justify-center bg-purple-950/40 border border-purple-500/30 rounded-xl">
+                    <span class="text-purple-400 font-bold tech-title text-sm">LCR</span>
                 </div>
-                <span class="tech-title text-lg font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-goldAccent">BLOTIX</span>
+                <span class="tech-title text-sm font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-purple-400">LCR-NETFREE</span>
             </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide text-slate-300">
-                <a href="#tokenizzazione" class="hover:text-cyan-400 transition-colors py-2 border-b-2 border-transparent hover:border-cyan-400">Asset Tokenizzazione</a>
-                <a href="#liquidity" class="hover:text-goldAccent transition-colors py-2 border-b-2 border-transparent hover:border-goldAccent">Liquidity Provider</a>
-                <a href="#protocollo" class="hover:text-cyan-400 transition-colors py-2 border-b-2 border-transparent hover:border-cyan-400">Protocollo NetFree</a>
-                <a href="#societa" class="hover:text-emerald-400 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-400">Società Gilanica</a>
+            <nav class="hidden md:flex space-x-8 text-xs font-mono tracking-wider text-slate-400">
+                <a href="#vision" class="hover:text-white transition-colors">[ La Visione ]</a>
+                <a href="#reattore" class="hover:text-purple-400 transition-colors">[ Mappatura Dinamica ]</a>
+                <a href="#informazione" class="hover:text-cyan-400 transition-colors">[ Pilastri Informativi ]</a>
+                <a href="#piattaforme" class="hover:text-amber-400 transition-colors">[ Co-Costruzione ]</a>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 text-center relative z-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-8 animate-pulse shadow-neon-cyan/20">
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-            WEB3 INFRASTRUCTURE PLATFORM v2.5.0
+    <!-- 1. HERO / VISION -->
+    <section id="vision" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 text-[10px] font-mono mb-4 tracking-widest">
+            SPAZIO INFORMATIVO AUTONOMO NON PROMOZIONALE
         </div>
-        <h2 class="tech-title text-4xl sm:text-7xl font-black tracking-tight mb-8 leading-[1.15]">
-            Sblocchiamo il Valore dell'Economia Reale per Irrigare la <span class="text-transparent bg-clip-text bg-gradient-to-r from-goldAccent to-emerald-400">Società dell'Abbondanza</span>
-        </h2>
-        <p class="max-w-3xl mx-auto text-slate-400 text-lg sm:text-xl leading-relaxed mb-10 font-light">
-            Un'infrastruttura tecnologica e visiva dove gli asset tangibili si trasformano in puro flusso finanziario circolare, alimentando uno sviluppo paritario e sostenibile.
+        <h1 class="tech-title text-3xl sm:text-5xl font-black mb-6 leading-tight uppercase">
+            Un pilastro alla volta,<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400">
+                costruiamo il posto in cui andremo a vivere
+            </span>
+        </h1>
+        <p class="max-w-3xl mx-auto text-slate-400 text-sm sm:text-base font-light leading-relaxed mb-4">
+            Questo spazio nasce per fare chiarezza. Non promuoviamo piattaforme: spieghiamo la visione di una nuova architettura condivisa. Chi vuole approfondire le dinamiche dell'economia del dono, del NetFree o della tokenizzazione etica degli asset reali, trova qui gli strumenti per comprendere come poter co-creare insieme.
         </p>
-        <div class="flex flex-wrap justify-center gap-5">
-            <a href="#tokenizzazione" class="px-8 py-4 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 rounded-2xl font-bold tracking-wide transition-all shadow-neon-cyan text-cyan-400 hover:scale-[1.02]">
-                Avvia Tokenizzazione RWA
-            </a>
-            <a href="#liquidity" class="px-8 py-4 bg-goldAccent/10 hover:bg-goldAccent/20 border border-goldAccent/40 rounded-2xl font-bold tracking-wide transition-all shadow-gold-glow text-goldAccent hover:scale-[1.02]">
-                Portale Liquidity Provider
-            </a>
-        </div>
     </section>
 
-    <!-- 1. TOKENIZZAZIONE -->
-    <section id="tokenizzazione" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-900/60 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-6">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/5 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest">
-                    L'Innesco dei Beni Reali
-                </div>
-                <h3 class="tech-title text-3xl sm:text-4xl font-black leading-tight">Liberare il Valore Imprigionato nella Materia</h3>
-                <p class="text-slate-400 text-base sm:text-lg leading-relaxed font-light">
-                    Immagina di possedere un bene reale e solido: un'infrastruttura, un palazzo di pietra, un impianto logistico. Ha un valore immenso, ma è "energia congelata" che non puoi frazionare o muovere fluidamente. 
-                </p>
-                <p class="text-slate-400 text-base leading-relaxed font-light">
-                    La nostra tecnologia non tocca la struttura fisica dell'asset. Crea semplicemente una <strong>"fotocopia digitale" speculare, blindata e legalmente protetta</strong>[cite: 1]. Il bene tangibile resta intatto al suo posto, mentre la sua copia digitale diventa divisibile in milioni di gocce di pura energia liquida, pronte a circolare nell'ecosistema.
-                </p>
-                <div class="pt-2">
-                    <a href="#pagine-approfondimento-tokenizzazione" class="inline-flex items-center text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors gap-2 group">
-                        Esplora l'Infrastruttura di Tokenizzazione 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </div>
-            <!-- GRAPHIC CARD -->
-            <div class="bg-gradient-to-b from-slate-900/60 to-slate-950/60 border border-slate-800/80 rounded-3xl p-10 relative overflow-hidden h-80 flex items-center justify-center shadow-2xl group">
-                <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-transparent to-transparent opacity-50 group-hover:opacity-100 transition-all duration-700"></div>
-                <div class="text-center relative z-10 space-y-4">
-                    <!-- SVG ICON: CUBE TO TOKEN SHARDS -->
-                    <svg class="w-20 h-20 mx-auto text-cyan-400 filter drop-shadow-[0_0_15px_rgba(6,182,212,0.5)] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    <span class="text-xs font-mono text-slate-400 uppercase tracking-widest block">Digital Twin Activation Grid</span>
-                </div>
-                <!-- Decorative grid layout lines -->
-                <div class="absolute inset-0 bg-[linear-gradient(to_right,#1c2541_1px,transparent_1px),linear-gradient(to_bottom,#1c2541_1px,transparent_1px)] bg-[size:24px_24px] opacity-10"></div>
-            </div>
+    <!-- 2. IL REATTORE FRATTALE A LENTE DINAMICA (IL PRINCIPIO DI CRESCITA) -->
+    <section id="reattore" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-slate-900 relative z-10">
+        <div class="text-center mb-8">
+            <h3 class="tech-title text-xl sm:text-2xl font-bold">Mappatura Orbitale dell'Ecosistema</h3>
+            <p class="text-xs text-slate-500 mt-2 max-w-xl mx-auto">
+                La visualizzazione olografica mostra l'espansione per sotto-settori della matrice 6x6. L'orbita attiva viene magnificata all'esterno, mentre i livelli saturi si stringono in cerchi concentrici definiti attorno al nucleo.
+            </p>
         </div>
-    </section>
 
-    <!-- 2. LIQUIDITY PROVIDER & SIMULATORE -->
-    <section id="liquidity" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-900/60 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-12">
-            <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-goldAccent/5 border border-goldAccent/20 text-goldAccent text-xs font-mono uppercase tracking-widest">
-                    Il Catalizzatore Finanziario
-                </div>
-                <h3 class="tech-title text-3xl sm:text-4xl font-black leading-tight">La Scintilla d'Innesco e la Cascata di Ritorno</h3>
-                <p class="text-slate-400 text-base sm:text-lg leading-relaxed font-light">
-                    La copia digitale dell'asset è come un motore d'avanguardia perfetto, ma immobile. Il <em>Liquidity Provider</em> non deve acquistare l'intera struttura, porta semplicemente il carburante iniziale: la **scintilla d'innesco**[cite: 1].
-                </p>
-                <p class="text-slate-400 text-base leading-relaxed font-light">
-                    L'apporto di liquidità attiva istantaneamente la diga tecnologica, generando un immenso fiume d'oro che scorre verso la comunità[cite: 1]. La fisica di questo flusso è circolare: una parte di questo fiume crea una **piccola cascata laterale** posizionata accanto a chi ha avviato il motore, riempiendo costantemente il suo bicchiere sotto forma di ritorno economico stabile, matematico e prevedibile[cite: 1].
-                </p>
-                <!-- SVG STREAM COMPONENT -->
-                <div class="pt-4 hidden lg:block">
-                    <svg class="w-full h-16 text-goldAccent/40 animate-pulse" fill="none" viewBox="0 0 400 60">
-                        <path d="M 0 30 Q 100 0, 200 30 T 400 30" stroke="currentColor" stroke-width="2" fill="none"/>
-                        <path d="M 0 40 Q 100 10, 200 40 T 400 40" stroke="currentColor" stroke-width="1" stroke-dasharray="5 5" fill="none"/>
-                    </svg>
-                </div>
-            </div>
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
-            <!-- INTERACTIVE CONFIGURATOR -->
-            <div class="lg:col-span-7 bg-gradient-to-b from-slate-900/80 to-slate-950/80 border border-slate-800 rounded-3xl p-6 md:p-8 backdrop-blur-xl relative shadow-2xl border-t-goldAccent/30">
-                <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
-                    <div class="flex items-center space-x-2">
-                        <span class="w-2.5 h-2.5 bg-goldAccent rounded-full shadow-gold-glow"></span>
-                        <h4 class="tech-title text-sm font-bold uppercase tracking-wider text-slate-200">Configuratore Operativo LP</h4>
+            <!-- CONTROLLI E MONITOR (SINISTRA) -->
+            <div class="lg:col-span-4 flex flex-col justify-between space-y-4">
+                <div class="bg-slate-900/30 border border-slate-800/60 rounded-3xl p-5 backdrop-blur-xl shadow-2xl space-y-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="tech-title text-[9px] font-bold text-slate-400 uppercase tracking-wider">Frequenze Relazionali</h4>
+                        <span id="active-focus-tag" class="text-[9px] font-mono bg-purple-950 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">LENTE SU: L1</span>
                     </div>
-                    <span class="text-[10px] font-mono text-goldAccent tracking-widest">METRICHE IN REAL-TIME</span>
-                </div>
-
-                <!-- PRESET OPTIONS TAB -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-6">
-                    <button id="btn-oneshot_asset" onclick="changePreset('oneshot_asset')" class="p-3 text-xs rounded-xl font-mono font-bold bg-goldAccent/10 text-goldAccent border border-goldAccent/40 text-center transition-all shadow-gold-glow/10">
-                        One-Shot Asset (D)[cite: 1]
-                    </button>
-                    <button id="btn-plafond" onclick="changePreset('plafond')" class="p-3 text-xs rounded-xl font-mono font-bold bg-slate-950 border border-slate-800 text-slate-400 text-center hover:text-slate-200 transition-all">
-                        Rotativo 5 Anni (B)[cite: 1]
-                    </button>
-                    <button id="btn-oneshot" onclick="changePreset('oneshot')" class="p-3 text-xs rounded-xl font-mono font-bold bg-slate-950 border border-slate-800 text-slate-400 text-center hover:text-slate-200 transition-all">
-                        Fisso 6 Mesi (A)[cite: 1]
-                    </button>
-                    <button id="btn-minilp" onclick="changePreset('minilp')" class="p-3 text-xs rounded-xl font-mono font-bold bg-slate-950 border border-slate-800 text-slate-400 text-center hover:text-slate-200 transition-all">
-                        Mini LP (E)[cite: 1]
-                    </button>
-                </div>
-
-                <!-- INPUT FIELDS -->
-                <div class="space-y-4 mb-6">
-                    <div id="box-asset" class="space-y-2">
-                        <label class="text-[11px] font-mono font-bold text-slate-400 block uppercase tracking-wider">VALORE DELL'ASSET DA TOKENIZZARE (€)</label>
-                        <div class="relative rounded-xl overflow-hidden shadow-inner bg-slate-950 border border-slate-800 focus-within:border-goldAccent transition-colors">
-                            <input type="text" id="assetInput" value="100.000.000" oninput="formatAndCalc(this)" class="w-full text-right bg-transparent outline-none py-3.5 px-4 font-mono font-bold text-goldAccent text-base">
+                    
+                    <div class="space-y-1.5 font-mono text-xs max-h-[260px] overflow-y-auto pr-1">
+                        <div id="card-l1" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#E53E3E] transition-all">
+                            <span class="text-slate-300 font-medium">L1 - Radice (6 Settori)</span>
+                            <span id="counter-l1" class="font-bold text-[#E53E3E]">0 / 1 passi</span>
                         </div>
-                        <span class="text-[10px] text-slate-500 font-mono block">Impegno richiesto calcolato automaticamente allo 0.85% dell'asset[cite: 1].</span>
-                    </div>
-
-                    <div id="box-capital" class="space-y-2 hidden">
-                        <label class="text-[11px] font-mono font-bold text-slate-400 block uppercase tracking-wider">CAPITALE DI INGRESSO LP (€)</label>
-                        <div class="relative rounded-xl overflow-hidden shadow-inner bg-slate-950 border border-slate-800 focus-within:border-cyan-400 transition-colors">
-                            <input type="text" id="capitalInput" value="1.000.000" oninput="formatAndCalc(this)" class="w-full text-right bg-transparent outline-none py-3.5 px-4 font-mono font-bold text-cyan-400 text-base">
+                        <div id="card-l2" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#DD6B20] opacity-40 transition-all">
+                            <span class="text-slate-400 font-medium">L2 - Sacrale (36 Settori)</span>
+                            <span id="counter-l2" class="font-bold text-slate-500">0 / 6 passi</span>
+                        </div>
+                        <div id="card-l3" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#D69E2E] opacity-40 transition-all">
+                            <span class="text-slate-400 font-medium">L3 - Plesso (216 Settori)</span>
+                            <span id="counter-l3" class="font-bold text-slate-500">0 / 6 passi</span>
+                        </div>
+                        <div id="card-l4" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#38A169] opacity-40 transition-all">
+                            <span class="text-slate-400 font-medium">L4 - Cuore (1.296 Set.)</span>
+                            <span id="counter-l4" class="font-bold text-slate-500">0 / 6 passi</span>
+                        </div>
+                        <div id="card-l5" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#3182CE] opacity-40 transition-all">
+                            <span class="text-slate-400 font-medium">L5 - Gola (7.776 Set.)</span>
+                            <span id="counter-l5" class="font-bold text-slate-500">0 / 6 passi</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- KPI RESULTS GRID -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
-                    <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800/80 border-l-2 border-l-white/40">
-                        <span class="text-[9px] font-mono text-slate-400 block uppercase tracking-widest">Innesco Richiesto</span>
-                        <span id="kpiCap" class="text-sm md:text-base font-black text-white block mt-1 font-mono">0 €</span>
-                    </div>
-                    <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800/80 border-l-2 border-l-emerald-500">
-                        <span class="text-[9px] font-mono text-slate-400 block uppercase tracking-widest">Profitto Semestrale</span>
-                        <span id="kpiProfit" class="text-sm md:text-base font-black text-emerald-400 block mt-1 font-mono">0 €</span>
-                    </div>
-                    <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800/80 border-l-2 border-l-cyan-500">
-                        <span class="text-[9px] font-mono text-slate-400 block uppercase tracking-widest">Valore Sbloccato</span>
-                        <span id="kpiAsset" class="text-sm md:text-base font-black text-cyan-400 block mt-1 font-mono">0 €</span>
+                <!-- SIMULATORE DI COMPRENSIONE VISIVA -->
+                <div class="bg-slate-900/30 border border-slate-800/60 rounded-3xl p-5 backdrop-blur-xl shadow-2xl space-y-3">
+                    <h4 class="tech-title text-[9px] font-bold text-slate-400 uppercase tracking-wider">Simulatore del Flusso</h4>
+                    <div class="space-y-2">
+                        <button onclick="injectLensStep(1)" class="w-full py-3 bg-purple-600/10 hover:bg-purple-600/20 border border-purple-500/40 rounded-xl text-xs font-mono font-bold text-purple-400 tracking-wider">
+                            [ +1 Punto per Sotto-Settore ]
+                        </button>
+                        <button onclick="injectFullLensLevel()" class="w-full py-2 bg-slate-950 hover:bg-slate-900 border border-slate-800 rounded-xl text-[11px] font-mono text-cyan-400">
+                            ++ Satura Orbita in Focus
+                        </button>
+                        <button onclick="hardResetLens()" class="w-full py-1.5 bg-red-500/5 hover:bg-red-500/10 border border-red-500/20 rounded-xl text-[10px] font-mono text-red-400">
+                            Reset Grafico
+                        </button>
                     </div>
                 </div>
+            </div>
 
-                <!-- MINI CHART -->
-                <div class="h-48 w-full bg-slate-950/90 p-3 rounded-2xl border border-slate-800/80 shadow-inner">
-                    <canvas id="miniChart"></canvas>
+            <!-- IL REATTORE (DESTRA) -->
+            <div class="lg:col-span-8 bg-gradient-to-b from-slate-900/20 to-slate-950/40 border border-slate-800/60 rounded-3xl p-4 flex flex-col items-center justify-center relative shadow-2xl backdrop-blur-xl overflow-hidden min-h-[460px]">
+                <div class="w-full h-full flex items-center justify-center">
+                    <svg id="lensCanvas" width="440" height="440" class="block overflow-visible"></svg>
                 </div>
-
-                <div class="mt-5 text-center">
-                    <a href="#pagine-approfondimento-liquidity" class="inline-flex items-center text-xs font-bold text-goldAccent hover:text-goldAccent/80 transition-colors gap-2 group">
-                        Accedi al Portale Completo Liquidity Provider 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </a>
+                
+                <!-- LEGENDA CHAKRA SUL GRAPH -->
+                <div class="w-full mt-4 flex flex-wrap justify-center gap-4 text-[10px] font-mono text-slate-500 border-t border-slate-900 pt-3">
+                    <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-[#E53E3E]"></div> S1: Radice</div>
+                    <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-[#DD6B20]"></div> S2: Sacrale</div>
+                    <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-[#D69E2E]"></div> S3: Plesso</div>
+                    <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-[#38A169]"></div> S4: Cuore</div>
+                    <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-[#3182CE]"></div> S5: Gola</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. PROTOCOLLO NETFREE -->
-    <section id="protocollo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-900/60 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <!-- GRAPHIC ELEMENT -->
-            <div class="order-2 lg:order-1 bg-gradient-to-b from-slate-900/60 to-slate-950/60 border border-slate-800/80 rounded-3xl p-10 h-80 flex items-center justify-center relative overflow-hidden shadow-2xl">
-                <div class="flex items-center space-x-8 relative z-10">
-                    <div class="w-2.5 h-36 bg-gradient-to-b from-cyan-400 via-cyan-500/50 to-transparent rounded-full shadow-neon-cyan animate-pulse"></div>
-                    <div class="w-2.5 h-36 bg-gradient-to-b from-goldAccent via-goldAccent/50 to-transparent rounded-full shadow-gold-glow animate-pulse [animation-delay:0.2s]"></div>
-                    <div class="w-2.5 h-36 bg-gradient-to-b from-cyan-400 via-cyan-500/50 to-transparent rounded-full shadow-neon-cyan animate-pulse [animation-delay:0.4s]"></div>
-                </div>
-                <div class="absolute inset-0 bg-[radial-gradient(#1c2541_1px,transparent_1px)] bg-[size:16px_16px] opacity-20"></div>
+    <!-- 3. PILASTRI INFORMATIVI (DINAMIC BLOG DA DATABASE) -->
+    <section id="informazione" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 border-t border-slate-900 relative z-10">
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h3 class="tech-title text-xl sm:text-2xl font-bold">Pilastri Condivisi</h3>
+                <p class="text-xs text-slate-500 mt-1">Approfondimenti e documentazione caricati direttamente dall'ecosistema.</p>
             </div>
-            
-            <div class="order-1 lg:order-2 space-y-6">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/5 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest">
-                    L'Infrastruttura di Distribuzione
-                </div>
-                <h3 class="tech-title text-3xl sm:text-4xl font-black leading-tight">L'Acquedotto Digitale Simmetrico</h3>
-                <p class="text-slate-400 text-base sm:text-lg leading-relaxed font-light">
-                    Nell'economia obsoleta, la ricchezza si comporta come la pioggia meteorologica: si accumula in modo caotico creando paludi stagnanti in pochi punti e lasciando interi territori nella totale siccità. 
-                </p>
-                <p class="text-slate-400 text-base leading-relaxed font-light">
-                    Il nostro sistema agisce come un **acquedotto digitale automatico, trasparente e sovrano**. Attraverso tre vettori paralleli perfettamente equilibrati (la geometria del codice 111), raccoglie la liquidità sbloccata dai beni reali e la convoglia istantaneamente nei settori dello sviluppo, abbattendo ogni inefficienza burocratica o attrito d'intermediazione[cite: 1].
-                </p>
-                <div class="pt-2">
-                    <a href="#pagine-approfondimento-protocollo" class="inline-flex items-center text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors gap-2 group">
-                        Esamina le Regole del Protocollo
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
+            <a href="admin.html" class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-[10px] font-mono text-slate-400 hover:text-white transition-colors">
+                ⚙️ Gestione Contenuti
+            </a>
+        </div>
+
+        <div id="blogContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Messaggio di default o caricamento dinamico -->
+            <div class="p-6 bg-slate-900/20 border border-slate-800/60 rounded-2xl text-center col-span-2 py-12">
+                <p class="text-xs font-mono text-slate-500">In attesa di connessione al database Supabase. Modalità informativa locale attiva.</p>
             </div>
         </div>
     </section>
 
-    <!-- 4. SOCIETÀ GILANICA -->
-    <section id="societa" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-900/60 relative z-10 mb-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-6">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/5 border border-emerald-500/20 text-emerald-400 text-xs font-mono uppercase tracking-widest">
-                    La Destinazione Finale
-                </div>
-                <h3 class="tech-title text-3xl sm:text-4xl font-black leading-tight">L'Albero dell'Abbondanza e dell'Evoluzione</h3>
-                <p class="text-slate-400 text-base sm:text-lg leading-relaxed font-light">
-                    Il punto di arrivo di tutto questo flusso energetico non è l'accumulo finanziario fine a se stesso, ma la fioritura di una civiltà integrata. Tutto l'oro generato dall'acquedotto tecnologico va a nutrire le radici di un maestoso **Albero della Vita**[cite: 1].
-                </p>
-                <p class="text-slate-400 text-base leading-relaxed font-light">
-                    È la rappresentazione di un modello sociale cooperativo e non gerarchico (Gilanico), dove le comunità sono autosufficienti ed evolvono in un ambiente sano[cite: 1]. Quando l'infrastruttura tecnologica in background soddisfa ed elimina l'ansia della scarsità materiale, le persone tornano a essere libere di cooperare su basi paritarie, dedicandosi unicamente alla conoscenza e alla crescita collettiva[cite: 1].
-                </p>
-                <div class="pt-2">
-                    <a href="#pagine-approfondimento-masterplan" class="inline-flex items-center text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors gap-2 group">
-                        Visiona il Masterplan a Lungo Termine
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </div>
-            <!-- GRAPHIC CARD -->
-            <div class="bg-gradient-to-b from-slate-900/60 to-slate-950/60 border border-slate-800/80 rounded-3xl p-10 h-80 flex items-center justify-center relative overflow-hidden shadow-2xl group">
-                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-emerald-500/10 opacity-60 group-hover:opacity-100 transition-all duration-700"></div>
-                <div class="text-center relative z-10 space-y-2 font-mono">
-                    <!-- SVG ICON: SACRED GEOMETRY OR TREE NODES -->
-                    <svg class="w-20 h-20 mx-auto text-emerald-400 filter drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
-                    </svg>
-                    <span class="text-3xl text-emerald-400 tracking-widest block font-black pt-2">333</span>
-                    <span class="text-[9px] text-slate-500 uppercase tracking-widest block font-bold">Community Growth Matrix</span>
-                </div>
+    <!-- 4. COLLEGAMENTI ED ESPANSIONE COOPERATIVA -->
+    <section id="piattaforme" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 border-t border-slate-900 mb-10 relative z-10">
+        <div class="bg-gradient-to-br from-slate-900/40 to-slate-950/60 border border-slate-800/60 rounded-3xl p-8 text-center space-y-5 backdrop-blur-xl shadow-2xl">
+            <h4 class="tech-title text-lg font-bold">Partecipa alla Costruzione</h4>
+            <p class="max-w-2xl mx-auto text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
+                Nessuna promozione, solo vie d'azione. Chi ha compreso la visione e desidera esaminare da vicino le metriche contrattuali o i flussi reali dei nodi, può connettersi ai canali e alle piattaforme operative esterne.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 pt-2">
+                <a href="#piattaforma-tokenizzazione" class="px-4 py-2 bg-slate-950 border border-slate-800 hover:border-purple-500/40 rounded-xl text-[11px] font-mono transition-all">
+                    [ Esamina Asset Tokenizzati RWA ]
+                </a>
+                <a href="#piattaforma-liquidity" class="px-4 py-2 bg-slate-950 border border-slate-800 hover:border-cyan-500/40 rounded-xl text-[11px] font-mono transition-all">
+                    [ Analisi Flussi Liquidity Provider ]
+                </a>
+                <a href="mailto:connect@netfree.org" class="px-4 py-2 bg-purple-500/10 border border-purple-500/30 text-purple-400 rounded-xl text-[11px] font-mono hover:bg-purple-500/20 transition-all">
+                    [ Prendi Contatto Diretto ]
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER CON TUTELA E DISCLAIMER -->
-    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8 border-t border-slate-900/60 text-slate-500 text-xs text-center space-y-4 relative z-10">
-        <p>© 2026 BLOTIX Ecosistema Protocol Suite. Tutti i diritti riservati.</p>
-        <p class="max-w-4xl mx-auto text-[10px] leading-relaxed text-slate-500 font-mono text-left p-5 bg-slate-950/90 border border-slate-900 rounded-2xl shadow-inner">
-            <strong>Trasparenza Informativa:</strong> Le elaborazioni matematiche e le metafore visive esposte hanno finalità puramente illustrative del funzionamento algoritmico del protocollo software. I gestori operano come informatori tecnologici e non costituiscono offerta pubblica o sollecitazione al risparmio, né consulenza regolata finanziaria o mediazione creditizia.
-        </p>
+    <footer class="text-center py-6 border-t border-slate-900 text-[10px] text-slate-600 font-mono tracking-wide relative z-10">
+        LCR-NetFree Protocol Suite • Centro di Documentazione Autonomo
     </footer>
 
-    <!-- ENGINE LOGIC IN JAVASCRIPT -->
+    <!-- LOGIC INTEGRATION -->
     <script>
-        let currentPreset = 'oneshot_asset';
-        let chart = null;
+        // CONFIGURAZIONE SUPABASE (Se usi il database per il blog)
+        const SUPABASE_URL = "https://YOUR_SUPABASE_PROJECT.supabase.co";
+        const SUPABASE_KEY = "YOUR_ANON_KEY";
+        const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
-        function formatNumber(num) {
-            return new Intl.NumberFormat('it-IT').format(Math.round(num));
-        }
+        // --- MOTORE DI RENDER LENTE FRATTALE QUANTISTICA ---
+        const canvas = document.getElementById('lensCanvas');
+        const cx = 220;
+        const cy = 220;
+        const chakraColors = ['#E53E3E', '#DD6B20', '#D69E2E', '#38A169', '#3182CE', '#805AD5'];
 
-        function changePreset(preset) {
-            currentPreset = preset;
-            const buttons = ['oneshot_asset', 'plafond', 'oneshot', 'minilp'];
-            buttons.forEach(b => {
-                const el = document.getElementById(`btn-${b}`);
-                if(b === preset) {
-                    if(b === 'oneshot_asset') {
-                        el.className = "p-3 text-xs rounded-xl font-mono font-bold bg-goldAccent/10 text-goldAccent border border-goldAccent/40 text-center transition-all shadow-gold-glow/10";
-                    } else {
-                        el.className = "p-3 text-xs rounded-xl font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/40 text-center transition-all shadow-neon-cyan/10";
-                    }
+        let lensLevels = [
+            { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 160, totalSectors: 6,    displayDots: 6 },
+            { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 180, totalSectors: 36,   displayDots: 36 },
+            { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 190, totalSectors: 216,  displayDots: 108 },
+            { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 200, totalSectors: 1296, displayDots: 180 },
+            { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 210, totalSectors: 7776, displayDots: 240 }
+        ];
+
+        let activeFocusLevel = 1;
+
+        function renderLensEngine() {
+            if (!canvas) return;
+            canvas.innerHTML = '';
+
+            // Core Centrale Luce Bianca Cristallina (Io / Unione)
+            const core = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            core.setAttribute('cx', cx);
+            core.setAttribute('cy', cy);
+            core.setAttribute('r', '7');
+            core.setAttribute('fill', '#ffffff');
+            core.setAttribute('style', 'filter: drop-shadow(0 0 10px rgba(255,255,255,0.9));');
+            canvas.appendChild(core);
+
+            // Calcolo radiale con adattamento e focalizzazione ingrandita
+            lensLevels.forEach(lvl => {
+                if (lvl.level < activeFocusLevel) {
+                    lvl.currentRad = 15 + (lvl.level * 18);
+                } else if (lvl.level === activeFocusLevel) {
+                    lvl.currentRad = 150;
                 } else {
-                    el.className = "p-3 text-xs rounded-xl font-mono font-bold bg-slate-950 border border-slate-800 text-slate-400 text-center hover:text-slate-200 transition-all";
+                    lvl.currentRad = 150 + ((lvl.level - activeFocusLevel) * 22);
                 }
             });
 
-            const boxAsset = document.getElementById('box-asset');
-            const boxCapital = document.getElementById('box-capital');
-
-            if(preset === 'oneshot_asset') {
-                boxAsset.classList.remove('hidden');
-                boxCapital.classList.add('hidden');
-            } else {
-                boxAsset.classList.add('hidden');
-                boxCapital.classList.remove('hidden');
+            // Rendering geometrie
+            lensLevels.forEach(s => {
+                const isFocused = s.level === activeFocusLevel;
                 
-                const capInput = document.getElementById('capitalInput');
-                if(preset === 'minilp') capInput.value = "8.500";[cite: 1]
-                else if(preset === 'oneshot') capInput.value = "1.000.000";[cite: 1]
-                else if(preset === 'plafond') capInput.value = "5.100.000";[cite: 1]
-            }
-            calculate();
-        }
+                const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                ring.setAttribute('cx', cx);
+                ring.setAttribute('cy', cy);
+                ring.setAttribute('r', s.currentRad);
+                ring.setAttribute('fill', 'none');
+                ring.setAttribute('stroke', isFocused ? '#4b5563' : '#0f172a');
+                ring.setAttribute('stroke-width', isFocused ? '0.7' : '0.3');
+                ring.setAttribute('style', 'transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);');
+                canvas.appendChild(ring);
 
-        function formatAndCalc(input) {
-            let cursor = input.selectionStart;
-            let oldLen = input.value.length;
-            let clean = input.value.replace(/\D/g, '');
-            if(!clean) return;
-            let formatted = new Intl.NumberFormat('it-IT').format(parseInt(clean));
-            input.value = formatted;
-            input.setSelectionRange(cursor + (formatted.length - oldLen), cursor + (formatted.length - oldLen));
-            calculate();
-        }
+                let activeDotsCount = Math.floor((s.currentSteps / s.maxSteps) * s.displayDots);
+                if (s.currentSteps > 0 && activeDotsCount === 0) activeDotsCount = 1;
 
-        function calculate() {
-            let initialCapital = 0;
-            let assetValue = 0;
-            const roiFactor = 0.235; // 23.5%[cite: 1]
+                for (let i = 0; i < s.displayDots; i++) {
+                    const angle = (i * 2 * Math.PI) / s.displayDots;
+                    const nodeX = cx + s.currentRad * Math.cos(angle);
+                    const nodeY = cy + s.currentRad * Math.sin(angle);
 
-            if(currentPreset === 'oneshot_asset') {
-                let cleanAsset = document.getElementById('assetInput').value.replace(/\./g, '');
-                assetValue = parseInt(cleanAsset) || 100000000;
-                initialCapital = assetValue * 0.0085; // 0.85% fisso[cite: 1]
-            } else {
-                let cleanCap = document.getElementById('capitalInput').value.replace(/\./g, '');
-                initialCapital = parseInt(cleanCap) || 1000000;
-                assetValue = initialCapital / 0.0085;[cite: 1]
-            }
+                    let macroSector = Math.floor((i / s.displayDots) * 6);
+                    if (macroSector > 5) macroSector = 5;
+                    let dotColor = chakraColors[macroSector];
+                    let nodePositionInSubsector = i % 6;
 
-            let profit = initialCapital * roiFactor;[cite: 1]
+                    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    dot.setAttribute('cx', nodeX);
+                    dot.setAttribute('cy', nodeY);
+                    
+                    let dotRadius = isFocused ? 5 : (s.level < activeFocusLevel ? 2.2 : 1.2);
+                    dot.setAttribute('r', dotRadius);
 
-            document.getElementById('kpiCap').innerText = formatNumber(initialCapital) + ' €';
-            document.getElementById('kpiProfit').innerText = '+' + formatNumber(profit) + ' €';
-            document.getElementById('kpiAsset').innerText = formatNumber(assetValue) + ' €';
-
-            updateChart(initialCapital, profit);
-        }
-
-        function updateChart(capital, profit) {
-            let labels = currentPreset === 'plafond' ? ["Ciclo 1", "Ciclo 2", "Ciclo 3", "Ciclo 4"] : ["Inizio", "Mese 3", "Mese 6 (Scadenza)"];
-            let dataCapital = currentPreset === 'plafond' ? [capital, capital*1.11, capital*1.23, capital*1.36] : [capital, capital, capital];
-            let dataProfit = currentPreset === 'plafond' ? [0, profit, profit*2.1, profit*3.4] : [0, 0, profit];
-
-            if(chart) {
-                chart.data.labels = labels;
-                chart.data.datasets[0].data = dataCapital;
-                chart.data.datasets[1].data = dataProfit;
-                chart.update();
-                return;
-            }
-
-            const ctx = document.getElementById('miniChart').getContext('2d');
-            chart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        { label: 'Capitale Attivo', data: dataCapital, borderColor: '#00f2fe', borderWidth: 2, fill: false, tension: 0.2, pointRadius: 2 },
-                        { label: 'Profitti Generati', data: dataProfit, borderColor: '#10b981', borderWidth: 2, fill: false, tension: 0.2, pointRadius: 2 }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        x: { ticks: { color: '#475569', font: { size: 9, family: 'monospace' } }, grid: { display: false } },
-                        y: { ticks: { color: '#475569', font: { size: 9, family: 'monospace' } }, grid: { color: 'rgba(28,37,65,0.15)', drawBorder: false } }
+                    if (nodePositionInSubsector < s.currentSteps || s.level < activeFocusLevel) {
+                        dot.setAttribute('fill', dotColor);
+                        if (isFocused) {
+                            dot.setAttribute('style', `filter: drop-shadow(0 0 5px ${dotColor}); transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);`);
+                        }
+                    } else {
+                        dot.setAttribute('fill', '#090d16');
+                        dot.setAttribute('stroke', '#1e293b');
+                        dot.setAttribute('stroke-width', '0.15');
                     }
+                    canvas.appendChild(dot);
                 }
             });
         }
 
-        window.addEventListener('DOMContentLoaded', () => { calculate(); });
+        window.injectLensStep = function(amount) {
+            for (let k = 0; k < amount; k++) {
+                let target = lensLevels.find(s => s.currentSteps < s.maxSteps);
+                if (!target) break;
+
+                target.currentSteps++;
+                document.getElementById(`counter-l${target.level}`).innerText = `${target.currentSteps} / ${target.maxSteps} passi`;
+                document.getElementById(`counter-l${target.level}`).className = "font-bold text-white";
+
+                if (target.currentSteps === target.maxSteps && activeFocusLevel === target.level && activeFocusLevel < 5) {
+                    document.getElementById(`card-l${activeFocusLevel}`).classList.add('opacity-40');
+                    activeFocusLevel++;
+                    const nextCard = document.getElementById(`card-l${activeFocusLevel}`);
+                    if (nextCard) {
+                        nextCard.classList.remove('opacity-40');
+                        nextCard.classList.add('border-l-purple-500');
+                    }
+                    document.getElementById('active-focus-tag').innerText = `LENTE SU: L${activeFocusLevel}`;
+                }
+            }
+            renderLensEngine();
+        }
+
+        window.injectFullLensLevel = function() {
+            let target = lensLevels.find(s => s.currentSteps < s.maxSteps);
+            if (!target) return;
+            let rimasti = target.maxSteps - target.currentSteps;
+            injectLensStep(rimasti);
+        }
+
+        window.hardResetLens = function() {
+            lensLevels.forEach(s => s.currentSteps = 0);
+            activeFocusLevel = 1;
+            document.getElementById('active-focus-tag').innerText = 'LENTE SU: L1';
+            for (let i = 1; i <= 5; i++) {
+                const card = document.getElementById(`card-l${i}`);
+                const counter = document.getElementById(`counter-l${i}`);
+                counter.innerText = `0 / ${lensLevels[i-1].maxSteps} passi`;
+                counter.className = "font-bold text-slate-500";
+                if (i === 1) card.className = "p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#E53E3E] transition-all";
+                else card.className = "p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 opacity-40 transition-all";
+            }
+            renderLensEngine();
+        }
+
+        // --- CARICAMENTO POST DA DATABASE SUPABASE ---
+        async function loadContent() {
+            const container = document.getElementById('blogContainer');
+            if (!supabase) return;
+            
+            let { data: posts, error } = await supabase.from('lcr_posts').select('*').order('created_at', { ascending: false });
+            if(posts && posts.length > 0) {
+                container.innerHTML = '';
+                posts.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = "p-6 bg-slate-900/30 border border-slate-800/60 rounded-2xl space-y-3 backdrop-blur-md";
+                    card.innerHTML = `
+                        <span class="text-[9px] font-mono text-purple-400 bg-purple-950/40 px-2 py-0.5 rounded border border-purple-500/20">${new Date(post.created_at).toLocaleDateString()}</span>
+                        <h4 class="tech-title text-base font-bold text-white">${post.title}</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">${post.content}</p>
+                        ${post.file_url ? `<a href="${post.file_url}" download class="inline-flex items-center gap-1 text-xs text-amber-400 font-mono mt-2 bg-amber-400/5 px-2.5 py-1 rounded border border-amber-400/20 hover:bg-amber-400/10">[ 📥 Documentazione Allegata ]</a>` : ''}
+                    `;
+                    container.appendChild(card);
+                });
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderLensEngine();
+            loadContent();
+        });
     </script>
 </body>
 </html>
