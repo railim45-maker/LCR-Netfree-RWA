@@ -54,7 +54,7 @@
             </span>
         </h1>
         <p class="max-w-3xl mx-auto text-slate-400 text-sm sm:text-base font-light leading-relaxed">
-            Questo non è un luogo di promozione commerciale, ma un centro di documentazione e comprensione. Mettiamo le persone nelle condizioni di analizzare, studiare e co-progettare un modello basato su risorse condivise, transizione digitale ed economia cooperativa etica. Un pilastro alla volta, tracciamo la rete.
+            Questo non è un luogo di promozione commerciale, ma un centro di documentazione e comprensione. Mettiamo le persone nelle condizioni di analizzare, studiare e co-progettare un modelo basato su risorse condivise, transizione digitale ed economia cooperativa etica. Un pilastro alla volta, tracciamo la rete.
         </p>
     </section>
 
@@ -160,7 +160,7 @@
         </div>
     </section>
 
-    <!-- 4. COLLEGAMENTI ED ESPANSIONE COOPERATIVA -->
+    <!-- 4. PIATTAFORME OPERATIVE ESTERNE -->
     <section id="piattaforme" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-900 mb-10 relative z-10">
         <div class="bg-gradient-to-br from-slate-900/30 to-slate-950/50 border border-slate-800/60 rounded-3xl p-8 text-center space-y-5 backdrop-blur-xl shadow-2xl">
             <h4 class="tech-title text-lg font-bold">Vie d'Azione e Co-Costruzione</h4>
@@ -186,9 +186,9 @@
     </footer>
 
     <script>
-        // CONFIGURAZIONE SUPABASE - SOSTITUISCI CON I TUOI DATI REALI
-        const SUPABASE_URL = "INSERISCI_QUI_IL_TUO_PROJECT_URL";
-        const SUPABASE_KEY = "INSERISCI_QUI_LA_TUA_ANON_KEY";
+        // --- CONFIGURAZIONE CONNESSA A SUPABASE ---
+        const SUPABASE_URL = "https://jlkxbzdycgjxuqxqqkgk.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_0483t-GV1ef72-K_eatrow_P5ZLKAPe";
         const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
         // --- MOTORE DI LENTE FRATTALE CONTRATTILE ---
@@ -326,7 +326,7 @@
             const container = document.getElementById('pathwayContainer');
             if (!container) return;
             if (!supabase) {
-                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-slate-500">Configurare le credenziali Supabase nello script per attivare il percorso formativo.</div>`;
+                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-slate-500">Errore: Client non inizializzato.</div>`;
                 return;
             }
             
@@ -338,14 +338,14 @@
 
             if (error) {
                 console.error(error);
-                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-red-400">Impossibile connettersi alle tabelle di formazione.</div>`;
+                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-red-400">Impossibile caricare i dati. Verificare SQL ed RLS su Supabase.</div>`;
                 return;
             }
 
             if (!moduli || moduli.length === 0) {
                 container.innerHTML = `
                     <div class="p-8 bg-slate-900/20 border border-slate-800/60 rounded-2xl text-center py-12">
-                        <p class="text-xs font-mono text-slate-400">Il cammino formativo è in fase di predisposizione.</p>
+                        <p class="text-xs font-mono text-slate-400">Il cammino formativo è in fase di predisposizione. Accedi all'area di caricamento per inserire i primi testi.</p>
                     </div>`;
                 return;
             }
@@ -367,7 +367,7 @@
                 
                 let headerHTML = `
                     <div class="border-b border-slate-900 pb-4 mb-4">
-                        <span class="text-[9px] font-mono text-purple-400 font-bold uppercase tracking-widest block mb-0.5">TAPPA DEL PERCORSO CONTRATTILE ${tappaNum}</span>
+                        <span class="text-[9px] font-mono text-purple-400 font-bold uppercase tracking-widest block mb-0.5">TAPPA DEL PERCORSO ${tappaNum}</span>
                         <h4 class="tech-title text-base sm:text-lg font-bold text-white uppercase">${tappa.titolo}</h4>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

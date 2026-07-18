@@ -84,9 +84,9 @@
     </div>
 
     <script>
-        // CONFIGURAZIONE SUPABASE - INCOLLA LE STESSE CHIAVI DI INDEX.HTML
-        const SUPABASE_URL = "INSERISCI_QUI_IL_TUO_PROJECT_URL";
-        const SUPABASE_KEY = "INSERISCI_QUI_LA_TUA_ANON_KEY";
+        // --- CONFIGURAZIONE CONNESSA A SUPABASE ---
+        const SUPABASE_URL = "https://jlkxbzdycgjxuqxqqkgk.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_0483t-GV1ef72-K_eatrow_P5ZLKAPe";
         const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
         document.getElementById('uploadForm').addEventListener('submit', async (e) => {
