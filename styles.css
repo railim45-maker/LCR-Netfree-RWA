@@ -2,7 +2,7 @@
 
 .tech-title {
     font-family: 'Orbitron', sans-serif;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
 }
 
 body {
@@ -10,7 +10,6 @@ body {
     background-color: #030712;
 }
 
-/* Griglia olografica di sfondo */
 .animated-gradient-bg {
     position: fixed;
     top: 0;
@@ -33,7 +32,6 @@ body {
     mask-image: radial-gradient(circle at 50% 50%, black 10%, transparent 85%);
 }
 
-/* Transizioni millimetriche ed elastiche della lente frattale contrattile */
 circle {
     transition: cx 0.75s cubic-bezier(0.25, 1, 0.5, 1),
                 cy 0.75s cubic-bezier(0.25, 1, 0.5, 1),
@@ -50,9 +48,10 @@ button:hover {
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
 }
 
-/* Linee laterali dei Chakra per i moduli formativi */
 #card-l1 { border-l-color: #E53E3E; }
 #card-l2 { border-l-color: #DD6B20; }
 #card-l3 { border-l-color: #D69E2E; }
 #card-l4 { border-l-color: #38A169; }
 #card-l5 { border-l-color: #3182CE; }
+#card-l6 { border-l-color: #805AD5; }
+#card-l7 { border-l-color: #FFFFFF; }

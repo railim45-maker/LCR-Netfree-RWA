@@ -11,11 +11,7 @@
         tailwind.config = {
             darkMode: 'class',
             theme: {
-                extend: {
-                    colors: {
-                        slate: { 950: '#030712', 900: '#0b1329', 800: '#1e293b', 700: '#334155' }
-                    }
-                }
+                extend: { colors: { slate: { 950: '#030712', 900: '#0b1329', 800: '#1e293b' } } }
             }
         }
     </script>
@@ -24,7 +20,6 @@
 
     <div class="animated-gradient-bg"></div>
 
-    <!-- NAVBAR ISTITUZIONALE -->
     <header class="border-b border-slate-900/80 bg-slate-950/70 backdrop-blur-xl sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
@@ -35,17 +30,16 @@
             </div>
             <nav class="hidden md:flex space-x-8 text-xs font-mono tracking-wider text-slate-400">
                 <a href="#vision" class="hover:text-white transition-colors">[ La Visione ]</a>
-                <a href="#netfree-protocol" class="hover:text-purple-400 transition-colors">[ Il Protocollo NetFree ]</a>
-                <a href="#informazione" class="hover:text-cyan-400 transition-colors">[ Cammino di Formazione ]</a>
-                <a href="#piattaforme" class="hover:text-amber-400 transition-colors">[ Piattaforme ]</a>
+                <a href="netfree.html" class="hover:text-purple-400 transition-colors">[ Protocollo NetFree ]</a>
+                <a href="#informazione" class="hover:text-cyan-400 transition-colors">[ Cammino Formativo ]</a>
+                <a href="#piattaforme" class="hover:text-amber-400 transition-colors">[ Co-Costruzione ]</a>
             </nav>
         </div>
     </header>
 
-    <!-- 1. INTRODUZIONE ALLA VISIONE -->
     <section id="vision" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center relative z-10">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 text-[10px] font-mono mb-6 tracking-widest">
-            SPAZIO INFORMATIVO AUTONOMO • HUB DI TRANSIZIONE COGNITIVA
+            HUB INFORMATIVO AUTONOMO • LIBERTÀ & SOVRANITÀ
         </div>
         <h1 class="tech-title text-3xl sm:text-6xl font-black mb-6 leading-tight uppercase">
             Costruiamo lo Spazio <br>
@@ -53,88 +47,23 @@
                 In Cui Andremo a Vivere
             </span>
         </h1>
-        <p class="max-w-3xl mx-auto text-slate-400 text-sm sm:text-base font-light leading-relaxed">
-            Questo non è un luogo di promozione commerciale, ma un centro di documentazione e comprensione. Mettiamo le persone nelle condizioni di analizzare, studiare e co-progettare un modelo basato su risorse condivise, transizione digitale ed economia cooperativa etica. Un pilastro alla volta, tracciamo la rete.
+        <p class="max-w-3xl mx-auto text-slate-400 text-sm sm:text-base font-light leading-relaxed mb-6">
+            Questo spazio è pubblico ed esprime una chiara prospettiva informativa. Mettiamo l'individuo nelle condizioni di comprendere i modelli prima e i singoli pilastri operativi poi. Comprendere il progetto significa risvegliare il proprio principio di autodeterminazione prima di analizzare i flussi applicati delle nostre tecnologie.
         </p>
-    </section>
-
-    <!-- 2. IL PROTOCOLLO NETFREE & IL MOTORE LENTE FRATTALE -->
-    <section id="netfree-protocol" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-900 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-12">
-            
-            <!-- TESTI E MONITOR -->
-            <div class="lg:col-span-5 space-y-5">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/40 border border-purple-500/30 text-purple-400 text-[9px] font-mono uppercase tracking-wider">
-                    Meccanismi di Sostenibilità Matematica
-                </div>
-                <h3 class="tech-title text-2xl sm:text-3xl font-bold uppercase leading-tight">
-                    Il Protocollo NetFree:<br> Economia del Dono e Crescita Costante
-                </h3>
-                <p class="text-slate-400 text-xs sm:text-sm font-light leading-relaxed">
-                    Perché siamo in grado di parlare di dono e di crescita esponenziale costante senza cadere nei limiti dei vecchi modelli finanziari speculativi? La risposta risiede nella **canalizzazione dei flussi di consumo reali**.
-                </p>
-                <p class="text-slate-400 text-xs sm:text-sm font-light leading-relaxed">
-                    Ogni giorno la collettività compie acquisti e sostiene costi inevitabili per utenze e abbonamenti a servizi essenziali. Il protocollo NetFree intercetta le economie di scala generate da questi flussi commerciali ricorrenti e, invece di accentrarle, le ridistribuisce geometricamente secondo la potenza del 6. Questo costante apporto di carburante economico reale permette alla rete di auto-sostenersi ed espandersi a impulsi coordinati.
-                </p>
-                
-                <!-- Monitor dei passi della lente frattale -->
-                <div class="pt-4 border-t border-slate-900 space-y-1.5 font-mono text-[11px]">
-                    <div id="card-l1" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#E53E3E]">
-                        <span class="text-slate-400">L1 - Radice (6 Riferimenti)</span>
-                        <span id="counter-l1" class="font-bold text-[#E53E3E]">0 / 1 passi</span>
-                    </div>
-                    <div id="card-l2" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#DD6B20] opacity-40">
-                        <span class="text-slate-400">L2 - Sacrale (36 Riferimenti)</span>
-                        <span id="counter-l2" class="font-bold text-slate-500">0 / 6 passi</span>
-                    </div>
-                    <div id="card-l3" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#D69E2E] opacity-40">
-                        <span class="text-slate-400">L3 - Plesso (216 Riferimenti)</span>
-                        <span id="counter-l3" class="font-bold text-slate-500">0 / 6 passi</span>
-                    </div>
-                    <div id="card-l4" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#38A169] opacity-40">
-                        <span class="text-slate-400">L4 - Cuore (1.296 Riferimenti)</span>
-                        <span id="counter-l4" class="font-bold text-slate-500">0 / 6 passi</span>
-                    </div>
-                    <div id="card-l5" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#3182CE] opacity-40">
-                        <span class="text-slate-400">L5 - Gola (7.776 Riferimenti)</span>
-                        <span id="counter-l5" class="font-bold text-slate-500">0 / 6 passi</span>
-                    </div>
-                </div>
-
-                <!-- Pulsanti di simulazione visiva -->
-                <div class="pt-2 grid grid-cols-2 gap-2">
-                    <button onclick="injectLensStep(1)" class="py-2.5 bg-purple-600/10 hover:bg-purple-600/20 border border-purple-500/30 rounded-xl text-xs font-mono font-bold text-purple-400 text-center">
-                        [ +1 Punto / Sotto-Settore ]
-                    </button>
-                    <button onclick="injectFullLensLevel()" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-[11px] font-mono text-cyan-400 text-center">
-                        [ Satura Livello Corrente ]
-                    </button>
-                </div>
-            </div>
-
-            <!-- IL VISUALIZZATORE VETTORIALE OLOGRAFICO -->
-            <div class="lg:col-span-7 bg-gradient-to-b from-slate-900/10 to-slate-950/40 border border-slate-800/50 rounded-3xl p-6 flex flex-col items-center justify-center relative shadow-2xl backdrop-blur-xl overflow-hidden min-h-[460px]">
-                <div class="absolute top-4 right-6 text-[8px] font-mono text-slate-500 tracking-widest">
-                    LENS_MODE: ACTIVE_FOCUS_MAGNIFIED // RAYS: 6
-                </div>
-                
-                <div class="w-full h-full flex items-center justify-center py-4">
-                    <svg id="lensCanvas" width="420" height="420" class="block overflow-visible"></svg>
-                </div>
-
-                <div class="w-full mt-2 flex flex-wrap justify-center gap-4 text-[9px] font-mono text-slate-500 border-t border-slate-900/60 pt-3">
-                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#E53E3E]"></div> S1: Radice</div>
-                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#DD6B20]"></div> S2: Sacrale</div>
-                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#D69E2E]"></div> S3: Plesso</div>
-                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#38A169]"></div> S4: Cuore</div>
-                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#3182CE]"></div> S5: Gola</div>
-                </div>
-            </div>
-
+        <div class="flex justify-center gap-4">
+            <a href="netfree.html" class="px-5 py-3 bg-purple-600/10 hover:bg-purple-600/20 border border-purple-500/40 rounded-xl text-xs font-mono font-bold text-purple-400 tracking-wider transition-all">
+                [ 1. Esplora il Modello di Crescita NetFree → ]
+            </a>
         </div>
     </section>
 
-    <!-- 3. PERCORSO DI FORMAZIONE DINAMICO (INTEGRATO CON SUPABASE) -->
+    <section class="max-w-4xl mx-auto px-4 py-8 relative z-10 bg-slate-900/20 border border-slate-900 rounded-3xl backdrop-blur-sm">
+        <h3 class="tech-title text-sm font-bold text-purple-400 uppercase tracking-wider mb-3">Fondamento: L'Autodeterminazione</h3>
+        <p class="text-slate-400 text-xs sm:text-sm font-light leading-relaxed">
+            LCR-NetFree riconosce la sovranità individuale come presupposto essenziale per una vita libera e abbondante. Autodeterminarsi significa esercitare la responsabilità e il diritto di decidere dove convogliare il valore e l'energia delle proprie azioni quotidiane, superando le dinamiche estrattive centralizzate.
+        </p>
+    </section>
+
     <section id="informazione" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-900 relative z-10">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
             <div>
@@ -151,7 +80,6 @@
             </a>
         </div>
 
-        <!-- CONTENITORE DELLE TAPPE FORMATIVE -->
         <div id="pathwayContainer" class="space-y-8">
             <div class="p-8 bg-slate-900/10 border border-slate-800/40 rounded-3xl text-center py-16 backdrop-blur-sm">
                 <div class="w-6 h-6 border-2 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
@@ -160,7 +88,6 @@
         </div>
     </section>
 
-    <!-- 4. PIATTAFORME OPERATIVE ESTERNE -->
     <section id="piattaforme" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-900 mb-10 relative z-10">
         <div class="bg-gradient-to-br from-slate-900/30 to-slate-950/50 border border-slate-800/60 rounded-3xl p-8 text-center space-y-5 backdrop-blur-xl shadow-2xl">
             <h4 class="tech-title text-lg font-bold">Vie d'Azione e Co-Costruzione</h4>
@@ -174,9 +101,6 @@
                 <a href="#piattaforma-liquidity" class="px-4 py-2 bg-slate-950 border border-slate-800 hover:border-cyan-500/40 rounded-xl text-[11px] font-mono transition-all">
                     [ Esplora Flussi Liquidity Provider ]
                 </a>
-                <a href="mailto:connect@netfree.org" class="px-4 py-2 bg-purple-500/10 border border-purple-500/30 text-purple-400 rounded-xl text-[11px] font-mono hover:bg-purple-500/20 transition-all">
-                    [ Prendi Contatto Diretto ]
-                </a>
             </div>
         </div>
     </section>
@@ -186,142 +110,10 @@
     </footer>
 
     <script>
-        // --- CONFIGURAZIONE CONNESSA A SUPABASE ---
         const SUPABASE_URL = "https://jlkxbzdycgjxuqxqqkgk.supabase.co";
         const SUPABASE_KEY = "sb_publishable_0483t-GV1ef72-K_eatrow_P5ZLKAPe";
         const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
-        // --- MOTORE DI LENTE FRATTALE CONTRATTILE ---
-        const canvas = document.getElementById('lensCanvas');
-        const cx = 210;
-        const cy = 210;
-        const chakraColors = ['#E53E3E', '#DD6B20', '#D69E2E', '#38A169', '#3182CE', '#805AD5'];
-
-        let lensLevels = [
-            { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 150, totalSectors: 6,    displayDots: 6 },
-            { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 170, totalSectors: 36,   displayDots: 36 },
-            { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 180, totalSectors: 216,  displayDots: 108 },
-            { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 190, totalSectors: 1296, displayDots: 180 },
-            { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 200, totalSectors: 7776, displayDots: 240 }
-        ];
-
-        let activeFocusLevel = 1;
-
-        function renderLensEngine() {
-            if (!canvas) return;
-            canvas.innerHTML = '';
-
-            const core = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            core.setAttribute('cx', cx);
-            core.setAttribute('cy', cy);
-            core.setAttribute('r', '7');
-            core.setAttribute('fill', '#ffffff');
-            core.setAttribute('style', 'filter: drop-shadow(0 0 10px rgba(255,255,255,0.9));');
-            canvas.appendChild(core);
-
-            lensLevels.forEach(lvl => {
-                if (lvl.level < activeFocusLevel) {
-                    lvl.currentRad = 15 + (lvl.level * 16);
-                } else if (lvl.level === activeFocusLevel) {
-                    lvl.currentRad = 145;
-                } else {
-                    lvl.currentRad = 145 + ((lvl.level - activeFocusLevel) * 20);
-                }
-            });
-
-            lensLevels.forEach(s => {
-                const isFocused = s.level === activeFocusLevel;
-                const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                ring.setAttribute('cx', cx);
-                ring.setAttribute('cy', cy);
-                ring.setAttribute('r', s.currentRad);
-                ring.setAttribute('fill', 'none');
-                ring.setAttribute('stroke', isFocused ? '#4b5563' : '#0f172a');
-                ring.setAttribute('stroke-width', isFocused ? '0.7' : '0.3');
-                ring.setAttribute('style', 'transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);');
-                canvas.appendChild(ring);
-
-                let activeDotsCount = Math.floor((s.currentSteps / s.maxSteps) * s.displayDots);
-                if (s.currentSteps > 0 && activeDotsCount === 0) activeDotsCount = 1;
-
-                for (let i = 0; i < s.displayDots; i++) {
-                    const angle = (i * 2 * Math.PI) / s.displayDots;
-                    const nodeX = cx + s.currentRad * Math.cos(angle);
-                    const nodeY = cy + s.currentRad * Math.sin(angle);
-
-                    let macroSector = Math.floor((i / s.displayDots) * 6);
-                    if (macroSector > 5) macroSector = 5;
-                    let dotColor = chakraColors[macroSector];
-                    let nodePositionInSubsector = i % 6;
-
-                    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                    dot.setAttribute('cx', nodeX);
-                    dot.setAttribute('cy', nodeY);
-                    
-                    let dotRadius = isFocused ? 4.5 : (s.level < activeFocusLevel ? 2.2 : 1.1);
-                    dot.setAttribute('r', dotRadius);
-
-                    if (nodePositionInSubsector < s.currentSteps || s.level < activeFocusLevel) {
-                        dot.setAttribute('fill', dotColor);
-                        if (isFocused) {
-                            dot.setAttribute('style', `filter: drop-shadow(0 0 5px ${dotColor}); transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);`);
-                        }
-                    } else {
-                        dot.setAttribute('fill', '#090d16');
-                        dot.setAttribute('stroke', '#1e293b');
-                        dot.setAttribute('stroke-width', '0.15');
-                    }
-                    canvas.appendChild(dot);
-                }
-            });
-        }
-
-        window.injectLensStep = function(amount) {
-            for (let k = 0; k < amount; k++) {
-                let target = lensLevels.find(s => s.currentSteps < s.maxSteps);
-                if (!target) break;
-
-                target.currentSteps++;
-                document.getElementById(`counter-l${target.level}`).innerText = `${target.currentSteps} / ${target.maxSteps} passi`;
-                document.getElementById(`counter-l${target.level}`).className = "font-bold text-white";
-
-                if (target.currentSteps === target.maxSteps && activeFocusLevel === target.level && activeFocusLevel < 5) {
-                    document.getElementById(`card-l${activeFocusLevel}`).classList.add('opacity-40');
-                    activeFocusLevel++;
-                    const nextCard = document.getElementById(`card-l${activeFocusLevel}`);
-                    if (nextCard) {
-                        nextCard.classList.remove('opacity-40');
-                        nextCard.classList.add('border-l-purple-500');
-                    }
-                    document.getElementById('active-focus-tag').innerText = `LENTE SU: L${activeFocusLevel}`;
-                }
-            }
-            renderLensEngine();
-        }
-
-        window.injectFullLensLevel = function() {
-            let target = lensLevels.find(s => s.currentSteps < s.maxSteps);
-            if (!target) return;
-            let rimasti = target.maxSteps - target.currentSteps;
-            injectLensStep(rimasti);
-        }
-
-        window.hardResetLens = function() {
-            lensLevels.forEach(s => s.currentSteps = 0);
-            activeFocusLevel = 1;
-            document.getElementById('active-focus-tag').innerText = 'LENTE SU: L1';
-            for (let i = 1; i <= 5; i++) {
-                const card = document.getElementById(`card-l${i}`);
-                const counter = document.getElementById(`counter-l${i}`);
-                counter.innerText = `0 / ${lensLevels[i-1].maxSteps} passi`;
-                counter.className = "font-bold text-slate-500";
-                if (i === 1) card.className = "p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#E53E3E] transition-all";
-                else card.className = "p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 opacity-40 transition-all";
-            }
-            renderLensEngine();
-        }
-
-        // --- APPORTAMENTO DEL PERCORSO FORMATIVO DA SUPABASE ---
         async function loadPathwayContent() {
             const container = document.getElementById('pathwayContainer');
             if (!container) return;
@@ -337,8 +129,7 @@
                 .order('created_at', { ascending: true });
 
             if (error) {
-                console.error(error);
-                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-red-400">Impossibile caricare i dati. Verificare SQL ed RLS su Supabase.</div>`;
+                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-red-400">Impossibile caricare i dati.</div>`;
                 return;
             }
 
@@ -379,6 +170,30 @@
                     if(mat.categoria === 'elaborato') badgeColor = "text-purple-400 bg-purple-950/40 border-purple-500/20";
                     if(mat.categoria === 'materiale') badgeColor = "text-emerald-400 bg-emerald-950/40 border-emerald-500/20";
 
+                    let risorsaHTML = '';
+                    if (mat.url_risorsa) {
+                        if (mat.categoria === 'presentazione') {
+                            risorsaHTML = `
+                                <div class="pt-3">
+                                    <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-900 shadow-inner">
+                                        <video controls class="w-full h-full object-cover">
+                                            <source src="${mat.url_risorsa}" type="video/mp4">
+                                            Il tuo browser non supporta il tag video.
+                                        </video>
+                                    </div>
+                                </div>
+                            `;
+                        } else {
+                            risorsaHTML = `
+                                <div class="pt-2">
+                                    <a href="${mat.url_risorsa}" target="_blank" class="inline-flex items-center gap-1.5 text-[10px] font-mono text-purple-400 hover:text-purple-300 bg-purple-500/5 px-2.5 py-1 rounded border border-purple-500/10 transition-all">
+                                        📁 Consulta Risorsa di Studio →
+                                    </a>
+                                </div>
+                            `;
+                        }
+                    }
+
                     headerHTML += `
                         <div class="p-4 bg-slate-950/40 border border-slate-900 rounded-2xl flex flex-col justify-between space-y-3">
                             <div class="space-y-1">
@@ -389,13 +204,7 @@
                                 <p class="text-xs text-slate-400 font-light leading-relaxed">${mat.descrizione || ''}</p>
                                 ${mat.testo_esteso ? `<p class="text-[11px] text-slate-500 italic pt-2 border-t border-slate-900/30">${mat.testo_esteso}</p>` : ''}
                             </div>
-                            ${mat.url_risorsa ? `
-                                <div class="pt-2">
-                                    <a href="${mat.url_risorsa}" target="_blank" class="inline-flex items-center gap-1.5 text-[10px] font-mono text-purple-400 hover:text-purple-300 bg-purple-500/5 px-2.5 py-1 rounded border border-purple-500/10">
-                                        📁 Consulta Risorsa di Studio →
-                                    </a>
-                                </div>
-                            ` : ''}
+                            ${risorsaHTML}
                         </div>
                     `;
                 });
@@ -406,10 +215,7 @@
             });
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            renderLensEngine();
-            loadPathwayContent();
-        });
+        window.addEventListener('DOMContentLoaded', loadPathwayContent);
     </script>
 </body>
 </html>

@@ -10,9 +10,7 @@
     <script>
         tailwind.config = {
             theme: {
-                extend: {
-                    colors: { slate: { 950: '#030712', 900: '#0b1329', 800: '#1e293b' } }
-                }
+                extend: { colors: { slate: { 950: '#030712', 900: '#0b1329', 800: '#1e293b' } } }
             }
         }
     </script>
@@ -72,8 +70,8 @@
                 </div>
 
                 <div>
-                    <label class="block text-slate-400 mb-1">URL Risorsa Esterna (PDF / Cloud Drive / Presentazioni)</label>
-                    <input type="url" id="url_risorsa" placeholder="https://drive.google.com/..." class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-purple-500">
+                    <label class="block text-slate-400 mb-1">URL Risorsa Esterna (Usa l'Opzione 2 di Streaming per i Video)</label>
+                    <input type="url" id="url_risorsa" placeholder="https://docs.google.com/uc?export=download&id=..." class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-purple-500">
                 </div>
 
                 <button type="submit" class="w-full py-3 bg-purple-600 hover:bg-purple-700 font-bold text-white rounded-xl transition-all tracking-widest uppercase">
@@ -84,7 +82,6 @@
     </div>
 
     <script>
-        // --- CONFIGURAZIONE CONNESSA A SUPABASE ---
         const SUPABASE_URL = "https://jlkxbzdycgjxuqxqqkgk.supabase.co";
         const SUPABASE_KEY = "sb_publishable_0483t-GV1ef72-K_eatrow_P5ZLKAPe";
         const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
@@ -106,7 +103,6 @@
             const { data, error } = await supabase.from('lcr_formazione').insert([payload]);
 
             if(error) {
-                console.error(error);
                 alert("Errore di pubblicazione: " + error.message);
             } else {
                 alert("Modulo inserito con successo all'interno del Cammino di Autodeterminazione!");

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="it" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCR-NetFree | Il Protocollo NetFree e il Principio di Crescita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { colors: { slate: { 950: '#030712', 900: '#0b1329', 800: '#1e293b' } } }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-purple-500/30">
+
+    <div class="animated-gradient-bg"></div>
+
+    <header class="border-b border-slate-900/80 bg-slate-950/70 backdrop-blur-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="w-9 h-9 flex items-center justify-center bg-purple-950/40 border border-purple-500/30 rounded-xl">
+                    <span class="text-purple-400 font-bold tech-title text-sm">LCR</span>
+                </a>
+                <span class="tech-title text-sm font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-purple-400">LCR-NETFREE</span>
+            </div>
+            <a href="index.html" class="text-xs font-mono tracking-wider text-slate-400 hover:text-white">[ ← Torna alla Home ]</a>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-12">
+            
+            <div class="lg:col-span-5 space-y-5">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/40 border border-purple-500/30 text-purple-400 text-[9px] font-mono uppercase tracking-wider">
+                    IL PRIMO PILASTRO FONDAMENTALE
+                </div>
+                <h2 class="tech-title text-2xl sm:text-4xl font-black uppercase leading-tight">
+                    Il Protocollo NetFree:<br> Sostenibilità e Crescita Esponenziale
+                </h2>
+                <p class="text-slate-400 text-xs sm:text-sm font-light leading-relaxed">
+                    Perché siamo in grado di parlare di economia del dono e di crescita costante senza ricadere nei limiti dei vecchi modelli speculativi? La sostenibilità risiede nella **canalizzazione dei flussi di consumo e abbonamenti reali**.
+                </p>
+                <p class="text-slate-400 text-xs sm:text-sm font-light leading-relaxed">
+                    Ogni mese ognuno di noi sostiene costi inevitabili per utenze, telefonia, e abbonamenti a servizi essenziali. Il protocollo NetFree intercetta le economie di scala generate da questi flussi ricorrenti commerciali e, invece di disperderle, le ridistribuisce geometricamente secondo la potenza del 6. Questo costante afflusso di energia esterna permette alla rete di auto-sostenersi, espandendosi a impulsi simmetrici coordinati per sotto-settori.
+                </p>
+                
+                <div class="pt-4 border-t border-slate-900 space-y-1.5 font-mono text-[11px]">
+                    <div id="card-l1" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#E53E3E]">
+                        <span>L1 - Radice (6 Settori)</span>
+                        <span id="counter-l1" class="font-bold text-[#E53E3E]">0 / 1 passi</span>
+                    </div>
+                    <div id="card-l2" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#DD6B20] opacity-40">
+                        <span>L2 - Sacrale (36 Settori)</span>
+                        <span id="counter-l2" class="font-bold text-slate-500">0 / 6 passi</span>
+                    </div>
+                    <div id="card-l3" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#D69E2E] opacity-40">
+                        <span>L3 - Plesso (216 Settori)</span>
+                        <span id="counter-l3" class="font-bold text-slate-500">0 / 6 passi</span>
+                    </div>
+                    <div id="card-l4" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#38A169] opacity-40">
+                        <span>L4 - Cuore (1.296 Set.)</span>
+                        <span id="counter-l4" class="font-bold text-slate-500">0 / 6 passi</span>
+                    </div>
+                    <div id="card-l5" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#3182CE] opacity-40">
+                        <span>L5 - Gola (7.776 Set.)</span>
+                        <span id="counter-l5" class="font-bold text-slate-500">0 / 6 passi</span>
+                    </div>
+                    <div id="card-l6" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#805AD5] opacity-40">
+                        <span>L6 - Terzo Occhio</span>
+                        <span id="counter-l6" class="font-bold text-slate-500">0 / 6 passi</span>
+                    </div>
+                    <div id="card-l7" class="p-2 bg-slate-950/40 rounded-xl border border-slate-800/40 flex justify-between items-center border-l-4 border-l-[#FFFFFF] opacity-40">
+                        <span>L7 - Corona Alpha</span>
+                        <span id="counter-l7" class="font-bold text-slate-500">0 / 6 passi</span>
+                    </div>
+                </div>
+
+                <div class="pt-2 grid grid-cols-2 gap-2">
+                    <button onclick="injectLensStep(1)" class="py-2.5 bg-purple-600/10 hover:bg-purple-600/20 border border-purple-500/30 rounded-xl text-xs font-mono font-bold text-purple-400 text-center">
+                        [ +1 Punto / Sotto-Settore ]
+                    </button>
+                    <button onclick="injectFullLensLevel()" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-[11px] font-mono text-cyan-400 text-center">
+                        [ Satura Livello ]
+                    </button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-gradient-to-b from-slate-900/10 to-slate-950/40 border border-slate-800/50 rounded-3xl p-6 flex flex-col items-center justify-center relative shadow-2xl backdrop-blur-xl overflow-hidden min-h-[480px]">
+                <div class="absolute top-4 right-6 text-[8px] font-mono text-slate-500 tracking-widest">
+                    LENS_MODE: ACTIVE_FOCUS_MAGNIFIED // RAYS: 6
+                </div>
+                
+                <div class="w-full h-full flex items-center justify-center py-4">
+                    <svg id="lensCanvas" width="440" height="440" class="block overflow-visible"></svg>
+                </div>
+
+                <div class="w-full mt-2 flex flex-wrap justify-center gap-4 text-[9px] font-mono text-slate-500 border-t border-slate-900/60 pt-3">
+                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#E53E3E]"></div> S1: Radice</div>
+                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#DD6B20]"></div> S2: Sacrale</div>
+                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#D69E2E]"></div> S3: Plesso</div>
+                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#38A169]"></div> S4: Cuore</div>
+                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#3182CE]"></div> S5: Gola</div>
+                    <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#805AD5]"></div> S6: Terzo Occhio</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const canvas = document.getElementById('lensCanvas');
+        const cx = 220;
+        const cy = 220;
+        const chakraColors = ['#E53E3E', '#DD6B20', '#D69E2E', '#38A169', '#3182CE', '#805AD5', '#FFFFFF'];
+
+        let lensLevels = [
+            { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, totalSectors: 6,      displayDots: 6 },
+            { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, totalSectors: 36,     displayDots: 36 },
+            { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, totalSectors: 216,    displayDots: 108 },
+            { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, totalSectors: 1296,   displayDots: 180 },
+            { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, totalSectors: 7776,   displayDots: 240 },
+            { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, totalSectors: 46656,  displayDots: 300 },
+            { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, totalSectors: 279936, displayDots: 360 }
+        ];
+
+        let activeFocusLevel = 1;
+
+        function renderLensEngine() {
+            if (!canvas) return;
+            canvas.innerHTML = '';
+
+            const core = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            core.setAttribute('cx', cx);
+            core.setAttribute('cy', cy);
+            core.setAttribute('r', '8');
+            core.setAttribute('fill', '#ffffff');
+            core.setAttribute('style', 'filter: drop-shadow(0 0 12px rgba(255,255,255,1));');
+            canvas.appendChild(core);
+
+            lensLevels.forEach(lvl => {
+                if (lvl.level < activeFocusLevel) {
+                    lvl.currentRad = 15 + (lvl.level * 20);
+                } else if (lvl.level === activeFocusLevel) {
+                    lvl.currentRad = 175;
+                } else {
+                    lvl.currentRad = 175 + ((lvl.level - activeFocusLevel) * 22);
+                }
+            });
+
+            lensLevels.forEach(s => {
+                const isFocused = s.level === activeFocusLevel;
+                const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                ring.setAttribute('cx', cx);
+                ring.setAttribute('cy', cy);
+                ring.setAttribute('r', s.currentRad);
+                ring.setAttribute('fill', 'none');
+                ring.setAttribute('stroke', isFocused ? '#4b5563' : '#0f172a');
+                ring.setAttribute('stroke-width', isFocused ? '0.8' : '0.3');
+                ring.setAttribute('style', 'transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);');
+                canvas.appendChild(ring);
+
+                let activeDotsCount = Math.floor((s.currentSteps / s.maxSteps) * s.displayDots);
+                if (s.currentSteps > 0 && activeDotsCount === 0) activeDotsCount = 1;
+
+                for (let i = 0; i < s.displayDots; i++) {
+                    const angle = (i * 2 * Math.PI) / s.displayDots;
+                    const nodeX = cx + s.currentRad * Math.cos(angle);
+                    const nodeY = cy + s.currentRad * Math.sin(angle);
+
+                    let macroSector = Math.floor((i / s.displayDots) * 6);
+                    if (macroSector > 5) macroSector = 5;
+                    let dotColor = chakraColors[macroSector];
+                    let nodePositionInSubsector = i % 6;
+
+                    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    dot.setAttribute('cx', nodeX);
+                    dot.setAttribute('cy', nodeY);
+                    
+                    let dotRadius = isFocused ? 5.5 : (s.level < activeFocusLevel ? 2.5 : 1.2);
+                    dot.setAttribute('r', dotRadius);
+
+                    if (nodePositionInSubsector < s.currentSteps || s.level < activeFocusLevel) {
+                        dot.setAttribute('fill', dotColor);
+                        if (isFocused) {
+                            dot.setAttribute('style', `filter: drop-shadow(0 0 6px ${dotColor}); transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);`);
+                        }
+                    } else {
+                        dot.setAttribute('fill', '#090d16');
+                        dot.setAttribute('stroke', '#1e293b');
+                        dot.setAttribute('stroke-width', '0.15');
+                    }
+                    canvas.appendChild(dot);
+                }
+            });
+        }
+
+        window.injectLensStep = function(amount) {
+            for (let k = 0; k < amount; k++) {
+                let target = lensLevels.find(s => s.currentSteps < s.maxSteps);
+                if (!target) break;
+
+                target.currentSteps++;
+                document.getElementById(`counter-l${target.level}`).innerText = `${target.currentSteps} / ${target.maxSteps} passi`;
+                document.getElementById(`counter-l${target.level}`).className = "font-bold text-white";
+
+                if (target.currentSteps === target.maxSteps && activeFocusLevel === target.level && activeFocusLevel < 7) {
+                    document.getElementById(`card-l${activeFocusLevel}`).classList.add('opacity-40');
+                    activeFocusLevel++;
+                    const nextCard = document.getElementById(`card-l${activeFocusLevel}`);
+                    if (nextCard) {
+                        nextCard.classList.remove('opacity-40');
+                        nextCard.classList.add('border-l-purple-500');
+                    }
+                    document.getElementById('active-focus-tag').innerText = `LENTE SU: L${activeFocusLevel}`;
+                }
+            }
+            renderLensEngine();
+        }
+
+        window.injectFullLensLevel = function() {
+            let target = lensLevels.find(s => s.currentSteps < s.maxSteps);
+            if (!target) return;
+            let rimasti = target.maxSteps - target.currentSteps;
+            injectLensStep(rimasti);
+        }
+
+        window.addEventListener('DOMContentLoaded', renderLensEngine);
+    </script>
+</body>
+</html>
