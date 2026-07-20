@@ -1,18 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-primary: #f8fafc;
+    --surface-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --border-color: #e2e8f0;
+}
 
 .tech-title {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: -0.01em;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
 }
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #fcfbf9;
-    color: #1c2321;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    overflow-x: hidden;
 }
 
-/* Sfondo organico e luminoso a sfumature calde */
-.organic-gradient-bg {
+/* Sfondo con sfumature istituzionali ma calde (natura + tecnologia) */
+.eco-future-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,43 +29,43 @@ body {
     height: 100vh;
     z-index: 0;
     pointer-events: none;
-    background: radial-gradient(circle at 10% 20%, rgba(212, 190, 169, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(143, 166, 154, 0.1) 0%, transparent 40%),
-                #fcfbf9;
+    background: radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.04) 0%, transparent 45%),
+                #f8fafc;
 }
 
-/* Micro-trama geometrica naturale */
-.organic-gradient-bg::before {
+.eco-future-bg::before {
     content: "";
     position: absolute;
     inset: 0;
     background-image: 
-        linear-gradient(to right, rgba(143, 166, 154, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(143, 166, 154, 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
+        linear-gradient(to right, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
 }
 
+/* Transizioni fluide */
 circle {
-    transition: cx 0.75s cubic-bezier(0.25, 1, 0.5, 1),
-                cy 0.75s cubic-bezier(0.25, 1, 0.5, 1),
-                r 0.75s cubic-bezier(0.25, 1, 0.5, 1),
+    transition: cx 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                cy 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                r 0.8s cubic-bezier(0.16, 1, 0.3, 1),
                 fill 0.4s ease;
 }
 
-button, select, input, textarea {
-    transition: all 0.25s ease;
+button, input, select, textarea, a {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(53, 79, 82, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
 }
 
-/* Bordi Chakra in tonalità calde e terrose */
-#card-l1 { border-l-color: #c86d51; }
-#card-l2 { border-l-color: #d48c46; }
-#card-l3 { border-l-color: #d4b246; }
-#card-l4 { border-l-color: #5d8a6e; }
-#card-l5 { border-l-color: #4a7c8c; }
-#card-l6 { border-l-color: #7b5ea7; }
-#card-l7 { border-l-color: #8c8c8c; }
+/* Colori dei Chakra in chiave Eco-Futurista */
+#card-l1 { border-l-color: #dc2626; }
+#card-l2 { border-l-color: #ea580c; }
+#card-l3 { border-l-color: #ca8a04; }
+#card-l4 { border-l-color: #059669; }
+#card-l5 { border-l-color: #0284c7; }
+#card-l6 { border-l-color: #7c3aed; }
+#card-l7 { border-l-color: #475569; }
