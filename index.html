@@ -1,144 +1,122 @@
 <!DOCTYPE html>
-<html lang="it" class="dark scroll-smooth">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LCR-NetFree | Ecosistema di Transizione e Consapevolezza</title>
+    <title>LCR-NetFree | Il Tempo Ritrovato e l'Abbondanza</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/unpkg/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
-                extend: { colors: { slate: { 950: '#030712', 900: '#0b1329', 800: '#1e293b' } } }
+                extend: { 
+                    colors: { 
+                        earth: { 50: '#fcfbf9', 100: '#f4f1ea', 200: '#e6dfd1', 800: '#354f52', 900: '#2f3e46' } 
+                    } 
+                }
             }
         }
     </script>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-purple-500/30">
+<body class="bg-earth-50 text-earth-900 min-h-screen relative overflow-x-hidden selection:bg-earth-200">
 
-    <div class="animated-gradient-bg"></div>
+    <div class="organic-gradient-bg"></div>
 
-    <header class="border-b border-slate-900/80 bg-slate-950/70 backdrop-blur-xl sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header class="border-b border-earth-200/60 bg-earth-50/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-9 h-9 flex items-center justify-center bg-purple-950/40 border border-purple-500/30 rounded-xl">
-                    <span class="text-purple-400 font-bold tech-title text-sm">LCR</span>
+                <div class="w-10 h-10 flex items-center justify-center bg-earth-800 text-earth-50 rounded-2xl shadow-sm">
+                    <span class="font-serif font-bold text-base">L</span>
                 </div>
-                <span class="tech-title text-sm font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-purple-400">LCR-NETFREE</span>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-base tracking-wide text-earth-900">LCR-NETFREE</span>
+                    <span class="text-[9px] font-mono tracking-widest text-earth-800 uppercase">Economia del Dono</span>
+                </div>
             </div>
-            <nav class="hidden md:flex space-x-8 text-xs font-mono tracking-wider text-slate-400">
-                <a href="#vision" class="hover:text-white transition-colors">[ La Visione ]</a>
-                <a href="#progetto-basi" class="hover:text-purple-400 transition-colors">[ Fondamenti del Progetto ]</a>
-                <a href="#informazione" class="hover:text-cyan-400 transition-colors">[ Cammino Formativo ]</a>
-                <a href="#piattaforme" class="hover:text-amber-400 transition-colors">[ Piattaforme ]</a>
+            <nav class="hidden md:flex space-x-8 text-xs font-mono tracking-wider text-earth-800">
+                <a href="#vision" class="hover:text-emerald-700 transition-colors">La Visione</a>
+                <a href="netfree.html" class="hover:text-emerald-700 transition-colors">Il Protocollo NetFree</a>
+                <a href="#informazione" class="hover:text-emerald-700 transition-colors">Il Cammino</a>
             </nav>
         </div>
     </header>
 
-    <section id="vision" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 text-center relative z-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 text-[10px] font-mono mb-6 tracking-widest">
-            SPAZIO INFORMATIVO AUTONOMO • HUB DI TRANSIZIONE COGNITIVA
+    <section id="vision" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-earth-100 border border-earth-200 text-earth-800 text-[10px] font-mono mb-8 tracking-widest uppercase">
+            🌱 Un ritorno all'essenza e all'abbondanza reale
         </div>
-        <h1 class="tech-title text-3xl sm:text-6xl font-black mb-6 leading-tight uppercase">
-            Costruiamo lo Spazio <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-purple-500">
-                In Cui Andremo a Vivere
-            </span>
+        <h1 class="tech-title text-4xl sm:text-6xl font-bold mb-6 leading-tight text-earth-900">
+            Smettere di vendere il tempo <br>
+            <span class="italic text-emerald-800">per riscoprire il valore della vita</span>
         </h1>
-        <p class="max-w-3xl mx-auto text-slate-400 text-sm sm:text-base font-light leading-relaxed mb-6">
-            Questo non è un luogo di promozione commerciale o di marketing, ma un centro autonomo di documentazione, studio e comprensione. Mettiamo le persone nelle condizioni di analizzare e co-progettare un modello sociale ed economico basato su risorse condivise, transizione digitale consapevole ed economia cooperativa etica. Un pilastro alla volta, tracciamo la rete.
+        <p class="max-w-3xl mx-auto text-earth-800/80 text-base sm:text-lg font-light leading-relaxed mb-10">
+            Immagina giornate non più scandite dalla sopravvivenza o dall'ansia della scarsità, ma incentrate sul benessere, sulla crescita personale, sulla serenità e sulla condivisione di gruppo. LCR-NetFree nasce per questo: restituire valore al lavoro manuale e di concetto, slegandolo dall'obbligo economico. Si torna a fare ciò che si ama perché è nella nostra natura farlo ed è utile per sé e per gli esattamente come il lavoro di semina e comunicazione che stiamo compiendo oggi insieme per costruire queste fondamenta.
         </p>
     </section>
 
-    <section id="progetto-basi" class="max-w-5xl mx-auto px-4 py-12 relative z-10 border-t border-slate-900">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+    <section class="max-w-6xl mx-auto px-4 py-12 relative z-10 border-t border-earth-200/60">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div class="md:col-span-6 space-y-4">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/40 border border-purple-500/30 text-purple-400 text-[9px] font-mono uppercase tracking-wider">
-                    Struttura e Orientamento Concettuale
+            <div class="lg:col-span-6 space-y-6">
+                <div class="inline-block px-3 py-1 bg-amber-100 text-amber-900 text-[10px] font-mono uppercase tracking-widest rounded-md">
+                    Il Futuro è Già Qui
                 </div>
-                <h2 class="tech-title text-xl sm:text-2xl font-bold uppercase leading-tight">
-                    Comprendere le basi:<br>Autodeterminazione e Partnership
-                </h2>
-                <p class="text-slate-400 text-xs sm:text-sm font-light leading-relaxed">
-                    LCR-NetFree si sviluppa attorno al principio cardine della sovranità dell'individuo. Riconosciamo l'**autodeterminazione** come il diritto inalienabile di ogni essere umano di decidere come e dove canalizzare il valore generato dalle proprie azioni quotidiane, uscendo dalle logiche estrattive tradizionali.
+                <h3 class="tech-title text-2xl sm:text-3xl font-bold text-earth-900 leading-snug">
+                    L'Economia del Dono e il NetFree:<br>Un nuovo modo di vivere
+                </h3>
+                <p class="text-earth-800/80 text-sm font-light leading-relaxed">
+                    Viviamo in un mondo saturo di intermediari che monetizzano ogni istante. Il NetFree e l'economia del dono ribaltano la prospettiva: quando le necessità primarie sono protette da una rete basata sulla cooperazione e sulle risorse condivise, l'individuo è finalmente libero.
                 </p>
-                <p class="text-slate-400 text-xs sm:text-sm font-light leading-relaxed">
-                    Attraverso un modello gilanico basato sulla partnership, sulla pari dignità e sul mutuo soccorso, riallocciamo le economie derivanti dai flussi di consumo per strutturare infrastrutture stabili e condivise. Prima di scendere nelle metriche dei singoli pilastri tecnici o nell'utilizzo delle nostre piattaforme decentralizzate, è essenziale comprendere la visione d'insieme.
+                <p class="text-earth-800/80 text-sm font-light leading-relaxed">
+                    Non c'è più bisogno di vendere le proprie ore al miglior offerente. L'energia vitale torna a fluire verso la creatività, l'arte, la cura della terra e la crescita collettiva.
                 </p>
                 <div class="pt-2">
-                    <a href="netfree.html" class="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors">
-                        [ 2. Esamina l'espansione matematica del protocollo NetFree → ]
+                    <a href="netfree.html" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-emerald-800 hover:text-emerald-900 transition-colors bg-earth-100 px-4 py-3 rounded-xl border border-earth-200">
+                        [ Scopri la matematica naturale e la geometria della crescita → ]
                     </a>
                 </div>
             </div>
 
-            <div class="md:col-span-6 bg-slate-900/30 border border-slate-800/60 p-4 rounded-3xl backdrop-blur-md shadow-2xl space-y-3">
-                <div class="flex justify-between items-center border-b border-slate-900 pb-2">
-                    <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Materiale Multimediale Iniziale</span>
-                    <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
+            <div class="lg:col-span-6 bg-white border border-earth-200 p-5 rounded-3xl shadow-xl space-y-4">
+                <div class="flex justify-between items-center border-b border-earth-100 pb-3">
+                    <span class="text-[10px] font-mono text-earth-800 uppercase tracking-widest font-bold">Presentazione Ufficiale</span>
+                    <div class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></div>
                 </div>
-                <h4 class="text-xs font-mono font-bold text-slate-200">📺 Video Spiegazione Ufficiale: Il Progetto LCR-NetFree</h4>
-                <p class="text-slate-400 text-[11px] font-light leading-normal">
-                    Una guida fondamentale per comprendere il cambio di paradigma, il contrasto con i modelli commerciali aggressivi e l'introduzione alla vita libera e abbondante.
-                </p>
+                <h4 class="font-serif font-bold text-sm text-earth-900">La Visione di LCR-NetFree in Video</h4>
                 
-                <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-900 shadow-inner mt-2">
-                    <video controls class="w-full h-full object-cover">
-                        <source src="https://docs.google.com/uc?export=download&id=18CXVsJ6I6v5g3xt9g-XNSDspLNAkGJRp" type="video/mp4">
-                        Il tuo browser non supporta il tag video.
-                    </video>
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-earth-900 shadow-inner">
+                    <iframe src="https://drive.google.com/file/d/18CXVsJ6I6v5g3xt9g-XNSDspLNAkGJRp/preview" class="w-full h-full border-0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section id="informazione" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 border-t border-slate-900 relative z-10">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+    <section id="informazione" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-earth-200/60 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div>
-                <div class="inline-flex items-center gap-1.5 text-[9px] font-mono tracking-widest text-purple-400 bg-purple-950/30 px-2.5 py-1 rounded-md border border-purple-500/20 mb-2 uppercase">
-                    Consapevolezza Guidata Progressiva
-                </div>
-                <h3 class="tech-title text-2xl font-bold uppercase">Il Cammino dell'Autodeterminazione</h3>
-                <p class="text-xs text-slate-400 mt-1 max-w-xl">
-                    Un percorso strutturato in tappe per guidare l'individuo verso una nuova prospettiva di vita sovrana, libera dalle logiche di scarsità e radicata nell'abbondanza condivisa.
+                <span class="text-[10px] font-mono tracking-widest text-emerald-800 uppercase block mb-1">Crescita e Consapevolezza</span>
+                <h3 class="tech-title text-2xl sm:text-3xl font-bold text-earth-900">Il Cammino della Fioritura</h3>
+                <p class="text-xs text-earth-800/70 mt-1 max-w-lg">
+                    Riflessioni e tappe progressive per accompagnare l'individuo nel recupero della propria sovranità interiore ed esteriore.
                 </p>
             </div>
-            <a href="admin.html" class="mt-4 md:mt-0 px-4 py-2 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl text-xs font-mono text-slate-400 hover:text-white transition-all">
-                ⚙️ Area Caricamento Materiali
+            <a href="admin.html" class="mt-4 md:mt-0 px-4 py-2.5 bg-earth-200/60 hover:bg-earth-200 border border-earth-300 rounded-xl text-xs font-mono text-earth-900 transition-all">
+                ⚙️ Area Custodi (Admin)
             </a>
         </div>
 
         <div id="pathwayContainer" class="space-y-8">
-            <div class="p-8 bg-slate-900/10 border border-slate-800/40 rounded-3xl text-center py-16 backdrop-blur-sm">
-                <div class="w-6 h-6 border-2 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                <p class="text-xs font-mono text-slate-500 tracking-wider">Sincronizzazione moduli con il registro Supabase...</p>
+            <div class="p-8 bg-white border border-earth-200 rounded-3xl text-center py-16 shadow-sm">
+                <div class="w-6 h-6 border-2 border-emerald-700 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-xs font-mono text-earth-800/60 tracking-wider">Raccolta delle tracce in corso...</p>
             </div>
         </div>
     </section>
 
-    <section id="piattaforme" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 border-t border-slate-900 mb-10 relative z-10">
-        <div class="bg-gradient-to-br from-slate-900/30 to-slate-950/50 border border-slate-800/60 rounded-3xl p-8 text-center space-y-5 backdrop-blur-xl shadow-2xl">
-            <h4 class="tech-title text-lg font-bold">Vie d'Azione e Co-Costruzione</h4>
-            <p class="max-w-2xl mx-auto text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
-                Chi desidera scendere nelle metriche contrattuali dell'affitto digitale o esaminare le architetture operative della tokenizzazione, può accedere in modo mirato alle nostre piattaforme ufficiali dedicate.
-            </p>
-            <div class="flex flex-wrap justify-center gap-3 pt-2">
-                <a href="#piattaforma-tokenizzazione" class="px-4 py-2 bg-slate-950 border border-slate-800 hover:border-purple-500/40 rounded-xl text-[11px] font-mono transition-all">
-                    [ Approfondisci Tokenizzazione RWA ]
-                </a>
-                <a href="#piattaforma-liquidity" class="px-4 py-2 bg-slate-950 border border-slate-800 hover:border-cyan-500/40 rounded-xl text-[11px] font-mono transition-all">
-                    [ Esplora Flussi Liquidity Provider ]
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center py-6 border-t border-slate-900 text-[10px] text-slate-600 font-mono tracking-wide relative z-10">
-        LCR-NetFree Protocol Suite • Struttura Informativa Autonoma
+    <footer class="text-center py-8 border-t border-earth-200/60 text-[11px] text-earth-800/60 font-mono tracking-wide relative z-10 bg-earth-100/50">
+        LCR-NetFree • Spazio di Condivisione, Abbondanza e Rispetto della Vita
     </footer>
 
     <script>
@@ -150,7 +128,7 @@
             const container = document.getElementById('pathwayContainer');
             if (!container) return;
             if (!supabase) {
-                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-slate-500">Errore: Client non inizializzato.</div>`;
+                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-earth-800">Database non connesso.</div>`;
                 return;
             }
             
@@ -161,14 +139,14 @@
                 .order('created_at', { ascending: true });
 
             if (error) {
-                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-red-400">Impossibile caricare i dati.</div>`;
+                container.innerHTML = `<div class="p-6 text-center text-xs font-mono text-red-600">Impossibile recuperare i dati.</div>`;
                 return;
             }
 
             if (!moduli || moduli.length === 0) {
                 container.innerHTML = `
-                    <div class="p-8 bg-slate-900/20 border border-slate-800/60 rounded-2xl text-center py-12">
-                        <p class="text-xs font-mono text-slate-400">Il cammino formativo è in fase di predisposizione. Accedi all'area di caricamento per inserire i primi testi.</p>
+                    <div class="p-8 bg-white border border-earth-200 rounded-2xl text-center py-12 shadow-sm">
+                        <p class="text-xs font-mono text-earth-800/70">Nessun modulo nel registro. Usa l'area custodi per inserire i primi passi.</p>
                     </div>`;
                 return;
             }
@@ -186,40 +164,40 @@
             Object.keys(tappeRaggruppate).forEach(tappaNum => {
                 const tappa = tappeRaggruppate[tappaNum];
                 const tappaBlock = document.createElement('div');
-                tappaBlock.className = "bg-gradient-to-r from-slate-900/30 to-slate-950/20 border border-slate-800/40 rounded-3xl p-6 backdrop-blur-md shadow-xl";
+                tappaBlock.className = "bg-white border border-earth-200 rounded-3xl p-6 shadow-sm";
                 
                 let headerHTML = `
-                    <div class="border-b border-slate-900 pb-4 mb-4">
-                        <span class="text-[9px] font-mono text-purple-400 font-bold uppercase tracking-widest block mb-0.5">TAPPA DEL PERCORSO ${tappaNum}</span>
-                        <h4 class="tech-title text-base sm:text-lg font-bold text-white uppercase">${tappa.titolo}</h4>
+                    <div class="border-b border-earth-100 pb-4 mb-4">
+                        <span class="text-[9px] font-mono text-emerald-800 font-bold uppercase tracking-widest block mb-0.5">PASSO DEL CAMMINO ${tappaNum}</span>
+                        <h4 class="tech-title text-lg sm:text-xl font-bold text-earth-900">${tappa.titolo}</h4>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 `;
 
                 tappa.materiali.forEach(mat => {
-                    let badgeColor = "text-cyan-400 bg-cyan-950/40 border-cyan-500/20";
-                    if(mat.categoria === 'presentazione') badgeColor = "text-amber-400 bg-amber-950/40 border-amber-500/20";
-                    if(mat.categoria === 'elaborato') badgeColor = "text-purple-400 bg-purple-950/40 border-purple-500/20";
-                    if(mat.categoria === 'materiale') badgeColor = "text-emerald-400 bg-emerald-950/40 border-emerald-500/20";
+                    let badgeColor = "text-emerald-800 bg-emerald-50 border-emerald-200";
+                    if(mat.categoria === 'presentazione') badgeColor = "text-amber-800 bg-amber-50 border-amber-200";
+                    if(mat.categoria === 'elaborato') badgeColor = "text-purple-800 bg-purple-50 border-purple-200";
 
                     let risorsaHTML = '';
                     if (mat.url_risorsa) {
                         if (mat.categoria === 'presentazione') {
+                            let embedUrl = mat.url_risorsa;
+                            if (embedUrl.includes('drive.google.com') && embedUrl.includes('/view')) {
+                                embedUrl = embedUrl.replace('/view', '/preview');
+                            }
                             risorsaHTML = `
                                 <div class="pt-3">
-                                    <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-900 shadow-inner">
-                                        <video controls class="w-full h-full object-cover">
-                                            <source src="${mat.url_risorsa}" type="video/mp4">
-                                            Il tuo browser non supporta il tag video.
-                                        </video>
+                                    <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-earth-900 border border-earth-200">
+                                        <iframe src="${embedUrl}" class="w-full h-full border-0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             `;
                         } else {
                             risorsaHTML = `
                                 <div class="pt-2">
-                                    <a href="${mat.url_risorsa}" target="_blank" class="inline-flex items-center gap-1.5 text-[10px] font-mono text-purple-400 hover:text-purple-300 bg-purple-500/5 px-2.5 py-1 rounded border border-purple-500/10 transition-all">
-                                        📁 Consulta Risorsa di Studio →
+                                    <a href="${mat.url_risorsa}" target="_blank" class="inline-flex items-center gap-1.5 text-[10px] font-mono text-emerald-800 hover:text-emerald-900 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 transition-all font-semibold">
+                                        📁 Apri Risorsa di Studio →
                                     </a>
                                 </div>
                             `;
@@ -227,14 +205,14 @@
                     }
 
                     headerHTML += `
-                        <div class="p-4 bg-slate-950/40 border border-slate-900 rounded-2xl flex flex-col justify-between space-y-3">
-                            <div class="space-y-1">
+                        <div class="p-5 bg-earth-50/50 border border-earth-200/80 rounded-2xl flex flex-col justify-between space-y-3">
+                            <div class="space-y-1.5">
                                 <span class="inline-block text-[8px] font-mono uppercase tracking-wider px-2 py-0.5 rounded border ${badgeColor}">
                                     ${mat.categoria}
                                 </span>
-                                <h5 class="text-sm font-bold text-slate-200 pt-1">${mat.titolo}</h5>
-                                <p class="text-xs text-slate-400 font-light leading-relaxed">${mat.descrizione || ''}</p>
-                                ${mat.testo_esteso ? `<p class="text-[11px] text-slate-500 italic pt-2 border-t border-slate-900/30">${mat.testo_esteso}</p>` : ''}
+                                <h5 class="text-sm font-bold text-earth-900 pt-1">${mat.titolo}</h5>
+                                <p class="text-xs text-earth-800/80 font-light leading-relaxed">${mat.descrizione || ''}</p>
+                                ${mat.testo_esteso ? `<p class="text-[11px] text-earth-800/60 italic pt-2 border-t border-earth-200/40">${mat.testo_esteso}</p>` : ''}
                             </div>
                             ${risorsaHTML}
                         </div>

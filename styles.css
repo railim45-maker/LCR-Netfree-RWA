@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght=700;900&family=Plus+Jakarta+Sans:wght=300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
 
 .tech-title {
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 0.1em;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.01em;
 }
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #030712;
+    background-color: #fcfbf9;
+    color: #1c2321;
 }
 
-.animated-gradient-bg {
+/* Sfondo organico e luminoso a sfumature calde */
+.organic-gradient-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -18,18 +20,20 @@ body {
     height: 100vh;
     z-index: 0;
     pointer-events: none;
-    background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.02) 0%, transparent 75%), #030712;
+    background: radial-gradient(circle at 10% 20%, rgba(212, 190, 169, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(143, 166, 154, 0.1) 0%, transparent 40%),
+                #fcfbf9;
 }
 
-.animated-gradient-bg::before {
+/* Micro-trama geometrica naturale */
+.organic-gradient-bg::before {
     content: "";
     position: absolute;
     inset: 0;
     background-image: 
-        linear-gradient(to right, rgba(30, 41, 59, 0.15) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(30, 41, 59, 0.15) 1px, transparent 1px);
-    background-size: 35px 35px;
-    mask-image: radial-gradient(circle at 50% 50%, black 10%, transparent 85%);
+        linear-gradient(to right, rgba(143, 166, 154, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(143, 166, 154, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
 }
 
 circle {
@@ -40,18 +44,19 @@ circle {
 }
 
 button, select, input, textarea {
-    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.25s ease;
 }
 
 button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+    box-shadow: 0 6px 20px rgba(53, 79, 82, 0.08);
 }
 
-#card-l1 { border-l-color: #E53E3E; }
-#card-l2 { border-l-color: #DD6B20; }
-#card-l3 { border-l-color: #D69E2E; }
-#card-l4 { border-l-color: #38A169; }
-#card-l5 { border-l-color: #3182CE; }
-#card-l6 { border-l-color: #805AD5; }
-#card-l7 { border-l-color: #FFFFFF; }
+/* Bordi Chakra in tonalità calde e terrose */
+#card-l1 { border-l-color: #c86d51; }
+#card-l2 { border-l-color: #d48c46; }
+#card-l3 { border-l-color: #d4b246; }
+#card-l4 { border-l-color: #5d8a6e; }
+#card-l5 { border-l-color: #4a7c8c; }
+#card-l6 { border-l-color: #7b5ea7; }
+#card-l7 { border-l-color: #8c8c8c; }
