@@ -12,7 +12,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const navItems = [
   { href: "/", label: "Home" },
