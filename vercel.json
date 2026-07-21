@@ -1,10 +1,16 @@
 {
   "version": 2,
   "installCommand": "pnpm install --no-frozen-lockfile",
-  "builds": [
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist/public",
+  "rewrites": [
     {
-      "src": "server/_core/index.ts",
-      "use": "@vercel/node"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
