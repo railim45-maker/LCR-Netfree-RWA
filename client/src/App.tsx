@@ -17,7 +17,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/dashboard", label: "Dashboard" },
-  { href: "/club-deal", label: "Club Deal" },
+  { href: "/club-deal", label: "Liquidity Provider" },
   { href: "/network", label: "Potenza del 6" },
   { href: "/accesso", label: "Accesso" },
 ];
