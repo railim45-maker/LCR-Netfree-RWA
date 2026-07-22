@@ -1,26 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, Compass, Shield, Users, HeartHandshake, Layers, Globe } from "lucide-react";
+import { ArrowRight, Compass, Shield, Users, HeartHandshake, Layers, Globe } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground space-y-24 pb-28">
       
-      {/* 1. IL RISVEGLIO E LA VISIONE (Punto 1 & 2: La scelta evolutiva e l'economia del dono) */}
+      {/* 1. TITOLO D'IMPATTO E VISIONE EVOLUTIVA */}
       <section className="relative overflow-hidden pt-28 pb-16 border-b border-border/40">
         <div className="container max-w-5xl mx-auto px-6 text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs uppercase tracking-[0.25em] font-semibold">
-            <Sparkles className="w-3.5 h-3.5" /> Il Percorso Evolutivo e d'Anima
+            Il Percorso Evolutivo e d'Anima
           </div>
           
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight font-serif-display leading-tight">
-            Il sistema economico globale è uno tsunami chiuso in una tazzina.<br />
-            <span className="text-primary">Tu puoi scegliere di non subirlo.</span>
+            LCR NetFree RWA<br />
+            <span className="text-primary">La Chiave Railim</span>
           </h1>
 
           <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed">
-            Riconoscere le dinamiche del vecchio mondo è il primo passo per rispettare il proprio percorso evolutivo. Non si tratta di vendere o lottare, ma di allinearsi a un principio universale e naturale: l'<strong>economia del dono</strong>, dove il flusso del <em>ricevere e dare</em> torna ad essere circolare, vivo e non estattivo.
+            Riconoscere le dinamiche dell'attuale sistema economico è il primo passo per rispettare il proprio percorso evolutivo. Non si tratta di subire o lottare, ma di allinearsi a un principio naturale e universale: l'<strong>economia del dono</strong>, dove il flusso del <em>ricevere e dare</em> torna ad essere circolare, vivo e non estattivo.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -41,9 +41,9 @@ export default function Home() {
       {/* VIDEO DI PRESENTAZIONE GENERALE */}
       <section className="container max-w-4xl mx-auto px-6 space-y-8">
         <div className="text-center space-y-3">
-          <h2 className="text-3xl font-bold font-serif-display">Il Manifesto della Trasformazione</h2>
+          <h2 className="text-3xl font-bold font-serif-display">Presentazione Ufficiale del Progetto</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Una guida visiva e formativa per comprendere il cambio di paradigma e la nostra visione a lungo termine.
+            Una guida formativa per comprendere il cambio di paradigma e la nostra visione a lungo termine.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function Home() {
           </div>
           <h2 className="text-3xl font-bold font-serif-display">Come attivare l'abbondanza partendo da zero?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Se oggi avverti la limitazione del contesto esterno, la risposta non è la competizione, ma la rete. Attraverso NetFree integriamo asset reali e vitali per l'autonomia quotidiana.
+            Se oggi avverti i limiti del contesto esterno, la risposta è la rete. Attraverso NetFree integriamo asset reali e vitali per l'autonomia quotidiana.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function Home() {
 
           <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
             <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Sparkles className="w-6 h-6" />
+              <Shield className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold">Microorganismi & Terra</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -137,12 +137,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. L'OPPORTUNITÀ PER IL LIQUIDITY PROVIDER (Aiutare, Co-creare, Guadagnare nel cerchio virtuoso) */}
+      {/* 5. L'OPPORTUNITÀ PER IL LIQUIDITY PROVIDER */}
       <section className="container max-w-6xl mx-auto px-6 space-y-12">
         <div className="text-center space-y-3">
           <h2 className="text-3xl font-bold font-serif-display">Il Circolo Virtuoso del Liquidity Provider</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Non sei un utente passivo, ma un pilastro generativo di un sistema che cresce nutrendo se stesso.
+            Un'opportunità concreta per aiutare, co-creare e generare prosperità all'interno di un sistema che cresce nutrendo se stesso.
           </p>
         </div>
 
