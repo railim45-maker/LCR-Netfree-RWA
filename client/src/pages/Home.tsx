@@ -81,7 +81,6 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-6 aspect-video w-full rounded-xl overflow-hidden border border-border bg-black/40 flex items-center justify-center relative">
-              {/* Sostituibile o collegabile al secondo video non appena disponibile */}
               <div className="text-center p-6 space-y-2">
                 <Sparkles className="w-8 h-8 text-primary mx-auto opacity-60" />
                 <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">Contenuto in fase di sincronizzazione</p>
@@ -111,7 +110,7 @@ export default function Home() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Superare lo scambio meramente estrattivo per entrare in una circolarità basata sul valore umano, sulla fiducia e sulla rigenerazione reciproca.
             </p>
-          </CardCard>
+          </Card>
 
           <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
             <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
@@ -121,7 +120,7 @@ export default function Home() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Infrastrutture di rete decentralizzate che restituiscono sovranità ai partecipanti, azzerando le intermediazioni parassitarie del vecchio mondo.
             </p>
-          </CardCard>
+          </Card>
 
           <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
             <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
@@ -131,7 +130,7 @@ export default function Home() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Ancorare il valore digitale a beni reali e tangibili, garantendo stabilità, protezione patrimoniale e flussi trasparenti.
             </p>
-          </CardCard>
+          </Card>
 
           <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
             <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
@@ -141,7 +140,7 @@ export default function Home() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               La riscoperta della propria autorità interiore e del diritto inalienabile a co-creare la propria esistenza fuori dai vincoli di un'economia imposta.
             </p>
-          </CardCard>
+          </Card>
 
         </div>
       </section>
