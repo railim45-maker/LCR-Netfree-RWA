@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, Compass, Shield, Users, PlayCircle, HeartHandshake, Layers } from "lucide-react";
+import { ArrowRight, Sparkles, Compass, Shield, Users, HeartHandshake, Layers, Globe } from "lucide-react";
 
 export default function Home() {
   return (
