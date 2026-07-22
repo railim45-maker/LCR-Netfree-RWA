@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { PlayCircle, Sparkles } from "lucide-react";
 
 export default function ClubDeal() {
   const [submitted, setSubmitted] = useState(false);
@@ -12,12 +13,33 @@ export default function ClubDeal() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-6 space-y-8 max-w-7xl mx-auto">
+    <div className="min-h-screen bg-background text-foreground p-6 space-y-12 max-w-7xl mx-auto pb-20">
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-bold tracking-tight">Selezione Liquidity Provider & Tokenizzazione RWA</h1>
-        <p className="text-muted-foreground">
-          Partecipazione attiva e coordinata dei Liquidity Provider nelle operazioni di economia nativa donativa e asset reali.
+        <p className="text-muted-foreground max-w-3xl">
+          Partecipazione attiva e coordinata dei Liquidity Provider nelle operazioni di economia nativa donativa e asset reali, senza esposizioni debitorie o leve finanziarie esterne.
         </p>
+      </div>
+
+      {/* Sezione Video Sintesi Tokenizzazione RWA */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-card/40 border border-border rounded-3xl p-6 md:p-8 backdrop-blur-md">
+        <div className="space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs uppercase tracking-wider font-semibold">
+            <Sparkles className="w-3.5 h-3.5" /> Approfondimento Tecnico
+          </div>
+          <h2 className="text-2xl font-bold">La Sintesi della Tokenizzazione RWA</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Scopri come connettere i beni reali e tangibili alle nuove strutture di valore protetto, garantendo flussi trasparenti all'interno dell'ecosistema.
+          </p>
+        </div>
+        <div className="aspect-video w-full rounded-xl overflow-hidden border border-border bg-black/40 flex items-center justify-center relative">
+          {/* Sostituisci il src con il link del secondo video quando disponibile, oppure mantedi il placeholder */}
+          <div className="text-center p-6 space-y-2">
+            <PlayCircle className="w-10 h-10 text-primary mx-auto opacity-80" />
+            <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">Video Sintesi RWA</p>
+            <p className="text-sm font-medium">In fase di sincronizzazione</p>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -40,7 +62,7 @@ export default function ClubDeal() {
           <CardContent className="space-y-2">
             <div className="text-2xl font-bold">Flussi Nativi Donativi</div>
             <p className="text-sm text-muted-foreground">
-              Infrastruttura di partecipazione basata sul Libro Mastro e priva di esposizioni debitorie o mutui.
+              Infrastruttura di partecipazione basata sul Libro Mastro e priva di esposizioni debitorie.
             </p>
           </CardContent>
         </Card>
