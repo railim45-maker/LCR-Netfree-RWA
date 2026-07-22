@@ -38,22 +38,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VIDEO DI PRESENTAZIONE GENERALE */}
+      {/* VIDEO DI PRESENTAZIONE GENERALE (URL YouTube: https://youtu.be/7RvWyWE3zxo) */}
       <section className="container max-w-4xl mx-auto px-6 space-y-8">
         <div className="text-center space-y-3">
           <h2 className="text-3xl font-bold font-serif-display">Presentazione Ufficiale del Progetto</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Una guida formativa per comprendere il cambio di paradigma e la nostra visione a lungo termine.
+            Una guida formativa per comprendere il cambio di paradigma, la metafora del seme e la nostra visione a lungo termine.
           </p>
         </div>
 
         <Card className="border-border bg-card/60 backdrop-blur-md rounded-2xl overflow-hidden p-6 shadow-xl">
           <div className="aspect-video w-full rounded-xl overflow-hidden border border-border bg-black/40 flex items-center justify-center">
             <iframe 
-              src="https://drive.google.com/file/d/18CXVsJ6I6v5g3xt9g-XNSDspLNAkGJRp/preview" 
+              src="https://www.youtube.com/embed/7RvWyWE3zxo" 
               className="w-full h-full border-0" 
-              allow="autoplay"
-              title="Presentazione Ufficiale NetFree"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+              title="NetFree LCR Presentazione Ufficiale"
             />
           </div>
         </Card>
