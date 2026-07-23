@@ -6,8 +6,6 @@ import { ArrowLeft, ExternalLink, Droplets, PlayCircle } from "lucide-react";
 export default function AcquaPage() {
   return (
     <div className="min-h-screen bg-background text-foreground space-y-12 pb-28 pt-24 px-6 max-w-5xl mx-auto">
-      
-      {/* Torna alla Home */}
       <div>
         <Link href="/">
           <Button variant="ghost" className="gap-2 text-muted-foreground hover:text-foreground">
@@ -16,7 +14,6 @@ export default function AcquaPage() {
         </Link>
       </div>
 
-      {/* Intestazione */}
       <div className="space-y-4 text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs uppercase tracking-wider font-semibold">
           <Droplets className="w-3.5 h-3.5" /> NetFree • Risorse Vitali
@@ -29,7 +26,6 @@ export default function AcquaPage() {
         </p>
       </div>
 
-      {/* Video Ufficiale */}
       <Card className="border-border bg-card/60 backdrop-blur-md rounded-2xl overflow-hidden p-6 shadow-xl space-y-4">
         <div className="flex items-center gap-2 text-sm font-semibold text-primary">
           <PlayCircle className="w-4 h-4" /> Conferenza e Spiegazione Tecnica
@@ -45,12 +41,10 @@ export default function AcquaPage() {
         </div>
       </Card>
 
-      {/* Riquadri con Miniature e Collegamenti di Approfondimento */}
       <div className="space-y-6">
         <h3 className="text-2xl font-bold font-serif-display text-center">Mattoni e Approfondimenti Verificati</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
           <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between hover:border-primary/50 transition-all">
             <div className="space-y-2">
               <span className="text-xs font-mono text-primary uppercase">Video Conferenza</span>
@@ -102,10 +96,8 @@ export default function AcquaPage() {
               Scarica / Visualizza PDF <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </Card>
-
         </div>
       </div>
-
     </div>
   );
 }
