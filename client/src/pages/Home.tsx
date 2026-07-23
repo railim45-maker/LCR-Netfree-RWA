@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowRight, Shield, Users, HeartHandshake, Layers, Globe, Sparkles, ExternalLink, Droplets, Sun, Sprout, BookOpen } from "lucide-react";
+import { ArrowRight, Shield, Users, HeartHandshake, Layers, Globe, Sparkles, Droplets, Sun, Sprout, BookOpen, ChevronRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground space-y-24 pb-28">
+    <div className="min-h-screen bg-background text-foreground space-y-20 pb-28">
       
       {/* INTRODUZIONE E TITOLO D'IMPATTO */}
-      <section className="relative overflow-hidden pt-28 pb-16 border-b border-border/40">
-        <div className="container max-w-5xl mx-auto px-6 text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs uppercase tracking-[0.25em] font-semibold">
+      <section className="relative overflow-hidden pt-28 pb-12 border-b border-border/40">
+        <div className="container max-w-5xl mx-auto px-6 text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/35 bg-primary/10 text-primary text-xs uppercase tracking-[0.25em] font-semibold">
             La Chiave Railim • Percorso Evolutivo
           </div>
           
@@ -19,11 +19,11 @@ export default function Home() {
             <span className="text-primary">Dalla Materia Reale alla Cittadella</span>
           </h1>
 
-          <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed">
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
             Un percorso chiaro e lineare per comprendere come si costruisce concretamente un nuovo modello di vita, superando i vecchi paradigmi attraverso la tokenizzazione, l'economia del dono e la sovranità condivisa.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link href="/club-deal">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-8 py-6 text-base rounded-full shadow-[0_0_30px_rgba(212,175,55,0.3)]">
                 Diventa Liquidity Provider <ArrowRight className="w-4 h-4" />
@@ -31,7 +31,7 @@ export default function Home() {
             </Link>
             <Link href="/accesso">
               <Button size="lg" variant="outline" className="border-border bg-card/50 text-foreground hover:bg-card hover:text-white px-8 py-6 text-base rounded-full">
-                Accedi all'Area Riservata
+                Area Riservata
               </Button>
             </Link>
           </div>
@@ -39,266 +39,146 @@ export default function Home() {
       </section>
 
       {/* VIDEO DI PRESENTAZIONE GENERALE */}
-      <section className="container max-w-4xl mx-auto px-6 space-y-8">
-        <div className="text-center space-y-3">
-          <h2 className="text-3xl font-bold font-serif-display">Presentazione Ufficiale del Progetto</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Una guida formativa per comprendere i passaggi chiave di questo cammino.
-          </p>
+      <section className="container max-w-3xl mx-auto px-6 space-y-4">
+        <div className="text-center space-y-2">
+          <h2 className="text-2xl font-bold font-serif-display">Presentazione Ufficiale del Progetto</h2>
+          <p className="text-sm text-muted-foreground">Una guida formativa per comprendere i passaggi chiave di questo cammino.</p>
         </div>
-
-        <Card className="border-border bg-card/60 backdrop-blur-md rounded-2xl overflow-hidden p-6 shadow-xl">
-          <div className="aspect-video w-full rounded-xl overflow-hidden border border-border bg-black/40 flex items-center justify-center">
-            <iframe 
-              src="https://www.youtube.com/embed/7RvWyWE3zxo" 
-              className="w-full h-full border-0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-              title="Presentazione Ufficiale LCR NetFree"
-            />
-          </div>
-        </Card>
+        <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border bg-black/40 shadow-xl">
+          <iframe 
+            src="https://www.youtube.com/embed/7RvWyWE3zxo" 
+            className="w-full h-full border-0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen
+            title="Presentazione Ufficiale LCR NetFree"
+          />
+        </div>
       </section>
 
-      {/* STEP 1: TOKENIZZAZIONE RWA (Con e Senza LP) */}
-      <section className="container max-w-6xl mx-auto px-6 space-y-8">
-        <div className="text-center space-y-3">
+      {/* STEP 1: TOKENIZZAZIONE RWA */}
+      <section className="container max-w-5xl mx-auto px-6 space-y-6">
+        <div className="text-center space-y-2">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 1 • L'Innesco</span>
           <h2 className="text-3xl font-bold font-serif-display">Tokenizzazione RWA: Con e Senza LP</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Tutto parte dal contatto con la materia reale. È il motore che genera l'energia necessaria attraverso il protocollo Blotix e Railim.
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+            Il contatto con la materia reale genera l'energia iniziale attraverso il protocollo Blotix e Railim.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Shield className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-bold">Il Modello della Tokenizzazione</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Ancoriamo il valore digitale a beni fisici reali (come il comparto Hospitality Veneto), mantenendo la piena proprietà al 100% senza frazionamenti o vendite del bene e inserendo una rigorosa validazione con periti indipendenti per la stima dell'asset.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-3">
+            <Shield className="w-6 h-6 text-primary" />
+            <h3 className="text-lg font-bold">Il Modello della Tokenizzazione</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Ancoriamo il valore a beni fisici reali (come il comparto Hospitality Veneto), mantenendo la piena proprietà al 100% senza frazionamenti e con perizie indipendenti.
             </p>
           </Card>
-
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Users className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-bold">Il Ruolo dei Liquidity Provider (LP)</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              La partecipazione dei LP fornisce stabilità e supporto alle operazioni reali, garantendo flussi trasparenti e programmati (come i rendimenti semestrali) completamente privi di leve debitorie bancarie.
+          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-3">
+            <Users className="w-6 h-6 text-primary" />
+            <h3 className="text-lg font-bold">I Liquidity Provider (LP)</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              La partecipazione dei LP garantisce stabilità e flussi trasparenti programmati (rendimenti semestrali) totalmente privi di leve debitorie.
             </p>
           </Card>
         </div>
       </section>
 
       {/* STEP 2: L'ECONOMIA DEL DONO */}
-      <section className="container max-w-5xl mx-auto px-6">
-        <div className="rounded-3xl border border-primary/30 bg-gradient-to-b from-card/80 to-card/40 p-8 md:p-12 space-y-6 shadow-2xl text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-          
+      <section className="container max-w-4xl mx-auto px-6">
+        <div className="rounded-3xl border border-primary/30 bg-card/50 p-8 text-center space-y-4 shadow-xl">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 2 • Il Modello</span>
-          <h2 className="text-2xl md:text-4xl font-bold font-serif-display">
-            L'Economia del Dono
-          </h2>
-
-          <p className="max-w-2xl mx-auto text-base text-muted-foreground leading-relaxed">
-            L'energia e il valore generati dalla tokenizzazione non finiscono in un circuito speculativo estrattivo, ma alimentano un nuovo paradigma relazionale. Il passaggio dal trattenere al far fluire: si riceve e si dona, disinnescando la mentalità della scarsità.
+          <h2 className="text-2xl md:text-3xl font-bold font-serif-display">L'Economia del Dono</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Il valore generato non alimenta circuiti speculativi, ma un nuovo paradigma relazionale: si passa dal trattenere al far fluire, superando la scarsità.
           </p>
         </div>
       </section>
 
-      {/* STEP 3: NETFREE (L'Ecosistema con i mattoni di approfondimento) */}
-      <section className="container max-w-6xl mx-auto px-6 space-y-12">
-        <div className="text-center space-y-3">
+      {/* STEP 3: NETFREE (Accesso alle Sezioni di Approfondimento) */}
+      <section className="container max-w-5xl mx-auto px-6 space-y-6">
+        <div className="text-center space-y-2">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 3 • L'Ecosistema</span>
-          <h2 className="text-3xl font-bold font-serif-display">NetFree: Il Network di Network</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Grazie all'economia del dono, le persone possono accedere alle risorse di base senza l'ansia della sopravvivenza quotidiana. Di seguito trovi i mattoni e gli approfondimenti verificati per costruire l'autonomia.
+          <h2 className="text-3xl font-bold font-serif-display">NetFree: Il Network di Risorse</h2>
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+            Soluzioni pratiche per l'autonomia quotidiana. Clicca sui moduli per esplorare le guide e gli approfondimenti verificati.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           
-          {/* ACQUA & RISORSE VITALI */}
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Droplets className="w-6 h-6" />
+          <Link href="/netfree/acqua">
+            <div className="group border border-border bg-card/40 hover:border-primary/50 transition-all rounded-2xl p-5 space-y-3 cursor-pointer flex flex-col justify-between h-full">
+              <div className="space-y-2">
+                <Droplets className="w-6 h-6 text-primary" />
+                <h3 className="font-bold text-sm">Acqua & Risorse</h3>
+                <p className="text-xs text-muted-foreground">Acqua viva, funzionale e biologia.</p>
               </div>
-              <h3 className="text-lg font-bold">Acqua & Risorse Vitali</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                L'acqua è il primo nutriente e il solvente primario del nostro organismo. Comprendere la differenza tra l'acqua funzionale, viva e strutturata e le comuni acque commerciali o di rete trattate è fondamentale per riappropriarsi del proprio benessere biologico.
-              </p>
+              <span className="text-xs text-primary font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Approfondisci <ChevronRight className="w-3.5 h-3.5" />
+              </span>
             </div>
-            <div className="pt-4 border-t border-border/40 space-y-2 text-xs">
-              <span className="font-semibold text-foreground block">Approfondimenti e Fonti:</span>
-              <div className="flex flex-wrap gap-2">
-                <a href="https://www.youtube.com/watch?v=Di3BtfUqJwg" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Video] Dott. R. Favata (VeganOK) <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.youtube.com/watch?v=elbOEII7-zo" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Video] Presentazione Idrologica <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.youtube.com/watch?v=7A5ILFsrNLA" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Video] Laboratorio Salute <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://meglioinsalute.com/acqua-alcalina-non-acquistarla-se-prima-non-leggi-questo/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Articolo] Guida Acqua <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [PDF] Scheda Tecnica <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-          </Card>
+          </Link>
 
-          {/* TERRA & MICROORGANISMI */}
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Sprout className="w-6 h-6" />
+          <Link href="/netfree/terra">
+            <div className="group border border-border bg-card/40 hover:border-primary/50 transition-all rounded-2xl p-5 space-y-3 cursor-pointer flex flex-col justify-between h-full">
+              <div className="space-y-2">
+                <Sprout className="w-6 h-6 text-primary" />
+                <h3 className="font-bold text-sm">Terra & Microorganismi</h3>
+                <p className="text-xs text-muted-foreground">Sovranità alimentare e permacultura.</p>
               </div>
-              <h3 className="text-lg font-bold">Terra & Microorganismi Effettivi</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                La rigenerazione della terra passa attraverso il ripristino dell'equilibrio biologico del suolo. L'utilizzo di tecnologie naturali e microorganismi effettivi rappresenta uno strumento essenziale per la sovranità alimentare e la permacultura.
-              </p>
+              <span className="text-xs text-primary font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Approfondisci <ChevronRight className="w-3.5 h-3.5" />
+              </span>
             </div>
-            <div className="pt-4 border-t border-border/40 space-y-2 text-xs">
-              <span className="font-semibold text-foreground block">Approfondimenti e Fonti:</span>
-              <div className="flex flex-wrap gap-2">
-                <a href="https://www.ecopassaparola.net/it/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Portale] Ecopassaparola - Microorganismi <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-          </Card>
+          </Link>
 
-          {/* EFFICIENTAMENTO ENERGETICO */}
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Sun className="w-6 h-6" />
+          <Link href="/netfree/energia">
+            <div className="group border border-border bg-card/40 hover:border-primary/50 transition-all rounded-2xl p-5 space-y-3 cursor-pointer flex flex-col justify-between h-full">
+              <div className="space-y-2">
+                <Sun className="w-6 h-6 text-primary" />
+                <h3 className="font-bold text-sm">Energia & Comunità</h3>
+                <p className="text-xs text-muted-foreground">Autoproduzione e Green Sharing.</p>
               </div>
-              <h3 className="text-lg font-bold">Efficientamento Energetico & Comunità</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                L'indipendenza energetica non è solo un risparmio economico, ma un pilastro di sovranità comunitaria. Attraverso l'autoproduzione e le comunità energetiche (Green Sharing), liberiamo il territorio dai costi e dai vincoli delle reti centralizzate.
-              </p>
+              <span className="text-xs text-primary font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Approfondisci <ChevronRight className="w-3.5 h-3.5" />
+              </span>
             </div>
-            <div className="pt-4 border-t border-border/40 space-y-2 text-xs">
-              <span className="font-semibold text-foreground block">Approfondimenti e Fonti:</span>
-              <div className="flex flex-wrap gap-2">
-                <a href="https://www.agenziaentrate.gov.it/portale/schede/agevolazioni/detrazione-riqualificazione-energetica-55-2016/cosa-riqualificazione-55-2016" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Agenzia Entrate] Riqualificazione <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.aceaenergia.it/guide/efficientamento" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Acea] Guida Energetica <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.enpal.com/it/fotovoltaico/efficientamento-energetico-casa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Enpal] Fotovoltaico <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.pefpower.it/it/home" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Pef Power] Home <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.pefpower.it/it/informatives/mix-energetico" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Pef] Mix Energetico <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.pefpower.it/it/informatives/normative-arera" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Pef] Normative ARERA <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.pefpower.it/public/download/moduli/Gruppo_Enegan_Codice_Etico_310325_def.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [PDF] Codice Etico <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [PDF] Green Sharing (CER) <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.youtube.com/watch?v=ljS8B7-OLRc" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Video] Intervista Antonio Belsole (Pef Italia) <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.pefitalia.it/news/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [News] Pef Italia <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-          </Card>
+          </Link>
 
-          {/* FORMAZIONE & CRESCITA */}
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <BookOpen className="w-6 h-6" />
+          <Link href="/netfree/formazione">
+            <div className="group border border-border bg-card/40 hover:border-primary/50 transition-all rounded-2xl p-5 space-y-3 cursor-pointer flex flex-col justify-between h-full">
+              <div className="space-y-2">
+                <BookOpen className="w-6 h-6 text-primary" />
+                <h3 className="font-bold text-sm">Formazione & Reti</h3>
+                <p className="text-xs text-muted-foreground">Crescita interiore e Potenza del 6.</p>
               </div>
-              <h3 className="text-lg font-bold">Formazione, Crescita & Reti (Potenza del 6)</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                La vera transizione richiede una crescita interiore e una competenza pratica allineata ai valori della cooperazione. La formazione è lo strumento con cui la comunità apprende a muoversi nel nuovo paradigma.
-              </p>
+              <span className="text-xs text-primary font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Approfondisci <ChevronRight className="w-3.5 h-3.5" />
+              </span>
             </div>
-            <div className="pt-4 border-t border-border/40 space-y-2 text-xs">
-              <span className="font-semibold text-foreground block">Approfondimenti e Fonti:</span>
-              <div className="flex flex-wrap gap-2">
-                <a href="https://www.facebook.com/SkipperLab.formazione/?locale=it_IT" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Facebook] Skipper Lab <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.instagram.com/skipper_lab/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Instagram] Skipper Lab <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://atoka.io/public/it/azienda/skipper-lab-srl/72e352e37294" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Registro] Atoka Skipper Lab <ExternalLink className="w-3 h-3" />
-                </a>
-                <span>•</span>
-                <a href="https://www.avedisco.it/it-IT/Notizie/Eventi/2024/PEF-Convention-nazionale-2024.aspx" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
-                  [Avedisco] Convention Nazionale <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-          </Card>
+          </Link>
 
         </div>
       </section>
 
-      {/* STEP 4: ABBONDANZA E AUTODETERMINAZIONE */}
-      <section className="container max-w-5xl mx-auto px-6 text-center space-y-6">
-        <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 4 • Il Risultato</span>
-        <h2 className="text-3xl font-bold font-serif-display">Abbondanza e Autodeterminazione</h2>
-        <p className="max-w-3xl mx-auto text-base text-muted-foreground leading-relaxed">
-          L'accesso libero ed etico alle risorse tramite NetFree genera un profondo cambio di stato nell'individuo. La persona che non deve più lottare per i bisogni primari entra in uno stato di vera abbondanza, da cui fiorisce spontaneamente l'<strong>autodeterminazione</strong>: la riscoperta della propria autorità interiore e del diritto inalienabile a scegliere il proprio percorso liberi dalle vecchie catene.
-        </p>
-      </section>
-
-      {/* STEP 5: LA CITTADELLA (La Visione Finale) */}
-      <section className="container max-w-5xl mx-auto px-6 pb-12">
-        <div className="rounded-3xl border border-primary/30 bg-gradient-to-b from-card/80 to-card/40 p-8 md:p-12 space-y-6 text-center shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      {/* STEP 4 & 5: ABBONDANZA, AUTODETERMINAZIONE E CITTADELLA */}
+      <section className="container max-w-4xl mx-auto px-6 space-y-6">
+        <div className="rounded-3xl border border-primary/30 bg-card/50 p-8 md:p-10 text-center space-y-6 shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
           
-          <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 5 • La Visione Finale</span>
-          <h2 className="text-2xl md:text-4xl font-bold font-serif-display">
-            La Cittadella
-          </h2>
+          <div className="space-y-2">
+            <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 4 & 5 • Il Traguardo</span>
+            <h2 className="text-2xl md:text-3xl font-bold font-serif-display">Abbondanza, Autodeterminazione e la Cittadella</h2>
+          </div>
 
-          <p className="max-w-2xl mx-auto text-base text-muted-foreground leading-relaxed">
-            L'abbondanza collettiva e l'autodeterminazione dei singoli si manifestano infine nella <strong className="text-foreground">Cittadella</strong>: il polo fisico, spirituale e strutturato (custode del Libro Mastro) dove questo nuovo modello di vita e di economia trova la sua massima e stabile espressione.
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Liberi dai bisogni primari grazie a NetFree, l'individua fiorisce nell'<strong>autodeterminazione</strong>. Questa sovranità condivisa trova la sua massima espressione nella <strong>Cittadella</strong>: il polo fisico e spirituale custode del nuovo modello di vita.
           </p>
 
-          <div className="pt-4 flex justify-center gap-4">
+          <div className="pt-2">
             <Link href="/club-deal">
               <Button size="lg" className="bg-primary text-primary-foreground font-semibold px-8 py-6 rounded-full">
-                Unisciti come Liquidity Provider
+                Diventa Liquidity Provider
               </Button>
             </Link>
           </div>
