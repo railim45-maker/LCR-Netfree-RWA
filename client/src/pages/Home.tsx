@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowRight, Shield, Users, HeartHandshake, Layers, Globe, Sparkles } from "lucide-react";
+import { ArrowRight, Shield, Users, HeartHandshake, Layers, Globe, Sparkles, ExternalLink, Droplets, Sun, Sprout, BookOpen } from "lucide-react";
 
 export default function Home() {
   return (
@@ -109,52 +109,167 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STEP 3: NETFREE (L'Ecosistema) */}
+      {/* STEP 3: NETFREE (L'Ecosistema con i mattoni di approfondimento) */}
       <section className="container max-w-6xl mx-auto px-6 space-y-12">
         <div className="text-center space-y-3">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 3 • L'Ecosistema</span>
           <h2 className="text-3xl font-bold font-serif-display">NetFree: Il Network di Network</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Grazie all'economia del dono, le persone possono accedere alle risorse di base senza l'ansia della sopravvivenza quotidiana.
+            Grazie all'economia del dono, le persone possono accedere alle risorse di base senza l'ansia della sopravvivenza quotidiana. Di seguito trovi i mattoni e gli approfondimenti verificati per costruire l'autonomia.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Globe className="w-6 h-6" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* ACQUA & RISORSE VITALI */}
+          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                <Droplets className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold">Acqua & Risorse Vitali</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                L'acqua è il primo nutriente e il solvente primario del nostro organismo. Comprendere la differenza tra l'acqua funzionale, viva e strutturata e le comuni acque commerciali o di rete trattate è fondamentale per riappropriarsi del proprio benessere biologico.
+              </p>
             </div>
-            <h3 className="text-lg font-bold">Acqua & Risorse Vitali</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Soluzioni per la rigenerazione e la tutela delle risorse primarie.</p>
+            <div className="pt-4 border-t border-border/40 space-y-2 text-xs">
+              <span className="font-semibold text-foreground block">Approfondimenti e Fonti:</span>
+              <div className="flex flex-wrap gap-2">
+                <a href="https://www.youtube.com/watch?v=Di3BtfUqJwg" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Video] Dott. R. Favata (VeganOK) <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.youtube.com/watch?v=elbOEII7-zo" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Video] Presentazione Idrologica <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.youtube.com/watch?v=7A5ILFsrNLA" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Video] Laboratorio Salute <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://meglioinsalute.com/acqua-alcalina-non-acquistarla-se-prima-non-leggi-questo/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Articolo] Guida Acqua <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [PDF] Scheda Tecnica <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
           </Card>
 
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Sparkles className="w-6 h-6" />
+          {/* TERRA & MICROORGANISMI */}
+          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                <Sprout className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold">Terra & Microorganismi Effettivi</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                La rigenerazione della terra passa attraverso il ripristino dell'equilibrio biologico del suolo. L'utilizzo di tecnologie naturali e microorganismi effettivi rappresenta uno strumento essenziale per la sovranità alimentare e la permacultura.
+              </p>
             </div>
-            <h3 className="text-lg font-bold">Terra & Microorganismi</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Tecnologie naturali per il ripristino della fertilità e la permacultura.</p>
+            <div className="pt-4 border-t border-border/40 space-y-2 text-xs">
+              <span className="font-semibold text-foreground block">Approfondimenti e Fonti:</span>
+              <div className="flex flex-wrap gap-2">
+                <a href="https://www.ecopassaparola.net/it/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Portale] Ecopassaparola - Microorganismi <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
           </Card>
 
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Layers className="w-6 h-6" />
+          {/* EFFICIENTAMENTO ENERGETICO */}
+          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                <Sun className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold">Efficientamento Energetico & Comunità</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                L'indipendenza energetica non è solo un risparmio economico, ma un pilastro di sovranità comunitaria. Attraverso l'autoproduzione e le comunità energetiche (Green Sharing), liberiamo il territorio dai costi e dai vincoli delle reti centralizzate.
+              </p>
             </div>
-            <h3 className="text-lg font-bold">Efficientamento Energetico</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Modelli di indipendenza energetica e autoproduzione.</p>
+            <div className="pt-4 border-t border-border/40 space-y-2 text-xs">
+              <span className="font-semibold text-foreground block">Approfondimenti e Fonti:</span>
+              <div className="flex flex-wrap gap-2">
+                <a href="https://www.agenziaentrate.gov.it/portale/schede/agevolazioni/detrazione-riqualificazione-energetica-55-2016/cosa-riqualificazione-55-2016" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Agenzia Entrate] Riqualificazione <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.aceaenergia.it/guide/efficientamento" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Acea] Guida Energetica <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.enpal.com/it/fotovoltaico/efficientamento-energetico-casa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Enpal] Fotovoltaico <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.pefpower.it/it/home" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Pef Power] Home <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.pefpower.it/it/informatives/mix-energetico" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Pef] Mix Energetico <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.pefpower.it/it/informatives/normative-arera" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Pef] Normative ARERA <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.pefpower.it/public/download/moduli/Gruppo_Enegan_Codice_Etico_310325_def.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [PDF] Codice Etico <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [PDF] Green Sharing (CER) <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.youtube.com/watch?v=ljS8B7-OLRc" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Video] Intervista Antonio Belsole (Pef Italia) <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.pefitalia.it/news/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [News] Pef Italia <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
           </Card>
 
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-              <Users className="w-6 h-6" />
+          {/* FORMAZIONE & CRESCITA */}
+          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold">Formazione, Crescita & Reti (Potenza del 6)</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                La vera transizione richiede una crescita interiore e una competenza pratica allineata ai valori della cooperazione. La formazione è lo strumento con cui la comunità apprende a muoversi nel nuovo paradigma.
+              </p>
             </div>
-            <h3 className="text-lg font-bold">Formazione & Potenza del 6</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Percorsi di crescita e cooperazione orientati al benessere comune.</p>
+            <div className="pt-4 border-t border-border/40 space-y-2 text-xs">
+              <span className="font-semibold text-foreground block">Approfondimenti e Fonti:</span>
+              <div className="flex flex-wrap gap-2">
+                <a href="https://www.facebook.com/SkipperLab.formazione/?locale=it_IT" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Facebook] Skipper Lab <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.instagram.com/skipper_lab/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Instagram] Skipper Lab <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://atoka.io/public/it/azienda/skipper-lab-srl/72e352e37294" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Registro] Atoka Skipper Lab <ExternalLink className="w-3 h-3" />
+                </a>
+                <span>•</span>
+                <a href="https://www.avedisco.it/it-IT/Notizie/Eventi/2024/PEF-Convention-nazionale-2024.aspx" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1">
+                  [Avedisco] Convention Nazionale <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
           </Card>
+
         </div>
-        <p className="text-center text-xs text-muted-foreground italic">
-          * I riferimenti specifici ai prodotti e servizi partner utilizzati nell'ecosistema sono consultabili tramite i collegamenti esterni dedicati.
-        </p>
       </section>
 
       {/* STEP 4: ABBONDANZA E AUTODETERMINAZIONE */}
