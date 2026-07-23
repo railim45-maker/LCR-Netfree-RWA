@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground space-y-20 pb-28">
       
-      {/* INTRODUZIONE E TITOLO D'IMPATTO (Nuovo Posizionamento Istituzionale) */}
+      {/* INTRODUZIONE E TITOLO D'IMPATTO */}
       <section className="relative overflow-hidden pt-36 pb-24 border-b border-border/40">
         <div className="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1920&auto=format&fit=crop')` }} />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/95 to-background z-0" />
