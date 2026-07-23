@@ -1,9 +1,9 @@
 import { Switch, Route } from "wouter";
 import Home from "@/pages/Home";
-import AcquaPage from "@/pages/netfree/Acqua";
-import TerraPage from "@/pages/netfree/Terra";
-import EnergiaPage from "@/pages/netfree/Energia";
-import FormazionePage from "@/pages/netfree/Formazione";
+import AcquaPage from "@/pages/netfree/Acqua.tsx";
+import TerraPage from "@/pages/netfree/Terra.tsx";
+import EnergiaPage from "@/pages/netfree/Energia.tsx";
+import FormazionePage from "@/pages/netfree/Formazione.tsx";
 import ClubDeal from "@/pages/ClubDeal";
 import NotFound from "@/pages/not-found";
 
@@ -14,10 +14,10 @@ export default function App() {
       <Route path="/club-deal" component={ClubDeal} />
       
       {/* Rotte NetFree Dedicate */}
-      <Route path="/netfree/acqua" component={AcquaPage} />
-      <Route path="/netfree/terra" component={TerraPage} />
-      <Route path="/netfree/energia" component={EnergiaPage} />
-      <Route path="/netfree/formazione" component={FormazionePage} />
+      <Route path="/netfree/acqua.tsx" component={AcquaPage} />
+      <Route path="/netfree/terra.tsx" component={TerraPage} />
+      <Route path="/netfree/energia.tsx" component={EnergiaPage} />
+      <Route path="/netfree/formazione.tsx" component={FormazionePage} />
 
       {/* Fallback 404 */}
       <Route component={NotFound} />
