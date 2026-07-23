@@ -26,7 +26,6 @@ export default function EnergiaPage() {
         </p>
       </div>
 
-      {/* Video Ufficiale */}
       <Card className="border-border bg-card/60 backdrop-blur-md rounded-2xl overflow-hidden p-6 shadow-xl space-y-4">
         <div className="flex items-center gap-2 text-sm font-semibold text-primary">
           <PlayCircle className="w-4 h-4" /> Antonio Belsole, PEF Italia: "Così produciamo energia pulita"
@@ -88,14 +87,14 @@ export default function EnergiaPage() {
             </div>
           </Card>
 
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between md:col-span-2">
             <div className="space-y-2">
               <span className="text-xs font-mono text-primary uppercase">Documenti Ufficiali (PDF)</span>
               <h4 className="text-lg font-bold">Codice Etico e Green Sharing (CER)</h4>
             </div>
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap gap-6 pt-2">
               <a href="https://www.pefpower.it/public/download/moduli/Gruppo_Enegan_Codice_Etico_310325_def.pdf" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline flex items-center gap-1">Codice Etico <ExternalLink className="w-3 h-3" /></a>
-              <a href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline flex items-center gap-1">Green Sharing <ExternalLink className="w-3 h-3" /></a>
+              <a href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline flex items-center gap-1">Green Sharing (CER) <ExternalLink className="w-3 h-3" /></a>
             </div>
           </Card>
         </div>
