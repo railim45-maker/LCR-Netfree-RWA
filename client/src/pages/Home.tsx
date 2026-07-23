@@ -1,47 +1,49 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowRight, Shield, Users, HeartHandshake, Layers, Globe, Sparkles, Droplets, Sun, Sprout, BookOpen, ChevronRight } from "lucide-react";
+import { ArrowRight, Shield, Users, Droplets, Sun, Sprout, BookOpen, ChevronRight, CheckCircle2 } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground space-y-20 pb-28">
       
-      {/* INTRODUZIONE E TITOLO D'IMPATTO (Con Immagine Evocativa di Sfondo) */}
-      <section className="relative overflow-hidden pt-32 pb-20 border-b border-border/40">
+      {/* INTRODUZIONE E TITOLO D'IMPATTO (Nuovo Posizionamento Istituzionale) */}
+      <section className="relative overflow-hidden pt-36 pb-24 border-b border-border/40">
         <div className="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1920&auto=format&fit=crop')` }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/90 to-background z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/95 to-background z-0" />
 
-        <div className="container max-w-5xl mx-auto px-6 text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/35 bg-primary/10 text-primary text-xs uppercase tracking-[0.25em] font-semibold">
-            La Chiave Railim • Percorso Evolutivo
+        <div className="container max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
+          
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs uppercase tracking-[0.3em] font-semibold">
+            LCR Ecosystem • La Chiave Railim
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight font-serif-display leading-tight">
-            LCR NetFree RWA<br />
-            <span className="text-primary">Dalla Materia Reale alla Cittadella</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight font-serif-display leading-[1.1]">
+            Oltre il debito.<br />
+            <span className="text-primary">Nel cuore della materia reale.</span>
           </h1>
 
-          <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
-            Un percorso chiaro e lineare per comprendere come si costruisce concretamente un nuovo modello di vita, superando i vecchi paradigmi attraverso la tokenizzazione, l'economia del dono e la sovranità condivisa.
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed font-light">
+            Un'infrastruttura finanziaria ed ecologica che unisce la tokenizzazione RWA di beni concreti a un nuovo modello di economia circolare. Senza leve bancarie. Senza compromessi.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link href="/club-deal">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-8 py-6 text-base rounded-full shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-8 py-6 text-base rounded-full shadow-[0_0_35px_rgba(212,175,55,0.25)]">
                 Diventa Liquidity Provider <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
             <Link href="/accesso">
-              <Button size="lg" variant="outline" className="border-border bg-card/50 text-foreground hover:bg-card hover:text-white px-8 py-6 text-base rounded-full">
+              <Button size="lg" variant="outline" className="border-border bg-card/40 backdrop-blur-sm text-foreground hover:bg-card hover:text-white px-8 py-6 text-base rounded-full">
                 Area Riservata
               </Button>
             </Link>
           </div>
+          
         </div>
       </section>
 
-      {/* VIDEO DI PRESENTAZIONE GENERALE (Auditivo & Visivo) */}
+      {/* VIDEO DI PRESENTAZIONE GENERALE */}
       <section className="container max-w-3xl mx-auto px-6 space-y-4">
         <div className="text-center space-y-2">
           <h2 className="text-2xl font-bold font-serif-display">Presentazione Ufficiale del Progetto</h2>
@@ -58,42 +60,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STEP 1: TOKENIZZAZIONE RWA (Con Immagini di Materia Reale) */}
+      {/* STEP 1: TOKENIZZAZIONE RWA & GARANZIA PERITALE */}
       <section className="container max-w-5xl mx-auto px-6 space-y-6">
         <div className="text-center space-y-2">
-          <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 1 • L'Innesco</span>
-          <h2 className="text-3xl font-bold font-serif-display">Tokenizzazione RWA: Con e Senza LP</h2>
+          <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 1 • Il Primo Pilastro</span>
+          <h2 className="text-3xl font-bold font-serif-display">Tokenizzazione RWA & Perizie Certificate</h2>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-            Il contatto con la materia reale genera l'energia iniziale attraverso il protocollo Blotix e Railim.
+            Il contatto con la materia reale genera l'innesco. Ogni asset è rigorosamente validato da periti indipendenti finanziati interamente dal protocollo (fee dello 0,88%).
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl overflow-hidden flex flex-col justify-between">
-            <div className="h-40 w-full overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f7?q=80&w=800&auto=format&fit=crop" alt="Materia Reale" className="w-full h-full object-cover opacity-75 hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-            </div>
-            <div className="p-6 space-y-3">
+          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
               <Shield className="w-6 h-6 text-primary" />
-              <h3 className="text-lg font-bold">Il Modello della Tokenizzazione</h3>
+              <h3 className="text-lg font-bold">La Regola del ±10% e Perizia Azzerata</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Ancoriamo il valore a beni fisici reali (come il comparto Hospitality Veneto), mantenendo la piena proprietà al 100% senza frazionamenti e con perizie indipendenti.
+                Per tutelare proprietari e investitori, la perizia indipendente è obbligatoria e rientra in un margine del ±10% sul valore reale di mercato. Il costo del perito è interamente a carico del protocollo (coperto dalla fee di strutturazione dello 0,88%), azzerando ogni attrito per il proprietario.
               </p>
+            </div>
+            <div className="pt-2 flex items-center gap-2 text-xs text-primary font-semibold">
+              <CheckCircle2 className="w-4 h-4" /> Zero costi vivi per il proprietario dell'asset
             </div>
           </Card>
 
-          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl overflow-hidden flex flex-col justify-between">
-            <div className="h-40 w-full overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Liquidity Provider" className="w-full h-full object-cover opacity-75 hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-            </div>
-            <div className="p-6 space-y-3">
+          <Card className="border-border bg-card/40 backdrop-blur-md rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
               <Users className="w-6 h-6 text-primary" />
-              <h3 className="text-lg font-bold">I Liquidity Provider (LP)</h3>
+              <h3 className="text-lg font-bold">I Liquidity Provider (ROI Sostenibile al 21%)</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                La partecipazione dei LP garantisce stabilità e flussi trasparenti programmati (rendimenti semestrali) totalmente privi di leve debitorie.
+                La partecipazione dei LP sostiene le operazioni reali con flussi trasparenti e programmati, attestati su un ROI calibrato al 21% per garantire una sostenibilità finanziaria inattaccabile e priva di leve debitorie bancarie.
               </p>
+            </div>
+            <div className="pt-2 flex items-center gap-2 text-xs text-primary font-semibold">
+              <CheckCircle2 className="w-4 h-4" /> Rendimenti solidi basati su flussi reali
             </div>
           </Card>
         </div>
@@ -104,22 +104,22 @@ export default function Home() {
         <div className="rounded-3xl border border-primary/30 bg-card/50 p-8 md:p-10 text-center space-y-4 shadow-xl relative overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-10 bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb9?q=80&w=1200&auto=format&fit=crop')` }} />
           <div className="relative z-10 space-y-4">
-            <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 2 • Il Modello</span>
+            <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 2 • Il Modello Relazionale</span>
             <h2 className="text-2xl md:text-3xl font-bold font-serif-display">L'Economia del Dono</h2>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Il valore generato non alimenta circuiti speculativi, ma un nuovo paradigma relazionale: si passa dal trattenere al far fluire, superando la scarsità.
+              Il valore generato dal primo pilastro non alimenta circuiti speculativi estrattivi, ma innesca un nuovo paradigma: dal trattenere al far fluire, superando la mentalità della scarsità.
             </p>
           </div>
         </div>
       </section>
 
-      {/* STEP 3: NETFREE (Moduli con Immagini Evocative) */}
+      {/* STEP 3: NETFREE (Moduli con Accesso alle Pagine Dedicate) */}
       <section className="container max-w-5xl mx-auto px-6 space-y-6">
         <div className="text-center space-y-2">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold">Step 3 • L'Ecosistema</span>
           <h2 className="text-3xl font-bold font-serif-display">NetFree: Il Network di Risorse</h2>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-            Soluzioni pratiche per l'autonomia quotidiana. Clicca sui moduli per esplorare le guide e gli approfondimenti verificati.
+            Soluzioni pratiche per l'autonomia quotidiana. Esplora i moduli con guide e approfondimenti verificati.
           </p>
         </div>
 
@@ -214,7 +214,7 @@ export default function Home() {
             <div className="pt-2">
               <Link href="/club-deal">
                 <Button size="lg" className="bg-primary text-primary-foreground font-semibold px-8 py-6 rounded-full">
-                  Diventa Liquidity Provider
+                  Diventa Liquidity Provider (ROI 21%)
                 </Button>
               </Link>
             </div>
