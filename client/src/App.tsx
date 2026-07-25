@@ -1,9 +1,9 @@
 import { Switch, Route } from "wouter";
 import Home from "@/pages/Home";
-import AcquaPage from "@/pages/netfree/Acqua.tsx";
-import TerraPage from "@/pages/netfree/Terra.tsx";
-import EnergiaPage from "@/pages/netfree/Energia.tsx";
-import FormazionePage from "@/pages/netfree/Formazione.tsx";
+import AcquaPage from "@/pages/Acqua.tsx";
+import TerraPage from "@/pages/Terra.tsx";
+import EnergiaPage from "@/pages/Energia.tsx";
+import FormazionePage from "@/pages/Formazione.tsx";
 import ClubDeal from "@/pages/ClubDeal";
 import NotFound from "@/pages/not-found";
 
@@ -13,7 +13,7 @@ export default function App() {
       <Route path="/" component={Home} />
       <Route path="/club-deal" component={ClubDeal} />
       
-      {/* Rotte NetFree Dedicate (URL puliti) */}
+      {/* Rotte NetFree Dedicate */}
       <Route path="/netfree/acqua" component={AcquaPage} />
       <Route path="/netfree/terra" component={TerraPage} />
       <Route path="/netfree/energia" component={EnergiaPage} />
