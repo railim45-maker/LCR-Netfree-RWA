@@ -1,20 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowRight, Shield, Users, Droplets, Sun, Sprout, BookOpen, ExternalLink, PlayCircle, Sparkles, Compass, Flame, HeartHandshake, Globe2, Footprints, Flag, Milestone } from "lucide-react";
+import { ArrowRight, Shield, Users, Droplets, Sun, Sprout, BookOpen, ExternalLink, PlayCircle, Sparkles, Compass, Flame, HeartHandshake, Globe2, Milestone, Target, Compass as CompassIcon } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background text-foreground space-y-32 pb-36">
+    <div className="min-h-screen relative text-foreground space-y-36 pb-40 overflow-hidden">
       
-      {/* 1. HERO SECTION: LUCE LUMINOSA, CALDA ED EMOZIONALE */}
-      <section className="relative overflow-hidden pt-48 pb-36 border-b border-primary/20 bg-gradient-to-b from-primary/5 via-background to-background">
-        <div className="absolute inset-0 z-0 opacity-40 bg-cover bg-center mix-blend-luminosity filter brightness-125" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/80 to-background z-0" />
+      {/* SFONDO LUMINOSO DELL'ALBERO SU TUTTA LA PAGINA */}
+      <div className="absolute inset-0 z-0 opacity-25 bg-cover bg-center bg-fixed mix-blend-luminosity filter brightness-125" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background z-0" />
 
-        <div className="container max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
+      {/* 1. HERO SECTION: LA LUCE DEL NUOVO MONDO */}
+      <section className="relative pt-48 pb-36 border-b border-primary/20 bg-gradient-to-b from-primary/10 via-transparent to-transparent z-10">
+        <div className="container max-w-5xl mx-auto px-6 text-center space-y-8">
           
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/50 bg-primary/20 text-primary text-xs uppercase tracking-[0.3em] font-bold backdrop-blur-md shadow-[0_0_30px_rgba(212,175,55,0.2)]">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/50 bg-primary/20 text-primary text-xs uppercase tracking-[0.3em] font-bold backdrop-blur-md shadow-[0_0_30px_rgba(212,175,55,0.3)]">
             <Sparkles className="w-4 h-4" /> La Via della Rinascita Collettiva
           </div>
           
@@ -41,14 +42,13 @@ export default function Home() {
       </section>
 
       {/* 2. VIDEO DI VISIONE E CONDIVISIONE */}
-      <section className="container max-w-4xl mx-auto px-6 space-y-4">
+      <section className="container max-w-4xl mx-auto px-6 space-y-4 relative z-10">
         <div className="text-center space-y-2">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Ascolto Profondo</span>
           <h2 className="text-3xl font-bold font-serif-display">Il Respiro del Nuovo Paradigma</h2>
           <p className="text-sm text-muted-foreground">Lasciati guidare in questo video di consapevolezza verso la comprensione della meta.</p>
         </div>
         <div className="rounded-3xl border border-primary/30 bg-card/60 backdrop-blur-xl p-4 md:p-6 shadow-2xl relative">
-          <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 to-amber-500/20 blur-xl opacity-50 -z-10" />
           <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border bg-black/40 shadow-inner">
             <iframe 
               src="https://www.youtube.com/embed/7RvWyWE3zxo" 
@@ -61,77 +61,96 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. IL PERCORSO E LA META (GUIDA VISIVA DEL CAMMINO) */}
-      <section className="container max-w-6xl mx-auto px-6 space-y-12">
-        <div className="text-center space-y-3">
-          <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">La Bussola</span>
-          <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Qual è la Meta e Qual è il Percorso?</h2>
-          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-            Ogni grande trasformazione richiede passi consapevoli. Ecco come ci muoviamo dal presente alla piena realizzazione della Cittadella.
+      {/* 3. LA VISIONE, LA META E GLI STEP DEL PERCORSO */}
+      <section className="container max-w-6xl mx-auto px-6 space-y-16 relative z-10">
+        
+        {/* LA VISIONE E LA META */}
+        <div className="rounded-3xl border border-primary/40 bg-gradient-to-br from-primary/15 via-card/80 to-card/40 backdrop-blur-xl p-8 md:p-12 shadow-2xl space-y-6 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs uppercase tracking-widest font-bold">
+            <Target className="w-4 h-4" /> La Nostra Meta
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold font-serif-display">La Cittadella della Sovranità Diffusa</h2>
+          <p className="max-w-3xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed font-light">
+            La nostra <strong>visione</strong> è il superamento definitivo della dipendenza da sistemi estrattivi. La <strong>meta</strong> è la creazione di poli fisici e relazionali in cui ogni individuo sperimenta la piena autonomia biologica, energetica e alimentare, uniti nell'economia del dono.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          <div className="relative group rounded-3xl border border-primary/30 bg-gradient-to-b from-card/80 to-card/40 backdrop-blur-md p-8 space-y-5 shadow-xl flex flex-col justify-between">
-            <div className="absolute -top-4 left-8 w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center font-mono text-sm shadow-lg">
-              01
-            </div>
-            <div className="space-y-4 pt-2">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Shield className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold font-serif-display">Tappa 1: La Materia Reale</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                Riconnettiamo il valore ai beni tangibili attraverso perizie indipendenti e trasparenti finanziate interamente dal protocollo. Azzeriamo gli attriti per chi possiede l'asset.
-              </p>
-            </div>
-            <div className="pt-4 border-t border-border/40 flex items-center gap-2 text-xs font-semibold text-primary">
-              <Globe2 className="w-4 h-4" /> Solide fondamenta materiali
-            </div>
+        {/* GLI STEP DEL PERCORSO */}
+        <div className="space-y-8">
+          <div className="text-center space-y-2">
+            <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Il Cammino</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-serif-display">Gli Step Operativi del Percorso</h2>
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+              Un itinerario in tre tappe progressive che unisce la solidità della materia alla libertà quotidiana.
+            </p>
           </div>
 
-          <div className="relative group rounded-3xl border border-primary/30 bg-gradient-to-b from-card/80 to-card/40 backdrop-blur-md p-8 space-y-5 shadow-xl flex flex-col justify-between">
-            <div className="absolute -top-4 left-8 w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center font-mono text-sm shadow-lg">
-              02
-            </div>
-            <div className="space-y-4 pt-2">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Flame className="w-6 h-6" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            {/* Step 1 */}
+            <div className="relative group rounded-3xl border border-primary/30 bg-card/60 backdrop-blur-md p-8 space-y-5 shadow-xl flex flex-col justify-between">
+              <div className="absolute -top-4 left-8 w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center font-mono text-sm shadow-lg">
+                01
               </div>
-              <h3 className="text-xl font-bold font-serif-display">Tappa 2: Il Flusso dei Liquidity Provider</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                Attiviamo il motore economico con un rendimento etico e sostenibile al 21%. Flussi limpidi e generatori di valore che alimentano la crescita comune senza legami debitori bancari.
-              </p>
-            </div>
-            <div className="pt-4 border-t border-border/40 flex items-center gap-2 text-xs font-semibold text-primary">
-              <HeartHandshake className="w-4 h-4" /> Energia finanziaria pulita
-            </div>
-          </div>
-
-          <div className="relative group rounded-3xl border border-primary/30 bg-gradient-to-b from-card/80 to-card/40 backdrop-blur-md p-8 space-y-5 shadow-xl flex flex-col justify-between">
-            <div className="absolute -top-4 left-8 w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center font-mono text-sm shadow-lg">
-              03
-            </div>
-            <div className="space-y-4 pt-2">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Milestone className="w-6 h-6" />
+              <div className="space-y-4 pt-2">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                  <Shield className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold font-serif-display">Step 1: La Materia Reale</h3>
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                  Riconnettiamo il valore ai beni tangibili attraverso perizie indipendenti e trasparenti finanziate interamente dal protocollo. Azzeriamo gli attriti per chi possiede l'asset.
+                </p>
               </div>
-              <h3 className="text-xl font-bold font-serif-display">Meta: La Cittadella & NetFree</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                Il traguardo finale: sovranità quotidiana nell'acqua viva, nella terra rigenerata e nelle comunità energetiche. La Cittadella come spazio fisico e spirituale di libertà diffusa.
-              </p>
+              <div className="pt-4 border-t border-border/40 flex items-center gap-2 text-xs font-semibold text-primary">
+                <Globe2 className="w-4 h-4" /> Solide fondamenta materiali
+              </div>
             </div>
-            <div className="pt-4 border-t border-border/40 flex items-center gap-2 text-xs font-semibold text-primary">
-              <Sparkles className="w-4 h-4" /> Autonomia e cooperazione totale
-            </div>
-          </div>
 
+            {/* Step 2 */}
+            <div className="relative group rounded-3xl border border-primary/30 bg-card/60 backdrop-blur-md p-8 space-y-5 shadow-xl flex flex-col justify-between">
+              <div className="absolute -top-4 left-8 w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center font-mono text-sm shadow-lg">
+                02
+              </div>
+              <div className="space-y-4 pt-2">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                  <Flame className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold font-serif-display">Step 2: Il Flusso dei Liquidity Provider</h3>
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                  Attiviamo il motore economico con un rendimento etico e sostenibile al 21%. Flussi limpidi e generatori di valore che alimentano la crescita comune senza legami debitori bancari.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-border/40 flex items-center gap-2 text-xs font-semibold text-primary">
+                <HeartHandshake className="w-4 h-4" /> Energia finanziaria pulita
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative group rounded-3xl border border-primary/30 bg-card/60 backdrop-blur-md p-8 space-y-5 shadow-xl flex flex-col justify-between">
+              <div className="absolute -top-4 left-8 w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center font-mono text-sm shadow-lg">
+                03
+              </div>
+              <div className="space-y-4 pt-2">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                  <Milestone className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold font-serif-display">Step 3: Sovranità & NetFree</h3>
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                  La realizzazione pratica: sovranità quotidiana nell'acqua viva, nella terra rigenerata e nelle comunità energetiche. Vivere la Cittadella nella vita di tutti i giorni.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-border/40 flex items-center gap-2 text-xs font-semibold text-primary">
+                <Sparkles className="w-4 h-4" /> Autonomia e cooperazione totale
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </section>
 
       {/* 4. LE AREE DI APPROFONDIMENTO (TUTTI I COLLEGAMENTI VERIFICATI) */}
-      <section className="container max-w-6xl mx-auto px-6 space-y-12">
+      <section className="container max-w-6xl mx-auto px-6 space-y-12 relative z-10">
         <div className="text-center space-y-3">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Strumenti di Crescita</span>
           <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Esplora gli Approfondimenti del Percorso</h2>
@@ -143,7 +162,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* Acqua */}
-          <div className="group border border-border/80 bg-card/50 hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
+          <div className="group border border-border/80 bg-card/70 backdrop-blur-md hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
             <div className="h-44 w-full overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent z-10" />
               <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=600&auto=format&fit=crop" alt="Acqua" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -174,7 +193,7 @@ export default function Home() {
           </div>
 
           {/* Terra */}
-          <div className="group border border-border/80 bg-card/50 hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
+          <div className="group border border-border/80 bg-card/70 backdrop-blur-md hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
             <div className="h-44 w-full overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent z-10" />
               <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?q=80&w=600&auto=format&fit=crop" alt="Terra" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -196,7 +215,7 @@ export default function Home() {
           </div>
 
           {/* Energia */}
-          <div className="group border border-border/80 bg-card/50 hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
+          <div className="group border border-border/80 bg-card/70 backdrop-blur-md hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
             <div className="h-44 w-full overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent z-10" />
               <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=600&auto=format&fit=crop" alt="Energia" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -230,7 +249,7 @@ export default function Home() {
           </div>
 
           {/* Formazione */}
-          <div className="group border border-border/80 bg-card/50 hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
+          <div className="group border border-border/80 bg-card/70 backdrop-blur-md hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
             <div className="h-44 w-full overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent z-10" />
               <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" alt="Formazione" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -248,7 +267,7 @@ export default function Home() {
                   <span>Canale Formativo Social</span> <ExternalLink className="w-3.5 h-3.5" />
                 </a>
                 <a href="https://www.instagram.com/skipper_lab/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-xs font-semibold text-muted-foreground hover:text-primary">
-                  <span>Instagram Skipper Lab</span> <ExternalLink className="w-3.5 h-3.5" />
+                  <span>Instagram Ufficiale</span> <ExternalLink className="w-3.5 h-3.5" />
                 </a>
                 <a href="https://atoka.io/public/it/azienda/skipper-lab-srl/72e352e37294" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-xs font-semibold text-muted-foreground hover:text-primary">
                   <span>Registro Societario Atoka</span> <ExternalLink className="w-3.5 h-3.5" />
@@ -263,11 +282,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. CALL TO ACTION FINALE (LA LUCE DELLA META) */}
-      <section className="container max-w-4xl mx-auto px-6">
-        <div className="rounded-3xl border border-primary/50 bg-gradient-to-br from-primary/10 via-card to-background p-12 md:p-16 text-center space-y-6 shadow-[0_0_60px_rgba(212,175,55,0.15)] relative overflow-hidden">
-          <div className="absolute inset-0 z-0 opacity-15 bg-cover bg-center filter brightness-150" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1200&auto=format&fit=crop')` }} />
-          
+      {/* 5. CALL TO ACTION FINALE */}
+      <section className="container max-w-4xl mx-auto px-6 relative z-10">
+        <div className="rounded-3xl border border-primary/50 bg-gradient-to-br from-primary/15 via-card to-background p-12 md:p-16 text-center space-y-6 shadow-[0_0_60px_rgba(212,175,55,0.15)] relative overflow-hidden backdrop-blur-xl">
           <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
             <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Il Futuro Inizia Adesso</span>
             <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Vivi l'Esperienza del Nuovo Paradigma</h2>
