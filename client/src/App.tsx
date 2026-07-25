@@ -13,11 +13,11 @@ export default function App() {
       <Route path="/" component={Home} />
       <Route path="/club-deal" component={ClubDeal} />
       
-      {/* Rotte NetFree Dedicate */}
-      <Route path="/netfree/Acqua.tsx" component={AcquaPage} />
-      <Route path="/netfree/Terra.tsx" component={TerraPage} />
-      <Route path="/netfree/Energia.tsx" component={EnergiaPage} />
-      <Route path="/netfree/Formazione.tsx" component={FormazionePage} />
+      {/* Rotte NetFree Dedicate (URL puliti) */}
+      <Route path="/netfree/acqua" component={AcquaPage} />
+      <Route path="/netfree/terra" component={TerraPage} />
+      <Route path="/netfree/energia" component={EnergiaPage} />
+      <Route path="/netfree/formazione" component={FormazionePage} />
 
       {/* Fallback 404 */}
       <Route component={NotFound} />
