@@ -1,23 +1,11 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { 
-  ArrowRight, Shield, Users, Droplets, Sun, Sprout, BookOpen, ExternalLink, 
-  PlayCircle, Sparkles, Flame, HeartHandshake, Globe2, Milestone, Target, 
-  CheckCircle2, Lock, FileText, Code, Award, RefreshCw, Layers, TrendingUp 
-} from "lucide-react";
+import { ArrowRight, Sparkles, Shield, Layers, BookOpen, ExternalLink, Lock, FileText, Code, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
 
 export default function Home() {
-  const [testStep, setTestStep] = useState(0);
-  const [userProfile, setUserProfile] = useState<string | null>(null);
   const [isAdminUnlocked, setIsAdminUnlocked] = useState(false);
   const [adminCodeInput, setAdminCodeInput] = useState("");
-
-  const handleTestAnswer = (profile: string) => {
-    setUserProfile(profile);
-    setTestStep(2);
-  };
 
   const handleAdminAccess = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,16 +19,16 @@ export default function Home() {
   return (
     <div className="min-h-screen relative text-foreground space-y-32 pb-40 overflow-hidden bg-background">
       
-      {/* SFONDO LUMINOSO DIFFUSO (MATERIA REALE E ABBONDANZA) */}
-      <div className="absolute inset-0 z-0 opacity-25 bg-cover bg-center bg-fixed mix-blend-luminosity filter brightness-125" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/90 to-background z-0" />
+      {/* L'ALBERO LUMINOSO E CALDO SU TUTTO LO SFONDO DEL SITO */}
+      <div className="absolute inset-0 z-0 opacity-30 bg-cover bg-center bg-fixed mix-blend-luminosity filter brightness-125 pointer-events-none" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background z-0 pointer-events-none" />
 
-      {/* 1. VISIONE A LUNGO TERMINE (IL SOGNO E LA REALTA') */}
-      <section className="relative pt-44 pb-32 border-b border-primary/20 bg-gradient-to-b from-primary/10 via-transparent to-transparent z-10">
+      {/* 1. VISIONE A LUNGO TERMINE (FILOSOFIA E VALORE INCONDIZIONATO) */}
+      <section className="relative pt-48 pb-36 border-b border-primary/20 bg-gradient-to-b from-primary/10 via-transparent to-transparent z-10">
         <div className="container max-w-5xl mx-auto px-6 text-center space-y-8">
           
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 bg-primary/20 text-primary text-xs uppercase tracking-[0.2em] font-bold backdrop-blur-md shadow-md">
-            <Sparkles className="w-4 h-4" /> La Visione di Lungo Termine
+            <Sparkles className="w-4 h-4" /> La Visione del Nuovo Paradigma
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight font-serif-display leading-[1.1] text-foreground">
@@ -51,13 +39,13 @@ export default function Home() {
           </h1>
 
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-            Tutti coloro che fanno parte di questo progetto scelgono di dedicare il proprio tempo alla vocazione di vita, alla crescita personale e relazionale. Per insegnare a vivere nell'abbondanza, riconosciamo con integrità e trasparenza che i fondatori partecipano giustamente ai proventi del valore generato.
+            Tutti coloro che fanno parte di questo progetto scelgono di dedicare il proprio tempo alla vocazione di vita, alla crescita personale e relazionale. Per insegnare a vivere nell'abbondanza, riconosciamo con integrità e trasparenza che i fondatori partecipano giustamente ai proventi del valore generato: il nostro portare valore ha in sé un merito sano che riconosciamo in noi e negli altri.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link href="/club-deal">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-9 py-6 text-base rounded-full shadow-lg font-semibold transition-all transform hover:scale-105">
-                Esplora i Club Deal & Scenari di Rendimento <ArrowRight className="w-4 h-4" />
+                Esplora i Club Deal e i Numeri <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
           </div>
@@ -65,12 +53,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. VIDEO DI PRESENTAZIONE INTEGRATO NATIVAMENTE */}
+      {/* 2. VIDEO DI PRESENTAZIONE NATIVO */}
       <section className="container max-w-4xl mx-auto px-6 space-y-4 relative z-10">
         <div className="text-center space-y-2">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Presentazione Ufficiale</span>
-          <h2 className="text-3xl font-bold font-serif-display">Ascolta la Visione e il Metodo</h2>
-          <p className="text-sm text-muted-foreground">Comprendi dall'interno come si sviluppa il nostro ecosistema.</p>
+          <h2 className="text-3xl font-bold font-serif-display">Ascolta la Visione Profonda</h2>
+          <p className="text-sm text-muted-foreground">Comprendi il modello e la filosofia direttamente dal nostro video ufficiale.</p>
         </div>
         <div className="rounded-3xl border border-primary/30 bg-card/60 backdrop-blur-xl p-4 md:p-6 shadow-2xl relative">
           <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border bg-black/40 shadow-inner">
@@ -85,164 +73,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. COME ARRICIARVI: I DUE SEMI (TOKENIZZAZIONE RWA E NETFREE) */}
-      <section className="container max-w-6xl mx-auto px-6 space-y-16 relative z-10">
+      {/* 3. IL MODELLO: I DUE SEMI (INTRODUZIONE STRUTTURALE) */}
+      <section className="container max-w-6xl mx-auto px-6 space-y-12 relative z-10">
         
         <div className="text-center space-y-3">
-          <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">La Strategia</span>
+          <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">La Strategia di Crescita</span>
           <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Come Arriviamo alla Meta: I Due Semi</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-            Dalla solidità dei beni reali tokenizzati alla forza generativa della condivisione in abbonamento (NetFree).
+            Un percorso in due tappe sinergiche che unisce la solidità della materia alla forza generativa della comunità in abbonamento.
           </p>
         </div>
 
-        {/* GRIGLIA DEI DUE SEMI CON DATI NUMERICI REALI */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          {/* SEME 1: TOKENIZZAZIONE RWA & SCENARI */}
-          <div className="rounded-3xl border border-border/80 bg-card/70 backdrop-blur-md p-8 space-y-6 shadow-xl flex flex-col justify-between">
-            <div className="space-y-4">
+          <div className="rounded-3xl border border-border/80 bg-card/70 backdrop-blur-md p-8 space-y-4 shadow-xl flex flex-col justify-between">
+            <div className="space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                 <Shield className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold font-serif-display">Il Primo Seme: Tokenizzazione RWA</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                La digitalizzazione di beni reali con una fee di emissione NFT del <strong>0,75%</strong> una tantum[cite: 1]. Attraverso i Liquidity Provider e la diffusione dell'informazione, attiviamo flussi stabili[cite: 1].
+                La digitalizzazione di beni reali con una fee di emissione NFT del 0,75%[cite: 1]. I dettagli analitici, le tabelle comparative e i calcoli dei rendimenti per ogni fascia di valore si trovano nelle pagine di approfondimento dedicate.
               </p>
-              
-              <div className="grid grid-cols-2 gap-4 pt-2">
-                <div className="p-4 rounded-2xl bg-background/50 border border-border/60 space-y-1">
-                  <span className="text-[10px] uppercase font-mono text-primary font-bold">Scenario A (con LP)</span>
-                  <div className="text-lg font-extrabold">2,00% annuo</div>
-                  <p className="text-[11px] text-muted-foreground">Rendimento netto medio su 5 anni: <strong>1,85%</strong>[cite: 1]</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-primary/10 border border-primary/30 space-y-1">
-                  <span className="text-[10px] uppercase font-mono text-primary font-bold">Scenario B</span>
-                  <div className="text-lg font-extrabold">2,50% annuo</div>
-                  <p className="text-[11px] text-muted-foreground">Rendimento netto medio su 5 anni: <strong>2,35%</strong>[cite: 1]</p>
-                </div>
-              </div>
             </div>
-
-            <div className="pt-4 border-t border-border/40 text-xs flex justify-between font-semibold">
-              <span className="text-muted-foreground">Esempio su Asset €1.000.000:</span>
-              <span className="text-primary">Costo NFT €7.500[cite: 1]</span>
+            <div className="pt-4 border-t border-border/40">
+              <Link href="/club-deal">
+                <Button variant="outline" className="w-full justify-between group">
+                  <span>Visualizza Analisi e Scenari</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </div>
 
-          {/* SEME 2: NETFREE E FRATTALE */}
-          <div className="rounded-3xl border border-primary/40 bg-gradient-to-b from-primary/10 to-card/70 backdrop-blur-md p-8 space-y-6 shadow-xl flex flex-col justify-between">
-            <div className="space-y-4">
+          <div className="rounded-3xl border border-primary/40 bg-gradient-to-b from-primary/10 to-card/70 backdrop-blur-md p-8 space-y-4 shadow-xl flex flex-col justify-between">
+            <div className="space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary">
                 <Layers className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold font-serif-display">Il Secondo Seme: Il Network NetFree</h3>
+              <h3 className="text-2xl font-bold font-serif-display">Il Secondo Seme: Network NetFree</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                La condivisione del dono attraverso un sistema frattale esteso fino all'ottavo livello di profondità. 
-              </p>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Anche raccogliendo un singolo euro al mese per abbonamento da tutta la comunità, si generano volumi straordinari. Il sistema si autorigenera suddividendo i proventi: una parte a beneficio dell'utente, una parte per i servizi e una parte per sostenere la crescita della comunità e la transizione dall'entropia alla <strong>sintropia</strong>.
+                Il sistema frattale di condivisione del dono esteso fino all'ottavo livello. Abbonamenti accessibili che generano flussi continui per i servizi e per la transizione dall'entropia alla sintropia.
               </p>
             </div>
-
-            <div className="pt-4 border-t border-border/40 text-xs flex justify-between font-semibold">
-              <span className="text-muted-foreground">Modello Economico:</span>
-              <span className="text-primary">Autorigenerante & Frattale</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 4. QUESTIONARIO / TEST DI CONSAPEVOLEZZA E ORIENTAMENTO */}
-      <section className="container max-w-4xl mx-auto px-6 space-y-8 relative z-10">
-        <div className="rounded-3xl border border-primary/40 bg-card/80 backdrop-blur-xl p-8 md:p-12 shadow-2xl space-y-8">
-          
-          <div className="text-center space-y-2">
-            <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Orientamento Consapevole</span>
-            <h2 className="text-2xl md:text-4xl font-bold font-serif-display">Qual è il Tuo Ruolo nel Nuovo Paradigma?</h2>
-            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-              Seleziona la tua inclinazione per scoprire come inserirti al meglio nel nostro percorso di abbondanza e mutuo aiuto.
-            </p>
-          </div>
-
-          {testStep === 0 && (
-            <div className="space-y-6 pt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <button 
-                  onClick={() => handleTestAnswer("asset")}
-                  className="p-5 rounded-2xl border border-border bg-background/60 hover:border-primary/60 hover:bg-primary/5 transition-all text-left space-y-2 group"
-                >
-                  <div className="font-bold text-sm group-hover:text-primary">Voglio tokenizzare i miei beni reali</div>
-                  <p className="text-xs text-muted-foreground">Valorizzare asset immobiliari o materiali con perizie indipendenti.</p>
-                </button>
-                <button 
-                  onClick={() => handleTestAnswer("lp")}
-                  className="p-5 rounded-2xl border border-border bg-background/60 hover:border-primary/60 hover:bg-primary/5 transition-all text-left space-y-2 group"
-                >
-                  <div className="font-bold text-sm group-hover:text-primary">Voglio partecipare come Liquidity Provider</div>
-                  <p className="text-xs text-muted-foreground">Sostenere la crescita con un rendimento etico e sostenibile.</p>
-                </button>
-                <button 
-                  onClick={() => handleTestAnswer("netfree")}
-                  className="p-5 rounded-2xl border border-border bg-background/60 hover:border-primary/60 hover:bg-primary/5 transition-all text-left space-y-2 group"
-                >
-                  <div className="font-bold text-sm group-hover:text-primary">Voglio attivare i servizi NetFree</div>
-                  <p className="text-xs text-muted-foreground">Portare acqua viva, terra ed energia nella mia vita e nel network.</p>
-                </button>
-                <button 
-                  onClick={() => handleTestAnswer("academy")}
-                  className="p-5 rounded-2xl border border-border bg-background/60 hover:border-primary/60 hover:bg-primary/5 transition-all text-left space-y-2 group"
-                >
-                  <div className="font-bold text-sm group-hover:text-primary">Voglio seguire l'Accademia e l'Autodeterminazione</div>
-                  <p className="text-xs text-muted-foreground">Entrare in contatto con Andrea e Aldo Pironi per la formazione profonda.</p>
-                </button>
-              </div>
-            </div>
-          )}
-
-          {testStep === 2 && userProfile && (
-            <div className="space-y-6 text-center py-4 bg-primary/5 rounded-2xl p-6 border border-primary/20">
-              <Award className="w-12 h-12 text-primary mx-auto" />
-              <div className="space-y-2">
-                <h3 className="text-xl font-bold font-serif-display">Profilo di Ingaggio Identificato</h3>
-                <p className="text-sm text-muted-foreground max-w-lg mx-auto">
-                  {userProfile === 'asset' && "Sei pronto per il Primo Seme: la tokenizzazione dei tuoi asset reali tramite il nostro protocollo trasparente."}
-                  {userProfile === 'lp' && "Sei un pilastro dei flussi finanziari: il ruolo di Liquidity Provider ti permette di generare valore reale e sostenibile."}
-                  {userProfile === 'netfree' && "Sei parte del Secondo Seme: l'economia del dono e i servizi in abbonamento del network NetFree."}
-                  {userProfile === 'academy' && "Hai una forte vocazione alla crescita interiore e giuridica. Ti mettiamo in contatto diretto con Andrea e Aldo Pironi per seguire l'Accademia di autodeterminazione."}
-                </p>
-              </div>
-              <div className="pt-2 flex flex-wrap justify-center gap-4">
-                <Link href="/club-deal">
-                  <Button className="bg-primary text-primary-foreground font-semibold">
-                    Procedi con i Club Deal <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
-                <Button variant="outline" onClick={() => setTestStep(0)} className="gap-2">
-                  <RefreshCw className="w-3.5 h-3.5" /> Rifai il test
+            <div className="pt-4 border-t border-border/40">
+              <Link href="/club-deal">
+                <Button variant="outline" className="w-full justify-between group">
+                  <span>Scopri il Modello Frattale</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </div>
+              </Link>
             </div>
-          )}
+          </div>
 
         </div>
       </section>
 
-      {/* 5. AREE DI APPROFONDIMENTO E LINK VERIFICATI */}
+      {/* 4. COLLEGAMENTI E RISORSE UFFICIALI */}
       <section className="container max-w-6xl mx-auto px-6 space-y-12 relative z-10">
         <div className="text-center space-y-3">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Approfondimenti</span>
           <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Risorse e Collegamenti Ufficiali</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
-            Tutti i materiali di riferimento per approfondire acqua, terra, energia e formazione.
+            Esplora le guide verificate per acqua, terra, energia e formazione.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <div className="group border border-border/80 bg-card/70 backdrop-blur-md hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
-            <div className="h-44 w-full overflow-hidden relative">
+            <div className="h-40 w-full overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=600&auto=format&fit=crop" alt="Acqua" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
@@ -251,15 +149,12 @@ export default function Home() {
                 <a href="https://www.youtube.com/watch?v=elbOEII7-zo" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between font-semibold text-primary hover:underline">
                   <span>Conferenza Tecnica</span> <ExternalLink className="w-3.5 h-3.5" />
                 </a>
-                <a href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-muted-foreground hover:text-primary">
-                  <span>Scheda Tecnica (PDF)</span> <ExternalLink className="w-3.5 h-3.5" />
-                </a>
               </div>
             </div>
           </div>
 
           <div className="group border border-border/80 bg-card/70 backdrop-blur-md hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
-            <div className="h-44 w-full overflow-hidden relative">
+            <div className="h-40 w-full overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?q=80&w=600&auto=format&fit=crop" alt="Terra" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
@@ -273,7 +168,7 @@ export default function Home() {
           </div>
 
           <div className="group border border-border/80 bg-card/70 backdrop-blur-md hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
-            <div className="h-44 w-full overflow-hidden relative">
+            <div className="h-40 w-full overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=600&auto=format&fit=crop" alt="Energia" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
@@ -282,15 +177,12 @@ export default function Home() {
                 <a href="https://www.pefpower.it/it/informatives/mix-energetico" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between font-semibold text-primary hover:underline">
                   <span>Mix Energetico & ARERA</span> <ExternalLink className="w-3.5 h-3.5" />
                 </a>
-                <a href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-muted-foreground hover:text-primary">
-                  <span>Green Sharing (PDF)</span> <ExternalLink className="w-3.5 h-3.5" />
-                </a>
               </div>
             </div>
           </div>
 
           <div className="group border border-border/80 bg-card/70 backdrop-blur-md hover:border-primary/60 transition-all rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl">
-            <div className="h-44 w-full overflow-hidden relative">
+            <div className="h-40 w-full overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" alt="Formazione" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
@@ -299,9 +191,6 @@ export default function Home() {
                 <a href="https://www.facebook.com/SkipperLab.formazione/?locale=it_IT" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between font-semibold text-primary hover:underline">
                   <span>Contatta Andrea e Aldo Pironi</span> <ExternalLink className="w-3.5 h-3.5" />
                 </a>
-                <a href="https://atoka.io/public/it/azienda/skipper-lab-srl/72e352e37294" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-muted-foreground hover:text-primary">
-                  <span>Registro Societario</span> <ExternalLink className="w-3.5 h-3.5" />
-                </a>
               </div>
             </div>
           </div>
@@ -309,7 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. AREA RISERVATA ADMIN (CODICI E MATERIALI INTERNI) */}
+      {/* 5. AREA RISERVATA ADMIN (CODICI E MATERIALI INTERNI) */}
       <section className="container max-w-4xl mx-auto px-6 relative z-10">
         <div className="rounded-3xl border border-border bg-card/50 backdrop-blur-xl p-8 md:p-10 shadow-xl space-y-6">
           <div className="flex items-center justify-between border-b border-border/60 pb-4">
@@ -372,19 +261,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. CALL TO ACTION FINALE */}
+      {/* 6. CALL TO ACTION FINALE */}
       <section className="container max-w-4xl mx-auto px-6 relative z-10">
         <div className="rounded-3xl border border-primary/50 bg-gradient-to-br from-primary/15 via-card to-background p-12 md:p-16 text-center space-y-6 shadow-[0_0_60px_rgba(212,175,55,0.15)] relative overflow-hidden backdrop-blur-xl">
           <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
-            <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">L'Abbondanza in Azione</span>
+            <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Il Futuro Inizia Adesso</span>
             <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Entriamo Insieme nel Nuovo Paradigma</h2>
             <p className="text-base text-muted-foreground leading-relaxed font-light">
-              Unisciti a noi in questo cammino di libertà e cooperazione. Sostieni l'infrastruttura reale e contribuisci a generare valore duraturo per tutti.
+              Unisciti a noi in questo cammino di libertà e cooperazione. Esplora i dettagli finanziari e i Club Deal nelle pagine dedicate.
             </p>
             <div className="pt-2">
               <Link href="/club-deal">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-7 rounded-full shadow-[0_0_40px_rgba(212,175,55,0.4)] text-base transition-all transform hover:scale-105">
-                  Esplora i Club Deal & Diventa Parte Attiva <ArrowRight className="w-4 h-4 ml-2" />
+                  Vai ai Club Deal e ai Numeri <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
             </div>
