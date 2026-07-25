@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, Shield, Layers, BookOpen, ExternalLink, Lock, FileText, Code, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles, Shield, Layers, ExternalLink, Lock, FileText, Code, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -19,11 +19,11 @@ export default function Home() {
   return (
     <div className="min-h-screen relative text-foreground space-y-32 pb-40 overflow-hidden bg-background">
       
-      {/* L'ALBERO LUMINOSO E CALDO SU TUTTO LO SFONDO DEL SITO */}
-      <div className="absolute inset-0 z-0 opacity-30 bg-cover bg-center bg-fixed mix-blend-luminosity filter brightness-125 pointer-events-none" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
+      {/* ALBERO LUMINOSO E CALDO SU TUTTO LO SFONDO DEL SITO */}
+      <div className="absolute inset-0 z-0 opacity-35 bg-cover bg-center bg-fixed mix-blend-luminosity filter brightness-125 pointer-events-none" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background z-0 pointer-events-none" />
 
-      {/* 1. VISIONE A LUNGO TERMINE (FILOSOFIA E VALORE INCONDIZIONATO) */}
+      {/* 1. VISIONE A LUNGO TERMINE (FILOSOFIA PURA E ABBONDANZA INCONDIZIONATA) */}
       <section className="relative pt-48 pb-36 border-b border-primary/20 bg-gradient-to-b from-primary/10 via-transparent to-transparent z-10">
         <div className="container max-w-5xl mx-auto px-6 text-center space-y-8">
           
@@ -39,13 +39,13 @@ export default function Home() {
           </h1>
 
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-            Tutti coloro che fanno parte di questo progetto scelgono di dedicare il proprio tempo alla vocazione di vita, alla crescita personale e relazionale. Per insegnare a vivere nell'abbondanza, riconosciamo con integrità e trasparenza che i fondatori partecipano giustamente ai proventi del valore generato: il nostro portare valore ha in sé un merito sano che riconosciamo in noi e negli altri.
+            Tutti coloro che fanno parte di questo progetto scelgono di dedicare il proprio tempo alla vocazione di vita, alla crescita personale, relazionale e al mutuo aiuto. Per insegnare a vivere nell'abbondanza, riconosciamo con totale integrità e trasparenza che anche noi fondatori viviamo nell'abbondanza: il nostro portare valore ha di per sé un merito sano che riconosciamo in noi e negli altri, partecipando giustamente ai proventi del valore generato.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link href="/club-deal">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-9 py-6 text-base rounded-full shadow-lg font-semibold transition-all transform hover:scale-105">
-                Esplora i Club Deal e i Numeri <ArrowRight className="w-4 h-4" />
+                Esplora i Percorsi di Opportunità <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
           </div>
@@ -93,7 +93,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold font-serif-display">Il Primo Seme: Tokenizzazione RWA</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                La digitalizzazione di beni reali con una fee di emissione NFT del 0,75%[cite: 1]. I dettagli analitici, le tabelle comparative e i calcoli dei rendimenti per ogni fascia di valore si trovano nelle pagine di approfondimento dedicate.
+                La digitalizzazione di beni reali con una fee di emissione NFT trasparente. I dettagli analitici, le tabelle comparative e i calcoli dei rendimenti per ogni fascia di valore si trovano nelle sezioni di approfondimento dedicate.
               </p>
             </div>
             <div className="pt-4 border-t border-border/40">
@@ -268,12 +268,12 @@ export default function Home() {
             <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Il Futuro Inizia Adesso</span>
             <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Entriamo Insieme nel Nuovo Paradigma</h2>
             <p className="text-base text-muted-foreground leading-relaxed font-light">
-              Unisciti a noi in questo cammino di libertà e cooperazione. Esplora i dettagli finanziari e i Club Deal nelle pagine dedicate.
+              Unisciti a noi in questo cammino di libertà e cooperazione. Esplora le opportunità e i dettagli nelle pagine dedicate.
             </p>
             <div className="pt-2">
               <Link href="/club-deal">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-7 rounded-full shadow-[0_0_40px_rgba(212,175,55,0.4)] text-base transition-all transform hover:scale-105">
-                  Vai ai Club Deal e ai Numeri <ArrowRight className="w-4 h-4 ml-2" />
+                  Vai alle Opportunità e ai Numeri <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
             </div>
