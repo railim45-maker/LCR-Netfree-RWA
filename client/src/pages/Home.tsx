@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, Shield, Layers, ExternalLink, Lock, FileText, Code, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles, Shield, Layers, ExternalLink, Lock, FileText, Code, CheckCircle2, Globe2, HeartHandshake } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link href="/club-deal">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-9 py-6 text-base rounded-full shadow-lg font-semibold transition-all transform hover:scale-105">
-                Esplora i Percorsi di Opportunità <ArrowRight className="w-4 h-4" />
+                Esplora i Prospetti Analitici <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
           </div>
@@ -73,67 +73,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. IL MODELLO: I DUE SEMI (INTRODUZIONE STRUTTURALE) */}
+      {/* 3. CHIARIMENTO DEL SISTEMA (PRIMO LIVELLO DI APPROFONDIMENTO IN HOME) */}
       <section className="container max-w-6xl mx-auto px-6 space-y-12 relative z-10">
         
         <div className="text-center space-y-3">
-          <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">La Strategia di Crescita</span>
-          <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Come Arriviamo alla Meta: I Due Semi</h2>
+          <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Architettura del Sistema</span>
+          <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Il Modello che Stiamo Costruendo</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-            Un percorso in due tappe sinergiche che unisce la solidità della materia alla forza generativa della comunità in abbonamento.
+            Prima di passare ai numeri e ai dettagli operativi, è fondamentale comprendere la struttura portante del nostro ecosistema: un'infrastruttura a due semi che unisce la materia alla condivisione.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          <div className="rounded-3xl border border-border/80 bg-card/70 backdrop-blur-md p-8 space-y-4 shadow-xl flex flex-col justify-between">
-            <div className="space-y-3">
+          <div className="rounded-3xl border border-border/80 bg-card/70 backdrop-blur-md p-8 space-y-5 shadow-xl flex flex-col justify-between">
+            <div className="space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                 <Shield className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold font-serif-display">Il Primo Seme: Tokenizzazione RWA</h3>
+              <h3 className="text-2xl font-bold font-serif-display">Primo Seme: La Tokenizzazione dei Beni Reali</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                La digitalizzazione di beni reali con una fee di emissione NFT trasparente. I dettagli analitici, le tabelle comparative e i calcoli dei rendimenti per ogni fascia di valore si trovano nelle sezioni di approfondimento dedicate.
+                Riconnettiamo il valore ai beni tangibili attraverso protocolli di digitalizzazione avanzata e perizie indipendenti. Questo permette di dare nuova liquidità e solidità patrimoniale azzerando gli attriti tradizionali.
               </p>
             </div>
-            <div className="pt-4 border-t border-border/40">
-              <Link href="/club-deal">
-                <Button variant="outline" className="w-full justify-between group">
-                  <span>Visualizza Analisi e Scenari</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+            <div className="pt-4 border-t border-border/40 text-xs text-primary font-semibold flex items-center gap-2">
+              <Globe2 className="w-4 h-4" /> Solidità e tutela della materia reale
             </div>
           </div>
 
-          <div className="rounded-3xl border border-primary/40 bg-gradient-to-b from-primary/10 to-card/70 backdrop-blur-md p-8 space-y-4 shadow-xl flex flex-col justify-between">
-            <div className="space-y-3">
+          <div className="rounded-3xl border border-primary/40 bg-gradient-to-b from-primary/10 to-card/70 backdrop-blur-md p-8 space-y-5 shadow-xl flex flex-col justify-between">
+            <div className="space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary">
                 <Layers className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold font-serif-display">Il Secondo Seme: Network NetFree</h3>
+              <h3 className="text-2xl font-bold font-serif-display">Secondo Seme: Il Network in Abbonamento</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Il sistema frattale di condivisione del dono esteso fino all'ottavo livello. Abbonamenti accessibili che generano flussi continui per i servizi e per la transizione dall'entropia alla sintropia.
+                Un sistema frattale di condivisione del dono esteso fino all'ottavo livello. Abbonamenti accessibili che generano flussi continui, autofinanziando i servizi e guidando la transizione dall'entropia alla sintropia.
               </p>
             </div>
-            <div className="pt-4 border-t border-border/40">
-              <Link href="/club-deal">
-                <Button variant="outline" className="w-full justify-between group">
-                  <span>Scopri il Modello Frattale</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+            <div className="pt-4 border-t border-border/40 text-xs text-primary font-semibold flex items-center gap-2">
+              <HeartHandshake className="w-4 h-4" /> Crescita esponenziale e mutuo aiuto
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* 4. COLLEGAMENTI E RISORSE UFFICIALI */}
+      {/* 4. SECONDO LIVELLO DI APPROFONDIMENTO (COLLEGAMENTI A SITI E DOCUMENTAZIONE ESTERNA) */}
       <section className="container max-w-6xl mx-auto px-6 space-y-12 relative z-10">
         <div className="text-center space-y-3">
-          <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Approfondimenti</span>
-          <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Risorse e Collegamenti Ufficiali</h2>
+          <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Secondo Livello</span>
+          <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Documentazione e Collegamenti di Approfondimento</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
-            Esplora le guide verificate per acqua, terra, energia e formazione.
+            Esplora le guide verificate, i portali partner e le risorse tecniche per ogni area del nostro percorso.
           </p>
         </div>
 
@@ -268,12 +260,12 @@ export default function Home() {
             <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Il Futuro Inizia Adesso</span>
             <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Entriamo Insieme nel Nuovo Paradigma</h2>
             <p className="text-base text-muted-foreground leading-relaxed font-light">
-              Unisciti a noi in questo cammino di libertà e cooperazione. Esplora le opportunità e i dettagli nelle pagine dedicate.
+              Unisciti a noi in questo cammino di libertà e cooperazione. Esplora i dettagli finanziari e le opportunità nelle pagine dedicate.
             </p>
             <div className="pt-2">
               <Link href="/club-deal">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 py-7 rounded-full shadow-[0_0_40px_rgba(212,175,55,0.4)] text-base transition-all transform hover:scale-105">
-                  Vai alle Opportunità e ai Numeri <ArrowRight className="w-4 h-4 ml-2" />
+                  Vai ai Prospetti Analitici <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
             </div>
