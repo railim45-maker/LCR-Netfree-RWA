@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, Shield, Layers, ExternalLink, Lock, FileText, Code, CheckCircle2, Globe2, HeartHandshake } from "lucide-react";
+import { ArrowRight, Sparkles, Shield, Layers, ExternalLink, Lock, FileText, Code, CheckCircle2, Globe2, HeartHandshake, Compass, Scale, Gift } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
       <div className="absolute inset-0 z-0 opacity-35 bg-cover bg-center bg-fixed mix-blend-luminosity filter brightness-125 pointer-events-none" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background z-0 pointer-events-none" />
 
-      {/* 1. VISIONE A LUNGO TERMINE (FILOSOFIA PURA E ABBONDANZA INCONDIZIONATA) */}
+      {/* 1. VISIONE A LUNGO TERMINE & ECONOMIA DEL DONO */}
       <section className="relative pt-48 pb-36 border-b border-primary/20 bg-gradient-to-b from-primary/10 via-transparent to-transparent z-10">
         <div className="container max-w-5xl mx-auto px-6 text-center space-y-8">
           
@@ -34,12 +34,12 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight font-serif-display leading-[1.1] text-foreground">
             Vivere nell'abbondanza, nell'amore<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-primary to-yellow-200">
-              e nel mutuo aiuto consapevole.
+              e nell'economia del dono consapevole.
             </span>
           </h1>
 
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-            Tutti coloro che fanno parte di questo progetto scelgono di dedicare il proprio tempo alla vocazione di vita, alla crescita personale, relazionale e al mutuo aiuto. Per insegnare a vivere nell'abbondanza, riconosciamo con totale integrità e trasparenza che anche noi fondatori viviamo nell'abbondanza: il nostro portare valore ha di per sé un merito sano che riconosciamo in noi e negli altri, partecipando giustamente ai proventi del valore generato.
+            Superiamo la logica della scarsità per abbracciare l'<strong>economia del dono</strong>: un sistema in cui il valore circola liberamente attraverso il mutuo aiuto, la condivisione e la valorizzazione del tempo dedicato alla propria vocazione. Per insegnare a vivere nell'abbondanza, riconosciamo con totale trasparenza che anche noi fondatori partecipiamo giustamente ai proventi del valore generato.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -73,14 +73,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. CHIARIMENTO DEL SISTEMA (PRIMO LIVELLO DI APPROFONDIMENTO IN HOME) */}
+      {/* 3. IL PRINCIPIO DI LIBERTÀ, RESPONSABILITÀ E TUTELA GIURIDICA (SINTESI DELL'AUTODETERMINAZIONE) */}
+      <section className="container max-w-5xl mx-auto px-6 relative z-10">
+        <div className="rounded-3xl border border-primary/40 bg-card/85 backdrop-blur-xl p-8 md:p-12 shadow-2xl space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="p-3 rounded-2xl bg-primary/20 text-primary">
+              <Scale className="w-6 h-6" />
+            </div>
+            <div>
+              <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Fondamento Giuridico ed Esistenziale</span>
+              <h2 className="text-2xl md:text-3xl font-bold font-serif-display">Libertà, Responsabilità e Piena Sovranità</h2>
+            </div>
+          </div>
+
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-light">
+            Il vero cambiamento parte dal riappropriarsi della propria autorità interiore e giuridica. Attraverso un percorso di <strong>consapevolezza e responsabilità individuale</strong>, l'individuo sceglie di uscire dai vincoli di dipendenza sistemica per agire come soggetto sovrano. 
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+            <div className="p-5 rounded-2xl border border-border/80 bg-background/50 space-y-2">
+              <div className="font-bold text-sm text-primary flex items-center gap-2">
+                <Compass className="w-4 h-4" /> Quali Vantaggi Offre
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Protezione patrimoniale avanzata, sgancio dai circuiti debitori estorsivi, recupero della dignità giuridica e totale autonomia decisionale nella gestione della propria vita e dei propri beni.
+              </p>
+            </div>
+            <div className="p-5 rounded-2xl border border-border/80 bg-background/50 space-y-2">
+              <div className="font-bold text-sm text-primary flex items-center gap-2">
+                <Shield className="w-4 h-4" /> L'Aspetto Legale
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Un rigoroso allineamento ai principi del diritto naturale e internazionale, fondato su strumenti giuridici leciti e inattaccabili per tutelare la persona e il patrimonio da qualsiasi pretesa estrattiva.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. CHIARIMENTO DEL SISTEMA: I DUE SEMI (PRIMO LIVELLO DI APPROFONDIMENTO) */}
       <section className="container max-w-6xl mx-auto px-6 space-y-12 relative z-10">
         
         <div className="text-center space-y-3">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Architettura del Sistema</span>
           <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Il Modello che Stiamo Costruendo</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-            Prima di passare ai numeri e ai dettagli operativi, è fondamentale comprendere la struttura portante del nostro ecosistema: un'infrastruttura a due semi che unisce la materia alla condivisione.
+            Un'infrastruttura a due semi che unisce la solidità della materia alla forza generativa della comunità in abbonamento.
           </p>
         </div>
 
@@ -93,7 +131,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold font-serif-display">Primo Seme: La Tokenizzazione dei Beni Reali</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Riconnettiamo il valore ai beni tangibili attraverso protocolli di digitalizzazione avanzata e perizie indipendenti. Questo permette di dare nuova liquidità e solidità patrimoniale azzerando gli attriti tradizionali.
+                Riconnettiamo il valore ai beni tangibili attraverso protocolli di digitalizzazione avanzata e perizie indipendenti, offrendo liquidità e solidità patrimoniale protetta.
               </p>
             </div>
             <div className="pt-4 border-t border-border/40 text-xs text-primary font-semibold flex items-center gap-2">
@@ -108,7 +146,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold font-serif-display">Secondo Seme: Il Network in Abbonamento</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Un sistema frattale di condivisione del dono esteso fino all'ottavo livello. Abbonamenti accessibili che generano flussi continui, autofinanziando i servizi e guidando la transizione dall'entropia alla sintropia.
+                Un sistema frattale di condivisione del dono esteso fino all'ottavo livello. Abbonamenti accessibili che generano flussi continui, autofinanziando i servizi e guidando la transizione verso la sintropia.
               </p>
             </div>
             <div className="pt-4 border-t border-border/40 text-xs text-primary font-semibold flex items-center gap-2">
@@ -119,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. SECONDO LIVELLO DI APPROFONDIMENTO (COLLEGAMENTI A SITI E DOCUMENTAZIONE ESTERNA) */}
+      {/* 5. SECONDO LIVELLO DI APPROFONDIMENTO (COLLEGAMENTI A SITI E DOCUMENTAZIONE ESTERNA) */}
       <section className="container max-w-6xl mx-auto px-6 space-y-12 relative z-10">
         <div className="text-center space-y-3">
           <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Secondo Livello</span>
@@ -190,7 +228,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. AREA RISERVATA ADMIN (CODICI E MATERIALI INTERNI) */}
+      {/* 6. AREA RISERVATA ADMIN (CODICI E MATERIALI INTERNI) */}
       <section className="container max-w-4xl mx-auto px-6 relative z-10">
         <div className="rounded-3xl border border-border bg-card/50 backdrop-blur-xl p-8 md:p-10 shadow-xl space-y-6">
           <div className="flex items-center justify-between border-b border-border/60 pb-4">
@@ -253,14 +291,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. CALL TO ACTION FINALE */}
+      {/* 7. CALL TO ACTION FINALE */}
       <section className="container max-w-4xl mx-auto px-6 relative z-10">
         <div className="rounded-3xl border border-primary/50 bg-gradient-to-br from-primary/15 via-card to-background p-12 md:p-16 text-center space-y-6 shadow-[0_0_60px_rgba(212,175,55,0.15)] relative overflow-hidden backdrop-blur-xl">
           <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
             <span className="text-primary text-xs uppercase tracking-widest font-semibold font-mono">Il Futuro Inizia Adesso</span>
             <h2 className="text-3xl md:text-5xl font-bold font-serif-display">Entriamo Insieme nel Nuovo Paradigma</h2>
             <p className="text-base text-muted-foreground leading-relaxed font-light">
-              Unisciti a noi in questo cammino di libertà e cooperazione. Esplora i dettagli finanziari e le opportunità nelle pagine dedicate.
+              Unisciti a noi in questo cammino di libertà, economia del dono e cooperazione. Esplora i dettagli analitici nelle pagine dedicate.
             </p>
             <div className="pt-2">
               <Link href="/club-deal">
