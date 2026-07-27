@@ -33,14 +33,14 @@ export default function SecondLevelHub() {
             <Sparkles className="w-3.5 h-3.5 text-emerald-600" /> Fondamenti, Filosofia e Scelte di Rete
           </div>
           <h1 className="text-3xl md:text-5xl font-bold font-serif text-stone-900 leading-tight">
-            I Pilastri Informativi del Secondo Livello
+            I 4 Pilastri Informativi del Secondo Livello
           </h1>
           <p className="text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed font-light">
-            Qui risiedono le spiegazioni, le teorie e le filosofie che guidano il nostro operato. Scegli un'area di approfondimento per comprendere i concetti alla base del progetto prima di accedere alla messa a terra numerica e legale del Terzo Livello.
+            Qui risiedono le spiegazioni, le teorie e le filosofie che guidano il nostro operato. Esplora i quattro ambiti fondamentali prima di accedere alla messa a terra numerica e legale del Terzo Livello.
           </p>
         </div>
 
-        {/* GRIGLIA DEI 4 APPROFONDIMENTI */}
+        {/* GRIGLIA DEI 4 APPROFONDIMENTI CON COLLEGAMENTI PUNTUALI */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
           
           {/* 1. NETFREE */}
@@ -56,7 +56,7 @@ export default function SecondLevelHub() {
               </p>
             </div>
             <div className="pt-4">
-              <Link href="/privato/economia-dono">
+              <Link href="/privato/netfree">
                 <button className="w-full bg-stone-50 hover:bg-emerald-50 text-stone-800 hover:text-emerald-900 font-medium py-3 px-6 rounded-2xl text-xs uppercase tracking-wider border border-stone-200 transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
                   Approfondisci Netfree <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -98,7 +98,7 @@ export default function SecondLevelHub() {
               </p>
             </div>
             <div className="pt-4">
-              <Link href="/privato/economia-dono">
+              <Link href="/privato/tokenizzazione-rwa">
                 <button className="w-full bg-stone-50 hover:bg-sky-50 text-stone-800 hover:text-sky-900 font-medium py-3 px-6 rounded-2xl text-xs uppercase tracking-wider border border-stone-200 transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
                   Approfondisci RWA <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -113,13 +113,13 @@ export default function SecondLevelHub() {
               <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200/60 flex items-center justify-center text-purple-800">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold font-serif text-stone-900">4. Libertà Legale (Autodeterminazione)</h3>
+              <h3 className="text-2xl font-bold font-serif text-stone-900">4. Libertà Legale</h3>
               <p className="text-sm text-stone-600 leading-relaxed font-light">
                 I principi di sovranità personale, il recupero dell'autorità originaria e la cornice etica per operare "nella luce" in piena armonia e trasparenza giuridica.
               </p>
             </div>
             <div className="pt-4">
-              <Link href="/privato/economia-dono">
+              <Link href="/privato/liberta-legale">
                 <button className="w-full bg-stone-50 hover:bg-purple-50 text-stone-800 hover:text-purple-900 font-medium py-3 px-6 rounded-2xl text-xs uppercase tracking-wider border border-stone-200 transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
                   Approfondisci la Sovranità <ArrowRight className="w-3.5 h-3.5" />
                 </button>
