@@ -14,7 +14,7 @@ export default function SecondLevelHub() {
         <div className="flex items-center justify-between p-4 rounded-3xl bg-white/85 border border-stone-200/80 shadow-sm backdrop-blur-xl">
           <div className="flex items-center gap-3">
             <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm border border-emerald-100">🌿</span>
-            <span className="font-bold text-xs uppercase tracking-wider text-stone-700 font-serif">Area Riservata • Secondo Livello (Teoria & Informazione)</span>
+            <span className="font-bold text-xs uppercase tracking-wider text-stone-700 font-serif">Percorso di Approfondimento Informativo</span>
           </div>
           <nav className="flex items-center gap-4 text-xs font-semibold">
             <Link href="/">
@@ -30,17 +30,17 @@ export default function SecondLevelHub() {
         {/* TITOLO E PRESENTAZIONE */}
         <div className="text-center space-y-4 pt-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium tracking-wide shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600" /> Fondamenti, Filosofia e Scelte di Rete
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" /> Filosofia, Teoria e Informazione Condivisa
           </div>
           <h1 className="text-3xl md:text-5xl font-bold font-serif text-stone-900 leading-tight">
-            I 4 Pilastri Informativi del Secondo Livello
+            I 4 Pilastri di Approfondimento
           </h1>
           <p className="text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed font-light">
-            Qui risiedono le spiegazioni, le teorie e le filosofie che guidano il nostro operato. Esplora i quattro ambiti fondamentali prima di accedere alla messa a terra numerica e legale del Terzo Livello.
+            Esplora le spiegazioni, le teorie e le filosofie che guidano le nostre scelte. Qui trovi la pura informazione concettuale prima di passare alla messa a terra numerica e strategica.
           </p>
         </div>
 
-        {/* GRIGLIA DEI 4 APPROFONDIMENTI CON COLLEGAMENTI PUNTUALI */}
+        {/* GRIGLIA DEI 4 APPROFONDIMENTI */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
           
           {/* 1. NETFREE */}
@@ -113,7 +113,7 @@ export default function SecondLevelHub() {
               <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200/60 flex items-center justify-center text-purple-800">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold font-serif text-stone-900">4. Libertà Legale</h3>
+              <h3 className="text-2xl font-bold font-serif text-stone-900">4. Libertà Legale (Autodeterminazione)</h3>
               <p className="text-sm text-stone-600 leading-relaxed font-light">
                 I principi di sovranità personale, il recupero dell'autorità originaria e la cornice etica per operare "nella luce" in piena armonia e trasparenza giuridica.
               </p>
