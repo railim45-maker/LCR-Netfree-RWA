@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
-import { Sparkles, Shield, Layers, Lock, CheckCircle2, Globe2, HeartHandshake, Compass, Scale, Gift, Leaf, Smile, Atom, ExternalLink } from "lucide-react";
+import { Sparkles, Shield, Lock, Gift, Compass, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -11,7 +10,7 @@ export default function Home() {
     e.preventDefault();
     if (accessCode === "LCR-ACCESSO-2026") {
       localStorage.setItem("lcr_user_unlocked", "true");
-      window.location.href = "/privato/dashboard.html"; // O la rotta riservata
+      window.location.href = "/privato/dashboard.html";
     } else {
       alert("Codice di accesso riservato non valido.");
     }
@@ -20,11 +19,11 @@ export default function Home() {
   return (
     <div className="min-h-screen relative text-foreground space-y-32 pb-40 overflow-hidden bg-background">
       
-      {/* SFONDO LUMINOSO DELL'ALBERO */}
+      {/* SFONDO LUMINOSO */}
       <div className="absolute inset-0 z-0 opacity-35 bg-cover bg-center bg-fixed mix-blend-luminosity filter brightness-125 pointer-events-none" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background z-0 pointer-events-none" />
 
-      {/* LIVELLO 1: LA VISIONE E L'ACCOGLIENZA */}
+      {/* LIVELLO 1: VISIONE E ACCOGLIENZA PUBBLICA (PERIMETRO CHIUSO) */}
       <section className="relative pt-48 pb-24 border-b border-primary/20 bg-gradient-to-b from-primary/10 via-transparent to-transparent z-10">
         <div className="container max-w-5xl mx-auto px-6 text-center space-y-8">
           
@@ -40,7 +39,7 @@ export default function Home() {
           </h1>
 
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-            Un luogo di ritrovo e di visione per chi desidera riappropriarsi della propria sovranità, superare le dinamiche limitanti e abbracciare l'<strong>economia del dono</strong>. Qui trovi coordinate e strumenti per camminare verso l'abbondanza consapevole, con un percorso formativo che si sblocca gradualmente in base alla maturazione e alla prontezza individuale.
+            Un luogo di ritrovo e di visione per chi desidera riappropriarsi della propria sovranità, superare le dinamiche limitanti e abbracciare l'<strong>economia del dono</strong>. Qui trovi coordinate e strumenti per camminare verso l'abbondanza consapevole, con un percorso formativo che si sblocca gradualmente in base alla maturazione individuale.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -49,7 +48,7 @@ export default function Home() {
               size="lg" 
               className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-9 py-6 text-base rounded-full shadow-lg font-semibold transition-all transform hover:scale-105"
             >
-              Accedi all'Area Riservata (Livello 2 & 3) <Lock className="w-4 h-4" />
+              Accedi all'Area Riservata (Secondo Livello) <Lock className="w-4 h-4" />
             </Button>
           </div>
           
@@ -63,7 +62,7 @@ export default function Home() {
             <div className="space-y-2 text-center">
               <Lock className="w-8 h-8 text-primary mx-auto" />
               <h3 className="text-xl font-bold font-serif-display">Area Riservata</h3>
-              <p className="text-xs text-muted-foreground">Inserisci le credenziali per accedere ai dati della rete (Livello 2) e ai riscontri numerici e legali (Livello 3).</p>
+              <p className="text-xs text-muted-foreground">Inserisci le credenziali per passare al Secondo Livello (dati della rete) e al Terzo Livello (numeri e architettura legale).</p>
             </div>
             <form onSubmit={handleUserUnlock} className="space-y-4">
               <input 
@@ -121,7 +120,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* APPROFONDIMENTO FORMATIVO E ACCADEMIA (COLLEGAMENTO ESTERNO COERENTE) */}
+      {/* SPIEGAZIONE INTERNA DEL PERCORSO FORMATIVO (SENZA LINK ESTERNI) */}
       <section className="container max-w-4xl mx-auto px-6 relative z-10">
         <div className="rounded-3xl border border-primary/40 bg-card/85 backdrop-blur-xl p-8 md:p-12 shadow-2xl space-y-6 text-center">
           <div className="w-12 h-12 rounded-2xl bg-primary/20 text-primary flex items-center justify-center mx-auto">
@@ -129,14 +128,16 @@ export default function Home() {
           </div>
           <h2 className="text-2xl md:text-3xl font-bold font-serif-display">Il Percorso di Consapevolezza e Origine</h2>
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Essere nati e viventi significa recuperare la propria autorità originaria e interiore. Per chi desidera approfondire i fondamenti formativi di questo cammino, consigliamo lo studio e la connessione con l'ecosistema di riferimento esterno:
+            Il recupero dell'autorità originaria e interiore avviene attraverso tappe di studio interne. Gli strumenti formativi avanzati e l'accesso ai moduli di crescita si sbloccano internamente per gradi all'interno dell'Area Riservata, man mano che l'individuo compie il proprio cammino.
           </p>
           <div className="pt-2">
-            <a href="https://www.facebook.com/SkipperLab.formazione/?locale=it_IT" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="gap-2 border-primary/40 hover:bg-primary/10 text-xs md:text-sm">
-                Approfondisci con l'Accademia di Formazione <ExternalLink className="w-4 h-4" />
-              </Button>
-            </a>
+            <Button 
+              onClick={() => setIsAccessModalOpen(true)}
+              variant="outline" 
+              className="gap-2 border-primary/40 hover:bg-primary/10 text-xs md:text-sm rounded-full px-8 py-5"
+            >
+              Accedi all'Area Riservata per Sbloccare i Moduli <ArrowRight className="w-4 h-4 ml-1" />
+            </Button>
           </div>
         </div>
       </section>
