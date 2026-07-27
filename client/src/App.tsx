@@ -2,6 +2,7 @@ import { Switch, Route } from "wouter";
 import Home from "@/pages/Home";
 import ClubDeal from "@/pages/ClubDeal";
 import RoleDetail from "@/pages/RoleDetail";
+import SecondLevelHub from "@/pages/SecondLevelHub";
 import EconomiaDonoPage from "@/pages/EconomiaDonoPage";
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
       <Route path="/" component={Home} />
       <Route path="/club-deal" component={ClubDeal} />
       <Route path="/ruolo/:id" component={RoleDetail} />
+      <Route path="/privato/secondo-livello" component={SecondLevelHub} />
       <Route path="/privato/economia-dono" component={EconomiaDonoPage} />
       <Route>
         <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-6 text-center space-y-4">
