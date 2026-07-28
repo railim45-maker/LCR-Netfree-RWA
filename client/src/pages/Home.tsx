@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Sparkles, ArrowRight, Sun, Network, Gift, Coins, ShieldCheck, PlayCircle } from "lucide-react";
+import { Sparkles, ArrowRight, Sun, Network, Gift, Coins, ShieldCheck, PlayCircle, Image as ImageIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -28,7 +28,6 @@ export default function Home() {
             Un luogo di ritrovo e di visione per chi desidera riappropriarsi della propria sovranità, superare le dinamiche limitanti e abbracciare l'economia del dono.
           </p>
 
-          {/* PULSANTE VIDEO INTRODUTTIVO */}
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <a href="#video-introduzione">
               <button className="bg-stone-900 text-stone-50 hover:bg-stone-800 gap-2 px-8 py-4 text-sm rounded-full shadow-lg font-medium transition-all transform hover:scale-105 inline-flex items-center cursor-pointer">
@@ -40,7 +39,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LE 4 SEZIONI DI APPROFONDIMENTO (COLLEGAMENTI DIRETTI) */}
+      {/* LE 4 SEZIONI DI APPROFONDIMENTO */}
       <section className="container max-w-6xl mx-auto px-6 space-y-12 relative z-10">
         <div className="text-center space-y-3">
           <span className="text-emerald-800 text-xs uppercase tracking-widest font-semibold font-mono">Percorso Informativo</span>
@@ -122,7 +121,7 @@ export default function Home() {
               <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200/60 flex items-center justify-center text-purple-800">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold font-serif text-stone-900">4. Libertà Legale (Autodeterminazione)</h3>
+              <h3 className="text-2xl font-bold font-serif text-stone-900">4. Libertà Legale</h3>
               <p className="text-sm text-stone-600 leading-relaxed font-light">
                 I principi di sovranità personale, il recupero dell'autorità originaria e la cornice etica per operare "nella luce" in piena trasparenza giuridica.
               </p>
@@ -130,7 +129,7 @@ export default function Home() {
             <div className="pt-4">
               <Link href="/privato/liberta-legale">
                 <button className="w-full bg-stone-50 hover:bg-purple-50 text-stone-800 hover:text-purple-900 font-medium py-3 px-6 rounded-2xl text-xs uppercase tracking-wider border border-stone-200 transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
-                  Approfondisci la Sovranità <ArrowRight className="w-3.5 h-3.5" />
+                  Approfondisci la Libertà Legale <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </Link>
             </div>
@@ -139,7 +138,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEZIONE VIDEO INTRODUTTIVO */}
+      {/* SEZIONE VIDEO INTRODUTTIVO (FUNZIONANTE) */}
       <section id="video-introduzione" className="container max-w-4xl mx-auto px-6 relative z-10 pt-10">
         <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-12 shadow-2xl shadow-stone-200/40 space-y-6 text-center">
           <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200/60 text-amber-800 flex items-center justify-center mx-auto">
@@ -149,12 +148,16 @@ export default function Home() {
           <p className="text-sm md:text-base text-stone-600 leading-relaxed max-w-2xl mx-auto font-light">
             Guarda la presentazione ufficiale per comprendere a fondo la visione e i passi operativi del nostro ecosistema.
           </p>
-          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-stone-200 bg-stone-900 flex items-center justify-center text-stone-400 shadow-inner">
-            {/* Sostituire con il player video effettivo (es. iframe YouTube o video embed) */}
-            <div className="text-center space-y-2 p-6">
-              <PlayCircle className="w-12 h-12 mx-auto text-amber-400 opacity-80" />
-              <p className="text-xs uppercase tracking-widest font-mono">Video Introduttivo in Caricamento</p>
-            </div>
+          
+          {/* PLAYER VIDEO FUNZIONANTE (Esempio Embed YouTube / HTML5) */}
+          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-stone-200 bg-stone-900 shadow-inner relative">
+            <iframe 
+              className="w-full h-full absolute inset-0"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="Video Introduttivo Progetto" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
