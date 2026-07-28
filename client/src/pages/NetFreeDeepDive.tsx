@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, Users, Network, Gift, ShieldCheck, Sun } from "lucide-react";
+import { ArrowRight, Sparkles, Users } from "lucide-react";
 
 export default function NetFreeDeepDive() {
   return (
@@ -40,10 +40,9 @@ export default function NetFreeDeepDive() {
           </p>
         </div>
 
-        {/* CORPO DELL'APPROFONDIMENTO (I PILASTRI E DETTAGLI) */}
+        {/* CORPO DELL'APPROFONDIMENTO */}
         <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-12 shadow-xl space-y-10">
           
-          {/* INTRODUZIONE AL CONTESTO */}
           <div className="space-y-3">
             <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
               Il progetto è concepito per rispondere alle sfide moderne, come l'inflazione e la dipendenza da un'unica fonte di reddito, offrendo un percorso verso la libertà finanziaria, temporale e personale attraverso la creazione di valore reale. Ecco come è strutturato e pensato l'ecosistema nei suoi pilastri fondamentali:
@@ -127,7 +126,6 @@ export default function NetFreeDeepDive() {
             Per comprendere la potenza geometrica e al tempo stesso sostenibile del modello, basta osservare come una struttura basata sulla cura di sole <strong>6 persone</strong> si espanda organicamente senza generare stress o logorio relazionale:
           </p>
 
-          {/* INFOGRAFICA HTML DELLA CRESCITA ESPONENZIALE */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
             <div className="p-6 rounded-2xl bg-white border border-emerald-100 shadow-sm text-center space-y-2">
               <span className="text-xs uppercase tracking-widest text-emerald-700 font-mono font-bold">Fase 1</span>
