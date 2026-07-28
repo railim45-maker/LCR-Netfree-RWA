@@ -1,166 +1,110 @@
 import { Link } from "wouter";
-import { Sparkles, ArrowRight, Sun, Network, Gift, Coins, ShieldCheck, PlayCircle } from "lucide-react";
+import { ArrowRight, Sparkles, Shield, Heart, Compass, TreePine } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="min-h-screen relative text-stone-800 space-y-24 pb-40 overflow-hidden bg-[#fcfbf9]">
       
-      {/* SFONDO LUMINOSO E GRADIENTI DI LUCE ARMONICA */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[600px] bg-gradient-to-r from-amber-100/50 via-emerald-100/40 to-sky-100/40 blur-[130px] rounded-full pointer-events-none z-0" />
-      <div className="absolute inset-0 z-0 opacity-30 bg-cover bg-center bg-fixed mix-blend-overlay filter brightness-110 pointer-events-none" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
+      {/* SFONDO LUMINOSO E GRADIENTI ARMONICI */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[700px] bg-gradient-to-b from-amber-100/30 via-emerald-50/20 to-transparent blur-[150px] rounded-full pointer-events-none z-0" />
 
-      {/* SEZIONE HERO: VISIONE E VIDEO INTRODUTTIVO */}
-      <section className="relative pt-36 pb-16 border-b border-stone-200/60 bg-gradient-to-b from-amber-50/40 via-transparent to-transparent z-10">
-        <div className="container max-w-5xl mx-auto px-6 text-center space-y-8">
-          
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-200/80 bg-amber-50/80 text-amber-900 text-xs uppercase tracking-[0.2em] font-semibold backdrop-blur-md shadow-sm">
-            <Sun className="w-4 h-4 text-amber-600" /> Spazio di Libertà e Condivisione
+      {/* HEADER DI NAVIGAZIONE */}
+      <header className="container max-w-5xl mx-auto px-6 pt-12 relative z-10">
+        <div className="flex items-center justify-between px-6 py-4 rounded-full bg-white/90 border border-stone-200/60 shadow-[0_2px_20px_rgba(0,0,0,0.02)] backdrop-blur-xl">
+          <div className="flex items-center gap-3">
+            <span className="w-7 h-7 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center text-xs border border-amber-200/60 font-serif">✦</span>
+            <span className="font-bold text-xs uppercase tracking-widest text-stone-600 font-serif">Il Giardino Luminoso • NetFree LCR</span>
           </div>
-          
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight font-serif leading-[1.1] text-stone-900">
-            Oltre la scarsità: una cassetta degli attrezzi<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-emerald-700 to-amber-700">
-              per una vita nuova in amore, rispetto e consapevolezza.
-            </span>
+          <nav className="flex items-center gap-6 text-xs font-medium">
+            <Link href="/net-free-deep-dive">
+              <span className="text-stone-600 hover:text-stone-900 cursor-pointer transition-colors font-serif">Esplora la Mappa</span>
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      {/* CONTENUTO PRINCIPALE (LA HOME ACCOGLIENTE) */}
+      <main className="container max-w-4xl mx-auto px-6 space-y-20 relative z-10">
+        
+        {/* INTRODUZIONE: LA STRADA CHE CONDUCE A CASA */}
+        <div className="text-center space-y-6 pt-6 max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-50/70 border border-amber-200/70 text-amber-900 text-xs font-medium tracking-widest shadow-sm font-serif">
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" /> La Via della Libertà e della Cura
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold font-serif text-stone-900 tracking-tight leading-[1.15]">
+            La Strada che Conduce a Casa
           </h1>
-
-          <p className="max-w-3xl mx-auto text-lg text-stone-600 leading-relaxed font-light">
-            Un luogo di ritrovo e di visione per chi desidera riappropriarsi della propria sovranità, superare le dinamiche limitanti e abbracciare l'economia del dono.
+          <p className="text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif">
+            Hai presente quella sensazione di camminare a tentoni, con la costante paura di sbagliare strada, mentre il peso delle bollette, del lavoro e delle preoccupazioni sembra schiacciarti ogni giorno di più? Ti hanno fatto credere che la vita sia una lotta solitaria e che non ci sia via d'uscita. <br /><br />
+            <strong className="text-stone-900 font-medium">Non è così.</strong> Quella che hai trovato adesso non è una semplice sosta: è la strada. È la via d'uscita da un sistema che ti vuole esausto, e conduce esattamente là dove meriti di arrivare.
           </p>
+        </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <a href="#video-introduzione">
-              <button className="bg-stone-900 text-stone-50 hover:bg-stone-800 gap-2 px-8 py-4 text-sm rounded-full shadow-lg font-medium transition-all transform hover:scale-105 inline-flex items-center cursor-pointer">
-                <PlayCircle className="w-5 h-5 text-amber-400" /> Guarda il Video di Introduzione del Progetto
+        {/* LE TAPPE DEL PERCORSO (ACCORDATE ED ESPLICATIVE) */}
+        <div className="space-y-8">
+          
+          {/* Tappa 1 */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
+            <div className="flex items-center gap-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">I</span>
+              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Primo Passo: Mettere i Piedi a Terra</h3>
+            </div>
+            <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
+              Il primo blocco, quando si è stanchi, è la paura di non potersi permettere un cambiamento o di dover rischiare soldi che servono per la spesa. La strada non ti chiede alcun capitale iniziale. Grazie a un meccanismo basato sulla tokenizzazione e sul sostegno di chi ha creduto prima di te nel progetto — con la generosità di chi ha fatto un passo indietro sulle prime semestralità — il tuo ingresso nel sistema è protetto. Non parti con un esborso economico: parti in equilibrio.
+            </p>
+          </div>
+
+          {/* Tappa 2 */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
+            <div className="flex items-center gap-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">II</span>
+              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Secondo Passo: Camminare Insieme (Il Net-Free)</h3>
+            </div>
+            <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
+              Una volta alleggerito il passo dalla pressione finanziaria, impariamo a muoverci in modo nuovo. Dimentica il mondo là fuori fatto di competizione e solitudine. Qui ti affidiamo un seme pulito. La regola è semplice e profondamente umana: ti prendi cura del tuo spazio e aiuti sei persone a fare lo stesso. È una catena di cura e di abbondanza condivisa, dove la forza di uno sostiene la crescita di tutti, slegando finalmente il guadagno dal tempo che vendi ogni giorno.
+            </p>
+          </div>
+
+          {/* Tappa 3 */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
+            <div className="flex items-center gap-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">III</span>
+              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Terzo Passo: Ritrovare il Tempio Biologico</h3>
+            </div>
+            <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
+              Quando l'economia smette di essere un assillo costante, l'energia torna a concentrarsi dove serve davvero: nel tuo corpo. La strada ti guida a riscoprire i gesti semplici e veri che restituiscono vitalità alla materia: un'acqua pura che disseta davvero, la terra che si rigenera attraverso i microrganismi e la sovranità energetica che alleggerisce la tua casa. Quando il corpo si ripulisce e ritrova il suo equilibrio naturale, la nebbia svanisce.
+            </p>
+          </div>
+
+          {/* Tappa 4 */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
+            <div className="flex items-center gap-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">IV</span>
+              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Quarto Passo: La Piena Sovranità (L'Accademia)</h3>
+            </div>
+            <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
+              Quando avrai ritrovato le tue forze, quando la tua vita avrà ripreso respiro e stabilità, allora sarai pronto per la tappa più profonda del risveglio: l'Accademia Uomo Naturale. È qui che impari a comprendere la finzione giuridica, a sciogliere le vecchie catene e a riprendere in mano la firma e la guida autentica della tua esistenza, con la consapevolezza di chi sa chi è veramente.
+            </p>
+          </div>
+
+        </div>
+
+        {/* CONCLUSIONE E CALL TO ACTION */}
+        <div className="p-12 rounded-[2.5rem] border border-amber-200/80 bg-gradient-to-br from-amber-50/70 via-white to-emerald-50/40 space-y-6 text-center shadow-xl backdrop-blur-md">
+          <h3 className="text-2xl font-bold font-serif text-stone-900">Sei pronto a fare il primo passo?</h3>
+          <p className="text-base text-stone-600 max-w-xl mx-auto font-light leading-relaxed font-serif italic">
+            "Non sei più solo a brancolare nel buio. C'è una mappa, c'è un metodo d'amore e ci sono persone pronte a camminare al tuo fianco."
+          </p>
+          <div className="pt-3">
+            <Link href="/net-free-deep-dive">
+              <button className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-9 py-4 rounded-full text-xs md:text-sm inline-flex items-center gap-2.5 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif">
+                Entra nel Profondo del Giardino <ArrowRight className="w-4 h-4" />
               </button>
-            </a>
-          </div>
-          
-        </div>
-      </section>
-
-      {/* LE 4 SEZIONI DI APPROFONDIMENTO */}
-      <section className="container max-w-6xl mx-auto px-6 space-y-12 relative z-10">
-        <div className="text-center space-y-3">
-          <span className="text-emerald-800 text-xs uppercase tracking-widest font-semibold font-mono">Percorso Informativo</span>
-          <h2 className="text-3xl md:text-5xl font-bold font-serif text-stone-900">Le 4 Aree di Approfondimento</h2>
-          <p className="text-stone-600 text-sm max-w-xl mx-auto font-light">
-            Esplora le basi teoriche, filosofiche e pratiche che costituiscono il nostro ecosistema.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* 1. NETFREE */}
-          <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-md p-8 space-y-4 shadow-xl shadow-stone-200/40 flex flex-col justify-between relative overflow-hidden group hover:border-emerald-300 transition-all">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-teal-400" />
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200/60 flex items-center justify-center text-emerald-800">
-                <Network className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold font-serif text-stone-900">1. Netfree</h3>
-              <p className="text-sm text-stone-600 leading-relaxed font-light">
-                La scissione del concetto di network rimuovendo la logica estrattiva del "work" per valorizzare l'essenza pura delle relazioni umane e della libertà multidimensionale.
-              </p>
-            </div>
-            <div className="pt-4">
-              <Link href="/privato/netfree">
-                <button className="w-full bg-stone-50 hover:bg-emerald-50 text-stone-800 hover:text-emerald-900 font-medium py-3 px-6 rounded-2xl text-xs uppercase tracking-wider border border-stone-200 transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
-                  Approfondisci Netfree <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          {/* 2. ECONOMIA DEL DONO */}
-          <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-md p-8 space-y-4 shadow-xl shadow-stone-200/40 flex flex-col justify-between relative overflow-hidden group hover:border-amber-300 transition-all">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-orange-400" />
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200/60 flex items-center justify-center text-amber-800">
-                <Gift className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold font-serif text-stone-900">2. Economia del Dono</h3>
-              <p className="text-sm text-stone-600 leading-relaxed font-light">
-                Il modello basato sulla condivisione del surplus. La metafora del seme e della Chiave Railim per moltiplicare il valore e alimentare una prosperità condivisa.
-              </p>
-            </div>
-            <div className="pt-4">
-              <Link href="/privato/economia-dono">
-                <button className="w-full bg-stone-50 hover:bg-amber-50 text-stone-800 hover:text-amber-900 font-medium py-3 px-6 rounded-2xl text-xs uppercase tracking-wider border border-stone-200 transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
-                  Approfondisci il Dono <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          {/* 3. TOKENIZZAZIONE RWA */}
-          <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-md p-8 space-y-4 shadow-xl shadow-stone-200/40 flex flex-col justify-between relative overflow-hidden group hover:border-sky-300 transition-all">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-400 to-indigo-400" />
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-200/60 flex items-center justify-center text-sky-800">
-                <Coins className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold font-serif text-stone-900">3. Tokenizzazione RWA</h3>
-              <p className="text-sm text-stone-600 leading-relaxed font-light">
-                La spiegazione teorica di blockchain, NFT e di come la tokenizzazione di Real World Asset liberi il valore inespresso della materia reale.
-              </p>
-            </div>
-            <div className="pt-4">
-              <Link href="/privato/tokenizzazione-rwa">
-                <button className="w-full bg-stone-50 hover:bg-sky-50 text-stone-800 hover:text-sky-900 font-medium py-3 px-6 rounded-2xl text-xs uppercase tracking-wider border border-stone-200 transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
-                  Approfondisci RWA <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          {/* 4. LIBERTÀ LEGALE */}
-          <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-md p-8 space-y-4 shadow-xl shadow-stone-200/40 flex flex-col justify-between relative overflow-hidden group hover:border-purple-300 transition-all">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-pink-400" />
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200/60 flex items-center justify-center text-purple-800">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold font-serif text-stone-900">4. Libertà Legale</h3>
-              <p className="text-sm text-stone-600 leading-relaxed font-light">
-                I principi di sovranità personale, il recupero dell'autorità originaria e la cornice etica per operare "nella luce" in piena trasparenza giuridica.
-              </p>
-            </div>
-            <div className="pt-4">
-              <Link href="/privato/liberta-legale">
-                <button className="w-full bg-stone-50 hover:bg-purple-50 text-stone-800 hover:text-purple-900 font-medium py-3 px-6 rounded-2xl text-xs uppercase tracking-wider border border-stone-200 transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
-                  Approfondisci la Libertà Legale <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* SEZIONE VIDEO INTRODUTTIVO UFFICIALE (LINK YOUTUBE INTEGRATO) */}
-      <section id="video-introduzione" className="container max-w-4xl mx-auto px-6 relative z-10 pt-10">
-        <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-12 shadow-2xl shadow-stone-200/40 space-y-6 text-center">
-          <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200/60 text-amber-800 flex items-center justify-center mx-auto">
-            <PlayCircle className="w-6 h-6" />
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold font-serif text-stone-900">Video di Introduzione al Progetto</h2>
-          <p className="text-sm md:text-base text-stone-600 leading-relaxed max-w-2xl mx-auto font-light">
-            Guarda la presentazione ufficiale (NetFree LCR) per comprendere a fondo la visione e i passi operativi del nostro ecosistema.
-          </p>
-          
-          {/* PLAYER YOUTUBE UFFICIALE */}
-          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-stone-200 bg-stone-900 shadow-inner relative">
-            <iframe 
-              className="w-full h-full absolute inset-0"
-              src="https://www.youtube.com/embed/7RvWyWE3zxo" 
-              title="NetFree LCR - Video Introduttivo" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            />
+            </Link>
           </div>
         </div>
-      </section>
+
+      </main>
 
     </div>
   );
