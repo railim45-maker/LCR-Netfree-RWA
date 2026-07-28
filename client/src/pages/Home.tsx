@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Sparkles, ArrowRight, Sun, Network, Gift, Coins, ShieldCheck, PlayCircle, Image as ImageIcon } from "lucide-react";
+import { Sparkles, ArrowRight, Sun, Network, Gift, Coins, ShieldCheck, PlayCircle } from "lucide-react";
 
 export default function Home() {
   return (
@@ -138,7 +138,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEZIONE VIDEO INTRODUTTIVO (FUNZIONANTE) */}
+      {/* SEZIONE VIDEO INTRODUTTIVO (SPAZIO DEDICATO) */}
       <section id="video-introduzione" className="container max-w-4xl mx-auto px-6 relative z-10 pt-10">
         <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-12 shadow-2xl shadow-stone-200/40 space-y-6 text-center">
           <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200/60 text-amber-800 flex items-center justify-center mx-auto">
@@ -146,18 +146,15 @@ export default function Home() {
           </div>
           <h2 className="text-2xl md:text-3xl font-bold font-serif text-stone-900">Video di Introduzione al Progetto</h2>
           <p className="text-sm md:text-base text-stone-600 leading-relaxed max-w-2xl mx-auto font-light">
-            Guarda la presentazione ufficiale per comprendere a fondo la visione e i passi operativi del nostro ecosistema.
+            Guarda la presentazione ufficiale per comprendere a fondo la visione e i passi operativi del nostro ecosistema LCR-NetFree.
           </p>
           
-          {/* PLAYER VIDEO FUNZIONANTE (Esempio Embed YouTube / HTML5) */}
-          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-stone-200 bg-stone-900 shadow-inner relative">
-            <iframe 
-              className="w-full h-full absolute inset-0"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-              title="Video Introduttivo Progetto" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            />
+          {/* Contenitore Video Ufficiale (Sostituisci l'src dell'iframe con il link video reale quando disponibile) */}
+          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-stone-200 bg-stone-900 shadow-inner flex items-center justify-center text-stone-400">
+            <div className="text-center space-y-2 p-6">
+              <PlayCircle className="w-12 h-12 mx-auto text-amber-400 opacity-90 animate-pulse" />
+              <p className="text-xs uppercase tracking-widest font-mono text-stone-300">Inserire qui il link o l'embed del video ufficiale LCR-NetFree</p>
+            </div>
           </div>
         </div>
       </section>
