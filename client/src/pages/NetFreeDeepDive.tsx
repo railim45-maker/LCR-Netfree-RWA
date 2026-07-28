@@ -5,13 +5,13 @@ import { useState } from "react";
 export default function NetFreeDeepDive() {
   const [activeFocusLevel, setActiveFocusLevel] = useState(1);
   const [lensLevels, setLensLevels] = useState([
-    { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, displayDots: 6, label: "L1 - Radice", peopleCount: "6 Persone", desc: "Cerchio ristretto iniziale di cura diretta[cite: 1]" },
-    { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, displayDots: 36, label: "L2 - Sacrale", peopleCount: "36 Nodi", desc: "Prima propagazione organica nei bio-distretti" },
-    { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, displayDots: 108, label: "L3 - Plesso", peopleCount: "216 Nodi", desc: "Espansione armonica della rete" },
-    { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, displayDots: 180, label: "L4 - Cuore", peopleCount: "1.296 Nodi", desc: "Integrazione comunitaria avanzata" },
-    { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, displayDots: 240, label: "L5 - Gola", peopleCount: "7.776 Nodi", desc: "Flussi di distretto attivi" },
-    { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, displayDots: 300, label: "L6 - Terzo Occhio", peopleCount: "46.656 Nodi", desc: "Coerenza sintropica diffusa" },
-    { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, displayDots: 360, label: "L7 - Corona Alpha", peopleCount: "279.936 Nodi", desc: "Foresta frattale completa" }
+    { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, displayDots: 6, label: "Livello 1 (Radice)", countNum: "1", peopleCount: "1 Persona (Tu)", desc: "Il Seme iniziale / Origine del flusso" },
+    { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, displayDots: 36, label: "Livello 2 (Propagazione)", countNum: "6", peopleCount: "6 Persone", desc: "Il cerchio ristretto di cura diretta" },
+    { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, displayDots: 108, label: "Livello 3 (Sviluppo)", countNum: "36", peopleCount: "36 Nodi", desc: "Prima propagazione organica nei bio-distretti" },
+    { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, displayDots: 180, label: "Livello 4 (Espansione)", countNum: "216", peopleCount: "216 Nodi", desc: "Rete interconnessa di distretto" },
+    { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, displayDots: 240, label: "Livello 5 (Foresta)", countNum: "1.296", peopleCount: "1.296 Nodi", desc: "Comunità estesa e autonoma" },
+    { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, displayDots: 300, label: "Livello 6 (Sintropia)", countNum: "7.776", peopleCount: "7.776 Nodi", desc: "Coerenza diffusa su vasta scala" },
+    { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, displayDots: 360, label: "Livello 7 (Corona)", countNum: "46.656+", peopleCount: "46.656+ Nodi", desc: "Ecosistema frattale completo" }
   ]);
 
   const chakraColors = ['#E53E3E', '#DD6B20', '#D69E2E', '#38A169', '#3182CE', '#805AD5', '#FFFFFF'];
@@ -156,7 +156,7 @@ export default function NetFreeDeepDive() {
         </div>
 
         {/* ========================================================================= */}
-        {/* DASHBOARD INTERATTIVA: QUANTUM LENS MATRIX + DIAGRAMMA AD ALBERO FRATTALE */}
+        {/* DASHBOARD INTERATTIVA CON CONTEGGI PUNTUALI DI FIANCO */}
         {/* ========================================================================= */}
         <div className="rounded-3xl border border-slate-800 bg-slate-950 p-6 md:p-8 text-slate-100 shadow-2xl space-y-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -164,13 +164,13 @@ export default function NetFreeDeepDive() {
           <div className="text-center space-y-2 max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-purple-400 text-[10px] font-mono tracking-widest">
               <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-              LCR-NETFREE QUANTUM LENS PROTOCOLO v6.0 + FRACTAL TREE MAPPING
+              LCR-NETFREE HIERARCHICAL TREE PROTOCOL v6.0
             </div>
             <h3 className="text-xl md:text-2xl font-black text-white font-mono tracking-tight">
-              REATTORE RADIALE E SCHEMA AD ALBERO FRATTALE PARALLELO
+              REATTORE CONCENTRICO E SCHEMA AD ALBERO A PIANI CON CONTEGGI
             </h3>
             <p className="text-slate-400 text-xs font-light">
-              Il reattore concentrico e il diagramma ad albero ramificato (stile network marketing organico) si popolano all'unisono, mostrando le 6 direttrici di sviluppo e i nodi attivi.
+              Monitora i conteggi numerici esatti di fianco a ciascun livello mentre il reattore radiale e l'albero lineare si popolano in tempo reale.
             </p>
           </div>
 
@@ -196,11 +196,11 @@ export default function NetFreeDeepDive() {
             </button>
           </div>
 
-          {/* GRID PRINCIPALE: SINISTRA REATTORE CERCHI, DESTRA DIAGRAMMA AD ALBERO FRATTALE */}
+          {/* GRID PRINCIPALE: SINISTRA REATTORE CERCHI, DESTRA ALBERO LINEARE A PIANI CON CONTEGGI */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-2">
             
             {/* 1. REATTORE VISIVO SVG (SINISTRA - 6 COLONNE) */}
-            <div className="lg:col-span-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center relative shadow-inner overflow-hidden min-h-[460px]">
+            <div className="lg:col-span-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center relative shadow-inner overflow-hidden min-h-[480px]">
               <div className="absolute top-3 left-4 text-[9px] font-mono text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Reattore Concentrico
               </div>
@@ -253,79 +253,48 @@ export default function NetFreeDeepDive() {
               </svg>
             </div>
 
-            {/* 2. DIAGRAMMA AD ALBERO FRATTALE SVG (DESTRA - 6 COLONNE) */}
-            <div className="lg:col-span-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center relative shadow-inner overflow-hidden min-h-[460px]">
-              <div className="absolute top-3 left-4 text-[9px] font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-1.5">
-                <TreePine className="w-3.5 h-3.5 text-emerald-400" /> Schema ad Albero (6 Rami)
+            {/* 2. SCHEMA AD ALBERO LINEARE A PIANI CON CONTEGGI (DESTRA - 6 COLONNE) */}
+            <div className="lg:col-span-6 bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 backdrop-blur-md flex flex-col justify-between space-y-3">
+              <div className="flex justify-between items-center border-b border-slate-800 pb-2">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono flex items-center gap-1.5">
+                  <TreePine className="w-3.5 h-3.5 text-emerald-400" /> Schema ad Albero con Conteggi
+                </span>
+                <span className="text-[9px] font-mono bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">
+                  PIANI GERARCHICI
+                </span>
               </div>
-              <div className="absolute top-3 right-4 text-[9px] font-mono text-slate-500 tracking-widest">
-                MATRICE 6-36-216
-              </div>
 
-              {/* Ramo SVG Diagram: Da un centro radiale partono 6 linee a raggiera che ramificano */}
-              <svg width="400" height="400" className="block overflow-visible mt-6">
-                {/* Nodo Centrale (Radice / Tu) */}
-                <circle cx="200" cy="200" r="10" fill="#ffffff" style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.9))' }} />
-                <text x="200" y="225" textAnchor="middle" fill="#94a3b8" fontSize="9" fontFamily="monospace">Seme (Tu)</text>
-
-                {/* 6 Raming / Linee principali del Livello 1 */}
-                {Array.from({ length: 6 }).map((_, branchIdx) => {
-                  const angle = (branchIdx * 2 * Math.PI) / 6 - Math.PI / 2;
-                  const l1Distance = 85;
-                  const x1 = 200 + l1Distance * Math.cos(angle);
-                  const y1 = 200 + l1Distance * Math.sin(angle);
-                  const branchColor = chakraColors[branchIdx];
-
-                  const isL1Active = lensLevels[0].currentSteps > 0 || activeFocusLevel > 1;
+              <div className="space-y-2 font-mono text-xs max-h-[420px] overflow-y-auto pr-1">
+                {lensLevels.map((lvl) => {
+                  const isFocused = lvl.level === activeFocusLevel;
+                  const isPast = lvl.level < activeFocusLevel;
+                  const isCompleted = lvl.currentSteps === lvl.maxSteps;
+                  const borderColor = chakraColors[lvl.level - 1];
 
                   return (
-                    <g key={branchIdx}>
-                      {/* Linea radice -> 6 nodi L1 */}
-                      <line 
-                        x1="200" y1="200" x2={x1} y2={y1} 
-                        stroke={isL1Active ? branchColor : '#1e293b'} 
-                        strokeWidth={isL1Active ? "2" : "1"} 
-                        strokeDasharray={isL1Active ? "none" : "3,3"}
-                        style={isL1Active ? { filter: `drop-shadow(0 0 4px ${branchColor})` } : undefined}
-                      />
-                      {/* Nodo L1 */}
-                      <circle 
-                        cx={x1} cy={y1} r={isL1Active ? "6" : "4"} 
-                        fill={isL1Active ? branchColor : '#090d16'} 
-                        stroke={branchColor} strokeWidth="1.5"
-                      />
-
-                      {/* Sotto-ramificazioni L2 (36 nodi totali, 6 per ciascun ramo L1) */}
-                      {Array.from({ length: 6 }).map((subIdx) => {
-                        const subAngle = angle + ((subIdx - 2.5) * 0.22);
-                        const l2Distance = 150;
-                        const x2 = 200 + l2Distance * Math.cos(subAngle);
-                        const y2 = 200 + l2Distance * Math.sin(subAngle);
-
-                        const isL2Active = (lensLevels[1].currentSteps > subIdx && lensLevels[0].currentSteps > 0) || activeFocusLevel > 2;
-
-                        return (
-                          <g key={subIdx}>
-                            <line 
-                              x1={x1} y1={y1} x2={x2} y2={y2} 
-                              stroke={isL2Active ? branchColor : '#0f172a'} 
-                              strokeWidth={isL2Active ? "1.2" : "0.5"} 
-                            />
-                            <circle 
-                              cx={x2} cy={y2} r={isL2Active ? "3.5" : "2"} 
-                              fill={isL2Active ? branchColor : '#090d16'} 
-                              stroke={branchColor} strokeWidth="1"
-                            />
-                          </g>
-                        );
-                      })}
-                    </g>
+                    <div 
+                      key={lvl.level}
+                      className={`p-3 bg-slate-950/75 rounded-xl border border-slate-800/80 space-y-1.5 transition-all border-l-4 ${isPast || isFocused ? 'opacity-100' : 'opacity-40'}`}
+                      style={{ borderLeftColor: borderColor }}
+                    >
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center gap-2">
+                          <span className="px-2 py-0.5 bg-slate-900 text-purple-300 font-bold rounded text-[11px] border border-purple-500/20">
+                            [{lvl.countNum}]
+                          </span>
+                          <span className={`font-bold ${isFocused ? 'text-white' : 'text-slate-300'} text-xs`}>
+                            {lvl.label} ➔ <span className="text-emerald-400">{lvl.peopleCount}</span>
+                          </span>
+                        </div>
+                        <span className={`text-[10px] px-2 py-0.5 rounded ${isCompleted ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/30' : 'bg-slate-900 text-slate-400'}`}>
+                          {lvl.currentSteps} / {lvl.maxSteps} passi
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-slate-400 font-light pl-7">{lvl.desc}</p>
+                    </div>
                   );
                 })}
-              </svg>
-              <p className="text-[10px] text-slate-400 text-center font-light mt-2">
-                Struttura ad albero frattale: 1 radice → 6 rami diretti → 36 nodi di propagazione.
-              </p>
+              </div>
             </div>
 
           </div>
