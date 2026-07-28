@@ -88,7 +88,7 @@ export default function NetFreeDeepDive() {
           </p>
         </div>
 
-        {/* CORPO DELL'APPROFONDIMENTO: PILASTRI ORIGINARI CON INFOGRAFICHE VISIVE */}
+        {/* CORPO DELL'APPROFONDIMENTO: PILASTRI CON INFOGRAFICHE VISIVE E IMMAGINI */}
         <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-12 shadow-xl space-y-12">
           
           {/* 1. LA STRUTTURA ORGANICA */}
@@ -100,28 +100,50 @@ export default function NetFreeDeepDive() {
             <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
               Il funzionamento di NetFree è descritto attraverso la metafora del seme, che rappresenta l'inizio di ogni trasformazione[cite: 1]:
             </p>
-            
-            {/* Infografica Visiva - Ciclo del Seme */}
+
+            {/* Infografica Visiva a Step Orizzontali */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-2">
-                <span className="text-emerald-700 font-mono text-xs font-bold">FASE A</span>
-                <h4 className="font-bold text-stone-900 text-sm">Chiave Railim</h4>
-                <p className="text-xs text-stone-600 font-light">Ogni partecipante riceve in dono un seme simbolico iniziale[cite: 1].</p>
+              <div className="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/60 shadow-sm space-y-2 relative overflow-hidden group hover:border-emerald-400 transition-all">
+                <div className="absolute -right-4 -bottom-4 text-emerald-100 text-6xl font-black select-none pointer-events-none">01</div>
+                <span className="text-emerald-700 font-mono text-xs font-bold uppercase tracking-wider">Inizio</span>
+                <h4 className="font-bold text-stone-900 text-sm font-serif">Chiave Railim</h4>
+                <p className="text-xs text-stone-600 font-light relative z-10">Ogni partecipante riceve in dono un seme simbolico iniziale[cite: 1].</p>
               </div>
-              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-2">
-                <span className="text-emerald-700 font-mono text-xs font-bold">FASE B</span>
-                <h4 className="font-bold text-stone-900 text-sm">Coltivazione</h4>
-                <p className="text-xs text-stone-600 font-light">Responsabilità di far crescere il valore ricevuto e accettare supporto[cite: 1].</p>
+
+              <div className="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/60 shadow-sm space-y-2 relative overflow-hidden group hover:border-emerald-400 transition-all">
+                <div className="absolute -right-4 -bottom-4 text-emerald-100 text-6xl font-black select-none pointer-events-none">02</div>
+                <span className="text-emerald-700 font-mono text-xs font-bold uppercase tracking-wider">Cura</span>
+                <h4 className="font-bold text-stone-900 text-sm font-serif">Coltivazione</h4>
+                <p className="text-xs text-stone-600 font-light relative z-10">Responsabilità di far crescere il valore ricevuto e accettare supporto[cite: 1].</p>
               </div>
-              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-2">
-                <span className="text-emerald-700 font-mono text-xs font-bold">FASE C</span>
-                <h4 className="font-bold text-stone-900 text-sm">Condivisione (6)</h4>
-                <p className="text-xs text-stone-600 font-light">Condivisione con un cerchio di almeno sei persone per una crescita organica[cite: 1].</p>
+
+              <div className="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/60 shadow-sm space-y-2 relative overflow-hidden group hover:border-emerald-400 transition-all">
+                <div className="absolute -right-4 -bottom-4 text-emerald-100 text-6xl font-black select-none pointer-events-none">03</div>
+                <span className="text-emerald-700 font-mono text-xs font-bold uppercase tracking-wider">Rete</span>
+                <h4 className="font-bold text-stone-900 text-sm font-serif">Condivisione (6)</h4>
+                <p className="text-xs text-stone-600 font-light relative z-10">Condivisione con un cerchio di almeno sei persone per una crescita organica[cite: 1].</p>
               </div>
-              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-2">
-                <span className="text-emerald-700 font-mono text-xs font-bold">FASE D</span>
-                <h4 className="font-bold text-stone-900 text-sm">I Frutti</h4>
-                <p className="text-xs text-stone-600 font-light">Generazione di nuovi semi e prosperità individuale[cite: 1].</p>
+
+              <div className="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/60 shadow-sm space-y-2 relative overflow-hidden group hover:border-emerald-400 transition-all">
+                <div className="absolute -right-4 -bottom-4 text-emerald-100 text-6xl font-black select-none pointer-events-none">04</div>
+                <span className="text-emerald-700 font-mono text-xs font-bold uppercase tracking-wider">Maturità</span>
+                <h4 className="font-bold text-stone-900 text-sm font-serif">I Frutti</h4>
+                <p className="text-xs text-stone-600 font-light relative z-10">Generazione di nuovi semi e prosperità individuale[cite: 1].</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Banner Immagine di Supporto 1 */}
+          <div className="rounded-2xl overflow-hidden shadow-md max-h-[220px] relative">
+            <img 
+              src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200&auto=format&fit=crop" 
+              alt="Crescita e Natura" 
+              className="w-full h-full object-cover filter brightness-90"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-stone-900/70 via-stone-900/30 to-transparent flex items-center p-8">
+              <div className="text-white space-y-1 max-w-lg">
+                <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">Armonia Organica</span>
+                <h4 className="text-lg font-bold font-serif">Dalla terra alla fioritura della comunità</h4>
               </div>
             </div>
           </div>
@@ -136,21 +158,17 @@ export default function NetFreeDeepDive() {
               L'intero progetto si fonda sulla condivisione del surplus per creare abbondanza collettiva[cite: 1]:
             </p>
 
-            {/* Infografica Visiva - Economia del Dono */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-              <div className="p-5 rounded-2xl bg-amber-50/40 border border-amber-100 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">🤝</div>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-stone-900 text-sm">Collaborazione vs Competizione</h4>
-                  <p className="text-xs text-stone-600 font-light">Costruire valore insieme riducendo i rischi e massimizzando i benefici per tutti[cite: 1].</p>
-                </div>
+              <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/70 space-y-2 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center text-lg font-bold">🤝</div>
+                <h4 className="font-bold text-stone-900 text-base font-serif">Collaborazione vs Competizione</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">Costruire valore insieme riducendo i rischi e massimizzando i benefici per tutti i partecipanti[cite: 1].</p>
               </div>
-              <div className="p-5 rounded-2xl bg-sky-50/40 border border-sky-100 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center shrink-0">🪙</div>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-stone-900 text-sm">Generazione di Liquidità</h4>
-                  <p className="text-xs text-stone-600 font-light">Tokenizzazione di asset inespressi per liberare risorse a supporto del dono[cite: 1].</p>
-                </div>
+
+              <div className="p-6 rounded-2xl bg-sky-50/50 border border-sky-200/70 space-y-2 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-sky-100 text-sky-900 flex items-center justify-center text-lg font-bold">💎</div>
+                <h4 className="font-bold text-stone-900 text-base font-serif">Generazione di Liquidità</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">Tokenizzazione di asset inespressi per liberare risorse a supporto dell'economia del dono[cite: 1].</p>
               </div>
             </div>
           </div>
@@ -165,21 +183,17 @@ export default function NetFreeDeepDive() {
               Criteri etici rigorosi per guidare ogni interazione all'interno dell'ecosistema[cite: 1]:
             </p>
 
-            {/* Infografica Visiva - Operare nella Luce */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-              <div className="p-5 rounded-2xl bg-purple-50/40 border border-purple-100 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center shrink-0">✨</div>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-stone-900 text-sm">Etica e Trasparenza</h4>
-                  <p className="text-xs text-stone-600 font-light">Correttezza, relazioni di fiducia e benefici sostenibili nel lungo periodo[cite: 1].</p>
-                </div>
+              <div className="p-6 rounded-2xl bg-purple-50/50 border border-purple-200/70 space-y-2 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-900 flex items-center justify-center text-lg font-bold">✨</div>
+                <h4 className="font-bold text-stone-900 text-base font-serif">Etica e Trasparenza</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">Correttezza, relazioni di fiducia e benefici sostenibili nel lungo periodo[cite: 1].</p>
               </div>
-              <div className="p-5 rounded-2xl bg-emerald-50/40 border border-emerald-100 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">🌱</div>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-stone-900 text-sm">Utilità Reale</h4>
-                  <p className="text-xs text-stone-600 font-light">Miglioramento concreto della qualità della vita e dell'autonomia decisionale[cite: 1].</p>
-                </div>
+
+              <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-200/70 space-y-2 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center text-lg font-bold">🌿</div>
+                <h4 className="font-bold text-stone-900 text-base font-serif">Utilità Reale</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">Miglioramento concreto della qualità della vita e dell'autonomia decisionale[cite: 1].</p>
               </div>
             </div>
           </div>
@@ -195,21 +209,21 @@ export default function NetFreeDeepDive() {
             </p>
 
             {/* Infografica Visiva - Tazzina all'Oceano */}
-            <div className="p-6 rounded-2xl bg-gradient-to-r from-sky-50 via-emerald-50 to-amber-50 border border-stone-200 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-              <div className="space-y-1 max-w-md">
-                <span className="text-xs font-mono text-emerald-800 font-bold uppercase tracking-wider">Metafora Formativa</span>
-                <h4 className="text-lg font-bold font-serif text-stone-900">La Capienza Interiore</h4>
-                <p className="text-xs text-stone-600 font-light">Prima della crescita economica serve la crescita personale per gestire grandi flussi di risorse senza subire contraccolpi[cite: 1].</p>
+            <div className="p-8 rounded-2xl bg-gradient-to-r from-sky-50 via-emerald-50 to-amber-50 border border-stone-200 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left shadow-sm">
+              <div className="space-y-2 max-w-md">
+                <span className="text-xs font-mono text-emerald-800 font-bold uppercase tracking-wider bg-white/80 px-3 py-1 rounded-full border border-emerald-200 inline-block">Metafora Formativa</span>
+                <h4 className="text-xl font-bold font-serif text-stone-900">La Capienza Interiore</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">Prima della crescita economica serve la crescita personale per gestire grandi flussi di risorse senza subire contraccolpi[cite: 1].</p>
               </div>
-              <div className="flex items-center gap-3 shrink-0">
-                <div className="px-4 py-3 bg-white rounded-xl shadow-sm border border-stone-200 text-center">
-                  <span className="block text-xl font-bold text-stone-900">☕</span>
-                  <span className="text-[10px] text-stone-500 font-mono">Tazzina</span>
+              <div className="flex items-center gap-4 shrink-0 bg-white/80 p-4 rounded-2xl border border-stone-200 shadow-sm">
+                <div className="px-4 py-3 bg-stone-50 rounded-xl border border-stone-200 text-center">
+                  <span className="block text-2xl">☕</span>
+                  <span className="text-[10px] text-stone-600 font-mono font-bold">Tazzina</span>
                 </div>
-                <span className="text-stone-400 font-bold">➔</span>
+                <span className="text-emerald-600 font-bold text-lg animate-pulse">➔</span>
                 <div className="px-4 py-3 bg-stone-900 text-white rounded-xl shadow-md text-center">
-                  <span className="block text-xl">🌊</span>
-                  <span className="text-[10px] text-emerald-400 font-mono">Oceano</span>
+                  <span className="block text-2xl">🌊</span>
+                  <span className="text-[10px] text-emerald-400 font-mono font-bold">Oceano</span>
                 </div>
               </div>
             </div>
