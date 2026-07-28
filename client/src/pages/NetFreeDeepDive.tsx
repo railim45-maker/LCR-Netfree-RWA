@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, Network, Users } from "lucide-react";
+import { ArrowRight, Sparkles, Users, Network, Gift, ShieldCheck, Sun } from "lucide-react";
 
 export default function NetFreeDeepDive() {
   return (
@@ -14,7 +14,7 @@ export default function NetFreeDeepDive() {
         <div className="flex items-center justify-between p-4 rounded-3xl bg-white/85 border border-stone-200/80 shadow-sm backdrop-blur-xl">
           <div className="flex items-center gap-3">
             <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm border border-emerald-100">🌿</span>
-            <span className="font-bold text-xs uppercase tracking-wider text-stone-700 font-serif">Approfondimento • NetFree</span>
+            <span className="font-bold text-xs uppercase tracking-wider text-stone-700 font-serif">Percorso Informativo • NetFree</span>
           </div>
           <nav className="flex items-center gap-4 text-xs font-semibold">
             <Link href="/">
@@ -36,47 +36,64 @@ export default function NetFreeDeepDive() {
             NetFree: Oltre il Modello Estrattivo
           </h1>
           <p className="text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed font-light">
-            L'unione di <strong>"Net"</strong> (la rete di persone) e <strong>"Free"</strong> (la libertà multidimensionale). Un ecosistema pensato per superare le sfide moderne e l'inflazione attraverso la creazione di valore reale.
+            Il termine <strong>NetFree</strong> nasce dall'unione di due concetti fondamentali: <strong>"Net"</strong> (rete di persone) e <strong>"Free"</strong> (libertà). Si definisce come un nuovo concetto di network che promuove la crescita, la collaborazione, la consapevolezza e la responsabilità individuale.
           </p>
         </div>
 
-        {/* CORPO DELL'APPROFONDIMENTO (CARD LUMINOSE) */}
+        {/* CORPO DELL'APPROFONDIMENTO (I PILASTRI E DETTAGLI) */}
         <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-12 shadow-xl space-y-10">
           
+          {/* INTRODUZIONE AL CONTESTO */}
+          <div className="space-y-3">
+            <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
+              Il progetto è concepito per rispondere alle sfide moderne, come l'inflazione e la dipendenza da un'unica fonte di reddito, offrendo un percorso verso la libertà finanziaria, temporale e personale attraverso la creazione di valore reale. Ecco come è strutturato e pensato l'ecosistema nei suoi pilastri fondamentali:
+            </p>
+          </div>
+
           {/* PILASTRO 1 */}
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center font-bold text-xs font-mono">1</span>
-            <h3 className="text-xl font-bold font-serif text-stone-900">Una Visione di Libertà Multidimensionale</h3>
+              <h3 className="text-xl font-bold font-serif text-stone-900">La Struttura Organica: Il Ciclo del Seme</h3>
             </div>
             <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
-              NetFree nasce dalla convinzione che la vera libertà non sia solo economica, ma multidimensionale: comprende la <strong>libertà finanziaria</strong>, la <strong>libertà temporale</strong> e la crescita personale. Si propone come una soluzione sostenibile alle sfide moderne, come l'inflazione e la dipendenza da un'unica fonte di reddito, mirando ad aumentare il tempo e le risorse a disposizione delle persone.
+              Il funzionamento di NetFree è descritto attraverso la metafora del seme, che rappresenta l'inizio di ogni trasformazione:
             </p>
+            <ul className="space-y-2 pl-11 text-sm md:text-base text-stone-600 list-disc list-inside font-light">
+              <li><strong>Ricezione della Chiave Railim:</strong> Ogni partecipante entra nell'ecosistema ricevendo in dono un "seme simbolico", denominato Chiave Railim.</li>
+              <li><strong>Responsabilità e Coltivazione:</strong> Chi riceve il seme assume la responsabilità di coltivare il proprio percorso, far crescere il valore ricevuto e accettare il supporto della comunità.</li>
+              <li><strong>Moltiplicazione e Condivisione:</strong> Per esprimere il proprio potenziale, il seme deve essere condiviso. Tradizionalmente, il sistema prevede la condivisione con un cerchio ristretto di persone (almeno sei), creando così una rete organica di crescita anziché una struttura gerarchica piramidale.</li>
+              <li><strong>I Frutti:</strong> Quando il percorso raggiunge la maturità, una parte dei risultati viene destinata a generare nuovi semi per sostenere il sistema, mentre la restante parte contribuisce alla prosperità individuale di chi ha partecipato.</li>
+            </ul>
           </div>
 
           {/* PILASTRO 2 */}
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center font-bold text-xs font-mono">2</span>
-            <h3 className="text-xl font-bold font-serif text-stone-900">Un Ecosistema basato sulla Creazione di Valore</h3>
+              <h3 className="text-xl font-bold font-serif text-stone-900">Il Modello Economico: L'Economia del Dono</h3>
             </div>
             <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
-              Per NetFree, "creare valore" significa contribuire a migliorare concretamente la vita delle persone risolvendo problemi reali. Il progetto si allontana dai modelli economici basati sulla scarsità e sul debito per favorire un sistema dove il successo individuale diventa uno strumento per il benessere collettivo.
+              L'intero progetto si fonda sul principio dell'Economia del Dono, che mira a creare abbondanza collettiva condividendo il surplus:
             </p>
+            <ul className="space-y-2 pl-11 text-sm md:text-base text-stone-600 list-disc list-inside font-light">
+              <li><strong>Collaborazione vs Competizione:</strong> NetFree è pensato come un ecosistema dove le persone collaborano per costruire valore insieme, riducendo i rischi e massimizzando i benefici per tutti.</li>
+              <li><strong>Generazione di Liquidità:</strong> Per sostenere questo sistema, NetFree collabora con aziende innovative che utilizzano la tokenizzazione per digitalizzare e valorizzare asset le cui potenzialità sono spesso inespresse, liberando così le risorse necessarie per alimentare l'economia del dono.</li>
+            </ul>
           </div>
 
           {/* PILASTRO 3 */}
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center font-bold text-xs font-mono">3</span>
-            <h3 className="text-xl font-bold font-serif text-stone-900">L'Economia del Dono e il Simbolo del Seme (Chiave Railim)</h3>
+              <h3 className="text-xl font-bold font-serif text-stone-900">La Filosofia Operativa: "Operare nella Luce"</h3>
             </div>
             <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
-              Il cuore operativo di NetFree è l'Economia del Dono, un modello dove si condivide il surplus per creare abbondanza collettiva. Questo processo è rappresentato simbolicamente dalla <strong>Chiave Railim</strong>:
+              NetFree seleziona rigorosamente partner e opportunità basandosi su criteri etici rigorosi:
             </p>
             <ul className="space-y-2 pl-11 text-sm md:text-base text-stone-600 list-disc list-inside font-light">
-              <li>Ogni partecipante riceve un "seme" (la Chiave Railim) in dono.</li>
-              <li>Ricevere questo dono comporta la responsabilità di coltivare il proprio percorso e di condividere a propria volta il valore ricevuto con altri, alimentando una rete organica di crescita.</li>
+              <li><strong>Etica e Trasparenza:</strong> Collaborare "nella luce" significa agire con correttezza, costruire relazioni di fiducia e generare benefici sostenibili nel lungo periodo.</li>
+              <li><strong>Utilità Reale:</strong> Ogni opportunità viene valutata non solo per il profitto, ma per la sua capacità di migliorare concretamente la qualità della vita e aumentare l'autonomia decisionale delle persone.</li>
             </ul>
           </div>
 
@@ -84,22 +101,15 @@ export default function NetFreeDeepDive() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center font-bold text-xs font-mono">4</span>
-            <h3 className="text-xl font-bold font-serif text-stone-900">"Operare nella Luce"</h3>
+              <h3 className="text-xl font-bold font-serif text-stone-900">Il Percorso di Crescita: Dalla Tazzina all'Oceano</h3>
             </div>
             <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
-              Un aspetto distintivo è l'impegno etico del progetto. NetFree seleziona esclusivamente partner e opportunità che operano <strong>"nella luce"</strong>, ovvero in modo etico, trasparente e sostenibile. Ogni iniziativa viene valutata non solo per il potenziale economico, ma per la sua utilità reale e l'impatto positivo sulla qualità della vita.
+              NetFree non è solo un sistema economico, ma un percorso formativo a livelli progressivi:
             </p>
-          </div>
-
-          {/* PILASTRO 5 */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center font-bold text-xs font-mono">5</span>
-            <h3 className="text-xl font-bold font-serif text-stone-900">Il Percorso di Crescita Personale (La Metafora dell'Oceano)</h3>
-            </div>
-            <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
-              NetFree non è solo un progetto economico, ma un percorso formativo. Utilizza la metafora della tazzina da caffè che deve diventare un oceano: <strong>prima di ottenere una crescita economica, è necessaria una crescita personale e di consapevolezza</strong> per essere in grado di gestire correttamente le nuove opportunità e risorse.
-            </p>
+            <ul className="space-y-2 pl-11 text-sm md:text-base text-stone-600 list-disc list-inside font-light">
+              <li><strong>Espansione della Consapevolezza:</strong> Viene utilizzata la metafora della tazzina da caffè che deve diventare un oceano: prima di ottenere una crescita economica, è necessaria una crescita personale per essere in grado di gestire grandi flussi di risorse senza esserne travolti.</li>
+              <li><strong>Formazione e Strumenti:</strong> Ogni fase è supportata da strumenti pratici e percorsi di sviluppo per garantire che la crescita sia equilibrata e consapevole.</li>
+            </ul>
           </div>
 
         </div>
@@ -141,11 +151,11 @@ export default function NetFreeDeepDive() {
           </p>
         </div>
 
-        {/* LINK VERSO L'ECONOMIA DEL DONO */}
+        {/* CONCLUSIONE E PROSIEGUO */}
         <div className="p-8 md:p-10 rounded-3xl border border-amber-200/80 bg-gradient-to-br from-amber-50/60 via-white to-emerald-50/30 space-y-4 text-center shadow-lg backdrop-blur-md">
-          <h3 className="text-xl font-bold font-serif text-stone-900">Prosegui nel Percorso Informativo</h3>
-          <p className="text-xs md:text-sm text-stone-600 max-w-lg mx-auto font-light">
-            Approfondisci le dinamiche dell'Economia del Dono e della Chiave Railim.
+          <h3 className="text-xl font-bold font-serif text-stone-900">In sintesi</h3>
+          <p className="text-xs md:text-sm text-stone-600 max-w-xl mx-auto font-light leading-relaxed">
+            NetFree è pensato come una visione filantropica che trasforma il successo individuale in uno strumento per il benessere collettivo, alimentando un ciclo virtuoso di abbondanza condivisa.
           </p>
           <div className="pt-2">
             <Link href="/privato/economia-dono">
