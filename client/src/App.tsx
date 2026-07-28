@@ -2,6 +2,7 @@ import { Switch, Route } from "wouter";
 import Home from "@/pages/Home";
 import ClubDeal from "@/pages/ClubDeal";
 import RoleDetail from "@/pages/RoleDetail";
+import NetFreeDeepDive from "@/pages/NetFreeDeepDive";
 import EconomiaDonoPage from "@/pages/EconomiaDonoPage";
 import TokenizzazionePage from "@/pages/TokenizzazionePage";
 
@@ -11,6 +12,7 @@ export default function App() {
       <Route path="/" component={Home} />
       <Route path="/club-deal" component={ClubDeal} />
       <Route path="/ruolo/:id" component={RoleDetail} />
+      <Route path="/privato/netfree" component={NetFreeDeepDive} />
       <Route path="/privato/economia-dono" component={EconomiaDonoPage} />
       <Route path="/privato/tokenizzazione-rwa" component={TokenizzazionePage} />
       <Route>
