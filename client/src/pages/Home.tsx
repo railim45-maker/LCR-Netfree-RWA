@@ -1,183 +1,160 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { Sparkles, ArrowRight, BookOpen, Download, ExternalLink } from 'lucide-react';
 
-// Diapositive ufficiali della presentazione "La Strada che Conduce a Casa"
-const slides = [
-  {
-    id: 1,
-    title: "La Strada che Conduce a Casa",
-    subtitle: "Dalla finzione del debito alla sovranità dell'Uomo Naturale",
-    image: "https://placehold.co/1280x720/0b0d10/d4af37?text=La+Strada+che+Conduce+a+Casa",
-  },
-  {
-    id: 2,
-    title: "Corriamo ogni giorno per restare fermi.",
-    text: "Inflazione, debito, tempo rubato. Il sistema attuale è progettato sull'illusione della scarsità. La fatica aumenta, ma la libertà si allontana.\n\nÈ il momento di fermarsi.",
-    image: "https://placehold.co/1280x720/0b0d10/10b981?text=Il+Labirinto",
-  },
-  {
-    id: 3,
-    title: "La vera libertà non si compra. Si coltiva.",
-    text: "Esiste una via d'uscita. Richiede un nuovo paradigma dove il valore reale sostituisce il debito, e la condivisione sostituisce la competizione.",
-    image: "https://placehold.co/1280x720/0b0d10/d4af37?text=La+Porta+della+Liberta",
-  },
-  {
-    id: 4,
-    title: "Tappa I: Piedi a terra.",
-    text: "Per elevarsi, servono radici solide. Trasformiamo il valore potenziale in energia liquida, senza cedere proprietà, senza creare nuovo debito.",
-    image: "https://placehold.co/1280x720/0b0d10/10b981?text=Tappa+I+Radici",
-  },
-  {
-    id: 5,
-    title: "Il patrimonio non viene venduto. Viene attivato.",
-    text: "La tecnologia lavora per l'uomo. Attraverso la digitalizzazione del valore, liberiamo risorse inaccessibili per nutrire una nuova economia.",
-    image: "https://placehold.co/1280x720/0b0d10/d4af37?text=Attivazione+Patrimonio",
-  },
-  {
-    id: 6,
-    title: "Operare esclusivamente nella Luce.",
-    text: "L'innovazione senza integrità è vuota. Scegliamo solo progetti e partner guidati da etica, trasparenza e utilità reale per l'essere umano.",
-    image: "https://placehold.co/1280x720/0b0d10/f59e0b?text=Operare+nella+Luce",
-  },
-  {
-    id: 7,
-    title: "Tappa II: Il dono della Chiave Railim.",
-    text: "Tutto inizia da un seme ricevuto in dono. Nessun rischio, nessuna pressione. Solo la responsabilità di coltivarlo e farlo prosperare.",
-    image: "https://placehold.co/1280x720/0b0d10/10b981?text=Tappa+II+Chiave+Railim",
-  },
-  {
-    id: 8,
-    title: "Dalla vendita alla cura del giardino.",
-    text: "Non ti chiediamo di diventare un venditore. Ti chiediamo di prenderti cura della tua cerchia, accompagnando chi scegli nel percorso di crescita.",
-    image: "https://placehold.co/1280x720/0b0d10/d4af37?text=Cura+del+Giardino",
-  },
-  {
-    id: 9,
-    title: "L'Abbondanza Circolare.",
-    text: "Quando il seme genera frutti, una parte torna al sistema per generare nuovi doni. La prosperità individuale nutre l'opportunità collettiva.",
-    image: "https://placehold.co/1280x720/0b0d10/10b981?text=Abbondanza+Circolare",
-  },
-  {
-    id: 10,
-    title: "Tappa III: Preparare il Contenitore.",
-    text: "Se versi uno tsunami dentro una tazzina, la tazzina si rompe. La ricchezza improvvisa, senza consapevolezza, è un pericolo, non una salvezza.",
-    image: "https://placehold.co/1280x720/0b0d10/3b82f6?text=Preparare+il+Contenitore",
-  },
-  {
-    id: 11,
-    title: "Dalla Tazzina all'Oceano.",
-    text: "La vera crescita economica richiede una profonda evoluzione interiore. Il Tempio Biologico deve espandersi per gestire la propria sovranità energetica.",
-    image: "https://placehold.co/1280x720/0b0d10/10b981?text=Dalla+Tazzina+all+Oceano",
-  },
-  {
-    id: 12,
-    title: "Tappa IV: Il Risveglio dalla Finzione.",
-    text: "Abbandoniamo le dipendenze artificiali. Riscopriamo l'essenza di esseri umani liberi, creatori del proprio destino fuori dalla finzione giuridica.",
-    image: "https://placehold.co/1280x720/0b0d10/f59e0b?text=Risveglio+dalla+Finzione",
-  },
-  {
-    id: 13,
-    title: "L'Accademia Uomo Naturale.",
-    text: "Il ritorno alla nostra natura originaria. Un percorso per riappropriarsi del proprio corpo, della propria mente e della propria energia vitale.",
-    image: "https://placehold.co/1280x720/0b0d10/d4af37?text=Accademia+Uomo+Naturale",
-  },
-  {
-    id: 14,
-    title: "L'Equilibrio Assoluto.",
-    text: "Libertà di Tempo, Finanziaria e Spirituale. Quando il valore reale incontra la consapevolezza interiore, il sistema del debito crolla. Inizia l'era dell'abbondanza.",
-    image: "https://placehold.co/1280x720/0b0d10/10b981?text=Equilibrio+Assoluto",
-  },
-  {
-    id: 15,
-    title: "Bentornati a Casa.",
-    text: "\"Ogni grande foresta è iniziata da un singolo seme. La domanda non è quanto possa crescere. La domanda è: vuoi coltivarlo con noi?\"",
-    image: "https://placehold.co/1280x720/0b0d10/d4af37?text=Bentornati+a+Casa",
-  }
-];
-
-export default function MasterPresentationView() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const currentSlide = slides[currentIndex];
+export default function Home() {
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0b0d10] text-[#f3f0df] flex flex-col items-center justify-between p-6 font-serif">
+    <div className="min-h-screen relative text-stone-800 space-y-24 pb-40 overflow-hidden bg-[#fcfbf9]">
       
-      {/* Header / Brand */}
-      <div className="w-full max-w-6xl flex justify-between items-center py-4 border-b border-[#d4af37]/20">
-        <div className="flex items-center gap-3">
-          <span className="text-[#d4af37] text-lg font-bold">✦</span>
-          <span className="text-xs uppercase tracking-[3px] text-[#d4af37] font-semibold">BIOFIN • Giardino Luminoso</span>
-        </div>
-        <div className="text-xs text-stone-400 font-sans">
-          Diapositiva {currentIndex + 1} di {slides.length}
-        </div>
-      </div>
+      {/* SFONDO LUMINOSO E GRADIENTI ARMONICI */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[700px] bg-gradient-to-b from-amber-100/30 via-emerald-50/20 to-transparent blur-[150px] rounded-full pointer-events-none z-0" />
 
-      {/* Slide Container (Aspect Ratio 16:9 fedele all'originale) */}
-      <div className="w-full max-w-5xl aspect-video bg-[#0f1217] rounded-2xl border border-[#d4af37]/30 shadow-[0_25px_50px_rgba(0,0,0,0.8)] relative overflow-hidden flex flex-col justify-between p-12 my-auto">
+      {/* HEADER DI NAVIGAZIONE */}
+      <header className="container max-w-5xl mx-auto px-6 pt-12 relative z-10">
+        <div className="flex items-center justify-between px-6 py-4 rounded-full bg-white/90 border border-stone-200/60 shadow-[0_2px_20px_rgba(0,0,0,0.02)] backdrop-blur-xl">
+          <div className="flex items-center gap-3">
+            <span className="w-7 h-7 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center text-xs border border-amber-200/60 font-serif">✦</span>
+            <span className="font-bold text-xs uppercase tracking-widest text-stone-600 font-serif">Il Giardino Luminoso • NetFree LCR</span>
+          </div>
+          <nav className="flex items-center gap-6 text-xs font-medium">
+            <button 
+              onClick={() => setIsViewerOpen(true)}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900 text-stone-50 hover:bg-stone-800 transition-colors font-serif cursor-pointer shadow-sm"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-amber-400" /> Sfoglia la Presentazione Ufficiale
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      {/* CONTENUTO PRINCIPALE (LA HOME ORIGINARIA E PURA) */}
+      <main className="container max-w-4xl mx-auto px-6 space-y-20 relative z-10">
         
-        {/* Background ambient glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(16,185,129,0.06)_0%,transparent_70%)] pointer-events-none" />
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center space-y-6">
-          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-[#f3f0df]">
-            {currentSlide.title}
+        {/* INTRODUZIONE: LA STRADA CHE CONDUCE A CASA */}
+        <div className="text-center space-y-6 pt-6 max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-50/70 border border-amber-200/70 text-amber-900 text-xs font-medium tracking-widest shadow-sm font-serif">
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" /> La Via della Libertà e della Cura
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold font-serif text-stone-900 tracking-tight leading-[1.15]">
+            La Strada che Conduce a Casa
           </h1>
-          {currentSlide.subtitle && (
-            <p className="text-lg md:text-xl text-[#9ca3af] italic font-light max-w-2xl">
-              {currentSlide.subtitle}
+          <p className="text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif">
+            Hai presente quella sensazione di camminare a tentoni, con la costante paura di sbagliare strada, mentre il peso delle bollette, del lavoro e delle preoccupazioni sembra schiacciarti ogni giorno di più? Ti hanno fatto credere che la vita sia una lotta solitaria e che non ci sia via d'uscita. <br /><br />
+            <strong className="text-stone-900 font-medium">Non è così.</strong> Quella che hai trovato adesso non è una semplice sosta: è la strada. È la via d'uscita da un sistema che ti vuole esausto, e conduce esattamente là dove meriti di arrivare.
+          </p>
+        </div>
+
+        {/* LE TAPPE DEL PERCORSO */}
+        <div className="space-y-8">
+          
+          {/* Tappa 1 */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
+            <div className="flex items-center gap-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">I</span>
+              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Primo Passo: Mettere i Piedi a Terra</h3>
+            </div>
+            <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
+              Il primo blocco, quando si è stanchi, è la paura di non potersi permettere un cambiamento o di dover rischiare soldi che servono per la spesa. La strada non ti chiede alcun capitale iniziale. Grazie a un meccanismo basato sulla tokenizzazione e sul sostegno di chi ha creduto prima di te nel progetto — con la generosità di chi ha fatto un passo indietro sulle prime semestralità — il tuo ingresso nel sistema è protetto. Non parti con un esborso economico: parti in equilibrio.
             </p>
-          )}
-          {currentSlide.text && (
-            <p className="text-base md:text-lg text-[#d1d5db] font-light font-sans max-w-3xl leading-relaxed whitespace-pre-line">
-              {currentSlide.text}
+          </div>
+
+          {/* Tappa 2 */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
+            <div className="flex items-center gap-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">II</span>
+              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Secondo Passo: Camminare Insieme (Il Net-Free)</h3>
+            </div>
+            <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
+              Una volta alleggerito il passo dalla pressione finanziaria, impariamo a muoverci in modo nuovo. Dimentica il mondo là fuori fatto di competizione e solitudine. Qui ti affidiamo un seme pulito. La regola è semplice e profondamente umana: ti prendi cura del tuo spazio e aiuti sei persone a fare lo stesso. È una catena di cura e di abbondanza condivisa, dove la forza di uno sostiene la crescita di tutti, slegando finalmente il guadagno dal tempo che vendi ogni giorno.
             </p>
-          )}
+          </div>
+
+          {/* Tappa 3 */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
+            <div className="flex items-center gap-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">III</span>
+              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Terzo Passo: Ritrovare il Tempio Biologico</h3>
+            </div>
+            <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
+              Quando l'economia smette di essere un assillo costante, l'energia torna a concentrarsi dove serve davvero: nel tuo corpo. La strada ti guida a riscoprire i gesti semplici e veri che restituiscono vitalità alla materia: un'acqua pura che disseta davvero, la terra che si rigenera attraverso i microrganismi e la sovranità energetica che alleggerisce la tua casa. Quando il corpo si ripulisce e ritrova il suo equilibrio naturale, la nebbia svanisce.
+            </p>
+          </div>
+
+          {/* Tappa 4 */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
+            <div className="flex items-center gap-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">IV</span>
+              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Quarto Passo: La Piena Sovranità (L'Accademia)</h3>
+            </div>
+            <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
+              Quando avrai ritrovato le tue forze, quando la tua vita avrà ripreso respiro e stabilità, allora sarai pronto per la tappa più profonda del risveglio: l'Accademia Uomo Naturale. È qui che impari a comprendere la finzione giuridica, a sciogliere le vecchie catene e a riprendere in mano la firma e la guida autentica della tua esistenza, con la consapevolezza di chi sa chi è veramente.
+            </p>
+          </div>
+
         </div>
 
-        {/* Watermark / Footer fisso nella slide */}
-        <div className="relative z-10 flex justify-between items-center text-xs tracking-[2px] text-[#d4af37] opacity-80 pt-4 border-t border-[#d4af37]/10">
-          <span>LA STRADA CHE CONDUCE A CASA</span>
-          <span>BIOFIN</span>
-        </div>
-      </div>
-
-      {/* Controlli di Navigazione */}
-      <div className="w-full max-w-6xl flex justify-between items-center py-4">
-        <button 
-          onClick={prevSlide}
-          className="px-6 py-3 rounded-full bg-[#161a23] border border-[#d4af37]/30 hover:bg-[#202533] text-[#f3f0df] text-xs uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
-        >
-          <ChevronLeft className="w-4 h-4 text-[#d4af37]" /> Precedente
-        </button>
-
-        <div className="flex gap-1.5">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${currentIndex === idx ? 'bg-[#d4af37] w-6' : 'bg-stone-700 hover:bg-stone-500'}`}
-            />
-          ))}
+        {/* CONCLUSIONE E CALL TO ACTION */}
+        <div className="p-12 rounded-[2.5rem] border border-amber-200/80 bg-gradient-to-br from-amber-50/70 via-white to-emerald-50/40 space-y-6 text-center shadow-xl backdrop-blur-md">
+          <h3 className="text-2xl font-bold font-serif text-stone-900">Sei pronto a fare il primo passo?</h3>
+          <p className="text-base text-stone-600 max-w-xl mx-auto font-light leading-relaxed font-serif italic">
+            "Non sei più solo a brancolare nel buio. C'è una mappa, c'è un metodo d'amore e ci sono persone pronte a camminare al tuo fianco."
+          </p>
+          <div className="pt-3 flex flex-wrap justify-center gap-4">
+            <button 
+              onClick={() => setIsViewerOpen(true)}
+              className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-8 py-4 rounded-full text-xs md:text-sm inline-flex items-center gap-2.5 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif"
+            >
+              <BookOpen className="w-4 h-4 text-amber-400" /> Esplora la Presentazione Master <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
-        <button 
-          onClick={nextSlide}
-          className="px-6 py-3 rounded-full bg-[#161a23] border border-[#d4af37]/30 hover:bg-[#202533] text-[#f3f0df] text-xs uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
-        >
-          Successiva <ChevronRight className="w-4 h-4 text-[#d4af37]" />
-        </button>
-      </div>
+      </main>
+
+      {/* MODALE INTEGRATA PER SFOGLIARE IL PDF MASTER ORIGINALE */}
+      {isViewerOpen && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 md:p-8">
+          <div className="bg-[#0f1217] border border-amber-500/30 w-full max-w-5xl h-[90vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden relative">
+            
+            {/* Header Modale */}
+            <div className="px-6 py-4 bg-[#161a23] border-b border-amber-500/20 flex justify-between items-center">
+              <div className="flex items-center gap-3">
+                <span className="text-amber-400 font-serif">✦</span>
+                <span className="text-xs uppercase tracking-widest text-[#f3f0df] font-serif font-semibold">La Strada che Conduce a Casa • Presentazione Ufficiale (PDF)</span>
+              </div>
+              <button 
+                onClick={() => setIsViewerOpen(false)}
+                className="text-stone-400 hover:text-white text-xs uppercase tracking-wider px-3 py-1.5 rounded-lg bg-stone-800/60 transition-colors"
+              >
+                Chiudi ✕
+              </button>
+            </div>
+
+            {/* Contenuto PDF incorporato */}
+            <div className="flex-1 w-full h-full bg-stone-950 relative">
+              <iframe 
+                src="/The_Road_to_Sovereignty.pdf" 
+                title="Presentazione Master La Strada che Conduce a Casa"
+                className="w-full h-full border-none"
+              />
+            </div>
+
+            {/* Footer Modale */}
+            <div className="px-6 py-3 bg-[#161a23] border-t border-amber-500/20 flex justify-between items-center text-xs text-stone-400 font-serif">
+              <span>BIOFIN • Giardino Luminoso</span>
+              <a 
+                href="/The_Road_to_Sovereignty.pdf" 
+                download="La_Strada_che_Conduce_a_Casa.pdf"
+                className="text-amber-400 hover:underline inline-flex items-center gap-1"
+              >
+                <Download className="w-3.5 h-3.5" /> Scarica il PDF originale
+              </a>
+            </div>
+
+          </div>
+        </div>
+      )}
 
     </div>
   );
