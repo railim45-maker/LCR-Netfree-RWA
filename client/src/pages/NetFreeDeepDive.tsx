@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, TreePine, Users, Network } from "lucide-react";
+import { ArrowRight, Sparkles, TreePine, Users, Network, Gift, ShieldCheck, Sun, Coins } from "lucide-react";
 import { useState } from "react";
 
 export default function NetFreeDeepDive() {
@@ -84,73 +84,135 @@ export default function NetFreeDeepDive() {
             NetFree: La Rete e la Libertà
           </h1>
           <p className="text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed font-light">
-            Il termine NetFree nasce dall'unione di due concetti fondamentali: <strong>"Net"</strong> (rete di persone) e <strong>"Free"</strong> (libertà)[cite: 1]. Si definisce come un nuovo concetto di network che promuove la crescita, la collaborazione, la consapevolezza e la responsabilità individuale[cite: 1]. Il progetto è concepito per rispondere alle sfide moderne, come l'inflazione e la dipendenza da un'unica fonte di reddito, offrendo un percorso verso la libertà finanziaria, temporale e personale attraverso la creazione di valore reale[cite: 1].
+            Il termine NetFree nasce dall'unione di due concetti fondamentali: <strong>"Net"</strong> (rete di persone) e <strong>"Free"</strong> (libertà)[cite: 1]. Si definisce come un nuovo concetto di network che promuove la crescita, la collaborazione, la consapevolezza e la responsabilità individuale[cite: 1]. Il progetto risponde alle sfide moderne offrendo un percorso verso la libertà finanziaria e personale[cite: 1].
           </p>
         </div>
 
-        {/* CORPO DELL'APPROFONDIMENTO: PILASTRI ORIGINARI */}
-        <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-12 shadow-xl space-y-10">
+        {/* CORPO DELL'APPROFONDIMENTO: PILASTRI ORIGINARI CON INFOGRAFICHE VISIVE */}
+        <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-12 shadow-xl space-y-12">
           
           {/* 1. LA STRUTTURA ORGANICA */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
               <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center font-bold text-xs font-mono">1</span>
               <h3 className="text-xl font-bold font-serif text-stone-900">La Struttura Organica: Il Ciclo del Seme</h3>
             </div>
-            <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
+            <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
               Il funzionamento di NetFree è descritto attraverso la metafora del seme, che rappresenta l'inizio di ogni trasformazione[cite: 1]:
             </p>
-            <ul className="space-y-2 pl-11 text-sm md:text-base text-stone-600 list-disc list-inside font-light">
-              <li><strong>Ricezione della Chiave Railim:</strong> Ogni partecipante entra nell'ecosistema ricevendo in dono un "seme simbolico", denominato Chiave Railim[cite: 1].</li>
-              <li><strong>Responsabilità e Coltivazione:</strong> Chi riceve il seme assume la responsabilità di coltivare il proprio percorso, far crescere il valore ricevuto e accettare il supporto della comunità[cite: 1].</li>
-              <li><strong>Moltiplicazione e Condivisione:</strong> Per esprimere il proprio potenziale, il seme deve essere condiviso[cite: 1]. Tradizionalmente, il sistema prevede la condivisione con almeno sei persone, creando così una rete organica di crescita anziché una struttura gerarchica[cite: 1].</li>
-              <li><strong>I Frutti:</strong> Quando il percorso raggiunge la maturità, una parte dei risultati viene destinata a generare nuovi semi per sostenere il sistema, mentre la restante parte contribuisce alla prosperità individuale di chi ha partecipato[cite: 1].</li>
-            </ul>
+            
+            {/* Infografica Visiva - Ciclo del Seme */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-2">
+                <span className="text-emerald-700 font-mono text-xs font-bold">FASE A</span>
+                <h4 className="font-bold text-stone-900 text-sm">Chiave Railim</h4>
+                <p className="text-xs text-stone-600 font-light">Ogni partecipante riceve in dono un seme simbolico iniziale[cite: 1].</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-2">
+                <span className="text-emerald-700 font-mono text-xs font-bold">FASE B</span>
+                <h4 className="font-bold text-stone-900 text-sm">Coltivazione</h4>
+                <p className="text-xs text-stone-600 font-light">Responsabilità di far crescere il valore ricevuto e accettare supporto[cite: 1].</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-2">
+                <span className="text-emerald-700 font-mono text-xs font-bold">FASE C</span>
+                <h4 className="font-bold text-stone-900 text-sm">Condivisione (6)</h4>
+                <p className="text-xs text-stone-600 font-light">Condivisione con un cerchio di almeno sei persone per una crescita organica[cite: 1].</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-2">
+                <span className="text-emerald-700 font-mono text-xs font-bold">FASE D</span>
+                <h4 className="font-bold text-stone-900 text-sm">I Frutti</h4>
+                <p className="text-xs text-stone-600 font-light">Generazione di nuovi semi e prosperità individuale[cite: 1].</p>
+              </div>
+            </div>
           </div>
 
           {/* 2. IL MODELLO ECONOMICO */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
               <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center font-bold text-xs font-mono">2</span>
               <h3 className="text-xl font-bold font-serif text-stone-900">Il Modello Economico: L'Economia del Dono</h3>
             </div>
-            <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
-              L'intero progetto si fonda sul principio dell'Economia del Dono, che mira a creare abbondanza collettiva condividendo il surplus[cite: 1]:
+            <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
+              L'intero progetto si fonda sulla condivisione del surplus per creare abbondanza collettiva[cite: 1]:
             </p>
-            <ul className="space-y-2 pl-11 text-sm md:text-base text-stone-600 list-disc list-inside font-light">
-              <li><strong>Collaborazione vs Competizione:</strong> NetFree è pensato come un ecosistema dove le persone collaborano per costruire valore insieme, riducendo i rischi e massimizzando i benefici per tutti[cite: 1].</li>
-              <li><strong>Generazione di Liquidità:</strong> Per sostenere questo sistema, NetFree collabora con aziende innovative che utilizzano la tokenizzazione per digitalizzare e valorizzare asset le cui potenzialità sono spesso inespresse, liberando così le risorse necessarie per alimentare l'economia del dono[cite: 1].</li>
-            </ul>
+
+            {/* Infografica Visiva - Economia del Dono */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div className="p-5 rounded-2xl bg-amber-50/40 border border-amber-100 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">🤝</div>
+                <div className="space-y-1">
+                  <h4 className="font-bold text-stone-900 text-sm">Collaborazione vs Competizione</h4>
+                  <p className="text-xs text-stone-600 font-light">Costruire valore insieme riducendo i rischi e massimizzando i benefici per tutti[cite: 1].</p>
+                </div>
+              </div>
+              <div className="p-5 rounded-2xl bg-sky-50/40 border border-sky-100 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center shrink-0">🪙</div>
+                <div className="space-y-1">
+                  <h4 className="font-bold text-stone-900 text-sm">Generazione di Liquidità</h4>
+                  <p className="text-xs text-stone-600 font-light">Tokenizzazione di asset inespressi per liberare risorse a supporto del dono[cite: 1].</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* 3. LA FILOSOFIA OPERATIVA */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
               <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center font-bold text-xs font-mono">3</span>
               <h3 className="text-xl font-bold font-serif text-stone-900">La Filosofia Operativa: "Operare nella Luce"</h3>
             </div>
-            <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
-              NetFree seleziona rigorosamente partner e opportunità basandosi su criteri etici[cite: 1]:
+            <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
+              Criteri etici rigorosi per guidare ogni interazione all'interno dell'ecosistema[cite: 1]:
             </p>
-            <ul className="space-y-2 pl-11 text-sm md:text-base text-stone-600 list-disc list-inside font-light">
-              <li><strong>Etica e Trasparenza:</strong> Collaborare "nella luce" significa agire con correttezza, costruire relazioni di fiducia e generare benefici sostenibili nel lungo periodo[cite: 1].</li>
-              <li><strong>Utilità Reale:</strong> Ogni opportunità viene valutata non solo per il profitto, ma per la sua capacità di migliorare concretamente la qualità della vita e aumentare l'autonomia decisionale delle persone[cite: 1].</li>
-            </ul>
+
+            {/* Infografica Visiva - Operare nella Luce */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div className="p-5 rounded-2xl bg-purple-50/40 border border-purple-100 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center shrink-0">✨</div>
+                <div className="space-y-1">
+                  <h4 className="font-bold text-stone-900 text-sm">Etica e Trasparenza</h4>
+                  <p className="text-xs text-stone-600 font-light">Correttezza, relazioni di fiducia e benefici sostenibili nel lungo periodo[cite: 1].</p>
+                </div>
+              </div>
+              <div className="p-5 rounded-2xl bg-emerald-50/40 border border-emerald-100 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">🌱</div>
+                <div className="space-y-1">
+                  <h4 className="font-bold text-stone-900 text-sm">Utilità Reale</h4>
+                  <p className="text-xs text-stone-600 font-light">Miglioramento concreto della qualità della vita e dell'autonomia decisionale[cite: 1].</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* 4. IL PERCORSO DI CRESCITA */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
               <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center font-bold text-xs font-mono">4</span>
               <h3 className="text-xl font-bold font-serif text-stone-900">Il Percorso di Crescita: Dalla Tazzina all'Oceano</h3>
             </div>
-            <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
-              NetFree non è solo un sistema economico, ma un percorso formativo a livelli progressivi[cite: 1]:
+            <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
+              Un percorso formativo progressivo per espandere la consapevolezza[cite: 1]:
             </p>
-            <ul className="space-y-2 pl-11 text-sm md:text-base text-stone-600 list-disc list-inside font-light">
-              <li><strong>Espansione della Consapevolezza:</strong> Viene utilizzata la metafora della tazzina da caffè che deve diventare un oceano: prima di ottenere una crescita economica, è necessaria una crescita personale per essere in grado di gestire grandi flussi di risorse senza esserne travolti[cite: 1].</li>
-              <li><strong>Formazione e Strumenti:</strong> Ogni fase è supportata da strumenti pratici e percorsi di sviluppo per garantire che la crescita sia equilibrata e consapevole[cite: 1].</li>
-            </ul>
+
+            {/* Infografica Visiva - Tazzina all'Oceano */}
+            <div className="p-6 rounded-2xl bg-gradient-to-r from-sky-50 via-emerald-50 to-amber-50 border border-stone-200 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+              <div className="space-y-1 max-w-md">
+                <span className="text-xs font-mono text-emerald-800 font-bold uppercase tracking-wider">Metafora Formativa</span>
+                <h4 className="text-lg font-bold font-serif text-stone-900">La Capienza Interiore</h4>
+                <p className="text-xs text-stone-600 font-light">Prima della crescita economica serve la crescita personale per gestire grandi flussi di risorse senza subire contraccolpi[cite: 1].</p>
+              </div>
+              <div className="flex items-center gap-3 shrink-0">
+                <div className="px-4 py-3 bg-white rounded-xl shadow-sm border border-stone-200 text-center">
+                  <span className="block text-xl font-bold text-stone-900">☕</span>
+                  <span className="text-[10px] text-stone-500 font-mono">Tazzina</span>
+                </div>
+                <span className="text-stone-400 font-bold">➔</span>
+                <div className="px-4 py-3 bg-stone-900 text-white rounded-xl shadow-md text-center">
+                  <span className="block text-xl">🌊</span>
+                  <span className="text-[10px] text-emerald-400 font-mono">Oceano</span>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
