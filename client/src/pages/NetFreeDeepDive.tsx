@@ -1,17 +1,17 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, TreePine } from "lucide-react";
+import { ArrowRight, Sparkles, TreePine, Users, Network } from "lucide-react";
 import { useState } from "react";
 
 export default function NetFreeDeepDive() {
   const [activeFocusLevel, setActiveFocusLevel] = useState(1);
   const [lensLevels, setLensLevels] = useState([
-    { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, displayDots: 6, label: "L1 - Radice (6 Settori)" },
-    { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, displayDots: 36, label: "L2 - Sacrale (36 Settori)" },
-    { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, displayDots: 108, label: "L3 - Plesso (216 Settori)" },
-    { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, displayDots: 180, label: "L4 - Cuore (1.296 Set.)" },
-    { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, displayDots: 240, label: "L5 - Gola (7.776 Set.)" },
-    { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, displayDots: 300, label: "L6 - Terzo Occhio" },
-    { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, displayDots: 360, label: "L7 - Corona Alpha" }
+    { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, displayDots: 6, label: "L1 - Radice", peopleCount: "6 Persone", desc: "Cerchio ristretto iniziale di cura diretta" },
+    { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, displayDots: 36, label: "L2 - Sacrale", peopleCount: "36 Nodi", desc: "Prima propagazione organica nei bio-distretti" },
+    { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, displayDots: 108, label: "L3 - Plesso", peopleCount: "216 Nodi", desc: "Espansione armonica della rete" },
+    { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, displayDots: 180, label: "L4 - Cuore", peopleCount: "1.296 Nodi", desc: "Integrazione comunitaria avanzata" },
+    { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, displayDots: 240, label: "L5 - Gola", peopleCount: "7.776 Nodi", desc: "Flussi di distretto attivi" },
+    { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, displayDots: 300, label: "L6 - Terzo Occhio", peopleCount: "46.656 Nodi", desc: "Coerenza sintropica diffusa" },
+    { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, displayDots: 360, label: "L7 - Corona Alpha", peopleCount: "279.936 Nodi", desc: "Foresta frattale completa" }
   ]);
 
   const chakraColors = ['#E53E3E', '#DD6B20', '#D69E2E', '#38A169', '#3182CE', '#805AD5', '#FFFFFF'];
@@ -97,7 +97,7 @@ export default function NetFreeDeepDive() {
               <h3 className="text-xl font-bold font-serif text-stone-900">La Struttura Frattale e il Sistema del Seme (Matrice 6-36-216)</h3>
             </div>
             <p className="text-stone-600 leading-relaxed pl-11 text-sm md:text-base font-light">
-              La comunità si sviluppa tramite una divisione armonica e matematica basata sul <strong>Sistema del Seme (matrice 6-36-216)</strong>. Ogni partecipante riceve in dono il seme energetico iniziale (Chiave Railim)[cite: 1].
+              La comunità si sviluppa tramite una divisione armonica e matematica basata sul <strong>Sistema del Seme (matrice 6-36-216)</strong>[cite: 1]. Ogni partecipante riceve in dono il seme energetico iniziale (Chiave Railim) per attivare il proprio percorso[cite: 1].
             </p>
           </div>
 
@@ -113,97 +113,63 @@ export default function NetFreeDeepDive() {
 
         </div>
 
-        {/* ========================================================= */}
-        {/* DASHBOARD INTERATTIVA: QUANTUM LENS MATRIX (6x6 e Matrice) */}
-        {/* ========================================================= */}
-        <div className="rounded-3xl border border-slate-800 bg-slate-950 p-6 md:p-8 text-slate-100 shadow-2xl space-y-6 relative overflow-hidden">
+        {/* ========================================================================= */}
+        {/* DASHBOARD INTERATTIVA Dòppia: QUANTUM LENS MATRIX + SCHEMA AD ALBERO PARALLELO */}
+        {/* ========================================================================= */}
+        <div className="rounded-3xl border border-slate-800 bg-slate-950 p-6 md:p-8 text-slate-100 shadow-2xl space-y-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="text-center space-y-2 max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-purple-400 text-[10px] font-mono tracking-widest">
               <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-              LCR-NETFREE QUANTUM LENS PROTOCOLO v6.0
+              LCR-NETFREE QUANTUM LENS PROTOCOLO v6.0 + TREE MAPPING
             </div>
             <h3 className="text-xl md:text-2xl font-black text-white font-mono tracking-tight">
-              LENTE FRATTALE AD ATTACCO RADIALE E POPOLAMENTO
+              REATTORE RADIALE E SCHEMA AD ALBERO FRATTALE PARALLELO
             </h3>
             <p className="text-slate-400 text-xs font-light">
-              Visualizza in tempo reale come il livello in corso di popolamento viene magnificato, mentre le orbite sature collassano verso il nucleo cristallino centrale.
+              I cerchi concentrici e l'albero genealogico/relazionale si popolano all'unisono, mostrando in tempo reale il numero esatto di persone e nodi attivi per livello.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-4">
+          {/* CONTROLLI GLOBALI */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <button 
+              onClick={() => injectLensStep(1)} 
+              className="px-5 py-2.5 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/40 rounded-xl text-xs font-mono font-bold text-purple-300 tracking-wider transition-all cursor-pointer shadow-lg"
+            >
+              [ +1 Passo / Sotto-Settore ]
+            </button>
+            <button 
+              onClick={injectFullLensLevel} 
+              className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl text-xs font-mono text-cyan-400 transition-all cursor-pointer"
+            >
+              ++ Satura Orbita Corrente
+            </button>
+            <button 
+              onClick={hardResetLens} 
+              className="px-4 py-2.5 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 rounded-xl text-xs font-mono text-red-400 transition-all cursor-pointer"
+            >
+              Reset Sistema
+            </button>
+          </div>
+
+          {/* GRID PRINCIPALE: SINISTRA REATTORE CERCHI, DESTRA SCHEMA AD ALBERO */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-2">
             
-            {/* PANNELLO DI CONTROLLO E MONITOR (SINISTRA) */}
-            <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
-              
-              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 backdrop-blur-md space-y-2">
-                <div className="flex justify-between items-center mb-2">
-                  <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">Frequenze Relazionali</h4>
-                  <span className="text-[9px] font-mono bg-purple-950 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">
-                    LENTE SU: L{activeFocusLevel}
-                  </span>
-                </div>
-                
-                <div className="space-y-1.5 font-mono text-xs max-h-[260px] overflow-y-auto pr-1">
-                  {lensLevels.map((lvl) => {
-                    const isFocused = lvl.level === activeFocusLevel;
-                    const isPast = lvl.level < activeFocusLevel;
-                    const borderColor = chakraColors[lvl.level - 1];
-                    
-                    return (
-                      <div 
-                        key={lvl.level}
-                        className={`p-2 bg-slate-950/60 rounded-xl border border-slate-800/60 flex justify-between items-center border-l-4 transition-all ${isPast || isFocused ? 'opacity-100' : 'opacity-40'}`}
-                        style={{ borderLeftColor: borderColor }}
-                      >
-                        <span className={`${isFocused ? 'text-white font-bold' : 'text-slate-300'} text-[11px]`}>{lvl.label}</span>
-                        <span className={`font-bold ${isPast || lvl.currentSteps === lvl.maxSteps ? 'text-white' : 'text-slate-400'}`}>
-                          {lvl.currentSteps} / {lvl.maxSteps} passi
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
+            {/* 1. REATTORE VISIVO SVG (SINISTRA - 6 COLONNE) */}
+            <div className="lg:col-span-6 bg-slate-900/40 border border-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center relative shadow-inner overflow-hidden min-h-[460px]">
+              <div className="absolute top-3 left-4 text-[9px] font-mono text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Reattore Concentrico
               </div>
-
-              {/* PULSANTI DI INIEZIONE PASSI */}
-              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 backdrop-blur-md space-y-2.5">
-                <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">Iniezione per Sotto-Sestina</h4>
-                <div className="space-y-2">
-                  <button 
-                    onClick={() => injectLensStep(1)} 
-                    className="w-full py-2.5 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/40 rounded-xl text-xs font-mono font-bold text-purple-300 tracking-wider transition-all cursor-pointer shadow-lg"
-                  >
-                    [ +1 Punto per Sotto-Settore ]
-                  </button>
-                  <button 
-                    onClick={injectFullLensLevel} 
-                    className="w-full py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl text-[11px] font-mono text-cyan-400 transition-all cursor-pointer"
-                  >
-                    ++ Satura Orbita in Focus
-                  </button>
-                  <button 
-                    onClick={hardResetLens} 
-                    className="w-full py-1.5 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 rounded-xl text-[10px] font-mono text-red-400 transition-all cursor-pointer"
-                  >
-                    Reset Sistema
-                  </button>
-                </div>
-              </div>
-
-            </div>
-
-            {/* REATTORE VISIVO SVG (DESTRA) */}
-            <div className="lg:col-span-7 bg-slate-900/40 border border-slate-800/60 rounded-2xl p-4 flex flex-col items-center justify-center relative shadow-inner overflow-hidden min-h-[440px]">
               <div className="absolute top-3 right-4 text-[9px] font-mono text-slate-500 tracking-widest">
-                LENS_MODE: ACTIVE_FOCUS // RAYS: 6
+                FOCUS: L{activeFocusLevel}
               </div>
-              <svg width="460" height="460" className="block overflow-visible">
+              <svg width="420" height="420" className="block overflow-visible mt-4">
                 <circle cx={cx} cy={cy} r="8" fill="#ffffff" style={{ filter: 'drop-shadow(0 0 12px rgba(255,255,255,1))' }} />
 
                 {lensLevels.map(lvl => {
-                  let radius = lvl.level < activeFocusLevel ? 15 + (lvl.level * 20) : (lvl.level === activeFocusLevel ? 165 : 165 + ((lvl.level - activeFocusLevel) * 22));
+                  let radius = lvl.level < activeFocusLevel ? 15 + (lvl.level * 18) : (lvl.level === activeFocusLevel ? 150 : 150 + ((lvl.level - activeFocusLevel) * 20));
                   const isFocused = lvl.level === activeFocusLevel;
 
                   return (
@@ -216,15 +182,15 @@ export default function NetFreeDeepDive() {
                         stroke={isFocused ? '#4b5563' : '#1e293b'}
                         strokeWidth={isFocused ? '0.8' : '0.3'}
                       />
-                      {Array.from({ length: lvl.displayDots }).map((_, i) => {
-                        const angle = (i * 2 * Math.PI) / lvl.displayDots;
+                      {Array.from({ length: Math.min(lvl.displayDots, 72) }).map((_, i) => {
+                        const angle = (i * 2 * Math.PI) / Math.min(lvl.displayDots, 72);
                         const nodeX = cx + radius * Math.cos(angle);
                         const nodeY = cy + radius * Math.sin(angle);
-                        const macroSector = Math.min(Math.floor((i / lvl.displayDots) * 6), 5);
+                        const macroSector = Math.min(Math.floor((i / Math.min(lvl.displayDots, 72)) * 6), 5);
                         const dotColor = chakraColors[macroSector];
                         const nodePositionInSubsector = i % 6;
                         const isActive = nodePositionInSubsector < lvl.currentSteps || lvl.level < activeFocusLevel;
-                        const dotRadius = isFocused ? 5 : (lvl.level < activeFocusLevel ? 2.2 : 1);
+                        const dotRadius = isFocused ? 4.5 : (lvl.level < activeFocusLevel ? 2 : 1);
 
                         return (
                           <circle
@@ -235,7 +201,7 @@ export default function NetFreeDeepDive() {
                             fill={isActive ? dotColor : '#090d16'}
                             stroke={isActive ? 'none' : '#1e293b'}
                             strokeWidth="0.15"
-                            style={isActive && isFocused ? { filter: `drop-shadow(0 0 6px ${dotColor})` } : undefined}
+                            style={isActive && isFocused ? { filter: `drop-shadow(0 0 5px ${dotColor})` } : undefined}
                           />
                         );
                       })}
@@ -243,6 +209,45 @@ export default function NetFreeDeepDive() {
                   );
                 })}
               </svg>
+            </div>
+
+            {/* 2. SCHEMA AD ALBERO PARALLELO (DESTRA - 6 COLONNE) */}
+            <div className="lg:col-span-6 bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 backdrop-blur-md flex flex-col justify-between space-y-3">
+              <div className="flex justify-between items-center border-b border-slate-800 pb-2">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono flex items-center gap-1.5">
+                  <TreePine className="w-3.5 h-3.5 text-emerald-400" /> Schema ad Albero Frattale
+                </span>
+                <span className="text-[9px] font-mono bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">
+                  MATRICE 6-36-216
+                </span>
+              </div>
+
+              <div className="space-y-2 font-mono text-xs max-h-[400px] overflow-y-auto pr-1">
+                {lensLevels.map((lvl) => {
+                  const isFocused = lvl.level === activeFocusLevel;
+                  const isPast = lvl.level < activeFocusLevel;
+                  const isCompleted = lvl.currentSteps === lvl.maxSteps;
+                  const borderColor = chakraColors[lvl.level - 1];
+
+                  return (
+                    <div 
+                      key={lvl.level}
+                      className={`p-3 bg-slate-950/70 rounded-xl border border-slate-800/70 space-y-1 transition-all border-l-4 ${isPast || isFocused ? 'opacity-100' : 'opacity-40'}`}
+                      style={{ borderLeftColor: borderColor }}
+                    >
+                      <div className="flex justify-between items-center">
+                        <span className={`font-bold ${isFocused ? 'text-white' : 'text-slate-300'} text-[11px]`}>
+                          {lvl.label} ({lvl.peopleCount})
+                        </span>
+                        <span className={`text-[10px] px-2 py-0.5 rounded ${isCompleted ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/30' : 'bg-slate-900 text-slate-400'}`}>
+                          {lvl.currentSteps} / {lvl.maxSteps} passi
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-slate-400 font-light">{lvl.desc}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
           </div>
