@@ -15,6 +15,7 @@ export default function App() {
       <Route path="/privato/netfree" component={NetFreeDeepDive} />
       <Route path="/privato/economia-dono" component={EconomiaDonoPage} />
       <Route path="/privato/tokenizzazione-rwa" component={TokenizzazionePage} />
+      <Route path="/privato/liberta-legale" component={LibertaLegalePage} />
       <Route>
         <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-6 text-center space-y-4">
           <h1 className="text-4xl font-bold font-serif-display text-primary">404</h1>
