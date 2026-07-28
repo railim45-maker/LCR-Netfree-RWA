@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, TreePine, Users, Network, ShieldCheck, Sun, Coins } from "lucide-react";
+import { ArrowRight, Sparkles, TreePine, Users, Network, ShieldCheck, Sun, Coins, Heart, Compass } from "lucide-react";
 import { useState } from "react";
 
 export default function NetFreeDeepDive() {
@@ -54,15 +54,14 @@ export default function NetFreeDeepDive() {
     <div className="min-h-screen relative text-stone-800 space-y-20 pb-36 overflow-hidden bg-[#fcfbf9]">
       
       {/* SFONDO LUMINOSO E GRADIENTI ARMONICI */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[600px] bg-gradient-to-r from-emerald-100/50 via-amber-100/40 to-sky-100/40 blur-[130px] rounded-full pointer-events-none z-0" />
-      <div className="absolute inset-0 z-0 opacity-25 bg-cover bg-center bg-fixed mix-blend-overlay filter brightness-110 pointer-events-none" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop')` }} />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[600px] bg-gradient-to-r from-amber-100/40 via-emerald-100/30 to-purple-100/30 blur-[140px] rounded-full pointer-events-none z-0" />
 
       {/* HEADER DI NAVIGAZIONE INTERNA */}
       <header className="container max-w-5xl mx-auto px-6 pt-10 relative z-10">
         <div className="flex items-center justify-between p-4 rounded-3xl bg-white/85 border border-stone-200/80 shadow-sm backdrop-blur-xl">
           <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm border border-emerald-100">🌿</span>
-            <span className="font-bold text-xs uppercase tracking-wider text-stone-700 font-serif">Il Giardino Luminoso • NetFree</span>
+            <span className="w-8 h-8 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center text-sm border border-amber-200">✨</span>
+            <span className="font-bold text-xs uppercase tracking-wider text-stone-700 font-serif">Il Giardino Luminoso • NetFree LCR</span>
           </div>
           <nav className="flex items-center gap-4 text-xs font-semibold">
             <Link href="/">
@@ -73,143 +72,237 @@ export default function NetFreeDeepDive() {
       </header>
 
       {/* CONTENUTO PRINCIPALE */}
-      <main className="container max-w-5xl mx-auto px-6 space-y-12 relative z-10">
+      <main className="container max-w-5xl mx-auto px-6 space-y-16 relative z-10">
         
-        {/* TITOLO E INTRODUZIONE */}
-        <div className="text-center space-y-4 pt-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-medium tracking-wide shadow-sm font-serif">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" /> L'Economia del Dono e la Moltiplicazione del Valore
+        {/* TITOLO E INTRODUZIONE STILE GIARDINO LUMINOSO */}
+        <div className="text-center space-y-5 pt-8">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 text-xs font-medium tracking-widest shadow-sm font-serif">
+            <Sparkles className="w-4 h-4 text-amber-600" /> L'Economia del Dono e la Moltiplicazione del Valore
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold font-serif text-stone-900 leading-tight">
-            NetFree: La Rete e la Libertà
+          <h1 className="text-4xl md:text-6xl font-bold font-serif text-stone-900 tracking-tight leading-tight">
+            NetFree LCR
           </h1>
-          <p className="text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed font-light">
-            Il termine NetFree nasce dall'unione di due concetti fondamentali: <strong>"Net"</strong> (la rete di persone) e <strong>"Free"</strong> (la libertà)[cite: 1]. Un percorso di libertà, crescita e responsabilità che ridefinisce le relazioni umane oltre la logica estrattiva[cite: 1].
+          <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed font-light">
+            Un percorso di libertà, crescita e responsabilità[cite: 1]. Dalla rigidità del modello estrattivo alla fioritura di una comunità basata sulla cura e sull'abbondanza condivisa[cite: 1].
           </p>
         </div>
 
-        {/* CORPO DELL'APPROFONDIMENTO: TESTI E INFOGRAFICHE STILE "GIARDINO LUMINOSO" */}
-        <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-12 shadow-xl space-y-12">
+        {/* ========================================================================= */}
+        {/* SEZIONE 1: IL PROBLEMA MODERNO VS IL BISOGNO UMANO (INFOGRAFICA AFFIANCATA) */}
+        {/* ========================================================================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          {/* 1. LA STRUTTURA ORGANICA */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
-              <span className="w-8 h-8 rounded-full bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center font-bold text-xs font-mono">1</span>
-              <h3 className="text-xl font-bold font-serif text-stone-900">La Struttura Organica: Il Ciclo del Seme</h3>
+          {/* Card Il Problema Moderno */}
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-stone-900 to-stone-800 text-stone-100 shadow-xl space-y-5 border border-stone-700/50 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-stone-700/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="inline-block px-3 py-1 rounded-full bg-stone-800 border border-stone-700 text-stone-300 text-[10px] font-mono tracking-widest uppercase">
+              Analisi del Contesto
+            </div>
+            <h3 className="text-2xl font-bold font-serif text-white">Il Problema Moderno</h3>
+            <ul className="space-y-3 text-sm text-stone-300 font-light">
+              <li className="flex items-start gap-2.5">
+                <span className="text-amber-400 font-bold">▪</span>
+                <span><strong>Inflazione e costo della vita:</strong> Aumento costante delle spese primarie.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-amber-400 font-bold">▪</span>
+                <span><strong>Dipendenza dalla scarsità:</strong> Sistemi tradizionali fondati sul controllo e sul debito.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-amber-400 font-bold">▪</span>
+                <span><strong>Scarsità di tempo:</strong> L'illusione che affidarsi a un'unica fonte di reddito sia ancora sufficiente.</span>
+              </li>
+            </ul>
+            <div className="pt-3 border-t border-stone-700/60">
+              <p className="text-xs text-amber-300/90 italic font-serif">
+                "L'illusione: Affidarsi a una sola fonte di reddito non è più sufficiente."
+              </p>
+            </div>
+          </div>
+
+          {/* Card Il Bisogno Umano / La Visione NetFree */}
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-50/80 via-white to-emerald-50/60 text-stone-800 shadow-xl space-y-5 border border-amber-200/60 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-200/30 rounded-full blur-2xl pointer-events-none" />
+            <div className="inline-block px-3 py-1 rounded-full bg-amber-100 border border-amber-200 text-amber-900 text-[10px] font-mono tracking-widest uppercase">
+              La Risposta Evolutiva
+            </div>
+            <h3 className="text-2xl font-bold font-serif text-stone-900">Il Bisogno Umano</h3>
+            <ul className="space-y-3 text-sm text-stone-600 font-light">
+              <li className="flex items-start gap-2.5">
+                <span className="text-emerald-600 font-bold">✓</span>
+                <span><strong>Equilibrio autentico:</strong> Armonia tra tempo personale e risorse materiali.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-emerald-600 font-bold">✓</span>
+                <span><strong>Opportunità sostenibili:</strong> Soluzioni accessibili e prive di rischi predatori.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-emerald-600 font-bold">✓</span>
+                <span><strong>Valore reale:</strong> Risolvere problemi concreti costruendo benefici collettivi.</span>
+              </li>
+            </ul>
+            <div className="pt-3 border-t border-amber-200/80">
+              <p className="text-xs text-stone-700 font-medium font-serif">
+                "La Domanda: Come generare libertà economica senza che tutto dipenda esclusivamente dal proprio tempo?"
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ========================================================================= */}
+        (CONTENUTI E PILASTRI APPROFONDITI CON INFOGRAFICHE DEDICATE)
+        {/* ========================================================================= */}
+        <div className="rounded-3xl border border-stone-200/90 bg-white/95 backdrop-blur-xl p-8 md:p-14 shadow-xl space-y-16">
+          
+          {/* 1. LA STRUTTURA ORGANICA (IL CICLO DEL SEME) */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 border-b border-stone-100 pb-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center font-bold text-sm font-mono shadow-sm">1</span>
+              <div>
+                <h3 className="text-2xl font-bold font-serif text-stone-900">La Struttura Organica: Il Ciclo del Seme</h3>
+                <p className="text-xs text-stone-500 font-light">La Chiave Railim e la metafora della coltivazione consapevole[cite: 1].</p>
+              </div>
             </div>
             
-            <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
-              Il funzionamento di NetFree è descritto attraverso la metafora del seme, che rappresenta l'inizio di ogni trasformazione[cite: 1]. L'ingresso nel sistema non è un debito, ma un seme ricevuto in dono dai "silos" della comunità, azzerando i rischi[cite: 1].
+            <p className="text-stone-600 leading-relaxed text-base font-light">
+              Il funzionamento di NetFree è descritto attraverso la metafora del seme, che rappresenta l'inizio di ogni trasformazione[cite: 1]. L'ingresso nel sistema non costituisce un debito, bensì un seme ricevuto in dono dai "silos" della comunità, azzerando qualsiasi rischio per ciò che non si possiede[cite: 1].
             </p>
 
-            {/* Infografica a supporto (Stile Seme / Chiave Railim) */}
+            {/* Infografica Visiva a 4 Fasi del Seme */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-2">
-              <div className="p-5 rounded-2xl bg-[#fcfbf9] border border-amber-200/60 shadow-sm space-y-2 relative">
-                <span className="text-amber-700 font-mono text-[10px] font-bold uppercase tracking-wider">Il Dono</span>
-                <h4 className="font-bold text-stone-900 text-sm font-serif">Chiave Railim</h4>
-                <p className="text-xs text-stone-600 font-light">Accoglienza senza pressione economica[cite: 1].</p>
+              <div className="p-6 rounded-2xl bg-[#fcfbf9] border border-amber-200/70 shadow-sm space-y-2 relative group hover:border-amber-400 transition-all">
+                <span className="text-amber-700 font-mono text-[10px] font-bold uppercase tracking-wider bg-amber-100/60 px-2 py-0.5 rounded">Fase 01</span>
+                <h4 className="font-bold text-stone-900 text-sm font-serif">Il Dono (Chiave Railim)</h4>
+                <p className="text-xs text-stone-600 font-light">Accoglienza nell'ecosistema senza alcuna pressione economica iniziale[cite: 1].</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#fcfbf9] border border-amber-200/60 shadow-sm space-y-2 relative">
-                <span className="text-amber-700 font-mono text-[10px] font-bold uppercase tracking-wider">La Scelta</span>
-                <h4 className="font-bold text-stone-900 text-sm font-serif">Coltivazione</h4>
-                <p className="text-xs text-stone-600 font-light">Impegno a piantare, curare e condividere[cite: 1].</p>
+              <div className="p-6 rounded-2xl bg-[#fcfbf9] border border-amber-200/70 shadow-sm space-y-2 relative group hover:border-amber-400 transition-all">
+                <span className="text-amber-700 font-mono text-[10px] font-bold uppercase tracking-wider bg-amber-100/60 px-2 py-0.5 rounded">Fase 02</span>
+                <h4 className="font-bold text-stone-900 text-sm font-serif">La Responsabilità</h4>
+                <p className="text-xs text-stone-600 font-light">Impegno a piantare, curare e fare crescere il valore ricevuto[cite: 1].</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#fcfbf9] border border-amber-200/60 shadow-sm space-y-2 relative">
-                <span className="text-amber-700 font-mono text-[10px] font-bold uppercase tracking-wider">La Rete</span>
-                <h4 className="font-bold text-stone-900 text-sm font-serif">Cura di ~6 Persone</h4>
-                <p className="text-xs text-stone-600 font-light">Il centro del sistema sono le persone, non la struttura[cite: 1].</p>
+              <div className="p-6 rounded-2xl bg-[#fcfbf9] border border-amber-200/70 shadow-sm space-y-2 relative group hover:border-amber-400 transition-all">
+                <span className="text-amber-700 font-mono text-[10px] font-bold uppercase tracking-wider bg-amber-100/60 px-2 py-0.5 rounded">Fase 03</span>
+                <h4 className="font-bold text-stone-900 text-sm font-serif">La Cura (~6 Persone)</h4>
+                <p className="text-xs text-stone-600 font-light">Condivisione con un cerchio ristretto; il centro del sistema sono le persone[cite: 1].</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#fcfbf9] border border-amber-200/60 shadow-sm space-y-2 relative">
-                <span className="text-amber-700 font-mono text-[10px] font-bold uppercase tracking-wider">I Frutti</span>
-                <h4 className="font-bold text-stone-900 text-sm font-serif">Nuova Abbondanza</h4>
-                <p className="text-xs text-stone-600 font-light">Generazione di prosperità diffusa e sostenibile[cite: 1].</p>
+              <div className="p-6 rounded-2xl bg-[#fcfbf9] border border-amber-200/70 shadow-sm space-y-2 relative group hover:border-amber-400 transition-all">
+                <span className="text-amber-700 font-mono text-[10px] font-bold uppercase tracking-wider bg-amber-100/60 px-2 py-0.5 rounded">Fase 04</span>
+                <h4 className="font-bold text-stone-900 text-sm font-serif">I Frutti</h4>
+                <p className="text-xs text-stone-600 font-light">Il seme matura generando risultati, prosperità e nuovi semi per il sistema[cite: 1].</p>
               </div>
             </div>
           </div>
 
-          {/* 2. IL MODELLO ECONOMICO */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
-              <span className="w-8 h-8 rounded-full bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center font-bold text-xs font-mono">2</span>
-              <h3 className="text-xl font-bold font-serif text-stone-900">Il Modello Economico: L'Economia del Dono</h3>
+          {/* 2. IL MODELLO ECONOMICO (L'ECONOMIA DEL DONO) */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 border-b border-stone-100 pb-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center font-bold text-sm font-mono shadow-sm">2</span>
+              <div>
+                <h3 className="text-2xl font-bold font-serif text-stone-900">Il Modello Economico: L'Economia del Dono</h3>
+                <p className="text-xs text-stone-500 font-light">Dalla competizione spietata alla condivisione del surplus[cite: 1].</p>
+              </div>
             </div>
             
-            <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
-              L'intero progetto si fonda sul principio dell'Economia del Dono, che mira a creare abbondanza collettiva condividendo il surplus[cite: 1]. Si collabora per costruire valore reale riducendo al minimo i rischi e azzerando la competizione[cite: 1].
+            <p className="text-stone-600 leading-relaxed text-base font-light">
+              L'intero progetto si fonda sul principio dell'Economia del Dono, che mira a creare abbondanza collettiva condividendo il surplus[cite: 1]. Invece di competere, le persone collaborano per costruire valore reale riducendo i rischi al minimo[cite: 1].
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-              <div className="p-6 rounded-2xl bg-amber-50/40 border border-amber-200/60 space-y-2">
-                <div className="text-amber-800 font-bold text-base">🌱 Restituire (Sostenibilità)</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-7 rounded-2xl bg-amber-50/50 border border-amber-200/70 space-y-3 shadow-sm">
+                <div className="flex items-center gap-2 text-amber-900 font-bold text-base font-serif">
+                  <span>🔄</span> Sostenibilità e Restituzione
+                </div>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Una parte dell'abbondanza generata torna ai "silos" del sistema per finanziare nuovi ingressi ed espandere la comunità[cite: 1].
+                  Una parte dell'abbondanza generata ritorna ai "silos" del sistema per finanziare nuovi ingressi ed espandere in modo perpetuo la comunità[cite: 1].
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-emerald-50/40 border border-emerald-200/60 space-y-2">
-                <div className="text-emerald-800 font-bold text-base">🪙 Valore Condiviso</div>
+              <div className="p-7 rounded-2xl bg-emerald-50/50 border border-emerald-200/70 space-y-3 shadow-sm">
+                <div className="flex items-center gap-2 text-emerald-900 font-bold text-base font-serif">
+                  <span>💎</span> Valore Condiviso e Tokenizzazione
+                </div>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Tokenizzazione e risorse digitalizzate per coprire i costi iniziali senza gravare sui partecipanti[cite: 1].
+                  Attraverso asset digitalizzati e tokenizzati, NetFree libera la liquidità necessaria per coprire i costi iniziali senza gravare sui singoli partecipanti[cite: 1].
                 </p>
               </div>
             </div>
           </div>
 
-          {/* 3. LA FILOSOFIA OPERATIVA */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
-              <span className="w-8 h-8 rounded-full bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center font-bold text-xs font-mono">3</span>
-              <h3 className="text-xl font-bold font-serif text-stone-900">La Filosofia Operativa: "Operare nella Luce"</h3>
+          {/* 3. LA FILOSOFIA OPERATIVA (OPERARE NELLA LUCE) */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 border-b border-stone-100 pb-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center font-bold text-sm font-mono shadow-sm">3</span>
+              <div>
+                <h3 className="text-2xl font-bold font-serif text-stone-900">La Filosofia Operativa: "Operare nella Luce"</h3>
+                <p className="text-xs text-stone-500 font-light">I pilastri etici e la trasparenza radicale[cite: 1].</p>
+              </div>
             </div>
             
-            <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
-              NetFree seleziona rigorosamente partner e opportunità basandosi su criteri etici rigorosi: azioni corrette, relazioni fondate sulla fiducia e nessuna promessa di arricchimento facile[cite: 1].
+            <p className="text-stone-600 leading-relaxed text-base font-light">
+              NetFree seleziona rigorosamente partner e opportunità basandosi su criteri etici inattaccabili: azioni corrette, relazioni fondate sulla fiducia e nessuna promessa di arricchimento facile[cite: 1].
             </p>
 
-            {/* Infografica a Colonne (Richiamo alle Colonne di Luce) */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
-              <div className="p-4 rounded-xl bg-stone-50 border border-stone-200 text-center space-y-1">
-                <span className="text-amber-700 font-bold text-xs">I. Etica</span>
-                <p className="text-[11px] text-stone-600 font-light">Trasparenza e fiducia reciproca.</p>
+            {/* Infografica a Colonne (Richiamo alle Colonne di Luce della presentazione) */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200 text-center space-y-2 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-900 flex items-center justify-center mx-auto text-xs font-bold font-serif">I</div>
+                <h4 className="font-bold text-stone-900 text-xs">Etica e Trasparenza</h4>
+                <p className="text-[11px] text-stone-600 font-light">Fiducia e chiarezza in ogni accordo[cite: 1].</p>
               </div>
-              <div className="p-4 rounded-xl bg-stone-50 border border-stone-200 text-center space-y-1">
-                <span className="text-amber-700 font-bold text-xs">II. Utilità Reale</span>
-                <p className="text-[11px] text-stone-600 font-light">Miglioramento concreto della vita.</p>
+
+              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200 text-center space-y-2 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-900 flex items-center justify-center mx-auto text-xs font-bold font-serif">II</div>
+                <h4 className="font-bold text-stone-900 text-xs">Utilità Reale</h4>
+                <p className="text-[11px] text-stone-600 font-light">Miglioramento concreto della vita[cite: 1].</p>
               </div>
-              <div className="p-4 rounded-xl bg-stone-50 border border-stone-200 text-center space-y-1">
-                <span className="text-amber-700 font-bold text-xs">III. Sostenibilità</span>
-                <p className="text-[11px] text-stone-600 font-light">Benefici duraturi nel tempo.</p>
+
+              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200 text-center space-y-2 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-900 flex items-center justify-center mx-auto text-xs font-bold font-serif">III</div>
+                <h4 className="font-bold text-stone-900 text-xs">Sostenibilità</h4>
+                <p className="text-[11px] text-stone-600 font-light">Benefici duraturi nel lungo periodo[cite: 1].</p>
               </div>
-              <div className="p-4 rounded-xl bg-stone-50 border border-stone-200 text-center space-y-1">
-                <span className="text-amber-700 font-bold text-xs">IV. Inclusività</span>
-                <p className="text-[11px] text-stone-600 font-light">Opportunità accessibili a tutti.</p>
+
+              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200 text-center space-y-2 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-900 flex items-center justify-center mx-auto text-xs font-bold font-serif">IV</div>
+                <h4 className="font-bold text-stone-900 text-xs">Inclusività</h4>
+                <p className="text-[11px] text-stone-600 font-light">Barriere ridotte per opportunità universali.</p>
               </div>
             </div>
           </div>
 
-          {/* 4. IL PERCORSO DI CRESCITA (Tazzina e Oceano) */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
-              <span className="w-8 h-8 rounded-full bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center font-bold text-xs font-mono">4</span>
-              <h3 className="text-xl font-bold font-serif text-stone-900">Il Percorso di Crescita: Dalla Tazzina all'Oceano</h3>
+          {/* 4. IL PERCORSO DI CRESCITA (DALLA TAZZINA ALL'OCEANO) */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 border-b border-stone-100 pb-4">
+              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center font-bold text-sm font-mono shadow-sm">4</span>
+              <div>
+                <h3 className="text-2xl font-bold font-serif text-stone-900">Il Percorso di Crescita: Dalla Tazzina all'Oceano</h3>
+                <p className="text-xs text-stone-500 font-light">Il prerequisito fondamentale: la capacità di ricevere[cite: 1].</p>
+              </div>
             </div>
             
-            <p className="text-stone-600 leading-relaxed text-sm md:text-base font-light">
-              NetFree non è solo un sistema economico, ma un percorso formativo progressivo. Se l'abbondanza arriva quando la consapevolezza è piccola, il sistema viene travolto (la tazzina rotta); se la persona cresce attraverso la formazione, una grande opportunità diventa una nuova onda (l'oceano)[cite: 1].
+            <p className="text-stone-600 leading-relaxed text-base font-light">
+              NetFree non è solo un sistema economico, ma un percorso formativo a livelli progressivi[cite: 1]. Se l'abbondanza arriva quando la consapevolezza è ancora piccola, il sistema viene travolto (la tazzina rotta); se la persona cresce attraverso la formazione, una grande opportunità diventa una nuova onda (l'oceano)[cite: 1].
             </p>
 
-            <div className="p-6 rounded-2xl bg-gradient-to-r from-amber-50/50 via-stone-50 to-emerald-50/50 border border-amber-200/50 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="p-8 rounded-3xl bg-gradient-to-r from-amber-50/60 via-stone-50 to-emerald-50/60 border border-amber-200/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
               <div className="space-y-1 text-center md:text-left">
-                <span className="text-[10px] font-mono text-amber-800 font-bold uppercase tracking-wider">Prerequisito fondamentale</span>
-                <h4 className="text-base font-bold font-serif text-stone-900">La Crescita Personale precede quella Economica</h4>
+                <span className="text-[10px] font-mono text-amber-800 font-bold uppercase tracking-wider bg-white px-3 py-1 rounded-full border border-amber-200 inline-block">Metafora Formativa</span>
+                <h4 className="text-lg font-bold font-serif text-stone-900">La Crescita Personale precede quella Economica</h4>
               </div>
-              <div className="flex items-center gap-3 shrink-0 font-mono text-xs text-stone-600">
-                <span className="px-3 py-1.5 bg-white rounded-lg border border-stone-200 shadow-sm">☕ Tazzina (Consapevolezza)</span>
-                <span>➔</span>
-                <span className="px-3 py-1.5 bg-stone-900 text-white rounded-lg shadow-sm">🌊 Oceano (Opportunità)</span>
+              <div className="flex items-center gap-4 shrink-0 font-mono text-xs text-stone-700 bg-white/90 p-4 rounded-2xl border border-stone-200 shadow-sm">
+                <div className="text-center">
+                  <span className="block text-xl">☕</span>
+                  <span className="text-[10px] font-bold">Tazzina</span>
+                </div>
+                <span className="text-amber-600 font-bold text-base">➔</span>
+                <div className="text-center">
+                  <span className="block text-xl">🌊</span>
+                  <span className="text-[10px] font-bold text-emerald-700">Oceano</span>
+                </div>
               </div>
             </div>
           </div>
@@ -231,7 +324,7 @@ export default function NetFreeDeepDive() {
               REATTORE CONCENTRICO E SCHEMA AD ALBERO A PIANI
             </h3>
             <p className="text-slate-400 text-xs font-light">
-              Visualizza in tempo reale il popolamento della comunità basato sulla cura di ~6 persone per nodo.
+              Visualizza in tempo reale il popolamento della comunità basato sulla cura di ~6 persone per nodo[cite: 1].
             </p>
           </div>
 
@@ -358,9 +451,9 @@ export default function NetFreeDeepDive() {
         </div>
 
         {/* CONCLUSIONE E NAVIGAZIONE */}
-        <div className="p-8 md:p-10 rounded-3xl border border-amber-200/80 bg-gradient-to-br from-amber-50/60 via-white to-emerald-50/30 space-y-4 text-center shadow-lg backdrop-blur-md">
-          <h3 className="text-xl font-bold font-serif text-stone-900">In sintesi</h3>
-          <p className="text-xs md:text-sm text-stone-600 max-w-xl mx-auto font-light leading-relaxed">
+        <div className="p-10 rounded-3xl border border-amber-200/80 bg-gradient-to-br from-amber-50/60 via-white to-emerald-50/30 space-y-4 text-center shadow-lg backdrop-blur-md">
+          <h3 className="text-xl font-bold font-serif text-stone-900">Il Giardino Condiviso</h3>
+          <p className="text-sm text-stone-600 max-w-xl mx-auto font-light leading-relaxed font-serif italic">
             "Ogni grande cambiamento inizia da un piccolo seme. La domanda non è quanto può crescere il seme, ma cosa può diventare un mondo in cui milioni di persone scelgono di coltivarlo insieme."
           </p>
           <div className="pt-2">
