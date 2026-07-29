@@ -13,9 +13,9 @@ export default function TokenizzazionePage() {
   const opzioniInteresse = [
     "Proprietario con 0,75%",
     "Proprietario senza 0,75%",
-    "Mini LP",
-    "Medium LP",
-    "Maxi LP",
+    "Mini LP (Da € 1.000 a € 50.000)",
+    "Medium LP (Da € 50.001 a € 500.000)",
+    "Maxi LP (Da € 500.000 in su)",
     "Informatori",
     "Responsabili/formatori Informatori"
   ];
@@ -40,7 +40,6 @@ export default function TokenizzazionePage() {
     setSubmitted(true);
   };
 
-  // Generatore link WhatsApp automatico con i dati inseriti
   const getWhatsAppLink = () => {
     const interessiStr = formData.interessi.join(', ');
     const testo = `Salve, sono ${formData.nome}. Ho richiesto la partecipazione ai webinar e l'accesso al percorso. I miei dati di contatto sono:\n- Email: ${formData.email}\n- Telefono: ${formData.telefono}\n- Aree d'interesse: ${interessiStr}`;
@@ -155,7 +154,7 @@ export default function TokenizzazionePage() {
           </div>
         </div>
 
-        {/* LE SEI POSSIBILITÀ E PROSPETTI */}
+        {/* LE 6 POSSIBILITÀ E I PROSPETTI */}
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Le 6 Possibilità e i Prospetti</h2>
@@ -194,48 +193,48 @@ export default function TokenizzazionePage() {
               </div>
             </div>
 
-            {/* 3. MINI LP */}
+            {/* 3. MINI LP (DA € 1.000 A € 50.000) */}
             <div className="p-8 rounded-[2rem] bg-white border border-stone-200/80 shadow-xl space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Opzione 03</span>
-                <h3 className="text-xl font-bold font-serif text-stone-900">Mini LP (Liquidity Pool)</h3>
+                <h3 className="text-xl font-bold font-serif text-stone-900">Mini LP (Da € 1.000 a € 50.000)</h3>
                 <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Partecipazione mirata alle pool di liquidità iniziali per sostenere i primi flussi operativi del sistema con esposizione bilanciata e protetta.
+                  Messa a disposizione di volumi di capitale per la co-creazione e la copertura dei costi iniziali di avvio dei primi nuclei operativi territoriali.
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Supporto iniziale</span>
-                <span className="text-amber-800 font-semibold">Liquidità Protetta</span>
+                <span>Sviluppo Iniziale</span>
+                <span className="text-amber-800 font-semibold">Co-Creazione di Base</span>
               </div>
             </div>
 
-            {/* 4. MEDIUM LP */}
+            {/* 4. MEDIUM LP (DA € 50.001 A € 500.000) */}
             <div className="p-8 rounded-[2rem] bg-white border border-stone-200/80 shadow-xl space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Opzione 04</span>
-                <h3 className="text-xl font-bold font-serif text-stone-900">Medium LP</h3>
+                <h3 className="text-xl font-bold font-serif text-stone-900">Medium LP (Da € 50.001 a € 500.000)</h3>
                 <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Coinvolgimento intermedio nelle pool di valore per alimentare l'espansione della rete e consolidare la stabilità circolare dei progetti sul territorio.
+                  Supporto strutturale e messa a disposizione di volumi per alimentare l'espansione territoriale e consolidare la stabilità dei cantieri in crescita.
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Espansione rete</span>
-                <span className="text-amber-800 font-semibold">Stabilità Circolare</span>
+                <span>Espansione Territoriale</span>
+                <span className="text-amber-800 font-semibold">Attivazione Cantieri</span>
               </div>
             </div>
 
-            {/* 5. MAXI LP */}
+            {/* 5. MAXI LP (DA € 500.000 IN SU) */}
             <div className="p-8 rounded-[2rem] bg-white border border-stone-200/80 shadow-xl space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Opzione 05</span>
-                <h3 className="text-xl font-bold font-serif text-stone-900">Maxi LP</h3>
+                <h3 className="text-xl font-bold font-serif text-stone-900">Maxi LP (Da € 500.000 in su)</h3>
                 <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Supporto avanzato di grande portata per il finanziamento strutturale dei grandi cantieri e delle infrastrutture cardine dell'ecosistema Net-Free.
+                  Coinvolgimento avanzato di grande portata per la co-creazione e il sostegno strutturale delle grandi infrastrutture cardine dell'ecosistema Net-Free.
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Infrastrutture</span>
-                <span className="text-amber-800 font-semibold">Grandi Cantieri</span>
+                <span>Infrastruttura Globale</span>
+                <span className="text-amber-800 font-semibold">Sovranità Strutturale</span>
               </div>
             </div>
 
@@ -396,7 +395,7 @@ export default function TokenizzazionePage() {
               <div className="space-y-2">
                 <h4 className="font-serif font-bold text-xl text-stone-900">Registrazione e Conferma Pronte</h4>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Grazie <strong>{formData.nome}</strong>. I tuoi dati e le tue preferenze ({formData.interessi.join(', ')}) sono stati registrati. Clicca sul pulsante sottostante per inviare il messaggio di conferma e ricevere istruzioni e link del webinar direttamente su WhatsApp.
+                  Grazie <strong>{formData.nome}</strong>. I tuoi dati e le tue preferenze ({formData.interessi.join(', ')}) sono stati registrati. Clicca sul pulsante sottostante per inviare il messaggio di conferma, ricevere istruzioni e sbloccare l'accesso al <strong>Prospetto Riservato di Co-Creazione</strong>.
                 </p>
               </div>
               
@@ -408,6 +407,12 @@ export default function TokenizzazionePage() {
                   className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-3 rounded-full text-xs inline-flex items-center justify-center gap-2 shadow-md transition-all font-serif"
                 >
                   <MessageCircle className="w-4 h-4" /> Invia Conferma Automatica su WhatsApp
+                </a>
+                <a 
+                  href="/prospetto-riservato" 
+                  className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-6 py-3 rounded-full text-xs inline-flex items-center justify-center gap-2 shadow-md transition-all font-serif"
+                >
+                  ✦ Accedi al Prospetto Riservato LP
                 </a>
               </div>
             </div>
