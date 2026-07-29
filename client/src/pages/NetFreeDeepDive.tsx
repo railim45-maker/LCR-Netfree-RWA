@@ -321,7 +321,7 @@ export default function NetFreeDeepDive() {
               </div>
             </div>
 
-            {/* 5. Protocolli con Diossido di Cloro (AGGIORNATO CON LINK GITHUB RAW) */}
+            {/* 5. Protocolli con Diossido di Cloro (LINK CORRETTI CON URL ENCODING) */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Protocolli di Purificazione</span>
@@ -343,7 +343,7 @@ export default function NetFreeDeepDive() {
                       <FileText className="w-3.5 h-3.5 text-amber-700" /> Salute Proibita (Andreas Kalcker)
                     </a>
                     <a 
-                      href="https://raw.githubusercontent.com/railim45-maker/LCR-Netfree-RWA/main/protocolli-salute-benessere/Cos'è%20il%20DIOSSIDO%20DI%20CLORO%20(CLO2).pdf" 
+                      href="https://raw.githubusercontent.com/railim45-maker/LCR-Netfree-RWA/main/protocolli-salute-benessere/Cos%27%C3%A8%20il%20DIOSSIDO%20DI%20CLORO%20(CLO2).pdf" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium"
