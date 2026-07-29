@@ -1,8 +1,33 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, BookOpen } from 'lucide-react';
+import { Sparkles, ArrowRight, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
+
+// Le tavole master ufficiali integrate direttamente nell'applicazione
+const masterSlides = [
+  { id: 1, title: "La Strada che Conduce a Casa", subtitle: "Dalla finzione del debito alla sovranità dell'Uomo Naturale", image: "https://placehold.co/1280x720/0b0d10/d4af37?text=La+Strada+che+Conduce+a+Casa" },
+  { id: 2, title: "Corriamo ogni giorno per restare fermi.", text: "Inflazione, debito, tempo rubato. Il sistema attuale è progettato sull'illusione della scarsità. La fatica aumenta, ma la libertà si allontana. È il momento di fermarsi.", image: "https://placehold.co/1280x720/0b0d10/10b981?text=Il+Labirinto" },
+  { id: 3, title: "La vera libertà non si compra. Si coltiva.", text: "Esiste una via d'uscita. Richiede un nuovo paradigma dove il valore reale sostituisce il debito, e la condivisione sostituisce la competizione.", image: "https://placehold.co/1280x720/0b0d10/d4af37?text=La+Porta+della+Liberta" },
+  { id: 4, title: "Tappa I: Piedi a terra.", text: "Per elevarsi, servono radici solide. Trasformiamo il valore potenziale in energia liquida, senza cedere proprietà, senza creare nuovo debito.", image: "https://placehold.co/1280x720/0b0d10/10b981?text=Tappa+I+Radici" },
+  { id: 5, title: "Il patrimonio non viene venduto. Viene attivato.", text: "La tecnologia lavora per l'uomo. Attraverso la digitalizzazione del valore, liberiamo risorse inaccessibili per nutrire una nuova economia.", image: "https://placehold.co/1280x720/0b0d10/d4af37?text=Attivazione+Patrimonio" },
+  { id: 6, title: "Operare esclusivamente nella Luce.", text: "L'innovazione senza integrità è vuota. Scegliamo solo progetti e partner guidati da etica, trasparenza e utilità reale per l'essere umano.", image: "https://placehold.co/1280x720/0b0d10/f59e0b?text=Operare+nella+Luce" },
+  { id: 7, title: "Tappa II: Il dono della Chiave Railim.", text: "Tutto inizia da un seme ricevuto in dono. Nessun rischio, nessuna pressione. Solo la responsabilità di coltivarlo e farlo prosperare.", image: "https://placehold.co/1280x720/0b0d10/10b981?text=Tappa+II+Chiave+Railim" },
+  { id: 8, title: "Dalla vendita alla cura del giardino.", text: "Non ti chiediamo di diventare un venditore. Ti chiediamo di prenderti cura della tua cerchia, accompagnando chi scegli nel percorso di crescita.", image: "https://placehold.co/1280x720/0b0d10/d4af37?text=Cura+del+Giardino" },
+  { id: 9, title: "L'Abbondanza Circolare.", text: "Quando il seme genera frutti, una parte torna al sistema per generare nuovi doni. La prosperità individuale nutre l'opportunità collettiva.", image: "https://placehold.co/1280x720/0b0d10/10b981?text=Abbondanza+Circolare" },
+  { id: 10, title: "Tappa III: Preparare il Contenitore.", text: "Se versi uno tsunami dentro una tazzina, la tazzina si rompe. La ricchezza improvvisa, senza consapevolezza, è un pericolo, non una salvezza.", image: "https://placehold.co/1280x720/0b0d10/3b82f6?text=Preparare+il+Contenitore" },
+  { id: 11, title: "Dalla Tazzina all'Oceano.", text: "La vera crescita economica richiede una profonda evoluzione interiore. Il Tempio Biologico deve espandersi per gestire la propria sovranità energetica.", image: "https://placehold.co/1280x720/0b0d10/10b981?text=Dalla+Tazzina+all+Oceano" },
+  { id: 12, title: "Tappa IV: Il Risveglio dalla Finzione.", text: "Abbandoniamo le dipendenze artificiali e la finzione giuridica. Riscopriamo l'essenza di esseri umani liberi, creatori del proprio destino.", image: "https://placehold.co/1280x720/0b0d10/f59e0b?text=Risveglio+dalla+Finzione" },
+  { id: 13, title: "L'Accademia Uomo Naturale.", text: "Il ritorno alla nostra natura originaria. Un percorso per riappropriarsi del proprio corpo, della propria mente e della propria energia vitale.", image: "https://placehold.co/1280x720/0b0d10/d4af37?text=Accademia+Uomo+Naturale" },
+  { id: 14, title: "L'Equilibrio Assoluto.", text: "Libertà di Tempo, Finanziaria e Spirituale. Quando il valore reale incontra la consapevolezza interiore, il sistema del debito crolla. Inizia l'era dell'abbondanza.", image: "https://placehold.co/1280x720/0b0d10/10b981?text=Equilibrio+Assoluto" },
+  { id: 15, title: "Bentornati a Casa.", text: "\"Ogni grande foresta è iniziata da un singolo seme. La domanda non è quanto possa crescere. La domanda è: vuoi coltivarlo con noi?\"", image: "https://placehold.co/1280x720/0b0d10/d4af37?text=Bentornati+a+Casa" }
+];
 
 export default function Home() {
   const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  const nextSlide = () => setCurrentSlideIndex((prev) => (prev + 1) % masterSlides.length);
+  const prevSlide = () => setCurrentSlideIndex((prev) => (prev - 1 + masterSlides.length) % masterSlides.length);
+
+  const activeSlide = masterSlides[currentSlideIndex];
 
   return (
     <div className="min-h-screen relative text-stone-800 space-y-24 pb-40 overflow-hidden bg-[#fcfbf9]">
@@ -19,10 +44,10 @@ export default function Home() {
           </div>
           <nav className="flex items-center gap-6 text-xs font-medium">
             <button 
-              onClick={() => setIsViewerOpen(true)}
+              onClick={() => { setCurrentSlideIndex(0); setIsViewerOpen(true); }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900 text-stone-50 hover:bg-stone-800 transition-colors font-serif cursor-pointer shadow-sm"
             >
-              <BookOpen className="w-3.5 h-3.5 text-amber-400" /> Sfoglia la Presentazione Ufficiale
+              <BookOpen className="w-3.5 h-3.5 text-amber-400" /> Sfoglia la Presentazione Master
             </button>
           </nav>
         </div>
@@ -102,26 +127,26 @@ export default function Home() {
           </p>
           <div className="pt-3">
             <button 
-              onClick={() => setIsViewerOpen(true)}
+              onClick={() => { setCurrentSlideIndex(0); setIsViewerOpen(true); }}
               className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-8 py-4 rounded-full text-xs md:text-sm inline-flex items-center gap-2.5 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif"
             >
-              <BookOpen className="w-4 h-4 text-amber-400" /> Sfoglia la Presentazione Ufficiale <ArrowRight className="w-4 h-4" />
+              <BookOpen className="w-4 h-4 text-amber-400" /> Sfoglia la Presentazione Master <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
 
       </main>
 
-      {/* VISORE MODALE INCORPORATO PER IL TUO PDF ORIGINALE (SENZA DOWNLOAD) */}
+      {/* VISORE MODALE NATIVO PER LA PRESENTAZIONE MASTER */}
       {isViewerOpen && (
         <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8">
-          <div className="bg-[#0f1217] border border-amber-500/30 w-full max-w-6xl h-[92vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden relative">
+          <div className="bg-[#0f1217] border border-amber-500/30 w-full max-w-5xl h-[88vh] rounded-3xl shadow-2xl flex flex-col justify-between overflow-hidden relative p-8 md:p-12">
             
-            {/* Header del Visore */}
-            <div className="px-6 py-4 bg-[#161a23] border-b border-amber-500/20 flex justify-between items-center">
+            {/* Header Modale */}
+            <div className="flex justify-between items-center border-b border-[#d4af37]/20 pb-4">
               <div className="flex items-center gap-3">
                 <span className="text-amber-400 font-serif">✦</span>
-                <span className="text-xs uppercase tracking-widest text-[#f3f0df] font-serif font-semibold">La Strada che Conduce a Casa • Presentazione Ufficiale</span>
+                <span className="text-xs uppercase tracking-[3px] text-amber-400 font-serif font-semibold">BIOFIN • La Strada che Conduce a Casa</span>
               </div>
               <button 
                 onClick={() => setIsViewerOpen(false)}
@@ -131,19 +156,51 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Visualizzatore PDF nativo incorporato senza pulsante di download */}
-            <div className="flex-1 w-full h-full bg-stone-950 relative">
-              <iframe 
-                src="/The_Road_to_Sovereignty.pdf#toolbar=0&navpanes=0&scrollbar=0" 
-                title="Presentazione Ufficiale La Strada che Conduce a Casa"
-                className="w-full h-full border-none"
-              />
+            {/* Contenuto della Diapositiva Master */}
+            <div className="flex flex-col items-center justify-center text-center space-y-6 my-auto px-4">
+              <span className="text-xs font-mono text-amber-400 tracking-widest uppercase">
+                Diapositiva {currentSlideIndex + 1} di {masterSlides.length}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#f3f0df] tracking-tight">
+                {activeSlide.title}
+              </h2>
+              {activeSlide.subtitle && (
+                <p className="text-lg md:text-xl text-stone-400 italic font-light max-w-2xl">
+                  {activeSlide.subtitle}
+                </p>
+              )}
+              {activeSlide.text && (
+                <p className="text-base md:text-lg text-stone-300 font-light max-w-3xl leading-relaxed">
+                  {activeSlide.text}
+                </p>
+              )}
             </div>
 
-            {/* Footer del Visore */}
-            <div className="px-6 py-3 bg-[#161a23] border-t border-amber-500/20 flex justify-between items-center text-xs text-stone-400 font-serif">
-              <span>BIOFIN • Giardino Luminoso</span>
-              <span>Visualizzazione protetta</span>
+            {/* Controlli Inferiori */}
+            <div className="flex justify-between items-center border-t border-[#d4af37]/20 pt-6">
+              <button 
+                onClick={prevSlide}
+                className="px-5 py-2.5 rounded-full bg-[#161a23] border border-amber-500/30 hover:bg-[#202533] text-[#f3f0df] text-xs uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+              >
+                <ChevronLeft className="w-4 h-4 text-amber-400" /> Precedente
+              </button>
+
+              <div className="flex gap-1.5 overflow-x-auto max-w-md px-2">
+                {masterSlides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`w-2 h-2 rounded-full transition-all cursor-pointer ${currentSlideIndex === idx ? 'bg-amber-400 w-6' : 'bg-stone-700 hover:bg-stone-500'}`}
+                  />
+                ))}
+              </div>
+
+              <button 
+                onClick={nextSlide}
+                className="px-5 py-2.5 rounded-full bg-[#161a23] border border-amber-500/30 hover:bg-[#202533] text-[#f3f0df] text-xs uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+              >
+                Successiva <ChevronRight className="w-4 h-4 text-amber-400" />
+              </button>
             </div>
 
           </div>
