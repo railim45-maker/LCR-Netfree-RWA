@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, TreePine } from "lucide-react";
+import { ArrowRight, Sparkles, TreePine, ExternalLink, ShieldCheck, Leaf, Globe, CheckCircle2, MessageCircle, FileText, Sun, Droplets, Zap, Activity } from "lucide-react";
 import { useState } from "react";
 
 export default function NetFreeDeepDive() {
@@ -17,6 +17,49 @@ export default function NetFreeDeepDive() {
   const chakraColors = ['#D97706', '#B45309', '#92400E', '#047857', '#065F46', '#022C22', '#FFFFFF'];
   const cx = 240;
   const cy = 240;
+
+  const [formData, setFormData] = useState({ 
+    nome: '', 
+    email: '', 
+    telefono: '', 
+    interessi: [] as string[] 
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const opzioniInteresse = [
+    "Efficientamento Energetico & Green Sharing",
+    "Presidio Acqua Pura & Depurazione",
+    "Tempio Biologico & Oli Essenziali (dōTERRA)",
+    "Microorganismi Effettivi & Ecopassaparola",
+    "Alcalinizzazione & Benessere (Basenpulver & Diossido di Cloro)",
+    "Innovazione & Monitoraggio (Tradetector)"
+  ];
+
+  const handleCheckboxChange = (opzione: string) => {
+    setFormData(prev => {
+      const exists = prev.interessi.includes(opzione);
+      if (exists) {
+        return { ...prev, interessi: prev.interessi.filter(item => item !== opzione) };
+      } else {
+        return { ...prev, interessi: [...prev.interessi, opzione] };
+      }
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.interessi.length === 0) {
+      alert("Seleziona almeno un'area d'interesse.");
+      return;
+    }
+    setSubmitted(true);
+  };
+
+  const getWhatsAppLink = () => {
+    const interessiStr = formData.interessi.join(', ');
+    const testo = `Salve, sono ${formData.nome}. Ho visionato i prodotti e le soluzioni Net-Free e desidero ricevere maggiori informazioni. I miei dati:\n- Email: ${formData.email}\n- Telefono: ${formData.telefono}\n- Aree d'interesse: ${interessiStr}`;
+    return `https://wa.me/?text=${encodeURIComponent(testo)}`;
+  };
 
   const injectLensStep = (amount: number) => {
     setLensLevels(prevLevels => {
@@ -80,19 +123,16 @@ export default function NetFreeDeepDive() {
             <Sparkles className="w-3.5 h-3.5 text-amber-600" /> L'Economia del Dono e la Moltiplicazione del Valore
           </div>
           <h1 className="text-4xl md:text-6xl font-bold font-serif text-stone-900 tracking-tight leading-[1.15]">
-            NetFree LCR
+            NetFree LCR & Tempio Biologico
           </h1>
           <p className="text-lg md:text-xl text-stone-600 leading-relaxed font-light font-serif italic">
             "Un percorso di libertà, crescita e responsabilità[cite: 1]."
           </p>
         </div>
 
-        {/* ========================================================================= */}
         {/* TAVOLA 01: IL PROBLEMA MODERNO VS IL BISOGNO UMANO */}
-        {/* ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           
-          {/* Colonna Sinistra: Il Problema Moderno */}
           <div className="p-10 rounded-[2.5rem] bg-[#1c1917] text-stone-100 shadow-2xl space-y-6 border border-stone-800 relative overflow-hidden flex flex-col justify-between">
             <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
             <div className="space-y-4 relative z-10">
@@ -122,7 +162,6 @@ export default function NetFreeDeepDive() {
             </div>
           </div>
 
-          {/* Colonna Destra: Il Bisogno Umano */}
           <div className="p-10 rounded-[2.5rem] bg-white text-stone-800 shadow-xl space-y-6 border border-amber-200/50 relative overflow-hidden flex flex-col justify-between">
             <div className="absolute top-0 right-0 w-48 h-48 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
             <div className="space-y-4 relative z-10">
@@ -154,160 +193,194 @@ export default function NetFreeDeepDive() {
 
         </div>
 
-        {/* ========================================================================= */}
-        {/* TAVOLA 02: I PILASTRI FONDAMENTALI DEL PROGETTO */}
-        {/* ========================================================================= */}
-        <div className="rounded-[2.5rem] border border-stone-200/80 bg-white/80 backdrop-blur-xl p-8 md:p-16 shadow-xl space-y-16">
-          
-          {/* 1. LA STRUTTURA ORGANICA (IL CICLO DEL SEME) */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-4 border-b border-stone-100 pb-5">
-              <span className="w-11 h-11 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">I</span>
-              <div>
-                <h3 className="text-2xl font-bold font-serif text-stone-900">La Struttura Organica: Il Ciclo del Seme</h3>
-                <p className="text-xs text-stone-500 font-light">La Chiave Railim e la metafora della coltivazione consapevole[cite: 1].</p>
-              </div>
-            </div>
-            
-            <p className="text-stone-600 leading-relaxed text-base font-light font-serif">
-              Il funzionamento di NetFree è descritto attraverso la metafora del seme, che rappresenta l'inizio di ogni trasformazione[cite: 1]. L'ingresso nel sistema non costituisce un debito, bensì un seme ricevuto in dono dai "silos" della comunità, azzerando qualsiasi rischio per ciò che non si possiede[cite: 1].
-            </p>
-
-            {/* Infografica Archetipica a 4 Fasi */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 pt-2">
-              <div className="p-6 rounded-3xl bg-[#fcfbf9] border border-stone-200/70 shadow-[0_2px_12px_rgba(0,0,0,0.01)] space-y-2.5">
-                <span className="text-amber-800 font-mono text-[10px] font-bold uppercase tracking-widest bg-amber-100/50 px-2.5 py-1 rounded-md">Fase A</span>
-                <h4 className="font-bold text-stone-900 text-sm font-serif">Il Dono (Chiave Railim)</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">Accoglienza nell'ecosistema senza alcuna pressione economica iniziale[cite: 1].</p>
-              </div>
-
-              <div className="p-6 rounded-3xl bg-[#fcfbf9] border border-stone-200/70 shadow-[0_2px_12px_rgba(0,0,0,0.01)] space-y-2.5">
-                <span className="text-amber-800 font-mono text-[10px] font-bold uppercase tracking-widest bg-amber-100/50 px-2.5 py-1 rounded-md">Fase B</span>
-                <h4 className="font-bold text-stone-900 text-sm font-serif">La Responsabilità</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">Impegno a piantare, curare e fare crescere il valore ricevuto[cite: 1].</p>
-              </div>
-
-              <div className="p-6 rounded-3xl bg-[#fcfbf9] border border-stone-200/70 shadow-[0_2px_12px_rgba(0,0,0,0.01)] space-y-2.5">
-                <span className="text-amber-800 font-mono text-[10px] font-bold uppercase tracking-widest bg-amber-100/50 px-2.5 py-1 rounded-md">Fase C</span>
-                <h4 className="font-bold text-stone-900 text-sm font-serif">La Cura (~6 Persone)</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">Condivisione con un cerchio ristretto; il centro del sistema sono le persone[cite: 1].</p>
-              </div>
-
-              <div className="p-6 rounded-3xl bg-[#fcfbf9] border border-stone-200/70 shadow-[0_2px_12px_rgba(0,0,0,0.01)] space-y-2.5">
-                <span className="text-amber-800 font-mono text-[10px] font-bold uppercase tracking-widest bg-amber-100/50 px-2.5 py-1 rounded-md">Fase D</span>
-                <h4 className="font-bold text-stone-900 text-sm font-serif">I Frutti</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">Il seme matura generando risultati, prosperità e nuovi semi per il sistema[cite: 1].</p>
-              </div>
-            </div>
+        {/* SEZIONE: DOCUMENTI E ALLEGATI UFFICIALI NET-FREE */}
+        <div className="rounded-[2.5rem] border border-emerald-200 bg-gradient-to-br from-emerald-50/80 via-white to-stone-50 p-8 md:p-12 shadow-xl space-y-8">
+          <div className="text-center space-y-2 max-w-lg mx-auto">
+            <span className="text-xs uppercase tracking-[3px] text-emerald-800 font-serif font-semibold">Allegati e Riferimenti Ufficiali</span>
+            <h3 className="text-2xl font-serif font-bold text-stone-900">Documentazione Tecnica e Informativa</h3>
+            <p className="text-stone-600 text-sm font-light font-serif">Scarica gli allegati ufficiali dedicati al Green Sharing e alla memoria biofisica dell'acqua.</p>
           </div>
 
-          {/* 2. IL MODELLO ECONOMICO (L'ECONOMIA DEL DONO) */}
-          <div className="space-y-6 pt-6 border-t border-stone-100">
-            <div className="flex items-center gap-4 border-b border-stone-100 pb-5">
-              <span className="w-11 h-11 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">II</span>
-              <div>
-                <h3 className="text-2xl font-bold font-serif text-stone-900">Il Modello Economico: L'Economia del Dono</h3>
-                <p className="text-xs text-stone-500 font-light">Dalla competizione spietata alla condivisione del surplus[cite: 1].</p>
-              </div>
-            </div>
-            
-            <p className="text-stone-600 leading-relaxed text-base font-light font-serif">
-              L'intero progetto si fonda sul principio dell'Economia del Dono, che mira a creare abbondanza collettiva condividendo il surplus[cite: 1]. Invece di competere, le persone collaborano per costruire valore reale riducendo i rischi al minimo[cite: 1].
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-8 rounded-3xl bg-amber-50/40 border border-amber-200/60 space-y-3">
-                <div className="flex items-center gap-2.5 text-amber-900 font-bold text-base font-serif">
-                  <span>🌱</span> Sostenibilità e Restituzione
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+            <a 
+              href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="p-6 rounded-3xl bg-white border border-stone-200 hover:border-emerald-400 shadow-md transition-all flex flex-col justify-between group space-y-4"
+            >
+              <div className="space-y-2">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold">
+                  <Sun className="w-5 h-5 text-emerald-700" />
                 </div>
-                <p className="text-xs text-stone-600 font-light leading-relaxed font-serif">
-                  Una parte dell'abbondanza generata ritorna ai "silos" del sistema per finanziare nuovi ingressi ed espandere in modo perpetuo la comunità[cite: 1].
+                <h4 className="font-serif font-bold text-lg text-stone-900 group-hover:text-emerald-800 transition-colors">Informativa Green Sharing (PDF)</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">
+                  Documento ufficiale PEF Power sulla condivisione energetica e i pannelli solari.
                 </p>
               </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-emerald-900 pt-2">
+                Scarica PDF Green Sharing <ExternalLink className="w-3.5 h-3.5" />
+              </span>
+            </a>
 
-              <div className="p-8 rounded-3xl bg-emerald-50/30 border border-emerald-200/50 space-y-3">
-                <div className="flex items-center gap-2.5 text-emerald-900 font-bold text-base font-serif">
-                  <span>🪙</span> Valore Condiviso e Tokenizzazione
+            <a 
+              href="https://www.omeopatia.org/download/seminario-rey/ELIA-Dell-acqua-la-rimembranza.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="p-6 rounded-3xl bg-white border border-stone-200 hover:border-emerald-400 shadow-md transition-all flex flex-col justify-between group space-y-4"
+            >
+              <div className="space-y-2">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold">
+                  <Droplets className="w-5 h-5 text-emerald-700" />
                 </div>
-                <p className="text-xs text-stone-600 font-light leading-relaxed font-serif">
-                  Attraverso asset digitalizzati e tokenizzati, NetFree libera la liquidità necessaria per coprire i costi iniziali senza gravare sui singoli partecipanti[cite: 1].
+                <h4 className="font-serif font-bold text-lg text-stone-900 group-hover:text-emerald-800 transition-colors">Dell'Acqua la Rimembranza (PDF)</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">
+                  Seminario scientifico approfondito sulla memoria dell'acqua e le proprietà biofisiche.
                 </p>
               </div>
-            </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-emerald-900 pt-2">
+                Scarica PDF Memoria Acqua <ExternalLink className="w-3.5 h-3.5" />
+              </span>
+            </a>
+          </div>
+        </div>
+
+        {/* I PRODOTTI E LE RETI DELL'ECOSISTEMA */}
+        <div className="rounded-[2.5rem] border border-stone-200/80 bg-white/80 backdrop-blur-xl p-8 md:p-16 shadow-xl space-y-12">
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Tecnologie e Presidi</span>
+            <h3 className="text-3xl font-bold font-serif text-stone-900">I Network e i Prodotti del Tempio Biologico</h3>
+            <p className="text-stone-600 text-sm font-light font-serif">Soluzioni selezionate per l'efficientamento, la purificazione, la nutrizione cellulare e la consapevolezza quotidiana.</p>
           </div>
 
-          {/* 3. LA FILOSOFIA OPERATIVA (OPERARE NELLA LUCE) */}
-          <div className="space-y-6 pt-6 border-t border-stone-100">
-            <div className="flex items-center gap-4 border-b border-stone-100 pb-5">
-              <span className="w-11 h-11 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">III</span>
-              <div>
-                <h3 className="text-2xl font-bold font-serif text-stone-900">La Filosofia Operativa: "Operare nella Luce"</h3>
-                <p className="text-xs text-stone-500 font-light">I pilastri etici e la trasparenza radicale[cite: 1].</p>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <p className="text-stone-600 leading-relaxed text-base font-light font-serif">
-              NetFree seleziona rigorosamente partner e opportunità basandosi su criteri etici inattaccabili: azioni corrette, relazioni fondate sulla fiducia e nessuna promessa di arricchimento facile[cite: 1].
-            </p>
-
-            {/* Infografica a Colonne (Le Colonne di Luce) */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="p-6 rounded-3xl bg-[#fcfbf9] border border-stone-200/70 text-center space-y-2.5">
-                <div className="w-9 h-9 rounded-full bg-amber-100/70 text-amber-900 flex items-center justify-center mx-auto text-xs font-bold font-serif">I</div>
-                <h4 className="font-bold text-stone-900 text-xs font-serif">Etica e Trasparenza</h4>
-                <p className="text-[11px] text-stone-600 font-light">Fiducia e chiarezza in ogni accordo[cite: 1].</p>
+            {/* 1. Efficientamento Energetico */}
+            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Energia & Fotovoltaico</span>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Efficientamento Energetico & Green Sharing</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Pannelli solari e sistemi di condivisione energetica avanzata tramite PEF Power per garantire autonomia e sostenibilità.
+                </p>
               </div>
-
-              <div className="p-6 rounded-3xl bg-[#fcfbf9] border border-stone-200/70 text-center space-y-2.5">
-                <div className="w-9 h-9 rounded-full bg-amber-100/70 text-amber-900 flex items-center justify-center mx-auto text-xs font-bold font-serif">II</div>
-                <h4 className="font-bold text-stone-900 text-xs font-serif">Utilità Reale</h4>
-                <p className="text-[11px] text-stone-600 font-light">Miglioramento concreto della vita[cite: 1].</p>
-              </div>
-
-              <div className="p-6 rounded-3xl bg-[#fcfbf9] border border-stone-200/70 text-center space-y-2.5">
-                <div className="w-9 h-9 rounded-full bg-amber-100/70 text-amber-900 flex items-center justify-center mx-auto text-xs font-bold font-serif">III</div>
-                <h4 className="font-bold text-stone-900 text-xs font-serif">Sostenibilità</h4>
-                <p className="text-[11px] text-stone-600 font-light">Benefici duraturi nel lungo periodo[cite: 1].</p>
-              </div>
-
-              <div className="p-6 rounded-3xl bg-[#fcfbf9] border border-stone-200/70 text-center space-y-2.5">
-                <div className="w-9 h-9 rounded-full bg-amber-100/70 text-amber-900 flex items-center justify-center mx-auto text-xs font-bold font-serif">IV</div>
-                <h4 className="font-bold text-stone-900 text-xs font-serif">Inclusività</h4>
-                <p className="text-[11px] text-stone-600 font-light">Barriere ridotte per opportunità universali.</p>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                <span className="text-xs text-stone-500 font-serif">PEF Power</span>
+                <a href="https://www.pefpower.it/it/home" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-serif font-semibold text-amber-900 hover:underline">
+                  Visita PEF Power <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             </div>
+
+            {/* 2. Depuratori Acqua Alcalina */}
+            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Presidio Acqua Pura</span>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Depuratori Acqua Alcalina (Dott. Favata)</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Sistemi di filtrazione e rivitalizzazione basati sui protocolli del Dott. Roberto Favata. Include video di approfondimento e schede tecniche.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex flex-wrap items-center justify-between gap-2">
+                <span className="text-xs text-stone-500 font-serif">Protocollo Favata</span>
+                <div className="flex items-center gap-3">
+                  <a href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" target="_blank" rel="noopener noreferrer" className="text-xs font-serif font-semibold text-amber-900 hover:underline inline-flex items-center gap-1">
+                    Scheda PDF <ExternalLink className="w-3 h-3" />
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=elbOEII7-zo" target="_blank" rel="noopener noreferrer" className="text-xs font-serif font-semibold text-amber-900 hover:underline inline-flex items-center gap-1">
+                    Video 1 <ExternalLink className="w-3 h-3" />
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=Di3BtfUqJwg" target="_blank" rel="noopener noreferrer" className="text-xs font-serif font-semibold text-amber-900 hover:underline inline-flex items-center gap-1">
+                    Video 2 <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* 3. Oli Essenziali dōTERRA */}
+            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Tempio Biologico</span>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Oli Essenziali dōTERRA</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Estratti botanici puri di grado terapeutico per il benessere olistico, la purificazione e l'armonia quotidiana della persona e della casa.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                <span className="text-xs text-stone-500 font-serif">Grado Terapeutico</span>
+                <a href="https://www.doterra.com/ME/it_ME" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-serif font-semibold text-amber-900 hover:underline">
+                  Esplora dōTERRA <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* 4. Microorganismi Effettivi */}
+            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Rigenerazione</span>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Microorganismi Effettivi (Ecopassaparola)</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Soluzioni ecologiche per la rivitalizzazione dei terreni, la pulizia domestica biologica e l'equilibrio simbiotico ambientale.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                <span className="text-xs text-stone-500 font-serif">Ecopassaparola</span>
+                <a href="http://ecopassaparola.it" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-serif font-semibold text-amber-900 hover:underline">
+                  Visita Ecopassaparola <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* 5. Basenpulver & Diossido di Cloro */}
+            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Alcalinizzazione & Benessere</span>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Basenpulver & Diossido di Cloro</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Integrazione minerale Pascoe per l'equilibrio acido-basico e protocolli di purificazione avanzata tramite diossido di cloro (Dioxitube).
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex flex-wrap items-center justify-between gap-2">
+                <span className="text-xs text-stone-500 font-serif">Integrazione & Protocolli</span>
+                <div className="flex items-center gap-3">
+                  <a href="https://www.viafarmaciaonline.it/pascoe-basenpulver-polvere-100-g.html" target="_blank" rel="noopener noreferrer" className="text-xs font-serif font-semibold text-amber-900 hover:underline inline-flex items-center gap-1">
+                    Basenpulver <ExternalLink className="w-3 h-3" />
+                  </a>
+                  <a href="https://dioxitube.com/w/fARnr15iVu8zKpJysQhmZ2" target="_blank" rel="noopener noreferrer" className="text-xs font-serif font-semibold text-amber-900 hover:underline inline-flex items-center gap-1">
+                    Diossido di Cloro <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* 6. Tradetector */}
+            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Analisi e Mercati</span>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Tradetector</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Piattaforma di analisi finanziaria e monitoraggio dei trend di mercato per una consapevolezza economica e strategica evoluta.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                <span className="text-xs text-stone-500 font-serif">Tradetector.net</span>
+                <a href="https://www.tradetector.net/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-serif font-semibold text-amber-900 hover:underline">
+                  Visita Tradetector <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
           </div>
 
-          {/* 4. IL PERCORSO DI CRESCITA (DALLA TAZZINA ALL'OCEANO) */}
-          <div className="space-y-6 pt-6 border-t border-stone-100">
-            <div className="flex items-center gap-4 border-b border-stone-100 pb-5">
-              <span className="w-11 h-11 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">IV</span>
-              <div>
-                <h3 className="text-2xl font-bold font-serif text-stone-900">Il Percorso di Crescita: Dalla Tazzina all'Oceano</h3>
-                <p className="text-xs text-stone-500 font-light">Il prerequisito fondamentale: la capacità di ricevere[cite: 1].</p>
-              </div>
-            </div>
-            
-            <p className="text-stone-600 leading-relaxed text-base font-light font-serif">
-              NetFree non è solo un sistema economico, ma un percorso formativo a livelli progressivi[cite: 1]. Se l'abbondanza arriva quando la consapevolezza è ancora piccola, il sistema viene travolto (la tazzina rotta); se la persona cresce attraverso la formazione, una grande opportunità diventa una nuova onda (l'oceano)[cite: 1].
+          {/* Approfondimento Memoria dell'Acqua */}
+          <div className="p-8 rounded-3xl bg-amber-50/40 border border-amber-200/60 space-y-3 text-center">
+            <h4 className="font-serif font-bold text-lg text-stone-900">Ulteriori Approfondimenti sulla Memoria dell'Acqua</h4>
+            <p className="text-xs text-stone-600 font-light max-w-xl mx-auto">
+              Per comprendere a fondo la valenza scientifica e biofisica dell'acqua rivitalizzata, esplora le risorse video e documentali ufficiali.
             </p>
-
-            <div className="p-8 rounded-3xl bg-gradient-to-r from-amber-50/50 via-stone-50 to-emerald-50/40 border border-amber-200/50 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-              <div className="space-y-1.5 text-center md:text-left">
-                <span className="text-[10px] font-mono text-amber-900 font-bold uppercase tracking-wider bg-white px-3 py-1 rounded-full border border-amber-200 inline-block">Prerequisito Formativo</span>
-                <h4 className="text-base font-bold font-serif text-stone-900">La Crescita Personale precede quella Economica</h4>
-              </div>
-              <div className="flex items-center gap-4 shrink-0 font-mono text-xs text-stone-700 bg-white px-6 py-4 rounded-2xl border border-stone-200 shadow-sm">
-                <div className="text-center">
-                  <span className="block text-2xl">☕</span>
-                  <span className="text-[10px] font-bold font-serif">Tazzina</span>
-                </div>
-                <span className="text-amber-600 font-bold text-base">➔</span>
-                <div className="text-center">
-                  <span className="block text-2xl">🌊</span>
-                  <span className="text-[10px] font-bold font-serif text-emerald-800">Oceano</span>
-                </div>
-              </div>
+            <div className="flex flex-wrap justify-center gap-4 pt-2">
+              <a href="https://www.youtube.com/watch?v=DZJbFmkUh2g" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-serif font-semibold text-amber-900 bg-white px-4 py-2 rounded-xl border border-amber-200 shadow-xs hover:bg-amber-50 transition-all">
+                Video Documentario Acqua <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
           </div>
 
@@ -454,6 +527,114 @@ export default function NetFreeDeepDive() {
 
         </div>
 
+        {/* MODULO DI RICHIESTA INFORMAZIONI & WHATSAPP */}
+        <div className="p-10 md:p-14 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-8">
+          <div className="text-center space-y-3 max-w-xl mx-auto">
+            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Attraversa la Via della Cura</span>
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Richiedi Informazioni sui Presidi Net-Free</h3>
+            <p className="text-stone-600 text-sm font-light font-serif">Seleziona le soluzioni di tuo interesse (selezione multipla). Verrai guidato direttamente all'interno dei nostri canali dedicati.</p>
+          </div>
+
+          {!submitted ? (
+            <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label className="text-xs font-serif uppercase tracking-wider text-stone-600">Il tuo Nome</label>
+                  <input 
+                    type="text" 
+                    required
+                    value={formData.nome}
+                    onChange={(e) => setFormData({...formData, nome: e.target.value})}
+                    placeholder="Dario Colognese" 
+                    className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-sm focus:outline-none focus:border-amber-500 font-serif"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-serif uppercase tracking-wider text-stone-600">La tua Email</label>
+                  <input 
+                    type="email" 
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    placeholder="dario@esempio.it" 
+                    className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-sm focus:outline-none focus:border-amber-500 font-serif"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-serif uppercase tracking-wider text-stone-600">Telefono / WhatsApp</label>
+                <input 
+                  type="tel" 
+                  required
+                  value={formData.telefono}
+                  onChange={(e) => setFormData({...formData, telefono: e.target.value})}
+                  placeholder="+39 333 1234567" 
+                  className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-sm focus:outline-none focus:border-amber-500 font-serif"
+                />
+              </div>
+
+              {/* SELEZIONE MULTIPLA - PRESIDI D'INTERESSE */}
+              <div className="space-y-3 pt-2">
+                <label className="text-xs font-serif uppercase tracking-wider text-stone-600 block">Sono interessato a… (Selezione Multipla)</label>
+                <div className="grid grid-cols-1 gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200">
+                  {opzioniInteresse.map((opzione) => {
+                    const isChecked = formData.interessi.includes(opzione);
+                    return (
+                      <div 
+                        key={opzione}
+                        onClick={() => handleCheckboxChange(opzione)}
+                        className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
+                          isChecked ? 'bg-amber-50/80 border-amber-300 text-stone-900' : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300'
+                        }`}
+                      >
+                        {isChecked ? (
+                          <CheckCircle2 className="w-4 h-4 text-amber-700 flex-shrink-0" />
+                        ) : (
+                          <div className="w-4 h-4 rounded-sm border border-stone-300 flex-shrink-0" />
+                        )}
+                        <span className="text-xs font-serif font-medium">{opzione}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="pt-4 text-center">
+                <button 
+                  type="submit"
+                  className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-8 py-4 rounded-full text-xs md:text-sm inline-flex items-center gap-2 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif"
+                >
+                  Invia Richiesta e Conferma su WhatsApp <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </form>
+          ) : (
+            <div className="p-8 rounded-3xl bg-amber-50/80 border border-amber-200 text-center space-y-6 max-w-xl mx-auto">
+              <div className="w-12 h-12 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center mx-auto border border-amber-300">
+                <CheckCircle2 className="w-6 h-6" />
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-serif font-bold text-xl text-stone-900">Richiesta Registrata con Successo</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">
+                  Grazie <strong>{formData.nome}</strong>. Le tue preferenze ({formData.interessi.join(', ')}) sono state registrate. Clicca sul pulsante per inviare il messaggio di conferma e ricevere supporto immediato su WhatsApp.
+                </p>
+              </div>
+              
+              <div className="pt-4 border-t border-amber-200/60 flex justify-center">
+                <a 
+                  href={getWhatsAppLink()} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-3 rounded-full text-xs inline-flex items-center justify-center gap-2 shadow-md transition-all font-serif"
+                >
+                  <MessageCircle className="w-4 h-4" /> Invia Conferma Automatica su WhatsApp
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
+
         {/* CONCLUSIONE E NAVIGAZIONE */}
         <div className="p-12 rounded-[2.5rem] border border-amber-200/80 bg-gradient-to-br from-amber-50/70 via-white to-emerald-50/40 space-y-6 text-center shadow-xl backdrop-blur-md">
           <h3 className="text-2xl font-bold font-serif text-stone-900">Il Giardino Condiviso</h3>
@@ -461,9 +642,9 @@ export default function NetFreeDeepDive() {
             "Ogni grande cambiamento inizia da un piccolo seme. La domanda non è quanto può crescere il seme, ma cosa può diventare un mondo in cui milioni di persone scelgono di coltivarlo insieme[cite: 1]."
           </p>
           <div className="pt-3">
-            <Link href="/privato/economia-dono">
+            <Link href="/">
               <button className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-9 py-4 rounded-full text-xs md:text-sm inline-flex items-center gap-2.5 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif">
-                Approfondisci l'Economia del Dono <ArrowRight className="w-4 h-4" />
+                ← Torna alla Home <ArrowRight className="w-4 h-4" />
               </button>
             </Link>
           </div>
