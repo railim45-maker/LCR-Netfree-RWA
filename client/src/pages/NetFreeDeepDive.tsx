@@ -5,13 +5,13 @@ import { useState } from "react";
 export default function NetFreeDeepDive() {
   const [activeFocusLevel, setActiveFocusLevel] = useState(1);
   const [lensLevels, setLensLevels] = useState([
-    { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, displayDots: 6, label: "Livello 1 (Radice)", countNum: "1", peopleCount: "1 Persona (Tu)", desc: "Il Seme iniziale / Origine del flusso[cite: 1]" },
-    { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, displayDots: 36, label: "Livello 2 (Propagazione)", countNum: "6", peopleCount: "6 Persone", desc: "Il cerchio ristretto di cura diretta[cite: 1]" },
-    { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, displayDots: 108, label: "Livello 3 (Sviluppo)", countNum: "36", peopleCount: "36 Nodi", desc: "Prima propagazione organica nei bio-distretti[cite: 1]" },
-    { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, displayDots: 180, label: "Livello 4 (Espansione)", countNum: "216", peopleCount: "216 Nodi", desc: "Rete interconnessa di distretto[cite: 1]" },
-    { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, displayDots: 240, label: "Livello 5 (Foresta)", countNum: "1.296", peopleCount: "1.296 Nodi", desc: "Comunità estesa e autonoma[cite: 1]" },
-    { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, displayDots: 300, label: "Livello 6 (Sintropia)", countNum: "7.776", peopleCount: "7.776 Nodi", desc: "Coerenza diffusa su vasta scala[cite: 1]" },
-    { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, displayDots: 360, label: "Livello 7 (Corona)", countNum: "46.656+", peopleCount: "46.656+ Nodi", desc: "Ecosistema frattale completo[cite: 1]" }
+    { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, displayDots: 6, label: "Livello 1 (Radice)", countNum: "1", peopleCount: "1 Persona (Tu)", desc: "Il Seme iniziale / Origine del flusso" },
+    { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, displayDots: 36, label: "Livello 2 (Propagazione)", countNum: "6", peopleCount: "6 Persone", desc: "Il cerchio ristretto di cura diretta" },
+    { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, displayDots: 108, label: "Livello 3 (Sviluppo)", countNum: "36", peopleCount: "36 Nodi", desc: "Prima propagazione organica nei bio-distretti" },
+    { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, displayDots: 180, label: "Livello 4 (Espansione)", countNum: "216", peopleCount: "216 Nodi", desc: "Rete interconnessa di distretto" },
+    { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, displayDots: 240, label: "Livello 5 (Foresta)", countNum: "1.296", peopleCount: "1.296 Nodi", desc: "Comunità estesa e autonoma" },
+    { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, displayDots: 300, label: "Livello 6 (Sintropia)", countNum: "7.776", peopleCount: "7.776 Nodi", desc: "Coerenza diffusa su vasta scala" },
+    { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, displayDots: 360, label: "Livello 7 (Corona)", countNum: "46.656+", peopleCount: "46.656+ Nodi", desc: "Ecosistema frattale completo" }
   ]);
 
   const chakraColors = ['#D97706', '#B45309', '#92400E', '#047857', '#065F46', '#022C22', '#FFFFFF'];
@@ -83,7 +83,7 @@ export default function NetFreeDeepDive() {
             Netfree LCR & Tempio Biologico
           </h1>
           <p className="text-lg md:text-xl text-stone-600 leading-relaxed font-light font-serif italic">
-            "Un percorso di libertà, crescita e responsabilità[cite: 1]."
+            "Un percorso di libertà, crescita e responsabilità."
           </p>
         </div>
 
@@ -100,21 +100,21 @@ export default function NetFreeDeepDive() {
               <ul className="space-y-3.5 text-sm text-stone-300 font-light leading-relaxed">
                 <li className="flex items-start gap-3">
                   <span className="text-amber-500 font-serif">▪</span>
-                  <span><strong>Inflazione e costo della vita:</strong> Aumento costante delle spese primarie[cite: 1].</span>
+                  <span><strong>Inflazione e costo della vita:</strong> Aumento costante delle spese primarie.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-amber-500 font-serif">▪</span>
-                  <span><strong>Dipendenza dalla scarsità:</strong> Sistemi tradizionali fondati sul controllo e sul debito[cite: 1].</span>
+                  <span><strong>Dipendenza dalla scarsità:</strong> Sistemi tradizionali fondati sul controllo e sul debito.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-amber-500 font-serif">▪</span>
-                  <span><strong>Scarsità di tempo e stress costante:</strong> L'illusione che affidarsi a un'unica fonte di reddito non sia più sufficiente[cite: 1].</span>
+                  <span><strong>Scarsità di tempo e stress costante:</strong> L'illusione che affidarsi a un'unica fonte di reddito non sia più sufficiente.</span>
                 </li>
               </ul>
             </div>
             <div className="pt-6 border-t border-stone-800/80 relative z-10">
               <p className="text-xs text-amber-300/90 font-serif italic">
-                "L'illusione: Affidarsi a una sola fonte di reddito non sia più sufficiente[cite: 1]."
+                "L'illusione: Affidarsi a una sola fonte di reddito non sia più sufficiente."
               </p>
             </div>
           </div>
@@ -129,21 +129,21 @@ export default function NetFreeDeepDive() {
               <ul className="space-y-3.5 text-sm text-stone-600 font-light leading-relaxed">
                 <li className="flex items-start gap-3">
                   <span className="text-emerald-700 font-serif font-bold">✓</span>
-                  <span><strong>Equilibrio autentico:</strong> Armonia tra tempo personale e risorse materiali[cite: 1].</span>
+                  <span><strong>Equilibrio autentico:</strong> Armonia tra tempo personale e risorse materiali.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-emerald-700 font-serif font-bold">✓</span>
-                  <span><strong>Opportunità sostenibili:</strong> Soluzioni accessibili e prive di rischi predatori[cite: 1].</span>
+                  <span><strong>Opportunità sostenibili:</strong> Soluzioni accessibili e prive di rischi predatori.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-emerald-700 font-serif font-bold">✓</span>
-                  <span><strong>Valore reale:</strong> Risolvere problemi concreti costruendo benefici collettivi[cite: 1].</span>
+                  <span><strong>Valore reale:</strong> Risolvere problemi concreti costruendo benefici collettivi.</span>
                 </li>
               </ul>
             </div>
             <div className="pt-6 border-t border-stone-100 relative z-10">
               <p className="text-xs text-stone-700 font-serif font-medium">
-                "La Domanda: Come generare libertà economica senza che tutto dipenda esclusivamente dal proprio tempo[cite: 1]?"
+                "La Domanda: Come generare libertà economica senza che tutto dipenda esclusivamente dal proprio tempo?"
               </p>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function NetFreeDeepDive() {
               </div>
             </div>
 
-            {/* 5. Protocolli con Diossido di Cloro (LINK CORRETTI CON URL ENCODING) */}
+            {/* 5. Protocolli con Diossido di Cloro (COLLEGATO AI FILE STATICI IN /PUBLIC) */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Protocolli di Purificazione</span>
@@ -335,7 +335,7 @@ export default function NetFreeDeepDive() {
                   <span className="text-[11px] font-bold font-serif text-stone-800 uppercase tracking-wider block">Documentazione Ufficiale:</span>
                   <div className="flex flex-col gap-1.5 text-xs font-serif">
                     <a 
-                      href="https://raw.githubusercontent.com/railim45-maker/LCR-Netfree-RWA/main/protocolli-salute-benessere/Salute%20Proibita%20-%20Andreas%20Kalcker%20CORRETTO.pdf" 
+                      href="/protocolli-salute-benessere/Salute%20Proibita%20-%20Andreas%20Kalcker%20CORRETTO.pdf" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium"
@@ -343,7 +343,7 @@ export default function NetFreeDeepDive() {
                       <FileText className="w-3.5 h-3.5 text-amber-700" /> Salute Proibita (Andreas Kalcker)
                     </a>
                     <a 
-                      href="https://raw.githubusercontent.com/railim45-maker/LCR-Netfree-RWA/main/protocolli-salute-benessere/Cos%27%C3%A8%20il%20DIOSSIDO%20DI%20CLORO%20(CLO2).pdf" 
+                      href="/protocolli-salute-benessere/Cos%27%C3%A8%20il%20DIOSSIDO%20DI%20CLORO%20(CLO2).pdf" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium"
@@ -398,7 +398,7 @@ export default function NetFreeDeepDive() {
               REATTORE CONCENTRICO E SCHEMA AD ALBERO A PIANI
             </h3>
             <p className="text-stone-400 text-xs font-light font-serif">
-              Visualizza in tempo reale il popolamento della comunità basato sulla cura di ~6 persone per nodo[cite: 1].
+              Visualizza in tempo reale il popolamento della comunità basato sulla cura di ~6 persone per nodo.
             </p>
           </div>
 
@@ -528,7 +528,7 @@ export default function NetFreeDeepDive() {
         <div className="p-12 rounded-[2.5rem] border border-amber-200/80 bg-gradient-to-br from-amber-50/70 via-white to-emerald-50/40 space-y-6 text-center shadow-xl backdrop-blur-md">
           <h3 className="text-2xl font-bold font-serif text-stone-900">Il Giardino Condiviso</h3>
           <p className="text-base text-stone-600 max-w-2xl mx-auto font-light leading-relaxed font-serif italic">
-            "Ogni grande cambiamento inizia da un piccolo seme. La domanda non è quanto può crescere il seme, ma cosa può diventare un mondo in cui milioni di persone scelgono di coltivarlo insieme[cite: 1]."
+            "Ogni grande cambiamento inizia da un piccolo seme. La domanda non è quanto può crescere il seme, ma cosa può diventare un mondo in cui milioni di persone scelgono di coltivarlo insieme."
           </p>
           <div className="pt-3">
             <Link href="/">
