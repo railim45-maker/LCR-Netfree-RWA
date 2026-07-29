@@ -321,7 +321,7 @@ export default function NetFreeDeepDive() {
               </div>
             </div>
 
-            {/* 5. Protocolli con Diossido di Cloro (COLLEGATO AI FILE STATICI IN /PUBLIC) */}
+            {/* 5. Protocolli con Diossido di Cloro (COLLEGATO CORRETTAMENTE ALLA CARTELLA PUBLIC) */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Protocolli di Purificazione</span>
