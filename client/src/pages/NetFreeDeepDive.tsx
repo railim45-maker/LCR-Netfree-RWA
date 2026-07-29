@@ -61,7 +61,7 @@ export default function NetFreeDeepDive() {
         <div className="flex items-center justify-between px-6 py-4 rounded-full bg-white/90 border border-stone-200/60 shadow-[0_2px_20px_rgba(0,0,0,0.02)] backdrop-blur-xl">
           <div className="flex items-center gap-3">
             <span className="w-7 h-7 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center text-xs border border-amber-200/60 font-serif">✦</span>
-            <span className="font-bold text-xs uppercase tracking-widest text-stone-600 font-serif">Il Giardino Luminoso • NetFree LCR</span>
+            <span className="font-bold text-xs uppercase tracking-widest text-stone-600 font-serif">Il Giardino Luminoso • Netfree LCR</span>
           </div>
           <nav className="flex items-center gap-4 text-xs font-medium">
             <Link href="/">
@@ -80,7 +80,7 @@ export default function NetFreeDeepDive() {
             <Sparkles className="w-3.5 h-3.5 text-amber-600" /> L'Economia del Dono e la Moltiplicazione del Valore
           </div>
           <h1 className="text-4xl md:text-6xl font-bold font-serif text-stone-900 tracking-tight leading-[1.15]">
-            NetFree LCR & Tempio Biologico
+            Netfree LCR & Tempio Biologico
           </h1>
           <p className="text-lg md:text-xl text-stone-600 leading-relaxed font-light font-serif italic">
             "Un percorso di libertà, crescita e responsabilità[cite: 1]."
