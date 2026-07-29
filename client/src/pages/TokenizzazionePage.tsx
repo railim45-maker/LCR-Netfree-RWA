@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle, Calculator, FileCheck, CheckSquare, Square, HeartHandshake, Lock } from 'lucide-react';
+import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle, Calculator, FileCheck, CheckSquare, Square, Lock, Layers, Lightbulb, Building2, Landmark, HeartHandshake } from 'lucide-react';
 
 export default function TokenizzazionePage() {
   const [formData, setFormData] = useState({ 
@@ -79,6 +79,84 @@ export default function TokenizzazionePage() {
           </p>
         </div>
 
+        {/* SEZIONE: CHE COSA È TOKENIZZABILE? */}
+        <div className="p-10 md:p-14 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-10">
+          <div className="text-center space-y-3 max-w-xl mx-auto">
+            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Orizzonte degli Asset</span>
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Che cosa è tokenizzabile?</h3>
+            <p className="text-stone-600 text-sm font-light font-serif">Qualsiasi forma di valore reale, tangibile o immateriale, può essere certificata e resa liquida attraverso i protocolli digitali Blotix.</p>
+          </div>
+
+          {/* ESEMPI CONCRETI: MUCCE, CALCIATORI, IDEE E BREVETTI */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/60 text-center space-y-2">
+              <span className="text-2xl">🐄</span>
+              <h4 className="font-serif font-bold text-sm text-stone-900">Mucche & Bestiame</h4>
+              <p className="text-xs text-stone-600 font-light">Valorizzazione e tracciabilità di asset biologici e zootecnici.</p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/60 text-center space-y-2">
+              <span className="text-2xl">⚽</span>
+              <h4 className="font-serif font-bold text-sm text-stone-900">Calciatori & Prestazioni</h4>
+              <p className="text-xs text-stone-600 font-light">Tokenizzazione dei diritti e dei flussi legati al talento sportivo.</p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/60 text-center space-y-2">
+              <span className="text-2xl">💡</span>
+              <h4 className="font-serif font-bold text-sm text-stone-900">Idee & Progetti</h4>
+              <p className="text-xs text-stone-600 font-light">Trasformazione di intuizioni creative in prototipi finanziabili.</p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/60 text-center space-y-2">
+              <span className="text-2xl">📜</span>
+              <h4 className="font-serif font-bold text-sm text-stone-900">Brevetti & Proprietà</h4>
+              <p className="text-xs text-stone-600 font-light">Certificazione digitale e protezione di innovazioni tecnologiche.</p>
+            </div>
+          </div>
+
+          {/* COLLEGAMENTI UFFICIALI AREE BLOTIX */}
+          <div className="pt-4 border-t border-stone-100">
+            <h4 className="text-xs font-serif uppercase tracking-wider text-stone-500 text-center mb-6">Ambiti Istituzionali di Applicazione (Blotix)</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <a href="https://www.blotix.io/index.php/privati" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 hover:border-amber-400 transition-all flex flex-col justify-between group space-y-3">
+                <div className="space-y-1">
+                  <span className="text-amber-800"><Building2 className="w-5 h-5" /></span>
+                  <h5 className="font-serif font-bold text-sm text-stone-900 group-hover:text-amber-800 transition-colors">Beni Privati</h5>
+                  <p className="text-xs text-stone-500 font-light">Immobili e patrimoni personali.</p>
+                </div>
+                <span className="inline-flex items-center gap-1 text-xs text-amber-800 font-serif">Approfondisci <ExternalLink className="w-3 h-3" /></span>
+              </a>
+
+              <a href="https://www.blotix.io/index.php/aziende" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 hover:border-amber-400 transition-all flex flex-col justify-between group space-y-3">
+                <div className="space-y-1">
+                  <span className="text-amber-800"><Layers className="w-5 h-5" /></span>
+                  <h5 className="font-serif font-bold text-sm text-stone-900 group-hover:text-amber-800 transition-colors">Aziende</h5>
+                  <p className="text-xs text-stone-500 font-light">Asset aziendali e flussi produttivi.</p>
+                </div>
+                <span className="inline-flex items-center gap-1 text-xs text-amber-800 font-serif">Approfondisci <ExternalLink className="w-3 h-3" /></span>
+              </a>
+
+              <a href="https://www.blotix.io/index.php/terzo-settore" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 hover:border-amber-400 transition-all flex flex-col justify-between group space-y-3">
+                <div className="space-y-1">
+                  <span className="text-amber-800"><HeartHandshake className="w-5 h-5" /></span>
+                  <h5 className="font-serif font-bold text-sm text-stone-900 group-hover:text-amber-800 transition-colors">Terzo Settore</h5>
+                  <p className="text-xs text-stone-500 font-light">Progetti sociali e comunitari.</p>
+                </div>
+                <span className="inline-flex items-center gap-1 text-xs text-amber-800 font-serif">Approfondisci <ExternalLink className="w-3 h-3" /></span>
+              </a>
+
+              <a href="https://www.blotix.io/index.php/pubblica-amministrazione" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 hover:border-amber-400 transition-all flex flex-col justify-between group space-y-3">
+                <div className="space-y-1">
+                  <span className="text-amber-800"><Landmark className="w-5 h-5" /></span>
+                  <h5 className="font-serif font-bold text-sm text-stone-900 group-hover:text-amber-800 transition-colors">Pubblica Amministrazione</h5>
+                  <p className="text-xs text-stone-500 font-light">Valorizzazione beni pubblici.</p>
+                </div>
+                <span className="inline-flex items-center gap-1 text-xs text-amber-800 font-serif">Approfondisci <ExternalLink className="w-3 h-3" /></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* SEZIONE SIMULATORE E CONTRATTI UFFICIALI BLOTIX */}
         <div className="p-10 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-amber-50/80 via-white to-stone-50 border border-amber-200 shadow-xl space-y-8">
           <div className="text-center space-y-2 max-w-lg mx-auto">
@@ -152,7 +230,7 @@ export default function TokenizzazionePage() {
           </div>
         </div>
 
-        {/* LE POSSIBILITÀ E I PROSPETTI (CON RIQUADRO LP UNIFICATO E RISERVATO) */}
+        {/* LE POSSIBILITÀ E I PROSPETTI */}
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Le Possibilità e i Ruoli nell'Ecosistema</h2>
