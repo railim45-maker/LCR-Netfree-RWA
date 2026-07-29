@@ -321,7 +321,7 @@ export default function NetFreeDeepDive() {
               </div>
             </div>
 
-            {/* 5. Protocolli con Diossido di Cloro (COLLEGATO CORRETTAMENTE ALLA CARTELLA PUBLIC) */}
+            {/* 5. Protocolli con Diossido di Cloro (COLLEGATO AI LINK GOOGLE DRIVE DIRETTI) */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Protocolli di Purificazione</span>
@@ -335,7 +335,7 @@ export default function NetFreeDeepDive() {
                   <span className="text-[11px] font-bold font-serif text-stone-800 uppercase tracking-wider block">Documentazione Ufficiale:</span>
                   <div className="flex flex-col gap-1.5 text-xs font-serif">
                     <a 
-                      href="/protocolli-salute-benessere/Salute%20Proibita%20-%20Andreas%20Kalcker%20CORRETTO.pdf" 
+                      href="https://drive.google.com/file/d/1QPdv3uQhn6_o2QGcU09Jiul9-npp2nYx/view?usp=sharing" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium"
@@ -343,7 +343,7 @@ export default function NetFreeDeepDive() {
                       <FileText className="w-3.5 h-3.5 text-amber-700" /> Salute Proibita (Andreas Kalcker)
                     </a>
                     <a 
-                      href="/protocolli-salute-benessere/Cos%27%C3%A8%20il%20DIOSSIDO%20DI%20CLORO%20(CLO2).pdf" 
+                      href="https://drive.google.com/file/d/17k4qLja8LkfJOU2K38n0jY7ynPhXzdYJ/view?usp=sharing" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium"
