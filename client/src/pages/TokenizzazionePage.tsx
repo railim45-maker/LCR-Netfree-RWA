@@ -40,8 +40,12 @@ export default function TokenizzazionePage() {
 
   const getWhatsAppLink = () => {
     const interessiStr = formData.interessi.join(', ');
-    const testo = `Salve, sono ${formData.nome}. Ho richiesto la partecipazione ai webinar e l'accesso al percorso. I miei dati di contatto sono:\n- Email: ${formData.email}\n- Telefono: ${formData.telefono}\n- Aree d'interesse: ${interessiStr}`;
-    return `https://wa.me/?text=${encodeURIComponent(testo)}`;
+    const numeroWhatsApp = "3477194486";
+    const emailRiferimento = "biofinsrls@gmail.com";
+    
+    const testo = `Salve, sono ${formData.nome}.\nConfermo la mia presenza al webinar e l'interesse per le aree: ${interessiStr}.\n\n- I Miei Contatti:\n• Email: ${formData.email} (Rif: ${emailRiferimento})\n• Telefono: ${formData.telefono}\n\nChiedo l'accesso e la registrazione della presenza.`;
+    
+    return `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(testo)}`;
   };
 
   return (
@@ -488,7 +492,7 @@ export default function TokenizzazionePage() {
               <div className="space-y-2">
                 <h4 className="font-serif font-bold text-lg md:text-xl text-stone-900">Registrazione e Conferma Pronte</h4>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Grazie <strong>{formData.nome}</strong>. I tuoi dati e le tue preferenze sono stati registrati. Clicca sul pulsante per inviare il messaggio di conferma e sbloccare l'accesso al <strong>Prospetto Riservato di Co-Creazione</strong>.
+                  Grazie <strong>{formData.nome}</strong>. I tuoi dati e le tue preferenze sono stati registrati. Clicca sul pulsante per inviare la conferma al numero <strong>3477194486</strong> (Rif: <code>biofinsrls@gmail.com</code>) e sbloccare l'accesso al <strong>Prospetto Riservato</strong>.
                 </p>
               </div>
               
@@ -499,7 +503,7 @@ export default function TokenizzazionePage() {
                   rel="noopener noreferrer"
                   className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-3 rounded-full text-xs inline-flex items-center justify-center gap-2 shadow-md transition-all font-serif"
                 >
-                  <MessageCircle className="w-4 h-4" /> Invia Conferma Automatica su WhatsApp
+                  <MessageCircle className="w-4 h-4" /> Invia Conferma su WhatsApp (3477194486)
                 </a>
                 <a 
                   href="/prospetto-riservato" 
