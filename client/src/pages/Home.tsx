@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { Sparkles, ArrowRight, BookOpen, ExternalLink, ShieldCheck, Heart, Leaf, Globe, Sun } from 'lucide-react';
+import React from 'react';
+import { Sparkles, ArrowRight, BookOpen, ExternalLink, ShieldCheck, Leaf, Globe } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function Home() {
-  const [activeCircle, setActiveCircle] = useState<number | null>(null);
-
   return (
     <div className="min-h-screen relative text-stone-800 space-y-28 pb-40 overflow-hidden bg-[#fcfbf9]">
       
@@ -24,7 +23,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900 text-stone-50 hover:bg-stone-800 transition-colors font-serif cursor-pointer shadow-sm"
             >
-              <BookOpen className="w-3.5 h-3.5 text-amber-400" /> Apri il PDF Ufficiale
+              <BookOpen className="w-3.5 h-3.5 text-amber-400" /> Sfoglia il PDF Ufficiale
             </a>
           </nav>
         </div>
@@ -47,14 +46,19 @@ export default function Home() {
           </p>
         </div>
 
-        {/* I 4 PILASTRI / LE TAPPE */}
+        {/* LE 4 TAPPE / I PILASTRI */}
         <div className="space-y-8">
           
           {/* Tappa I */}
           <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
-            <div className="flex items-center gap-4">
-              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">I</span>
-              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Primo Passo: Mettere i Piedi a Terra</h3>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">I</span>
+                <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Primo Passo: Mettere i Piedi a Terra</h3>
+              </div>
+              <Link href="/tokenizzazione" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold">
+                Approfondisci <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
             <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
               Il primo blocco, quando si è stanchi, è la paura di non potersi permettere un cambiamento o di dover rischiare soldi che servono per la spesa. La strada non ti chiede alcun capitale iniziale. Grazie a un meccanismo basato sulla tokenizzazione e sul sostegno di chi ha creduto prima di te nel progetto — con la generosità di chi ha fatto un passo indietro sulle prime semestralità — il tuo ingresso nel sistema è protetto. Non parti con un esborso economico: parti in equilibrio.
@@ -63,101 +67,76 @@ export default function Home() {
 
           {/* Tappa II */}
           <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
-            <div className="flex items-center gap-4">
-              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">II</span>
-              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Secondo Passo: Camminare Insieme (Il Net-Free)</h3>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">II</span>
+                <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Secondo Passo: Camminare Insieme (Il Net-Free)</h3>
+              </div>
+              <Link href="/economia-dono" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold">
+                Economia del Dono <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
             <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
-              Una volta alleggerito il passo dalla pressione finanziaria, impariamo a muoverci in modo nuovo. Dimentica il mondo là fuori fatto di competizione e solitudine. Qui ti affidiamo un seme pulito. La regola è semplice e profondamente umana: ti prendi cura del tuo spazio e aiuti sei persone a fare lo stesso. È una catena di cura e di abbondanza condivisa, dove la forza di uno sostiene la crescita di tutti, slegando finalmente il guadagno dal tempo che vendi ogni giorno.
+              Una volta alleggerito il passo dalla pressione finanziaria, impariamo a muoverci in modo nuovo. Dimentica il mondo là fuori fatto di competizione e solitudine. Qui ti affidiamo un seme pulito. La regola è semplice e profondamente umana: ti prendi cura del tuo spazio e aiuti sei persone a fare lo stesso. È una catena di cura e di abbondanza condivisa, dove la forza di uno sostiene la crescita di tutti.
             </p>
           </div>
 
           {/* Tappa III */}
           <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
-            <div className="flex items-center gap-4">
-              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">III</span>
-              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Terzo Passo: Ritrovare il Tempio Biologico</h3>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">III</span>
+                <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Terzo Passo: Ritrovare il Tempio Biologico</h3>
+              </div>
+              <span className="text-xs font-serif text-stone-500 font-medium">Presidi Ufficiali</span>
             </div>
             <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
-              Quando l'economia smette di essere un assillo costante, l'energia torna a concentrarsi dove serve davvero: nel tuo corpo. La strada ti guida a riscoprire i gesti semplici e veri che restituiscono vitalità alla materia: un'acqua pura che disseta davvero, la terra che si rigenera attraverso i microrganismi e la sovranità energetica che alleggerisce la tua casa. Quando il corpo si ripulisce e ritrova il suo equilibrio naturale, la nebbia svanisce.
+              Quando l'economia smette di essere un assillo costante, l'energia torna a concentrarsi dove serve davvero: nel tuo corpo. La strada ti guida a riscoprire i gesti semplici e veri che restituiscono vitalità alla materia: un'acqua pura che disseta davvero, la terra che si rigenera attraverso i microrganismi e la sovranità energetica che alleggerisce la tua casa.
             </p>
           </div>
 
           {/* Tappa IV */}
           <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
-            <div className="flex items-center gap-4">
-              <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">IV</span>
-              <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Quarto Passo: La Piena Sovranità (L'Accademia)</h3>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <span className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm">IV</span>
+                <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Quarto Passo: La Piena Sovranità (L'Accademia)</h3>
+              </div>
+              <Link href="/liberta-legale" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold">
+                Accademia Uomo Naturale <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
             <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
-              Quando avrai ritrovato le tue forze, quando la tua vita avrà ripreso respiro e stabilità, allora sarai pronto per la tappa più profonda del risveglio: l'Accademia Uomo Naturale. È qui che impari a comprendere la finzione giuridica, a sciogliere le vecchie catene e a riprendere in mano la firma e la guida autentica della tua esistenza, con la consapevolezza di chi sa chi è veramente.
+              Quando avrai ritrovato le tue forze, quando la tua vita avrà ripreso respiro e stabilità, allora sarai pronto per la tappa più profonda del risveglio: l'Accademia Uomo Naturale. È qui che impari a comprendere la finzione giuridica, a sciogliere le vecchie catene e a riprendere in mano la guida autentica della tua esistenza.
             </p>
           </div>
 
         </div>
 
-        {/* SEZIONE INTERATTIVA: I CERCHI DEL NET-FREE */}
-        <div className="p-10 md:p-14 rounded-[2.5rem] bg-stone-900 text-stone-100 space-y-8 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 blur-[100px] rounded-full pointer-events-none" />
+        {/* SEZIONE: IL MODELLO DI SVILUPPO (ECONOMIA DEL DONO) */}
+        <div className="p-10 md:p-14 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-8">
           <div className="text-center space-y-3 max-w-xl mx-auto">
-            <span className="text-xs uppercase tracking-[3px] text-amber-400 font-serif font-semibold">Economia del Dono • Rete Net-Free</span>
-            <h3 className="text-2xl md:text-3xl font-serif font-bold">La Costellazione dei Cerchi Illuminati</h3>
-            <p className="text-stone-400 text-sm font-light">Clicca su ciascuna fase per attivare l'illuminazione e scoprire come la cura circolare genera abbondanza collettiva.</p>
+            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Il Modello di Sviluppo</span>
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Dalla Vendita alla Cura del Giardino</h3>
+            <p className="text-stone-600 text-sm font-light font-serif">Il passaggio strutturale dal vecchio sistema piramidale basato su reclutamento e pressione al Sistema Net-Free fondato sulla comunità e sull'abbondanza circolare.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-            
-            <div 
-              onClick={() => setActiveCircle(activeCircle === 1 ? null : 1)}
-              className={`p-6 rounded-3xl border transition-all cursor-pointer flex flex-col justify-between ${activeCircle === 1 ? 'bg-amber-500/20 border-amber-400 shadow-[0_0_30px_rgba(245,158,11,0.3)]' : 'bg-stone-800/60 border-stone-700/80 hover:border-stone-500'}`}
-            >
-              <div className="space-y-3">
-                <span className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs transition-colors ${activeCircle === 1 ? 'bg-amber-400 text-stone-950 shadow-md' : 'bg-stone-700 text-stone-300'}`}>01</span>
-                <h4 className="font-serif text-lg text-amber-300 font-semibold">Il Seme Ricevuto</h4>
-                <p className="text-xs text-stone-300 font-light leading-relaxed">
-                  Tutto ha inizio da un seme pulito ricevuto in dono. Nessun debito, nessuna pressione finanziaria iniziale, solo l'opportunità di fiorire.
-                </p>
-              </div>
-              <div className="pt-4 flex items-center justify-between text-xs text-amber-400 font-serif">
-                <span>{activeCircle === 1 ? "Cerchio Attivo ✦" : "Clicca per accendere"}</span>
-                <Sparkles className="w-4 h-4" />
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+            <div className="p-8 rounded-3xl bg-stone-50 border border-stone-200/80 space-y-4">
+              <span className="text-xs font-mono uppercase tracking-widest text-stone-500 font-semibold">Vecchio Sistema</span>
+              <h4 className="font-serif font-bold text-xl text-stone-900">Reclutamento, Pressione, Scarsità</h4>
+              <p className="text-sm text-stone-600 font-light leading-relaxed">
+                Una struttura basata sulla competizione solitaria e sulla vendita forzata, dove la fatica aumenta e la libertà si allontana costantemente.
+              </p>
             </div>
 
-            <div 
-              onClick={() => setActiveCircle(activeCircle === 2 ? null : 2)}
-              className={`p-6 rounded-3xl border transition-all cursor-pointer flex flex-col justify-between ${activeCircle === 2 ? 'bg-amber-500/20 border-amber-400 shadow-[0_0_30px_rgba(245,158,11,0.3)]' : 'bg-stone-800/60 border-stone-700/80 hover:border-stone-500'}`}
-            >
-              <div className="space-y-3">
-                <span className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs transition-colors ${activeCircle === 2 ? 'bg-amber-400 text-stone-950 shadow-md' : 'bg-stone-700 text-stone-300'}`}>02</span>
-                <h4 className="font-serif text-lg text-amber-300 font-semibold">La Cura della Cerchia</h4>
-                <p className="text-xs text-stone-300 font-light leading-relaxed">
-                  Non vendi prodotti. Ti prendi cura del tuo spazio e accompagni amorevolmente sei persone in questo percorso di risveglio.
-                </p>
-              </div>
-              <div className="pt-4 flex items-center justify-between text-xs text-amber-400 font-serif">
-                <span>{activeCircle === 2 ? "Cerchio Attivo ✦" : "Clicca per accendere"}</span>
-                <Heart className="w-4 h-4" />
-              </div>
+            <div className="p-8 rounded-3xl bg-amber-50/50 border border-amber-200/80 space-y-4">
+              <span className="text-xs font-mono uppercase tracking-widest text-amber-800 font-semibold">Sistema Net-Free</span>
+              <h4 className="font-serif font-bold text-xl text-stone-900">Comunità, Dono, Cura, Abbondanza</h4>
+              <p className="text-sm text-stone-700 font-light leading-relaxed">
+                Non ti chiediamo di diventare un venditore. Ti chiediamo di prenderti cura della tua cerchia, accompagnando chi scegli nel percorso di crescita.
+              </p>
             </div>
-
-            <div 
-              onClick={() => setActiveCircle(activeCircle === 3 ? null : 3)}
-              className={`p-6 rounded-3xl border transition-all cursor-pointer flex flex-col justify-between ${activeCircle === 3 ? 'bg-amber-500/20 border-amber-400 shadow-[0_0_30px_rgba(245,158,11,0.3)]' : 'bg-stone-800/60 border-stone-700/80 hover:border-stone-500'}`}
-            >
-              <div className="space-y-3">
-                <span className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs transition-colors ${activeCircle === 3 ? 'bg-amber-400 text-stone-950 shadow-md' : 'bg-stone-700 text-stone-300'}`}>03</span>
-                <h4 className="font-serif text-lg text-amber-300 font-semibold">L'Abbondanza Circolare</h4>
-                <p className="text-xs text-stone-300 font-light leading-relaxed">
-                  Quando il seme genera frutti, una parte torna al sistema per alimentare nuovi doni, creando una prosperità collettiva duratura.
-                </p>
-              </div>
-              <div className="pt-4 flex items-center justify-between text-xs text-amber-400 font-serif">
-                <span>{activeCircle === 3 ? "Cerchio Attivo ✦" : "Clicca per accendere"}</span>
-                <Sun className="w-4 h-4" />
-              </div>
-            </div>
-
           </div>
         </div>
 
