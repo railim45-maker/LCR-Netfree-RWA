@@ -3,6 +3,7 @@ import Home from "@/pages/Home";
 import TokenizzazionePage from "@/pages/TokenizzazionePage";
 import EconomiaDonoPage from "@/pages/EconomiaDonoPage";
 import ProspettoRiservatoPage from "@/pages/ProspettoRiservatoPage";
+import NetFreeDeepDive from "@/pages/NetFreeDeepDive";
 import NotFound from "@/pages/NotFound";
 
 function Router() {
@@ -12,6 +13,7 @@ function Router() {
       <Route path="/tokenizzazione" component={TokenizzazionePage} />
       <Route path="/economia-dono" component={EconomiaDonoPage} />
       <Route path="/prospetto-riservato" component={ProspettoRiservatoPage} />
+      <Route path="/netfree" component={NetFreeDeepDive} />
       <Route component={NotFound} />
     </Switch>
   );
