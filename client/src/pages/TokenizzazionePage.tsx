@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle, Calculator, FileCheck, CheckSquare, Square } from 'lucide-react';
+import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle, Calculator, FileCheck, CheckSquare, Square, HeartHandshake, Lock } from 'lucide-react';
 
 export default function TokenizzazionePage() {
   const [formData, setFormData] = useState({ 
@@ -13,9 +13,7 @@ export default function TokenizzazionePage() {
   const opzioniInteresse = [
     "Proprietario con 0,75%",
     "Proprietario senza 0,75%",
-    "Mini LP (Da € 1.000 a € 50.000)",
-    "Medium LP (Da € 50.001 a € 500.000)",
-    "Maxi LP (Da € 500.000 in su)",
+    "Liquidity Provider (Co-Creazione Ecosistema)",
     "Informatori",
     "Responsabili/formatori Informatori"
   ];
@@ -77,7 +75,7 @@ export default function TokenizzazionePage() {
             La Tokenizzazione del Valore
           </h1>
           <p className="text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif">
-            Il patrimonio reale non viene venduto né svenduto: viene attivato attraverso la certificazione digitale e la tecnologia blockchain. Scopri le opportunità di partecipazione, i prospetti dedicati e gli strumenti ufficiali di simulazione e contratto.
+            Il patrimonio reale non viene venduto né svenduto: viene attivato attraverso la certificazione digitale e la tecnologia blockchain. Scopri le opportunità di partecipazione e gli strumenti ufficiali di simulazione e contratto.
           </p>
         </div>
 
@@ -154,11 +152,11 @@ export default function TokenizzazionePage() {
           </div>
         </div>
 
-        {/* LE 6 POSSIBILITÀ E I PROSPETTI */}
+        {/* LE POSSIBILITÀ E I PROSPETTI (CON RIQUADRO LP UNIFICATO E RISERVATO) */}
         <div className="space-y-8">
           <div className="text-center space-y-2">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Le 6 Possibilità e i Prospetti</h2>
-            <p className="text-stone-600 text-sm font-light font-serif">Seleziona il tuo ruolo all'interno dell'ecosistema per attivare il valore e sostenere la crescita circolare.</p>
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Le Possibilità e i Ruoli nell'Ecosistema</h2>
+            <p className="text-stone-600 text-sm font-light font-serif">Seleziona il tuo ruolo per attivare il valore e sostenere la crescita circolare.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -193,55 +191,30 @@ export default function TokenizzazionePage() {
               </div>
             </div>
 
-            {/* 3. MINI LP (DA € 1.000 A € 50.000) */}
-            <div className="p-8 rounded-[2rem] bg-white border border-stone-200/80 shadow-xl space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+            {/* 3. LIQUIDITY PROVIDER - UNICO RIQUADRO DI CO-CREAZIONE */}
+            <div className="p-8 rounded-[2rem] bg-gradient-to-br from-amber-50/60 via-white to-stone-50 border border-amber-200 shadow-xl space-y-4 hover:border-amber-400 transition-all flex flex-col justify-between md:col-span-2">
               <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Opzione 03</span>
-                <h3 className="text-xl font-bold font-serif text-stone-900">Mini LP (Da € 1.000 a € 50.000)</h3>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Messa a disposizione di volumi di capitale per la co-creazione e la copertura dei costi iniziali di avvio dei primi nuclei operativi territoriali.
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-100/80 px-3 py-1 rounded-full border border-amber-300">Co-Creazione Ecosistema</span>
+                  <span className="inline-flex items-center gap-1 text-xs text-amber-900 font-serif bg-white px-3 py-1 rounded-full border border-amber-200 shadow-xs">
+                    <Lock className="w-3 h-3 text-amber-700" /> Prospetto riservato su invito
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold font-serif text-stone-900">Liquidity Provider (Partecipazione alla Creazione di Valore)</h3>
+                <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">
+                  Unisciti a chi sceglie di co-creare e sostenere l'avvio dell'ecosistema reale. La messa a disposizione di capitale e volumi serve a coprire i costi iniziali e ad attivare i cantieri operativi territoriali. <em>I dettagli operativi, le fasce di contributo e la documentazione dedicata sono accessibili esclusivamente tramite il link riservato rilasciato dopo la manifestazione d'interesse.</em>
                 </p>
               </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Sviluppo Iniziale</span>
-                <span className="text-amber-800 font-semibold">Co-Creazione di Base</span>
+              <div className="pt-4 border-t border-stone-200/60 flex items-center justify-between text-xs text-stone-500 font-serif">
+                <span>Avvio Cantieri & Volumi</span>
+                <span className="text-amber-800 font-semibold">Accesso tramite Modulo sottostante</span>
               </div>
             </div>
 
-            {/* 4. MEDIUM LP (DA € 50.001 A € 500.000) */}
-            <div className="p-8 rounded-[2rem] bg-white border border-stone-200/80 shadow-xl space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+            {/* 4. INFORMATORI & RESPONSABILI */}
+            <div className="p-8 rounded-[2rem] bg-white border border-stone-200/80 shadow-xl space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between md:col-span-2">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Opzione 04</span>
-                <h3 className="text-xl font-bold font-serif text-stone-900">Medium LP (Da € 50.001 a € 500.000)</h3>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Supporto strutturale e messa a disposizione di volumi per alimentare l'espansione territoriale e consolidare la stabilità dei cantieri in crescita.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Espansione Territoriale</span>
-                <span className="text-amber-800 font-semibold">Attivazione Cantieri</span>
-              </div>
-            </div>
-
-            {/* 5. MAXI LP (DA € 500.000 IN SU) */}
-            <div className="p-8 rounded-[2rem] bg-white border border-stone-200/80 shadow-xl space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Opzione 05</span>
-                <h3 className="text-xl font-bold font-serif text-stone-900">Maxi LP (Da € 500.000 in su)</h3>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Coinvolgimento avanzato di grande portata per la co-creazione e il sostegno strutturale delle grandi infrastrutture cardine dell'ecosistema Net-Free.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Infrastruttura Globale</span>
-                <span className="text-amber-800 font-semibold">Sovranità Strutturale</span>
-              </div>
-            </div>
-
-            {/* 6. INFORMATORI & RESPONSABILI */}
-            <div className="p-8 rounded-[2rem] bg-white border border-stone-200/80 shadow-xl space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Opzione 06</span>
                 <h3 className="text-xl font-bold font-serif text-stone-900">Informatori & Responsabili/Formatori</h3>
                 <p className="text-sm text-stone-600 font-light leading-relaxed">
                   Il cuore umano della diffusione: informatori che aprono la via e formatori che accompagnano le cerchie nella comprensione del metodo e della cura.
@@ -355,7 +328,7 @@ export default function TokenizzazionePage() {
               {/* SELEZIONE MULTIPLA - SONO INTERESSATO A... */}
               <div className="space-y-3 pt-2">
                 <label className="text-xs font-serif uppercase tracking-wider text-stone-600 block">Sono interessato a… (Selezione Multipla)</label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200">
+                <div className="grid grid-cols-1 gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200">
                   {opzioniInteresse.map((opzione) => {
                     const isChecked = formData.interessi.includes(opzione);
                     return (
@@ -395,7 +368,7 @@ export default function TokenizzazionePage() {
               <div className="space-y-2">
                 <h4 className="font-serif font-bold text-xl text-stone-900">Registrazione e Conferma Pronte</h4>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Grazie <strong>{formData.nome}</strong>. I tuoi dati e le tue preferenze ({formData.interessi.join(', ')}) sono stati registrati. Clicca sul pulsante sottostante per inviare il messaggio di conferma, ricevere istruzioni e sbloccare l'accesso al <strong>Prospetto Riservato di Co-Creazione</strong>.
+                  Grazie <strong>{formData.nome}</strong>. I tuoi dati e le tue preferenze ({formData.interessi.join(', ')}) sono stati registrati. Clicca sul pulsante per inviare il messaggio di conferma e sbloccare istantaneamente l'accesso al <strong>Prospetto Riservato di Co-Creazione</strong>.
                 </p>
               </div>
               
