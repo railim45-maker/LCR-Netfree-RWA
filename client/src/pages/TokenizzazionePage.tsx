@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle, Calculator, FileCheck, CheckSquare, Square, Lock, Layers, Lightbulb, Building2, Landmark, HeartHandshake } from 'lucide-react';
+import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle, Calculator, FileCheck, CheckSquare, Square, Lock, Layers, Lightbulb, Building2, Landmark, HeartHandshake, Play } from 'lucide-react';
 
 export default function TokenizzazionePage() {
   const [formData, setFormData] = useState({ 
@@ -77,6 +77,58 @@ export default function TokenizzazionePage() {
           <p className="text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif">
             Il patrimonio reale non viene venduto né svenduto: viene attivato attraverso la certificazione digitale e la tecnologia blockchain. Scopri le opportunità di partecipazione e gli strumenti ufficiali di simulazione e contratto.
           </p>
+        </div>
+
+        {/* SEZIONE VIDEO PROVVISORIO / DELIMITAZIONE SPAZIO */}
+        <div className="p-6 md:p-10 rounded-[2.5rem] bg-[#141210] border border-stone-800 text-stone-100 shadow-2xl space-y-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone-800 pb-4 relative z-10">
+            <div>
+              <span className="text-[10px] font-mono tracking-widest text-amber-400 bg-stone-900 px-3 py-1 rounded border border-stone-800 uppercase">
+                Video Preliminare
+              </span>
+              <h3 className="text-xl font-bold font-serif text-white mt-2">
+                Asset e DeFi: Analisi del Protocollo Blotix
+              </h3>
+            </div>
+            <a 
+              href="https://www.youtube.com/watch?v=4cuK5woL5eY" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-mono text-amber-300 hover:text-amber-200 transition-colors bg-stone-900/80 px-4 py-2 rounded-xl border border-stone-800 w-fit"
+            >
+              Apri su YouTube <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          {/* PLAYER EMBED / BOX DELIMITATORE */}
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-stone-950 border border-stone-800 shadow-inner relative z-10 flex items-center justify-center">
+            <iframe 
+              className="w-full h-full absolute inset-0"
+              src="https://www.youtube-nocookie.com/embed/4cuK5woL5eY" 
+              title="Asset e DeFi - Blotix Protocol" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowFullScreen
+            ></iframe>
+          </div>
+
+          {/* SOMMARIO RAPIDO ESTRATTO DAL CONTENUTO */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 relative z-10">
+            <div className="p-4 rounded-xl bg-stone-900/60 border border-stone-800/80 space-y-1">
+              <span className="text-[10px] font-mono text-amber-400 uppercase">01. RWA & Sicurezza</span>
+              <p className="text-xs text-stone-300 font-light font-serif">Mantenimento della piena proprietà e attivazione della rendita passiva del 2,5%.</p>
+            </div>
+            <div className="p-4 rounded-xl bg-stone-900/60 border border-stone-800/80 space-y-1">
+              <span className="text-[10px] font-mono text-amber-400 uppercase">02. Doppio Token</span>
+              <p className="text-xs text-stone-300 font-light font-serif">Separazione chirurgica tra la stabilità di Safe Money e il dinamismo di Blotz.</p>
+            </div>
+            <div className="p-4 rounded-xl bg-stone-900/60 border border-stone-800/80 space-y-1">
+              <span className="text-[10px] font-mono text-amber-400 uppercase">03. Burn Deflazionistico</span>
+              <p className="text-xs text-stone-300 font-light font-serif">Meccanica di scarsità programmata con l'halving strutturale al quinto anno.</p>
+            </div>
+          </div>
         </div>
 
         {/* SEZIONE: CHE COSA È TOKENIZZABILE? */}
