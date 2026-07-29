@@ -321,7 +321,7 @@ export default function NetFreeDeepDive() {
               </div>
             </div>
 
-            {/* 5. Protocolli con Diossido di Cloro (AGGIORNATO CON I PDF LOCALI) */}
+           {/* 5. Protocolli con Diossido di Cloro */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Protocolli di Purificazione</span>
@@ -329,40 +329,38 @@ export default function NetFreeDeepDive() {
                 <p className="text-sm text-stone-600 font-light leading-relaxed">
                   Soluzioni e presidi per la sanificazione profonda, l'igiene e la rimozione di agenti patogeni secondo i protocolli dedicati.
                 </p>
-                <div className="pt-2 space-y-2 text-xs font-serif border-t border-stone-200/60 mt-3">
-                  <p className="font-semibold text-stone-800">Manuale e Documentazione Ufficiale:</p>
-                  <ul className="space-y-1.5">
-                    <li>
-                      <a 
-                        href="/protocolli-salute-benessere/Salute%20Proibita%20-%20Andreas%20Kalcker%20CORRETTO.pdf" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-amber-800 hover:underline inline-flex items-center gap-1 font-medium"
-                      >
-                        <FileText className="w-3.5 h-3.5" /> Salute Proibita (Andreas Kalcker)[cite: 2]
-                      </a>
-                    </li>
-                    <li>
-                      <a 
-                        href="/protocolli-salute-benessere/Cos'%C3%A8%20il%20DIOSSIDO%20DI%20CLORO%20(CLO2).pdf" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-amber-800 hover:underline inline-flex items-center gap-1 font-medium"
-                      >
-                        <FileText className="w-3.5 h-3.5" /> Cos'è il Diossido di Cloro (CDS)
-                      </a>
-                    </li>
-                  </ul>
+                
+                {/* COLLEGAMENTI AI PDF AGGIUNTI QUI */}
+                <div className="pt-3 border-t border-stone-200/60 space-y-2">
+                  <span className="text-[11px] font-bold font-serif text-stone-800 uppercase tracking-wider block">Documentazione Ufficiale:</span>
+                  <div className="flex flex-col gap-1.5 text-xs font-serif">
+                    <a 
+                      href="/protocolli-salute-benessere/Salute%20Proibita%20-%20Andreas%20Kalcker%20CORRETTO.pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium"
+                    >
+                      <FileText className="w-3.5 h-3.5 text-amber-700" /> Salute Proibita (Andreas Kalcker)
+                    </a>
+                    <a 
+                      href="/protocolli-salute-benessere/Cos'%C3%A8%20il%20DIOSSIDO%20DI%20CLORO%20(CLO2).pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium"
+                    >
+                      <FileText className="w-3.5 h-3.5 text-amber-700" /> Cos'è il Diossido di Cloro (CDS)
+                    </a>
+                  </div>
                 </div>
+
               </div>
               <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
                 <span className="text-stone-500">Igiene & Sicurezza</span>
                 <a href="https://dioxitube.com/w/fARnr15iVu8zKpJysQhmZ2" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Esplora il Video Protocollo <ExternalLink className="w-3 h-3" />
+                  Esplora il Protocollo <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
-
             {/* 6. Consapevolezza con Tradetector */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
