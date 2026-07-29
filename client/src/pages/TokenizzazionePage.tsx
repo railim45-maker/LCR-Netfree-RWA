@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle } from 'lucide-react';
+import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle, Calculator, FileCheck } from 'lucide-react';
 
 export default function TokenizzazionePage() {
   const [formData, setFormData] = useState({ nome: '', email: '', telefono: '', interesse: 'Proprietario con 0,75%' });
@@ -41,8 +41,81 @@ export default function TokenizzazionePage() {
             La Tokenizzazione del Valore
           </h1>
           <p className="text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif">
-            Il patrimonio reale non viene venduto né svenduto: viene attivato attraverso la certificazione digitale e la tecnologia blockchain. Scopri le sei opportunità di partecipazione e i prospetti dedicati per costruire insieme la nuova economia del dono.
+            Il patrimonio reale non viene venduto né svenduto: viene attivato attraverso la certificazione digitale e la tecnologia blockchain. Scopri le sei opportunità di partecipazione, i prospetti dedicati e gli strumenti ufficiali di simulazione e contratto.
           </p>
+        </div>
+
+        {/* SEZIONE SIMULATORE E CONTRATTI UFFICIALI BLOTIX */}
+        <div className="p-10 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-amber-50/80 via-white to-stone-50 border border-amber-200 shadow-xl space-y-8">
+          <div className="text-center space-y-2 max-w-lg mx-auto">
+            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Strumenti e Documentazione Ufficiale</span>
+            <h3 className="text-2xl font-serif font-bold text-stone-900">Simulatore Tokenomics 2.0 & Contratti</h3>
+            <p className="text-stone-600 text-sm font-light font-serif">Accedi al simulatore ufficiale Blotix e scarica la documentazione legale di trasparenza e licenza d'uso.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            
+            <a 
+              href="https://www.blotix.io/index.php/tokenomics-2-0-simulatore" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="p-6 rounded-3xl bg-white border border-stone-200 hover:border-amber-400 shadow-md transition-all flex flex-col justify-between group space-y-4"
+            >
+              <div className="space-y-2">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold">
+                  <Calculator className="w-5 h-5 text-amber-700" />
+                </div>
+                <h4 className="font-serif font-bold text-lg text-stone-900 group-hover:text-amber-800 transition-colors">Simulatore Tokenomics 2.0</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">
+                  Testa i flussi e calcola le proiezioni con il simulatore ufficiale interattivo di Blotix.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-amber-900 pt-2">
+                Apri Simulatore <ExternalLink className="w-3.5 h-3.5" />
+              </span>
+            </a>
+
+            <a 
+              href="https://www.blotix.io/images/doc/Contratto_Tokenization_Blotix.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="p-6 rounded-3xl bg-white border border-stone-200 hover:border-amber-400 shadow-md transition-all flex flex-col justify-between group space-y-4"
+            >
+              <div className="space-y-2">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold">
+                  <FileCheck className="w-5 h-5 text-amber-700" />
+                </div>
+                <h4 className="font-serif font-bold text-lg text-stone-900 group-hover:text-amber-800 transition-colors">Contratto di Tokenizzazione</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">
+                  Scarica il documento ufficiale PDF che disciplina la tokenizzazione degli asset reali.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-amber-900 pt-2">
+                Scarica PDF Contratto <ExternalLink className="w-3.5 h-3.5" />
+              </span>
+            </a>
+
+            <a 
+              href="https://www.blotix.io/images/doc/BLOTIX_NFT_License_Agreement.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="p-6 rounded-3xl bg-white border border-stone-200 hover:border-amber-400 shadow-md transition-all flex flex-col justify-between group space-y-4"
+            >
+              <div className="space-y-2">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold">
+                  <FileText className="w-5 h-5 text-amber-700" />
+                </div>
+                <h4 className="font-serif font-bold text-lg text-stone-900 group-hover:text-amber-800 transition-colors">Contratto di Licenza d'Uso</h4>
+                <p className="text-xs text-stone-600 font-light leading-relaxed">
+                  Consulta l'accordo ufficiale di licenza d'uso (BLOTIX NFT License Agreement).
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-amber-900 pt-2">
+                Scarica Licenza PDF <ExternalLink className="w-3.5 h-3.5" />
+              </span>
+            </a>
+
+          </div>
         </div>
 
         {/* LE SEI POSSIBILITÀ E PROSPETTI */}
