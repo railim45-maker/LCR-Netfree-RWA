@@ -36,7 +36,7 @@ export default function Home() {
       {/* CONTENUTO PRINCIPALE */}
       <main className="container max-w-4xl mx-auto px-4 md:px-6 space-y-16 md:space-y-24 relative z-10">
         
-        {/* INTRODUZIONE: LA STRADA CHE CONDUCE A CASA */}
+        {/* INTRODUZIONE */}
         <div className="text-center space-y-4 md:space-y-6 pt-4 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-amber-50/70 border border-amber-200/70 text-amber-900 text-[11px] md:text-xs font-medium tracking-wide md:tracking-widest shadow-sm font-serif">
             <Sparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" /> La Via della Libertà e della Cura
@@ -75,7 +75,6 @@ export default function Home() {
         {/* LE 4 TAPPE / I PILASTRI */}
         <div className="space-y-6 md:space-y-8">
           
-          {/* Tappa I */}
           <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
@@ -94,7 +93,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Tappa II */}
           <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
@@ -110,7 +108,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Tappa III */}
           <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
@@ -124,7 +121,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Tappa IV */}
           <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
@@ -142,7 +138,7 @@ export default function Home() {
 
         </div>
 
-        {/* SEZIONE: IL MODELLO DI SVILUPPO (ECONOMIA DEL DONO) */}
+        {/* SEZIONE: IL MODELLO DI SVILUPPO */}
         <div className="p-6 sm:p-10 md:p-14 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-8">
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Il Modello di Sviluppo</span>
