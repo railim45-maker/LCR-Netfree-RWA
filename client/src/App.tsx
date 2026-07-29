@@ -2,7 +2,7 @@ import { Switch, Route } from "wouter";
 import Home from "@/pages/Home";
 import TokenizzazionePage from "@/pages/TokenizzazionePage";
 import EconomiaDonoPage from "@/pages/EconomiaDonoPage";
-import LibertaleLegalePage from "@/pages/LibertaleLegalePage.tsx";
+import LibertaleLegalePage from "@/pages/LibertaleLegalePage";
 import NotFound from "@/pages/NotFound";
 
 function Router() {
