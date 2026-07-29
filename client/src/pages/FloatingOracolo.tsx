@@ -5,7 +5,7 @@ export default function FloatingOracolo() {
   const [isOpen, setIsOpen] = useState(false);
   const [chatInput, setChatInput] = useState('');
   const [chatMessages, setChatMessages] = useState([
-    { sender: 'bot', text: 'Salve! Sono l\'Oracolo dell\'Ecosistema NetFree & LCR. Interrogo i documenti e la conoscenza globale per assisterti. Chiedimi pure qualsiasi cosa sui nostri percorsi.' }
+    { sender: 'bot', text: 'Salve! Sono l\'Oracolo dell\'Ecosistema NetFree & LCR. Sono direttamente collegato al motore neurale Gemini per assisterti su tokenizzazione, autodeterminazione ed economia del dono. Come posso aiutarti?' }
   ]);
   const [isThinking, setIsThinking] = useState(false);
 
@@ -20,28 +20,52 @@ export default function FloatingOracolo() {
 
     try {
       /* 
-        NOTA TECNICA: 
-        Qui puoi collegare direttamente la tua chiamata API (es. a un endpoint backend o a Gemini API).
-        Attualmente simula un'elaborazione dinamica basata sull'intero spettro di conversazione.
+        CONFIGURAZIONE CHIAMATA GEMINI API:
+        Inserisci la tua chiave API di Google Gemini oppure collega questa fetch 
+        al tuo endpoint backend sicuro per non esporre la chiave nel browser.
       */
-      await new Promise(resolve => setTimeout(resolve, 1200)); // Simulazione elaborazione neurale
+      const GEMINI_API_KEY = "INSERISCI_QUI_LA_TUA_GEMINI_API_KEY"; // Oppure process.env.VITE_GEMINI_API_KEY
+      
+      // Se stai usando un backend locale o un proxy sicuro, puoi puntare direttamente al tuo server, 
+      // oppure chiamare direttamente l'endpoint ufficiale di Google Generative Language:
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              role: "user",
+              parts: [
+                {
+                  text: `Sei l'Oracolo ufficiale dell'ecosistema LCR-NetFree, un assistente esperto in tokenizzazione RWA (Protocollo Blotix), economia del dono, tempio biologico (acqua strutturata, Dott. Favata), e manuali di autodeterminazione e legge naturale. Rispondi in modo approfondito, coerente e allineato a questi principi alla seguente domanda dell'utente: "${userMsg}"`
+                }
+              ]
+            }
+          ]
+        })
+      });
 
-      let rispostaDinamica = "";
-      const q = userMsg.toLowerCase();
-
-      if (q.includes('autodeterminazione') || q.includes('sovranità') || q.includes('legge')) {
-        rispostaDinamica = "Analizzando i registri di autodeterminazione e i principi della Legge Naturale, l'ecosistema riconosce l'individuo come sovrano, superando la griglia dissipativa e le finzioni giuridiche attraverso l'Aletheiaforo.";
-      } else if (q.includes('video') || q.includes('incontro')) {
-        rispostaDinamica = "Tutti i video degli incontri chiusi vengono indicizzati e protetti nella dashboard admin. Possono essere consultati dai membri abilitati per approfondire i passaggi tecnici e formativi.";
-      } else if (q.includes('token') || q.includes('blotix') || q.includes('rwa')) {
-        rispostaDinamica = "Il protocollo Blotix converte asset reali in digitali (RWA) separando i flussi di Safe Money e garantendo sostenibilità e rendite basate sul valore effettivo.";
-      } else {
-        rispostaDinamica = `Ho esaminato la tua domanda riguardo a "${userMsg}". All'interno dell'ecosistema NetFree e dell'economia del dono, ogni interazione è pensata per espandere la coerenza e il benessere collettivo. Vuoi che approfondisca un aspetto particolare o preferisci verificare la documentazione dedicata?`;
+      if (!response.ok) {
+        throw new Error("Errore di connessione con il motore Gemini.");
       }
 
-      setChatMessages(prev => [...prev, { sender: 'bot', text: rispostaDinamica }]);
+      const data = await response.json();
+      const geminiReply = data.candidates?.[0]?.content?.parts?.[0]?.text || "L'Oracolo ha elaborato la risposta ma non ha restituito testo.";
+
+      setChatMessages(prev => [...prev, { sender: 'bot', text: geminiReply }]);
     } catch (error) {
-      setChatMessages(prev => [...prev, { sender: 'bot', text: "Si è verificato un momento di disallineamento temporaneo nel campo. Riprova tra un istante." }]);
+      console.error("Errore Oracolo Gemini:", error);
+      
+      // Fallback intelligente in caso di chiave API non ancora inserita o errore di rete
+      setChatMessages(prev => [
+        ...prev, 
+        { 
+          sender: 'bot', 
+          text: `Ho ricevuto la tua richiesta su "${userMsg}". (Nota: Per attivare le risposte in tempo reale tramite Gemini, inserisci la tua API Key nel codice del widget). L'ecosistema NetFree e l'economia del dono restano comunque orientati alla massima trasparenza e coerenza collettiva.` 
+        }
+      ]);
     } finally {
       setIsThinking(false);
     }
@@ -65,7 +89,7 @@ export default function FloatingOracolo() {
           <div className="bg-stone-900 text-stone-100 px-5 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <h3 className="font-bold text-xs uppercase tracking-wider">Oracolo • NetFree & LCR</h3>
+              <h3 className="font-bold text-xs uppercase tracking-wider">Oracolo • powered by Gemini</h3>
             </div>
             <button 
               onClick={() => setIsOpen(false)}
@@ -92,7 +116,7 @@ export default function FloatingOracolo() {
             {isThinking && (
               <div className="flex justify-start">
                 <div className="p-3 rounded-2xl bg-stone-100 text-stone-500 text-xs italic animate-pulse">
-                  L'Oracolo sta interrogando i documenti e il campo...
+                  Gemini sta interrogando i registri e i documenti...
                 </div>
               </div>
             )}
@@ -104,7 +128,7 @@ export default function FloatingOracolo() {
               type="text" 
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
-              placeholder="Chiedi qualsiasi cosa ai registri..." 
+              placeholder="Chiedi qualsiasi cosa all'Oracolo..." 
               className="flex-1 px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-800 focus:outline-none focus:border-amber-500"
             />
             <button 
