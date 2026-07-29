@@ -1,13 +1,50 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle, Calculator, FileCheck } from 'lucide-react';
+import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Coins, Users, FileText, CheckCircle2, MessageCircle, Calculator, FileCheck, CheckSquare, Square } from 'lucide-react';
 
 export default function TokenizzazionePage() {
-  const [formData, setFormData] = useState({ nome: '', email: '', telefono: '', interesse: 'Proprietario con 0,75%' });
+  const [formData, setFormData] = useState({ 
+    nome: '', 
+    email: '', 
+    telefono: '', 
+    interessi: [] as string[] 
+  });
   const [submitted, setSubmitted] = useState(false);
+
+  const opzioniInteresse = [
+    "Proprietario con 0,75%",
+    "Proprietario senza 0,75%",
+    "Mini LP",
+    "Medium LP",
+    "Maxi LP",
+    "Informatori",
+    "Responsabili/formatori Informatori"
+  ];
+
+  const handleCheckboxChange = (opzione: string) => {
+    setFormData(prev => {
+      const exists = prev.interessi.includes(opzione);
+      if (exists) {
+        return { ...prev, interessi: prev.interessi.filter(item => item !== opzione) };
+      } else {
+        return { ...prev, interessi: [...prev.interessi, opzione] };
+      }
+    });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (formData.interessi.length === 0) {
+      alert("Seleziona almeno un'opzione di interesse.");
+      return;
+    }
     setSubmitted(true);
+  };
+
+  // Generatore link WhatsApp automatico con i dati inseriti
+  const getWhatsAppLink = () => {
+    const interessiStr = formData.interessi.join(', ');
+    const testo = `Salve, sono ${formData.nome}. Ho richiesto la partecipazione ai webinar e l'accesso al percorso. I miei dati di contatto sono:\n- Email: ${formData.email}\n- Telefono: ${formData.telefono}\n- Aree d'interesse: ${interessiStr}`;
+    return `https://wa.me/?text=${encodeURIComponent(testo)}`;
   };
 
   return (
@@ -41,7 +78,7 @@ export default function TokenizzazionePage() {
             La Tokenizzazione del Valore
           </h1>
           <p className="text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif">
-            Il patrimonio reale non viene venduto né svenduto: viene attivato attraverso la certificazione digitale e la tecnologia blockchain. Scopri le sei opportunità di partecipazione, i prospetti dedicati e gli strumenti ufficiali di simulazione e contratto.
+            Il patrimonio reale non viene venduto né svenduto: viene attivato attraverso la certificazione digitale e la tecnologia blockchain. Scopri le opportunità di partecipazione, i prospetti dedicati e gli strumenti ufficiali di simulazione e contratto.
           </p>
         </div>
 
@@ -121,7 +158,7 @@ export default function TokenizzazionePage() {
         {/* LE SEI POSSIBILITÀ E PROSPETTI */}
         <div className="space-y-8">
           <div className="text-center space-y-2">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Le Sei PosSIBILITÀ e i Prospetti</h2>
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Le 6 Possibilità e i Prospetti</h2>
             <p className="text-stone-600 text-sm font-light font-serif">Seleziona il tuo ruolo all'interno dell'ecosistema per attivare il valore e sostenere la crescita circolare.</p>
           </div>
 
@@ -229,7 +266,7 @@ export default function TokenizzazionePage() {
             <p className="text-stone-400 text-sm font-light">Esplora la documentazione ufficiale e gli articoli di approfondimento sulla finanza digitale e le proprietà digitali del futuro.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 max-w-2xl mx-auto">
             <a href="https://www.blotix.io" target="_blank" rel="noopener noreferrer" className="p-6 rounded-3xl bg-stone-800/60 border border-stone-700/80 hover:border-amber-400 transition-all space-y-3 flex flex-col justify-between group">
               <div className="space-y-2">
                 <span className="text-xs font-mono text-amber-400">Piattaforma Ufficiale</span>
@@ -239,22 +276,13 @@ export default function TokenizzazionePage() {
               <span className="inline-flex items-center gap-1 text-xs text-amber-400 font-serif pt-2">Visita blotix.io <ExternalLink className="w-3.5 h-3.5" /></span>
             </a>
 
-            <a href="https://www.blotix.com" target="_blank" rel="noopener noreferrer" className="p-6 rounded-3xl bg-stone-800/60 border border-stone-700/80 hover:border-amber-400 transition-all space-y-3 flex flex-col justify-between group">
-              <div className="space-y-2">
-                <span className="text-xs font-mono text-amber-400">Network Globale</span>
-                <h4 className="font-serif text-lg text-stone-100 group-hover:text-amber-300 transition-colors">Blotix.com</h4>
-                <p className="text-xs text-stone-400 font-light">Infrastruttura internazionale e nodi operativi.</p>
-              </div>
-              <span className="inline-flex items-center gap-1 text-xs text-amber-400 font-serif pt-2">Visita blotix.com <ExternalLink className="w-3.5 h-3.5" /></span>
-            </a>
-
             <a href="https://www.blotix.org" target="_blank" rel="noopener noreferrer" className="p-6 rounded-3xl bg-stone-800/60 border border-stone-700/80 hover:border-amber-400 transition-all space-y-3 flex flex-col justify-between group">
               <div className="space-y-2">
-                <span className="text-xs font-mono text-amber-400">Fondazione & Community</span>
-                <h4 className="font-serif text-lg text-stone-100 group-hover:text-amber-300 transition-colors">Blotix.org</h4>
-                <p className="text-xs text-stone-400 font-light">Principi etici e governance della community.</p>
+                <span className="text-xs font-mono text-amber-400">Registrazione Ufficiale</span>
+                <h4 className="font-serif text-lg text-stone-100 group-hover:text-amber-300 transition-colors">Registrazione per Blotix.org</h4>
+                <p className="text-xs text-stone-400 font-light">Accesso e registrazione al portale istituzionale Blotix.org.</p>
               </div>
-              <span className="inline-flex items-center gap-1 text-xs text-amber-400 font-serif pt-2">Visita blotix.org <ExternalLink className="w-3.5 h-3.5" /></span>
+              <span className="inline-flex items-center gap-1 text-xs text-amber-400 font-serif pt-2">Registrati su blotix.org <ExternalLink className="w-3.5 h-3.5" /></span>
             </a>
           </div>
 
@@ -278,12 +306,12 @@ export default function TokenizzazionePage() {
           </div>
         </div>
 
-        {/* PARTECIPAZIONE WEBINAR & FORMAT "SONO INTERESSATO A…" */}
+        {/* PARTECIPAZIONE WEBINAR & FORMAT "SONO INTERESSATO A…" CON SELEZIONE MULTIPLA E WHATSAPP AUTOMATICO */}
         <div className="p-10 md:p-14 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-8">
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Partecipa e Unisciti</span>
             <h3 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Partecipazione ai Webinar & Manifestazione d'Interesse</h3>
-            <p className="text-stone-600 text-sm font-light font-serif">Compila il modulo per segnalare il tuo interesse. Verrai guidato all'interno dei nostri canali dedicati.</p>
+            <p className="text-stone-600 text-sm font-light font-serif">Compila il modulo per segnalare il tuo interesse (puoi selezionare più opzioni). Verrai guidato all'interno dei nostri canali dedicati.</p>
           </div>
 
           {!submitted ? (
@@ -313,33 +341,41 @@ export default function TokenizzazionePage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-xs font-serif uppercase tracking-wider text-stone-600">Telefono / WhatsApp</label>
-                  <input 
-                    type="tel" 
-                    required
-                    value={formData.telefono}
-                    onChange={(e) => setFormData({...formData, telefono: e.target.value})}
-                    placeholder="+39 333 1234567" 
-                    className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-sm focus:outline-none focus:border-amber-500 font-serif"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-serif uppercase tracking-wider text-stone-600">Sono interessato a…</label>
-                  <select 
-                    value={formData.interesse}
-                    onChange={(e) => setFormData({...formData, interesse: e.target.value})}
-                    className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-sm focus:outline-none focus:border-amber-500 font-serif"
-                  >
-                    <option value="Proprietario con 0,75%">Proprietario con 0,75%</option>
-                    <option value="Proprietario senza 0,75%">Proprietario senza 0,75%</option>
-                    <option value="Mini LP">Mini LP</option>
-                    <option value="Medium LP">Medium LP</option>
-                    <option value="Maxi LP">Maxi LP</option>
-                    <option value="Informatori">Informatori</option>
-                    <option value="Responsabili/formatori Informatori">Responsabili/formatori Informatori</option>
-                  </select>
+              <div className="space-y-2">
+                <label className="text-xs font-serif uppercase tracking-wider text-stone-600">Telefono / WhatsApp</label>
+                <input 
+                  type="tel" 
+                  required
+                  value={formData.telefono}
+                  onChange={(e) => setFormData({...formData, telefono: e.target.value})}
+                  placeholder="+39 333 1234567" 
+                  className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-sm focus:outline-none focus:border-amber-500 font-serif"
+                />
+              </div>
+
+              {/* SELEZIONE MULTIPLA - SONO INTERESSATO A... */}
+              <div className="space-y-3 pt-2">
+                <label className="text-xs font-serif uppercase tracking-wider text-stone-600 block">Sono interessato a… (Selezione Multipla)</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200">
+                  {opzioniInteresse.map((opzione) => {
+                    const isChecked = formData.interessi.includes(opzione);
+                    return (
+                      <div 
+                        key={opzione}
+                        onClick={() => handleCheckboxChange(opzione)}
+                        className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
+                          isChecked ? 'bg-amber-50/80 border-amber-300 text-stone-900' : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300'
+                        }`}
+                      >
+                        {isChecked ? (
+                          <CheckSquare className="w-4 h-4 text-amber-700 flex-shrink-0" />
+                        ) : (
+                          <Square className="w-4 h-4 text-stone-400 flex-shrink-0" />
+                        )}
+                        <span className="text-xs font-serif font-medium">{opzione}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -348,7 +384,7 @@ export default function TokenizzazionePage() {
                   type="submit"
                   className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-8 py-4 rounded-full text-xs md:text-sm inline-flex items-center gap-2 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif"
                 >
-                  Invia Richiesta e Accedi ai Webinar <ArrowRight className="w-4 h-4" />
+                  Invia Richiesta e Conferma Partecipazione <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </form>
@@ -358,28 +394,20 @@ export default function TokenizzazionePage() {
                 <CheckCircle2 className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <h4 className="font-serif font-bold text-xl text-stone-900">Richiesta Registrata con Successo</h4>
+                <h4 className="font-serif font-bold text-xl text-stone-900">Registrazione e Conferma Pronte</h4>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Grazie {formData.nome}. Il tuo interesse per <strong>{formData.interesse}</strong> è stato acquisito. Subito dopo la verifica, potrai accedere direttamente ai nostri canali riservati.
+                  Grazie <strong>{formData.nome}</strong>. I tuoi dati e le tue preferenze ({formData.interessi.join(', ')}) sono stati registrati. Clicca sul pulsante sottostante per inviare il messaggio di conferma e ricevere istruzioni e link del webinar direttamente su WhatsApp.
                 </p>
               </div>
               
               <div className="pt-4 border-t border-amber-200/60 flex flex-col sm:flex-row justify-center gap-4">
                 <a 
-                  href="https://chat.whatsapp.com/ex" 
+                  href={getWhatsAppLink()} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-3 rounded-full text-xs inline-flex items-center justify-center gap-2 shadow-md transition-all font-serif"
                 >
-                  <MessageCircle className="w-4 h-4" /> Unisciti al Gruppo WhatsApp
-                </a>
-                <a 
-                  href="https://whatsapp.com/channel/ex" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-6 py-3 rounded-full text-xs inline-flex items-center justify-center gap-2 shadow-md transition-all font-serif"
-                >
-                  <ShieldCheck className="w-4 h-4 text-amber-400" /> Segui il Canale WhatsApp
+                  <MessageCircle className="w-4 h-4" /> Invia Conferma Automatica su WhatsApp
                 </a>
               </div>
             </div>
