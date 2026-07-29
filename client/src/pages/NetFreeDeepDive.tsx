@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, TreePine, ExternalLink, ShieldCheck, Leaf, Globe, FileText, Sun, Droplets, Zap, Activity } from "lucide-react";
+import { ArrowRight, Sparkles, TreePine, ExternalLink, ShieldCheck, Leaf, Globe, FileText, Sun, Droplets, Zap, Activity, Award } from "lucide-react";
 import { useState } from "react";
 
 export default function NetFreeDeepDive() {
@@ -150,195 +150,211 @@ export default function NetFreeDeepDive() {
 
         </div>
 
-        {/* SEZIONE: DOCUMENTI E ALLEGATI UFFICIALI NET-FREE */}
-        <div className="rounded-[2.5rem] border border-emerald-200 bg-gradient-to-br from-emerald-50/80 via-white to-stone-50 p-8 md:p-12 shadow-xl space-y-8">
-          <div className="text-center space-y-2 max-w-lg mx-auto">
-            <span className="text-xs uppercase tracking-[3px] text-emerald-800 font-serif font-semibold">Allegati e Riferimenti Ufficiali</span>
-            <h3 className="text-2xl font-serif font-bold text-stone-900">Documentazione Tecnica e Informativa</h3>
-            <p className="text-stone-600 text-sm font-light font-serif">Scarica gli allegati ufficiali dedicati alla condivisione energetica e alla memoria biofisica dell'acqua.</p>
+        {/* SEZIONE: EDIFICAZIONE DELL'ESPERTO - DOTT. ROBERTO FAVATA */}
+        <div className="rounded-[2.5rem] border border-amber-200 bg-gradient-to-br from-amber-50/70 via-white to-stone-50 p-8 md:p-14 shadow-xl space-y-8">
+          <div className="flex items-center gap-3">
+            <span className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold">
+              <Award className="w-5 h-5 text-amber-700" />
+            </span>
+            <div>
+              <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Ascoltiamo l'Esperto</span>
+              <h3 className="text-2xl font-serif font-bold text-stone-900">Il Protocollo di Depurazione e l'Acqua Alcalina del Dott. Roberto Favata</h3>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+          <p className="text-stone-700 text-base font-light leading-relaxed font-serif">
+            Il <strong>Dott. Roberto Favata</strong> rappresenta un punto di riferimento fondamentale nella ricerca sulla biofisica dell'acqua, sulla nutrizione cellulare e sui processi di depurazione profonda dell'organismo. Con anni di studi clinici, ricerche sul campo e divulgazione scientifica indipendente, il Dott. Favata ha dimostrato come la qualità dell'acqua che introduciamo nel corpo non sia semplicemente una questione di filtrazione chimica, ma di ripristino energetico e strutturale. Grazie alle sue interviste e alle schede tecniche di approfondimento, comprendiamo come l'acqua alcalina rivitalizzata costituisca il primo pilastro del Tempio Biologico.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
             <a 
-              href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" 
+              href="https://www.youtube.com/watch?v=elbOEII7-zo" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="p-6 rounded-3xl bg-white border border-stone-200 hover:border-emerald-400 shadow-md transition-all flex flex-col justify-between group space-y-4"
+              className="p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group"
             >
-              <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold">
-                  <Sun className="w-5 h-5 text-emerald-700" />
-                </div>
-                <h4 className="font-serif font-bold text-lg text-stone-900 group-hover:text-emerald-800 transition-colors">Informativa Condivisione Energetica (PDF)</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Documento informativo ufficiale sulla condivisione dell'energia pulita e l'autonomia fotovoltaica.
-                </p>
-              </div>
-              <span className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-emerald-900 pt-2">
-                Scarica PDF Energia <ExternalLink className="w-3.5 h-3.5" />
-              </span>
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Intervista Dott. Favata (Parte 1)</span>
+              <ExternalLink className="w-4 h-4 text-amber-700" />
             </a>
 
             <a 
-              href="https://www.omeopatia.org/download/seminario-rey/ELIA-Dell-acqua-la-rimembranza.pdf" 
+              href="https://www.youtube.com/watch?v=Di3BtfUqJwg" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="p-6 rounded-3xl bg-white border border-stone-200 hover:border-emerald-400 shadow-md transition-all flex flex-col justify-between group space-y-4"
+              className="p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group"
             >
-              <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold">
-                  <Droplets className="w-5 h-5 text-emerald-700" />
-                </div>
-                <h4 className="font-serif font-bold text-lg text-stone-900 group-hover:text-emerald-800 transition-colors">Dell'Acqua la Rimembranza (PDF)</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Seminario scientifico approfondito sulla memoria dell'acqua e le proprietà biofisiche.
-                </p>
-              </div>
-              <span className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-emerald-900 pt-2">
-                Scarica PDF Memoria Acqua <ExternalLink className="w-3.5 h-3.5" />
-              </span>
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Intervista Dott. Favata (Parte 2)</span>
+              <ExternalLink className="w-4 h-4 text-amber-700" />
+            </a>
+
+            <a 
+              href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group"
+            >
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Documento Tecnico di Approfondimento (PDF)</span>
+              <FileText className="w-4 h-4 text-amber-700" />
             </a>
           </div>
         </div>
 
-        {/* I BENI E I BENEFICI DEL TEMPIO BIOLOGICO CON COLLEGAMENTI UFFICIALI */}
+        {/* SEZIONE: MEMORIA DELL'ACQUA (APPROFONDIMENTO SCIENTIFICO) */}
+        <div className="rounded-[2.5rem] border border-emerald-200 bg-gradient-to-br from-emerald-50/70 via-white to-stone-50 p-8 md:p-14 shadow-xl space-y-8">
+          <div className="flex items-center gap-3">
+            <span className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold">
+              <Droplets className="w-5 h-5 text-emerald-700" />
+            </span>
+            <div>
+              <span className="text-xs uppercase tracking-[3px] text-emerald-800 font-serif font-semibold">Approfondimento Biofisico</span>
+              <h3 className="text-2xl font-serif font-bold text-stone-900">La Memoria e la Rimembranza dell'Acqua</h3>
+            </div>
+          </div>
+
+          <p className="text-stone-700 text-base font-light leading-relaxed font-serif">
+            L'acqua possiede una struttura in grado di registrare, conservare e trasmettere informazioni biofisiologiche. Attraverso il seminario di approfondimento e il materiale documentario dedicato, esploriamo le evidenze scientifiche che spiegano come l'acqua informata e rivitalizzata agisca direttamente sulla coerenza cellulare dell'organismo umano.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            <a 
+              href="https://www.omeopatia.org/download/seminario-rey/ELIA-Dell-acqua-la-rimembranza.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group"
+            >
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-emerald-800">Seminario: "Dell'Acqua la Rimembranza" (PDF)</span>
+              <FileText className="w-4 h-4 text-emerald-700" />
+            </a>
+
+            <a 
+              href="https://www.youtube.com/watch?v=DZJbFmkUh2g" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group"
+            >
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-emerald-800">Video di Approfondimento sulla Memoria dell'Acqua</span>
+              <ExternalLink className="w-4 h-4 text-emerald-700" />
+            </a>
+          </div>
+        </div>
+
+        {/* I SEMI E I PRESIDI DEL NOSTRO GIARDINO */}
         <div className="rounded-[2.5rem] border border-stone-200/80 bg-white/80 backdrop-blur-xl p-8 md:p-16 shadow-xl space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">I Semi del Nostro Giardino</span>
             <h3 className="text-3xl font-bold font-serif text-stone-900">I Presidi e i Benefici del Tempio Biologico</h3>
-            <p className="text-stone-600 text-sm font-light font-serif">Soluzioni di valore focalizzate sul benessere quotidiano, sulla sovranità domestica e sulla cura ecologica.</p>
+            <p className="text-stone-600 text-sm font-light font-serif">Soluzioni di valore focalizzate sul benessere quotidiano, sulla sovranità energetica e sulla cura ecologica.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            {/* 1. Sovranità Energetica */}
+            {/* 1. Efficientamento Energetico e Green Sharing */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Energia & Autonomia</span>
-                <h4 className="text-xl font-bold font-serif text-stone-900">Sovranità Energetica & Condivisione Rinnovabile</h4>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Efficientamento Energetico, Pannelli Solari & Green Sharing</h4>
                 <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Sistemi di produzione solare e condivisione energetica per alleggerire i costi fissi e garantire stabilità alla casa.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
-                <span className="text-stone-500">Riduzione bollette & Autonomia</span>
-                <a href="https://www.pefpower.it/it/home" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Approfondisci PEF Power <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-
-            {/* 2. Acqua Pura */}
-            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Presidio Biologico</span>
-                <h4 className="text-xl font-bold font-serif text-stone-900">Rivitalizzazione e Memoria dell'Acqua</h4>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Tecnologie avanzate di filtrazione e rigenerazione per restituire all'acqua la sua struttura originaria e la piena vitalità biologica.
+                  Sistemi fotovoltaici avanzati e comunità energetiche rinnovabili per azzerare la dipendenza dalle fluttuazioni di mercato e condividere valore pulito.
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100 flex flex-wrap items-center justify-between gap-2 text-xs font-serif">
-                <span className="text-stone-500">Idratazione & Purezza</span>
+                <span className="text-stone-500">Autonomia & Condivisione</span>
                 <div className="flex items-center gap-3">
-                  <a href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                    Scheda PDF <ExternalLink className="w-3 h-3" />
+                  <a href="https://www.pefpower.it/it/home" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                    Approfondimento Energetico <ExternalLink className="w-3 h-3" />
                   </a>
-                  <a href="https://www.youtube.com/watch?v=elbOEII7-zo" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                    Video <ExternalLink className="w-3 h-3" />
+                  <a href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                    Informativa PDF <FileText className="w-3 h-3" />
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* 3. Aromaterapia ed Essenze */}
+            {/* 2. Oli Essenziali e Aromaterapia */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Tempio Biologico</span>
-                <h4 className="text-xl font-bold font-serif text-stone-900">Aromaterapia ed Estratti Botanici Puri</h4>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Oli Essenziali e Aromaterapia Evolutiva</h4>
                 <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Oli essenziali di grado terapeutico per sostenere l'equilibrio emotivo, purificare gli ambienti domestici e nutrire il corpo in modo naturale.
+                  Estratti botanici puri di grado terapeutico per sostenere l'equilibrio emotivo, purificare gli ambienti domestici e nutrire la persona.
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
-                <span className="text-stone-500">Benessere olistico & Ambiente</span>
+                <span className="text-stone-500">Purezza botanica & Olfattiva</span>
                 <a href="https://www.doterra.com/ME/it_ME" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Esplora dōTERRA <ExternalLink className="w-3 h-3" />
+                  Esplora l'Essenza Botanica <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
 
-            {/* 4. Rigenerazione Ecologica */}
+            {/* 3. Microorganismi Effettivi */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Cura della Terra</span>
-                <h4 className="text-xl font-bold font-serif text-stone-900">Rigenerazione Ecologica dei Terreni e della Casa</h4>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Microorganismi Effettivi per la Casa e il Suolo</h4>
                 <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Soluzioni simbiotiche a base di microorganismi effettivi per rivitalizzare la terra, favorire la crescita delle piante e pulire senza tossine.
+                  Soluzioni simbiotiche ecologiche per rivitalizzare i terreni, favorire la crescita delle piante e detergere la casa senza tossine.
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
-                <span className="text-stone-500">Simbiosi & Ecologia domestica</span>
+                <span className="text-stone-500">Simbiosi & Ecologia</span>
                 <a href="http://ecopassaparola.it" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Visita Ecopassaparola <ExternalLink className="w-3 h-3" />
+                  Approfondisci il Metodo Simbiotico <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
 
-            {/* 5. Equilibrio e Pulizia Interna */}
+            {/* 4. Integrazione Minerale (Basenpulver) */}
             <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Salute Cellulare</span>
-                <h4 className="text-xl font-bold font-serif text-stone-900">Equilibrio Acido-Basico e Depurazione</h4>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Integrazione Minerale per l'Equilibrio Acido-Basico</h4>
                 <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Integrazione minerale mirata per il bilanciamento del pH corporeo e protocolli mirati di igienizzazione e pulizia profonda.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex flex-wrap items-center justify-between gap-2 text-xs font-serif">
-                <span className="text-stone-500">Omeostasi & Vitalità</span>
-                <div className="flex items-center gap-3">
-                  <a href="https://www.viafarmaciaonline.it/pascoe-basenpulver-polvere-100-g.html" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                    Basenpulver <ExternalLink className="w-3 h-3" />
-                  </a>
-                  <a href="https://dioxitube.com/w/fARnr15iVu8zKpJysQhmZ2" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                    Diossido di Cloro <ExternalLink className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* 6. Consapevolezza Strategica */}
-            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Analisi & Visione</span>
-                <h4 className="text-xl font-bold font-serif text-stone-900">Consapevolezza Economica e Monitoraggio</h4>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Strumenti di analisi evoluta dei mercati e dei dati finanziari per sviluppare una lucidità strategica e decisionale indipendente.
+                  Supporto minerale mirato al bilanciamento del pH corporeo e al ripristino dell'omeostasi cellulare profonda.
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
-                <span className="text-stone-500">Chiarezza & Visione</span>
-                <a href="https://www.tradetector.net/" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Visita Tradetector <ExternalLink className="w-3 h-3" />
+                <span className="text-stone-500">Omeostasi & Benessere</span>
+                <a href="https://www.viafarmaciaonline.it/pascoe-basenpulver-polvere-100-g.html" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Approfondimento Minerale <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
 
-          </div>
-
-          {/* Approfondimento Memoria dell'Acqua */}
-          <div className="p-8 rounded-3xl bg-amber-50/40 border border-amber-200/60 space-y-3 text-center">
-            <h4 className="font-serif font-bold text-lg text-stone-900">Ulteriori Approfondimenti Biofisici</h4>
-            <p className="text-xs text-stone-600 font-light max-w-xl mx-auto">
-              Per comprendere a fondo la valenza scientifica e la memoria biologica dell'acqua, esplora le risorse documentali ufficiali.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 pt-2">
-              <a href="https://www.youtube.com/watch?v=DZJbFmkUh2g" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-serif font-semibold text-amber-900 bg-white px-4 py-2 rounded-xl border border-amber-200 shadow-xs hover:bg-amber-50 transition-all">
-                Video Documentario Acqua <ExternalLink className="w-3 h-3" />
-              </a>
-              <a href="https://www.youtube.com/watch?v=Di3BtfUqJwg" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-serif font-semibold text-amber-900 bg-white px-4 py-2 rounded-xl border border-amber-200 shadow-xs hover:bg-amber-50 transition-all">
-                Video Testimonianze Acqua <ExternalLink className="w-3 h-3" />
-              </a>
+            {/* 5. Protocolli con Diossido di Cloro */}
+            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Protocolli di Purificazione</span>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Protocolli Avanzati con Diossido di Cloro</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Soluzioni e presidi per la sanificazione profonda, l'igiene e la rimozione di agenti patogeni secondo i protocolli dedicati.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Igiene & Sicurezza</span>
+                <a href="https://dioxitube.com/w/fARnr15iVu8zKpJysQhmZ2" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Esplora il Protocollo <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
             </div>
+
+            {/* 6. Consapevolezza con Tradetector */}
+            <div className="p-8 rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Analisi & Visione</span>
+                <h4 className="text-xl font-bold font-serif text-stone-900">Consapevolezza Economica e Monitoraggio dei Trend</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Strumenti di analisi evoluta dei mercati e dei dati finanziari per sviluppare lucidità strategica e indipendenza decisionale.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Chiarezza & Trend</span>
+                <a href="https://www.tradetector.net/" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Approfondimento Analitico <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
           </div>
 
         </div>
