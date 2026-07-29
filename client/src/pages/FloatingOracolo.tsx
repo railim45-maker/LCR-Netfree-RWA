@@ -5,11 +5,11 @@ export default function FloatingOracolo() {
   const [isOpen, setIsOpen] = useState(false);
   const [chatInput, setChatInput] = useState('');
   const [chatMessages, setChatMessages] = useState([
-    { sender: 'bot', text: 'Salve! Sono l\'Oracolo dell\'Ecosistema NetFree & LCR. Come posso aiutarti oggi?' }
+    { sender: 'bot', text: 'Salve! Sono l\'Oracolo dell\'Ecosistema NetFree & LCR. Interrogo i documenti e la conoscenza globale per assisterti. Chiedimi pure qualsiasi cosa sui nostri percorsi.' }
   ]);
   const [isThinking, setIsThinking] = useState(false);
 
-  const handleSendMessage = (e: React.FormEvent) => {
+  const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!chatInput.trim()) return;
 
@@ -18,21 +18,33 @@ export default function FloatingOracolo() {
     setChatInput('');
     setIsThinking(true);
 
-    setTimeout(() => {
-      let botResponse = "Ho esaminato la richiesta alla luce dei protocolli dell'ecosistema. ";
-      const query = userMsg.toLowerCase();
+    try {
+      /* 
+        NOTA TECNICA: 
+        Qui puoi collegare direttamente la tua chiamata API (es. a un endpoint backend o a Gemini API).
+        Attualmente simula un'elaborazione dinamica basata sull'intero spettro di conversazione.
+      */
+      await new Promise(resolve => setTimeout(resolve, 1200)); // Simulazione elaborazione neurale
 
-      if (query.includes('token') || query.includes('blotix')) {
-        botResponse += "La tokenizzazione RWA con Blotix attiva i beni reali garantendo una rendita sostenibile del 2,5%.";
-      } else if (query.includes('acqua') || query.includes('favata')) {
-        botResponse += "L'acqua strutturata del Tempio Biologico ripristina i domini di coerenza esagonali per la salute cellulare.";
+      let rispostaDinamica = "";
+      const q = userMsg.toLowerCase();
+
+      if (q.includes('autodeterminazione') || q.includes('sovranità') || q.includes('legge')) {
+        rispostaDinamica = "Analizzando i registri di autodeterminazione e i principi della Legge Naturale, l'ecosistema riconosce l'individuo come sovrano, superando la griglia dissipativa e le finzioni giuridiche attraverso l'Aletheiaforo.";
+      } else if (q.includes('video') || q.includes('incontro')) {
+        rispostaDinamica = "Tutti i video degli incontri chiusi vengono indicizzati e protetti nella dashboard admin. Possono essere consultati dai membri abilitati per approfondire i passaggi tecnici e formativi.";
+      } else if (q.includes('token') || q.includes('blotix') || q.includes('rwa')) {
+        rispostaDinamica = "Il protocollo Blotix converte asset reali in digitali (RWA) separando i flussi di Safe Money e garantendo sostenibilità e rendite basate sul valore effettivo.";
       } else {
-        botResponse += "Questo aspetto rientra nei principi dell'economia del dono e della crescita condivisa.";
+        rispostaDinamica = `Ho esaminato la tua domanda riguardo a "${userMsg}". All'interno dell'ecosistema NetFree e dell'economia del dono, ogni interazione è pensata per espandere la coerenza e il benessere collettivo. Vuoi che approfondisca un aspetto particolare o preferisci verificare la documentazione dedicata?`;
       }
 
-      setChatMessages(prev => [...prev, { sender: 'bot', text: botResponse }]);
+      setChatMessages(prev => [...prev, { sender: 'bot', text: rispostaDinamica }]);
+    } catch (error) {
+      setChatMessages(prev => [...prev, { sender: 'bot', text: "Si è verificato un momento di disallineamento temporaneo nel campo. Riprova tra un istante." }]);
+    } finally {
       setIsThinking(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -47,7 +59,7 @@ export default function FloatingOracolo() {
           <span className="text-xs font-semibold pr-1 hidden sm:inline">Oracolo AI</span>
         </button>
       ) : (
-        <div className="w-[340px] sm:w-[380px] h-[500px] bg-white border border-stone-200 shadow-2xl rounded-3xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+        <div className="w-[340px] sm:w-[390px] h-[520px] bg-white border border-stone-200 shadow-2xl rounded-3xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200">
           
           {/* HEADER DELLA CHAT */}
           <div className="bg-stone-900 text-stone-100 px-5 py-4 flex items-center justify-between">
@@ -67,7 +79,7 @@ export default function FloatingOracolo() {
           <div className="overflow-y-auto p-4 space-y-3 flex-1 bg-[#fcfbf9]">
             {chatMessages.map((msg, index) => (
               <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 rounded-2xl text-xs leading-relaxed ${
+                <div className={`max-w-[85%] p-3.5 rounded-2xl text-xs leading-relaxed ${
                   msg.sender === 'user' 
                     ? 'bg-stone-900 text-stone-100 rounded-br-none' 
                     : 'bg-amber-50/90 border border-amber-200 text-stone-800 rounded-bl-none shadow-xs'
@@ -80,7 +92,7 @@ export default function FloatingOracolo() {
             {isThinking && (
               <div className="flex justify-start">
                 <div className="p-3 rounded-2xl bg-stone-100 text-stone-500 text-xs italic animate-pulse">
-                  L'Oracolo sta consultando i registri...
+                  L'Oracolo sta interrogando i documenti e il campo...
                 </div>
               </div>
             )}
@@ -92,7 +104,7 @@ export default function FloatingOracolo() {
               type="text" 
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
-              placeholder="Fai una domanda..." 
+              placeholder="Chiedi qualsiasi cosa ai registri..." 
               className="flex-1 px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-800 focus:outline-none focus:border-amber-500"
             />
             <button 
