@@ -1,65 +1,22 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, TreePine, ExternalLink, ShieldCheck, Leaf, Globe, CheckCircle2, MessageCircle, FileText, Sun, Droplets, Zap, Activity } from "lucide-react";
+import { ArrowRight, Sparkles, TreePine, ExternalLink, ShieldCheck, Leaf, Globe, FileText, Sun, Droplets, Zap, Activity } from "lucide-react";
 import { useState } from "react";
 
 export default function NetFreeDeepDive() {
   const [activeFocusLevel, setActiveFocusLevel] = useState(1);
   const [lensLevels, setLensLevels] = useState([
-    { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, displayDots: 6, label: "Livello 1 (Radice)", countNum: "1", peopleCount: "1 Persona (Tu)", desc: "Il Seme iniziale / Origine del flusso" },
-    { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, displayDots: 36, label: "Livello 2 (Propagazione)", countNum: "6", peopleCount: "6 Persone", desc: "Il cerchio ristretto di cura diretta" },
-    { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, displayDots: 108, label: "Livello 3 (Sviluppo)", countNum: "36", peopleCount: "36 Nodi", desc: "Prima propagazione organica nei bio-distretti" },
-    { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, displayDots: 180, label: "Livello 4 (Espansione)", countNum: "216", peopleCount: "216 Nodi", desc: "Rete interconnessa di distretto" },
-    { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, displayDots: 240, label: "Livello 5 (Foresta)", countNum: "1.296", peopleCount: "1.296 Nodi", desc: "Comunità estesa e autonoma" },
-    { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, displayDots: 300, label: "Livello 6 (Sintropia)", countNum: "7.776", peopleCount: "7.776 Nodi", desc: "Coerenza diffusa su vasta scala" },
-    { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, displayDots: 360, label: "Livello 7 (Corona)", countNum: "46.656+", peopleCount: "46.656+ Nodi", desc: "Ecosistema frattale completo" }
+    { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, displayDots: 6, label: "Livello 1 (Radice)", countNum: "1", peopleCount: "1 Persona (Tu)", desc: "Il Seme iniziale / Origine del flusso[cite: 1]" },
+    { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, displayDots: 36, label: "Livello 2 (Propagazione)", countNum: "6", peopleCount: "6 Persone", desc: "Il cerchio ristretto di cura diretta[cite: 1]" },
+    { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, displayDots: 108, label: "Livello 3 (Sviluppo)", countNum: "36", peopleCount: "36 Nodi", desc: "Prima propagazione organica nei bio-distretti[cite: 1]" },
+    { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, displayDots: 180, label: "Livello 4 (Espansione)", countNum: "216", peopleCount: "216 Nodi", desc: "Rete interconnessa di distretto[cite: 1]" },
+    { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, displayDots: 240, label: "Livello 5 (Foresta)", countNum: "1.296", peopleCount: "1.296 Nodi", desc: "Comunità estesa e autonoma[cite: 1]" },
+    { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, displayDots: 300, label: "Livello 6 (Sintropia)", countNum: "7.776", peopleCount: "7.776 Nodi", desc: "Coerenza diffusa su vasta scala[cite: 1]" },
+    { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, displayDots: 360, label: "Livello 7 (Corona)", countNum: "46.656+", peopleCount: "46.656+ Nodi", desc: "Ecosistema frattale completo[cite: 1]" }
   ]);
 
   const chakraColors = ['#D97706', '#B45309', '#92400E', '#047857', '#065F46', '#022C22', '#FFFFFF'];
   const cx = 240;
   const cy = 240;
-
-  const [formData, setFormData] = useState({ 
-    nome: '', 
-    email: '', 
-    telefono: '', 
-    interessi: [] as string[] 
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const opzioniInteresse = [
-    "Sovranità Energetica & Condivisione Rinnovabile",
-    "Presidio e Memoria dell'Acqua Pura",
-    "Tempio Biologico & Aromaterapia Evolutiva",
-    "Rigenerazione Ecologica della Terra",
-    "Armonia Cellulare & Alcalinizzazione Naturale",
-    "Consapevolezza e Analisi Strategica"
-  ];
-
-  const handleCheckboxChange = (opzione: string) => {
-    setFormData(prev => {
-      const exists = prev.interessi.includes(opzione);
-      if (exists) {
-        return { ...prev, interessi: prev.interessi.filter(item => item !== opzione) };
-      } else {
-        return { ...prev, interessi: [...prev.interessi, opzione] };
-      }
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formData.interessi.length === 0) {
-      alert("Seleziona almeno un'area d'interesse.");
-      return;
-    }
-    setSubmitted(true);
-  };
-
-  const getWhatsAppLink = () => {
-    const interessiStr = formData.interessi.join(', ');
-    const testo = `Salve, sono ${formData.nome}. Ho esplorato i semi e i benefici del Tempio Biologico Net-Free e desidero approfondire il percorso. I miei dati:\n- Email: ${formData.email}\n- Telefono: ${formData.telefono}\n- Aree d'interesse: ${interessiStr}`;
-    return `https://wa.me/?text=${encodeURIComponent(testo)}`;
-  };
 
   const injectLensStep = (amount: number) => {
     setLensLevels(prevLevels => {
@@ -157,7 +114,7 @@ export default function NetFreeDeepDive() {
             </div>
             <div className="pt-6 border-t border-stone-800/80 relative z-10">
               <p className="text-xs text-amber-300/90 font-serif italic">
-                "L'illusione: Affidarsi a una sola fonte di reddito non è più sufficiente[cite: 1]."
+                "L'illusione: Affidarsi a una sola fonte di reddito non sia più sufficiente[cite: 1]."
               </p>
             </div>
           </div>
@@ -244,7 +201,7 @@ export default function NetFreeDeepDive() {
           </div>
         </div>
 
-        {/* I BENI E I BENEFICI DEL TEMPIO BIOLOGICO */}
+        {/* I BENI E I BENEFICI DEL TEMPIO BIOLOGICO CON COLLEGAMENTI UFFICIALI */}
         <div className="rounded-[2.5rem] border border-stone-200/80 bg-white/80 backdrop-blur-xl p-8 md:p-16 shadow-xl space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">I Semi del Nostro Giardino</span>
@@ -263,9 +220,11 @@ export default function NetFreeDeepDive() {
                   Sistemi di produzione solare e condivisione energetica per alleggerire i costi fissi e garantire stabilità alla casa.
                 </p>
               </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Riduzione bollette & Autonomia</span>
-                <span className="text-amber-800 font-semibold">Beneficio Primario</span>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Riduzione bollette & Autonomia</span>
+                <a href="https://www.pefpower.it/it/home" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Approfondisci PEF Power <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             </div>
 
@@ -278,9 +237,16 @@ export default function NetFreeDeepDive() {
                   Tecnologie avanzate di filtrazione e rigenerazione per restituire all'acqua la sua struttura originaria e la piena vitalità biologica.
                 </p>
               </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Idratazione & Purezza cellulare</span>
-                <span className="text-amber-800 font-semibold">Vitalità Profonda</span>
+              <div className="pt-4 border-t border-stone-100 flex flex-wrap items-center justify-between gap-2 text-xs font-serif">
+                <span className="text-stone-500">Idratazione & Purezza</span>
+                <div className="flex items-center gap-3">
+                  <a href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                    Scheda PDF <ExternalLink className="w-3 h-3" />
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=elbOEII7-zo" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                    Video <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -293,9 +259,11 @@ export default function NetFreeDeepDive() {
                   Oli essenziali di grado terapeutico per sostenere l'equilibrio emotivo, purificare gli ambienti domestici e nutrire il corpo in modo naturale.
                 </p>
               </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Benessere olistico & Ambiente</span>
-                <span className="text-amber-800 font-semibold">Armonia Quotidiana</span>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Benessere olistico & Ambiente</span>
+                <a href="https://www.doterra.com/ME/it_ME" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Esplora dōTERRA <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             </div>
 
@@ -308,9 +276,11 @@ export default function NetFreeDeepDive() {
                   Soluzioni simbiotiche a base di microorganismi effettivi per rivitalizzare la terra, favorire la crescita delle piante e pulire senza tossine.
                 </p>
               </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Simbiosi & Ecologia domestica</span>
-                <span className="text-amber-800 font-semibold">Salute del Suolo</span>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Simbiosi & Ecologia domestica</span>
+                <a href="http://ecopassaparola.it" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Visita Ecopassaparola <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             </div>
 
@@ -323,9 +293,16 @@ export default function NetFreeDeepDive() {
                   Integrazione minerale mirata per il bilanciamento del pH corporeo e protocolli mirati di igienizzazione e pulizia profonda.
                 </p>
               </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Omeostasi & Vitalità</span>
-                <span className="text-amber-800 font-semibold">Forza Vitale</span>
+              <div className="pt-4 border-t border-stone-100 flex flex-wrap items-center justify-between gap-2 text-xs font-serif">
+                <span className="text-stone-500">Omeostasi & Vitalità</span>
+                <div className="flex items-center gap-3">
+                  <a href="https://www.viafarmaciaonline.it/pascoe-basenpulver-polvere-100-g.html" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                    Basenpulver <ExternalLink className="w-3 h-3" />
+                  </a>
+                  <a href="https://dioxitube.com/w/fARnr15iVu8zKpJysQhmZ2" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                    Diossido di Cloro <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -338,9 +315,11 @@ export default function NetFreeDeepDive() {
                   Strumenti di analisi evoluta dei mercati e dei dati finanziari per sviluppare una lucidità strategica e decisionale indipendente.
                 </p>
               </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-serif">
-                <span>Chiarezza & Visione</span>
-                <span className="text-amber-800 font-semibold">Sovranità Mentale</span>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Chiarezza & Visione</span>
+                <a href="https://www.tradetector.net/" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Visita Tradetector <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             </div>
 
@@ -355,6 +334,9 @@ export default function NetFreeDeepDive() {
             <div className="flex flex-wrap justify-center gap-4 pt-2">
               <a href="https://www.youtube.com/watch?v=DZJbFmkUh2g" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-serif font-semibold text-amber-900 bg-white px-4 py-2 rounded-xl border border-amber-200 shadow-xs hover:bg-amber-50 transition-all">
                 Video Documentario Acqua <ExternalLink className="w-3 h-3" />
+              </a>
+              <a href="https://www.youtube.com/watch?v=Di3BtfUqJwg" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-serif font-semibold text-amber-900 bg-white px-4 py-2 rounded-xl border border-amber-200 shadow-xs hover:bg-amber-50 transition-all">
+                Video Testimonianze Acqua <ExternalLink className="w-3 h-3" />
               </a>
             </div>
           </div>
@@ -500,114 +482,6 @@ export default function NetFreeDeepDive() {
 
           </div>
 
-        </div>
-
-        {/* MODULO DI RICHIESTA INFORMAZIONI & WHATSAPP */}
-        <div className="p-10 md:p-14 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-8">
-          <div className="text-center space-y-3 max-w-xl mx-auto">
-            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Attraversa la Via della Cura</span>
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Richiedi Informazioni sui Presidi Net-Free</h3>
-            <p className="text-stone-600 text-sm font-light font-serif">Seleziona le soluzioni di tuo interesse (selezione multipla). Verrai guidato direttamente all'interno dei nostri canali dedicati.</p>
-          </div>
-
-          {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto pt-2">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-xs font-serif uppercase tracking-wider text-stone-600">Il tuo Nome</label>
-                  <input 
-                    type="text" 
-                    required
-                    value={formData.nome}
-                    onChange={(e) => setFormData({...formData, nome: e.target.value})}
-                    placeholder="Dario Colognese" 
-                    className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-sm focus:outline-none focus:border-amber-500 font-serif"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-serif uppercase tracking-wider text-stone-600">La tua Email</label>
-                  <input 
-                    type="email" 
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    placeholder="dario@esempio.it" 
-                    className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-sm focus:outline-none focus:border-amber-500 font-serif"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-xs font-serif uppercase tracking-wider text-stone-600">Telefono / WhatsApp</label>
-                <input 
-                  type="tel" 
-                  required
-                  value={formData.telefono}
-                  onChange={(e) => setFormData({...formData, telefono: e.target.value})}
-                  placeholder="+39 333 1234567" 
-                  className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-sm focus:outline-none focus:border-amber-500 font-serif"
-                />
-              </div>
-
-              {/* SELEZIONE MULTIPLA - PRESIDI D'INTERESSE */}
-              <div className="space-y-3 pt-2">
-                <label className="text-xs font-serif uppercase tracking-wider text-stone-600 block">Sono interessato a… (Selezione Multipla)</label>
-                <div className="grid grid-cols-1 gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200">
-                  {opzioniInteresse.map((opzione) => {
-                    const isChecked = formData.interessi.includes(opzione);
-                    return (
-                      <div 
-                        key={opzione}
-                        onClick={() => handleCheckboxChange(opzione)}
-                        className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
-                          isChecked ? 'bg-amber-50/80 border-amber-300 text-stone-900' : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300'
-                        }`}
-                      >
-                        {isChecked ? (
-                          <CheckCircle2 className="w-4 h-4 text-amber-700 flex-shrink-0" />
-                        ) : (
-                          <div className="w-4 h-4 rounded-sm border border-stone-300 flex-shrink-0" />
-                        )}
-                        <span className="text-xs font-serif font-medium">{opzione}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="pt-4 text-center">
-                <button 
-                  type="submit"
-                  className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-8 py-4 rounded-full text-xs md:text-sm inline-flex items-center gap-2 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif"
-                >
-                  Invia Richiesta e Conferma su WhatsApp <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </form>
-          ) : (
-            <div className="p-8 rounded-3xl bg-amber-50/80 border border-amber-200 text-center space-y-6 max-w-xl mx-auto">
-              <div className="w-12 h-12 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center mx-auto border border-amber-300">
-                <CheckCircle2 className="w-6 h-6" />
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-serif font-bold text-xl text-stone-900">Richiesta Registrata con Successo</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Grazie <strong>{formData.nome}</strong>. Le tue preferenze ({formData.interessi.join(', ')}) sono state registrate. Clicca sul pulsante per inviare il messaggio di conferma e ricevere supporto immediato su WhatsApp.
-                </p>
-              </div>
-              
-              <div className="pt-4 border-t border-amber-200/60 flex justify-center">
-                <a 
-                  href={getWhatsAppLink()} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-3 rounded-full text-xs inline-flex items-center justify-center gap-2 shadow-md transition-all font-serif"
-                >
-                  <MessageCircle className="w-4 h-4" /> Invia Conferma Automatica su WhatsApp
-                </a>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* CONCLUSIONE E NAVIGAZIONE */}
