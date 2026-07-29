@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight, BookOpen, ExternalLink, ShieldCheck, Leaf, Globe } from 'lucide-react';
+import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Leaf, Globe, Play } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Home() {
@@ -18,12 +18,12 @@ export default function Home() {
           </div>
           <nav className="flex items-center gap-4 text-xs font-medium">
             <a 
-              href="/The_Road_to_Sovereignty.pdf" 
+              href="https://youtu.be/bhG1fel_lq4" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900 text-stone-50 hover:bg-stone-800 transition-colors font-serif cursor-pointer shadow-sm"
             >
-              <BookOpen className="w-3.5 h-3.5 text-amber-400" /> Sfoglia il PDF Ufficiale
+              <Play className="w-3.5 h-3.5 text-amber-400 fill-amber-400" /> Guarda il Video Ufficiale
             </a>
           </nav>
         </div>
@@ -46,6 +46,28 @@ export default function Home() {
           </p>
         </div>
 
+        {/* VIDEO DI SPIEGAZIONE INCORCORPORATO */}
+        <div className="p-4 md:p-6 rounded-[2.5rem] bg-white border border-stone-200/80 shadow-2xl space-y-4">
+          <div className="text-center space-y-2 pb-2">
+            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Verso l'Abbondanza Condivisa</span>
+            <h3 className="text-2xl font-serif font-bold text-stone-900">Il Video di Presentazione della Via</h3>
+          </div>
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-stone-950">
+            <iframe
+              src="https://www.youtube.com/embed/bhG1fel_lq4"
+              title="Verso l'Abbondanza Condivisa - Presentazione Ufficiale"
+              className="absolute top-0 left-0 w-full h-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <div className="text-center pt-2">
+            <p className="text-xs text-stone-500 font-serif italic">
+              "Il punto non è arricchirsi isolandosi dagli altri, ma capire il potenziale pazzesco della cura collettiva."
+            </p>
+          </div>
+        </div>
+
         {/* LE 4 TAPPE / I PILASTRI */}
         <div className="space-y-8">
           
@@ -61,7 +83,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
-              Il primo blocco, quando si è stanchi, è la paura di non potersi permettere un cambiamento o di dover rischiare soldi che servono per la spesa. La strada non ti chiede alcun capitale iniziale. Grazie a un meccanismo basato sulla tokenizzazione e sul sostegno di chi ha creduto prima di te nel progetto — con la generosità di chi ha fatto un passo indietro sulle prime semestralità — il tuo ingresso nel sistema è protetto. Non parti con un esborso economico: parti in equilibrio.
+              Il primo blocco, quando si è stanchi, è la paura di non potersi permettere un cambiamento o di dover rischiare soldi che servono per la spesa. La strada non ti chiede alcun capitale iniziale. Grazie a un meccanismo basato sulla tokenizzazione e sul sostegno di chi ha creduto prima di te nel progetto, il tuo ingresso nel sistema è protetto. Non parti con un esborso economico: parti in equilibrio.
             </p>
           </div>
 
@@ -77,7 +99,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
-              Una volta alleggerito il passo dalla pressione finanziaria, impariamo a muoverci in modo nuovo. Dimentica il mondo là fuori fatto di competizione e solitudine. Qui ti affidiamo un seme pulito. La regola è semplice e profondamente umana: ti prendi cura del tuo spazio e aiuti sei persone a fare lo stesso. È una catena di cura e di abbondanza condivisa, dove la forza di uno sostiene la crescita di tutti.
+              Una volta alleggerito il passo dalla pressione finanziaria, impariamo a muoverci in modo nuovo. Dimentica il mondo là fuori fatto di competizione e solitudine. Qui ti affidiamo un seme pulito. La regola è semplice e profondamente umana: ti prendi cura del tuo spazio e aiuti sei persone a fare lo stesso. È una catena di cura e di abbondanza condivisa.
             </p>
           </div>
 
@@ -91,7 +113,7 @@ export default function Home() {
               <span className="text-xs font-serif text-stone-500 font-medium">Presidi Ufficiali</span>
             </div>
             <p className="text-stone-600 text-sm md:text-base leading-relaxed font-light font-serif pl-14">
-              Quando l'economia smette di essere un assillo costante, l'energia torna a concentrarsi dove serve davvero: nel tuo corpo. La strada ti guida a riscoprire i gesti semplici e veri che restituiscono vitalità alla materia: un'acqua pura che disseta davvero, la terra che si rigenera attraverso i microrganismi e la sovranità energetica che alleggerisce la tua casa.
+              Quando l'economia smette di essere un assillo costante, l'energia torna a concentrarsi dove serve davvero: nel tuo corpo. La strada ti guida a riscoprire i gesti semplici e veri che restituiscono vitalità alla materia: un'acqua pura che disseta davvero, la terra che si rigenera e la sovranità energetica che alleggerisce la tua casa.
             </p>
           </div>
 
@@ -215,12 +237,12 @@ export default function Home() {
           </p>
           <div className="pt-3">
             <a 
-              href="/The_Road_to_Sovereignty.pdf" 
+              href="https://youtu.be/bhG1fel_lq4" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-9 py-4 rounded-full text-xs md:text-sm inline-flex items-center gap-2.5 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif"
             >
-              <BookOpen className="w-4 h-4 text-amber-400" /> Sfoglia il PDF Ufficiale <ArrowRight className="w-4 h-4" />
+              <Play className="w-4 h-4 text-amber-400 fill-amber-400" /> Guarda il Video di Spiegazione <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>
