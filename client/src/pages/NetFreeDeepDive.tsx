@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, TreePine, ExternalLink, ShieldCheck, Leaf, Globe, FileText, Sun, Droplets, Zap, Activity, Award } from "lucide-react";
+import { ArrowRight, Sparkles, TreePine, ExternalLink, FileText, Droplets, Award } from "lucide-react";
 import { useState } from "react";
 
 export default function NetFreeDeepDive() {
@@ -64,8 +64,8 @@ export default function NetFreeDeepDive() {
             <span className="font-bold text-[10px] md:text-xs uppercase tracking-wider md:tracking-widest text-stone-600 font-serif truncate max-w-[180px] sm:max-w-none">Il Giardino Luminoso • Netfree</span>
           </div>
           <nav className="flex items-center gap-4 text-xs font-medium">
-            <Link href="/">
-              <span className="text-stone-500 hover:text-stone-950 cursor-pointer transition-colors font-serif whitespace-nowrap">← Home</span>
+            <Link href="/" className="text-stone-500 hover:text-stone-950 cursor-pointer transition-colors font-serif whitespace-nowrap">
+              ← Home
             </Link>
           </nav>
         </div>
@@ -167,32 +167,17 @@ export default function NetFreeDeepDive() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 pt-2">
-            <a 
-              href="https://www.youtube.com/watch?v=elbOEII7-zo" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group"
-            >
+            <a href="https://www.youtube.com/watch?v=elbOEII7-zo" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group">
               <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Intervista Dott. Favata (Parte 1)</span>
               <ExternalLink className="w-4 h-4 text-amber-700 flex-shrink-0 ml-2" />
             </a>
 
-            <a 
-              href="https://www.youtube.com/watch?v=Di3BtfUqJwg" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group"
-            >
+            <a href="https://www.youtube.com/watch?v=Di3BtfUqJwg" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group">
               <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Intervista Dott. Favata (Parte 2)</span>
               <ExternalLink className="w-4 h-4 text-amber-700 flex-shrink-0 ml-2" />
             </a>
 
-            <a 
-              href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group"
-            >
+            <a href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group">
               <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Documento Tecnico di Approfondimento (PDF)</span>
               <FileText className="w-4 h-4 text-amber-700 flex-shrink-0 ml-2" />
             </a>
@@ -216,22 +201,12 @@ export default function NetFreeDeepDive() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 pt-2">
-            <a 
-              href="https://www.omeopatia.org/download/seminario-rey/ELIA-Dell-acqua-la-rimembranza.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group"
-            >
+            <a href="https://www.omeopatia.org/download/seminario-rey/ELIA-Dell-acqua-la-rimembranza.pdf" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group">
               <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-emerald-800">Seminario: "Dell'Acqua la Rimembranza" (PDF)</span>
               <FileText className="w-4 h-4 text-emerald-700 flex-shrink-0 ml-2" />
             </a>
 
-            <a 
-              href="https://www.youtube.com/watch?v=DZJbFmkUh2g" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group"
-            >
+            <a href="https://www.youtube.com/watch?v=DZJbFmkUh2g" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group">
               <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-emerald-800">Video di Approfondimento sulla Memoria dell'Acqua</span>
               <ExternalLink className="w-4 h-4 text-emerald-700 flex-shrink-0 ml-2" />
             </a>
@@ -321,7 +296,7 @@ export default function NetFreeDeepDive() {
               </div>
             </div>
 
-            {/* 5. Protocolli con Diossido di Cloro (Google Drive) */}
+            {/* 5. Protocolli con Diossido di Cloro */}
             <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Protocolli di Purificazione</span>
@@ -330,24 +305,13 @@ export default function NetFreeDeepDive() {
                   Soluzioni e presidi per la sanificazione profonda, l'igiene e la rimozione di agenti patogeni secondo i protocolli dedicati.
                 </p>
                 
-                {/* DOCUMENTAZIONE UFFICIALE */}
                 <div className="pt-3 border-t border-stone-200/60 space-y-2">
                   <span className="text-[11px] font-bold font-serif text-stone-800 uppercase tracking-wider block">Documentazione Ufficiale:</span>
                   <div className="flex flex-col gap-1.5 text-xs font-serif">
-                    <a 
-                      href="https://drive.google.com/file/d/1QPdv3uQhn6_o2QGcU09Jiul9-npp2nYx/view?usp=sharing" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium truncate"
-                    >
+                    <a href="https://drive.google.com/file/d/1QPdv3uQhn6_o2QGcU09Jiul9-npp2nYx/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium truncate">
                       <FileText className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Salute Proibita (Andreas Kalcker)
                     </a>
-                    <a 
-                      href="https://drive.google.com/file/d/17k4qLja8LkfJOU2K38n0jY7ynPhXzdYJ/view?usp=sharing" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium truncate"
-                    >
+                    <a href="https://drive.google.com/file/d/17k4qLja8LkfJOU2K38n0jY7ynPhXzdYJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium truncate">
                       <FileText className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Cos'è il Diossido di Cloro (CDS)
                     </a>
                   </div>
@@ -401,29 +365,20 @@ export default function NetFreeDeepDive() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-2">
-            <button 
-              onClick={() => injectLensStep(1)} 
-              className="px-4 py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs font-mono font-bold text-amber-300 tracking-wider transition-all cursor-pointer shadow-lg"
-            >
+            <button onClick={() => injectLensStep(1)} className="px-4 py-2.5 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl text-xs font-mono font-bold text-amber-300 tracking-wider transition-all cursor-pointer shadow-lg">
               [ +1 Passo ]
             </button>
-            <button 
-              onClick={injectFullLensLevel} 
-              className="px-4 py-2.5 bg-stone-900 hover:bg-stone-800 border border-stone-700 rounded-xl text-xs font-mono text-cyan-400 transition-all cursor-pointer"
-            >
+            <button onClick={injectFullLensLevel} className="px-4 py-2.5 bg-stone-900 hover:bg-stone-800 border border-stone-700 rounded-xl text-xs font-mono text-cyan-400 transition-all cursor-pointer">
               ++ Satura Orbita
             </button>
-            <button 
-              onClick={hardResetLens} 
-              className="px-4 py-2.5 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 rounded-xl text-xs font-mono text-red-400 transition-all cursor-pointer"
-            >
+            <button onClick={hardResetLens} className="px-4 py-2.5 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 rounded-xl text-xs font-mono text-red-400 transition-all cursor-pointer">
               Reset
             </button>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-2">
             
-            {/* REATTORE RADIALE SVG CON OVERFLOW SCROLL PER MOBILE */}
+            {/* REATTORE RADIALE SVG */}
             <div className="lg:col-span-6 bg-stone-900/50 border border-stone-800/80 rounded-2xl p-4 flex flex-col items-center justify-center relative shadow-inner overflow-x-auto min-h-[420px]">
               <div className="absolute top-3 left-4 text-[9px] font-mono text-stone-400 uppercase tracking-widest flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Reattore Concentrico
@@ -529,10 +484,8 @@ export default function NetFreeDeepDive() {
             "Ogni grande cambiamento inizia da un piccolo seme. La domanda non è quanto può crescere il seme, ma cosa può diventare un mondo in cui milioni di persone scelgono di coltivarlo insieme."
           </p>
           <div className="pt-2">
-            <Link href="/">
-              <button className="w-full sm:w-auto bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-8 py-3.5 rounded-full text-xs md:text-sm inline-flex items-center justify-center gap-2 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif">
-                ← Torna alla Home <ArrowRight className="w-4 h-4" />
-              </button>
+            <Link href="/" className="w-full sm:w-auto bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-8 py-3.5 rounded-full text-xs md:text-sm inline-flex items-center justify-center gap-2 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif">
+              ← Torna alla Home <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
