@@ -1,0 +1,52 @@
+{
+  "ecosistema": "LCR - Sentiero di Sovranità",
+  "version": "2.6.0",
+  "fasi": [
+    {
+      "id": 1,
+      "nome": "Alleggerimento PEF Power",
+      "modello": "Binario",
+      "profondita": 5,
+      "beneficio_unitario_mese": 2.00,
+      "voci": ["luce", "gas"],
+      "obiettivo_sconto_annuo": 1488.00
+    },
+    {
+      "id": 2,
+      "nome": "Formazione Biologica e Tazzina",
+      "riferimenti": ["Masaru Emoto", "Otto Warburg"]
+    },
+    {
+      "id": 3,
+      "nome": "Condi-Visione Cerchia",
+      "modello": "Potenza del 6",
+      "soglia_sblocco_livello": 3
+    },
+    {
+      "id": 4,
+      "nome": "Dispositivo Depurazione",
+      "fornitore": "Dott. Favata",
+      "provvigione_livello": 250.00,
+      "copertura_finanziaria": "Domino a Scacchiera (Coperto da L2/L3)"
+    },
+    {
+      "id": 5,
+      "nome": "Finanza Reale e Automazione AI",
+      "componenti": {
+        "protocollo_bt": "Blotix RWA",
+        "quota_rete_commerciale_pct": 1.00,
+        "quota_per_livello_pct": 0.20,
+        "asset_riferimento_valore": 200000.00,
+        "rendita_annua_asset_pct": 3.50,
+        "immobiliare": "Holidayworld (Affitti Brevi)",
+        "automazione": "Dipendenti AI 24/7 (VoiceDesk.it)"
+      }
+    }
+  ],
+  "matrice_prospetto_finanziario": {
+    "livelli_max": 7,
+    "totale_persone_struttura": 55987,
+    "totale_potenziale_depuratori": 13996500.00,
+    "totale_potenziale_5_anni_bt": 18660000.00
+  }
+}
