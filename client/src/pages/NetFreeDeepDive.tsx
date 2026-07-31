@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Sparkles, TreePine, ExternalLink, FileText, Droplets, Award, TrendingUp, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles, TreePine, ExternalLink, FileText, Droplets, Award, TrendingUp, ShieldCheck, Leaf, Globe } from "lucide-react";
 import { useState } from "react";
 
 export default function NetFreeDeepDive() {
@@ -104,13 +104,13 @@ export default function NetFreeDeepDive() {
           </p>
         </div>
 
-        {/* TABELLA ESEMPLIFICATIVA DEI NETWORK */}
+        {/* TABELLA COMPARATIVA DEI POSSIBILI GUADAGNI SU 5 NETWORK */}
         <div className="rounded-3xl md:rounded-[2.5rem] border border-stone-200 bg-white p-6 sm:p-8 md:p-12 shadow-xl space-y-6">
           <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Crescita Matematica Sostenibile</span>
-            <h3 className="text-xl md:text-2xl font-serif font-bold text-stone-900">Tabella Esemplificativa dei Network (Campione)</h3>
+            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Simulazione Economica</span>
+            <h3 className="text-xl md:text-2xl font-serif font-bold text-stone-900">Tabella Comparativa dei Possibili Guadagni su 5 Livelli</h3>
             <p className="text-stone-600 text-xs md:text-sm font-light font-serif">
-              Un esempio mirato dei primi livelli di propagazione: abbastanza chiaro per comprendere la scalabilità geometrica senza riempire la tazzina con lo tsunami.
+              Un confronto chiaro basato sul modello di propagazione a 6 nodi per livello (valori di simulazione orientativi per dimostrare la sostenibilità del network).
             </p>
           </div>
 
@@ -118,45 +118,108 @@ export default function NetFreeDeepDive() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-stone-200 text-stone-500 font-mono text-[11px] uppercase tracking-wider bg-stone-50">
-                  <th className="py-3 px-4 rounded-l-xl">Livello / Orbita</th>
-                  <th className="py-3 px-4">Nodi di Cura</th>
-                  <th className="py-3 px-4">Moltiplicatore</th>
-                  <th className="py-3 px-4 rounded-r-xl">Impatto e Obiettivo Biologico</th>
+                  <th className="py-3 px-4 rounded-l-xl">Livello Network</th>
+                  <th className="py-3 px-4">Nodi Attivi</th>
+                  <th className="py-3 px-4">Valore Medio per Nodo</th>
+                  <th className="py-3 px-4 rounded-r-xl">Potenziale Flusso Complessivo Stimato</th>
                 </tr>
               </thead>
               <tbody className="text-xs sm:text-sm font-serif divide-y divide-stone-100">
                 <tr className="hover:bg-amber-50/40 transition-colors">
                   <td className="py-4 px-4 font-bold text-amber-900">Livello 1 (Radice)</td>
                   <td className="py-4 px-4 font-mono font-semibold">1 Persona</td>
-                  <td className="py-4 px-4 font-mono text-stone-500">1x (Tu)</td>
-                  <td className="py-4 px-4 text-stone-600 font-light">Il seme iniziale, la stabilità personale e il cambio di prospettiva.</td>
+                  <td className="py-4 px-4 font-mono text-stone-600">Base Iniziale</td>
+                  <td className="py-4 px-4 text-stone-700 font-semibold font-mono">Attivazione Flusso Personale</td>
                 </tr>
                 <tr className="hover:bg-amber-50/40 transition-colors">
                   <td className="py-4 px-4 font-bold text-amber-900">Livello 2 (Propagazione)</td>
                   <td className="py-4 px-4 font-mono font-semibold">6 Persone</td>
-                  <td className="py-4 px-4 font-mono text-stone-500">6x</td>
-                  <td className="py-4 px-4 text-stone-600 font-light">Il cerchio ristretto di cura diretta e alleggerimento primario.</td>
+                  <td className="py-4 px-4 font-mono text-stone-600">Standard di Cura</td>
+                  <td className="py-4 px-4 text-emerald-700 font-semibold font-mono">Copertura Spese Primarie & Benessere</td>
                 </tr>
                 <tr className="hover:bg-amber-50/40 transition-colors">
                   <td className="py-4 px-4 font-bold text-amber-900">Livello 3 (Sviluppo)</td>
                   <td className="py-4 px-4 font-mono font-semibold">36 Nodi</td>
-                  <td className="py-4 px-4 font-mono text-stone-500">36x</td>
-                  <td className="py-4 px-4 text-stone-600 font-light">Prima propagazione organica nei bio-distretti locali.</td>
+                  <td className="py-4 px-4 font-mono text-stone-600">Crescita Organica</td>
+                  <td className="py-4 px-4 text-emerald-700 font-semibold font-mono">Autonomia Finanziaria di Distretto</td>
                 </tr>
                 <tr className="hover:bg-amber-50/40 transition-colors">
                   <td className="py-4 px-4 font-bold text-amber-900">Livello 4 (Espansione)</td>
                   <td className="py-4 px-4 font-mono font-semibold">216 Nodi</td>
-                  <td className="py-4 px-4 font-mono text-stone-500">216x</td>
-                  <td className="py-4 px-4 text-stone-600 font-light">Rete interconnessa di distretto e autonomia materiale.</td>
+                  <td className="py-4 px-4 font-mono text-stone-600">Moltiplicazione Valore</td>
+                  <td className="py-4 px-4 text-amber-700 font-semibold font-mono">Solidità e Sovranità Materiale Avanzata</td>
                 </tr>
                 <tr className="hover:bg-amber-50/40 transition-colors">
                   <td className="py-4 px-4 font-bold text-amber-900">Livello 5 (Foresta)</td>
                   <td className="py-4 px-4 font-mono font-semibold">1.296 Nodi</td>
-                  <td className="py-4 px-4 font-mono text-stone-500">1.296x</td>
-                  <td className="py-4 px-4 text-stone-600 font-light">Comunità estesa, autosufficiente e prospera.</td>
+                  <td className="py-4 px-4 font-mono text-stone-600">Ecosistema Completo</td>
+                  <td className="py-4 px-4 text-amber-800 font-bold font-mono">Abbondanza Circolare Piena e Diffusa</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+
+        {/* SEZIONE: EDIFICAZIONE DELL'ESPERTO - DOTT. ROBERTO FAVATA */}
+        <div className="rounded-3xl md:rounded-[2.5rem] border border-amber-200 bg-gradient-to-br from-amber-50/70 via-white to-stone-50 p-6 sm:p-8 md:p-14 shadow-xl space-y-6 md:space-y-8">
+          <div className="flex items-center gap-3">
+            <span className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold flex-shrink-0">
+              <Award className="w-5 h-5 text-amber-700" />
+            </span>
+            <div>
+              <span className="text-[10px] sm:text-xs uppercase tracking-[2px] sm:tracking-[3px] text-amber-800 font-serif font-semibold">Ascoltiamo l'Esperto</span>
+              <h3 className="text-xl md:text-2xl font-serif font-bold text-stone-900">Il Protocollo di Depurazione e l'Acqua Alcalina del Dott. Roberto Favata</h3>
+            </div>
+          </div>
+
+          <p className="text-stone-700 text-sm md:text-base font-light leading-relaxed font-serif">
+            Il <strong>Dott. Roberto Favata</strong> rappresenta un punto di riferimento fondamentale nella ricerca sulla biofisica dell'acqua, sulla nutrizione cellulare e sui processi di depurazione profonda dell'organismo. Con anni di studi clinici, ricerche sul campo e divulgazione scientifica indipendente, il Dott. Favata ha dimostrato come la qualità dell'acqua che introduciamo nel corpo non sia semplicemente una questione di filtrazione chimica, ma di ripristino energetico e strutturale. Grazie alle sue interviste e alle schede tecniche di approfondimento, comprendiamo come l'acqua alcalina rivitalizzata costituisca il primo pilastro del Tempio Biologico.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 pt-2">
+            <a href="https://www.youtube.com/watch?v=elbOEII7-zo" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group">
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Intervista Dott. Favata (Parte 1)</span>
+              <ExternalLink className="w-4 h-4 text-amber-700 flex-shrink-0 ml-2" />
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=Di3BtfUqJwg" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group">
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Intervista Dott. Favata (Parte 2)</span>
+              <ExternalLink className="w-4 h-4 text-amber-700 flex-shrink-0 ml-2" />
+            </a>
+
+            <a href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group">
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Documento Tecnico di Approfondimento (PDF)</span>
+              <FileText className="w-4 h-4 text-amber-700 flex-shrink-0 ml-2" />
+            </a>
+          </div>
+        </div>
+
+        {/* SEZIONE: MEMORIA DELL'ACQUA */}
+        <div className="rounded-3xl md:rounded-[2.5rem] border border-emerald-200 bg-gradient-to-br from-emerald-50/70 via-white to-stone-50 p-6 sm:p-8 md:p-14 shadow-xl space-y-6 md:space-y-8">
+          <div className="flex items-center gap-3">
+            <span className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold flex-shrink-0">
+              <Droplets className="w-5 h-5 text-emerald-700" />
+            </span>
+            <div>
+              <span className="text-[10px] sm:text-xs uppercase tracking-[2px] sm:tracking-[3px] text-emerald-800 font-serif font-semibold">Approfondimento Biofisico</span>
+              <h3 className="text-xl md:text-2xl font-serif font-bold text-stone-900">La Memoria e la Rimembranza dell'Acqua</h3>
+            </div>
+          </div>
+
+          <p className="text-stone-700 text-sm md:text-base font-light leading-relaxed font-serif">
+            L'acqua possiede una struttura in grado di registrare, conservare e trasmettere informazioni biofisiologiche. Attraverso il seminario di approfondimento e il materiale documentario dedicato, esploriamo le evidenze scientifiche che spiegano come l'acqua informata e rivitalizzata agisca direttamente sulla coerenza cellulare dell'organismo umano.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 pt-2">
+            <a href="https://www.omeopatia.org/download/seminario-rey/ELIA-Dell-acqua-la-rimembranza.pdf" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group">
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-emerald-800">Seminario: "Dell'Acqua la Rimembranza" (PDF)</span>
+              <FileText className="w-4 h-4 text-emerald-700 flex-shrink-0 ml-2" />
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=DZJbFmkUh2g" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group">
+              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-emerald-800">Video di Approfondimento sulla Memoria dell'Acqua</span>
+              <ExternalLink className="w-4 h-4 text-emerald-700 flex-shrink-0 ml-2" />
+            </a>
           </div>
         </div>
 
@@ -221,7 +284,6 @@ export default function NetFreeDeepDive() {
                         const dotColor = chakraColors[macroSector];
                         const nodePositionInSubsector = i % 6;
                         const isActive = nodePositionInSubsector < lvl.currentSteps || lvl.level < activeFocusLevel;
-                        // Nodi inattivi ora più chiari (#292524) per non confondersi e non spegnersi troppo
                         const dotRadius = isFocused ? 5 : (lvl.level < activeFocusLevel ? 2.5 : 1.5);
 
                         return (
