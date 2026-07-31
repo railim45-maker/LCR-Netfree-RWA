@@ -223,6 +223,140 @@ export default function NetFreeDeepDive() {
           </div>
         </div>
 
+        {/* I SEMI E I PRESIDI DEL NOSTRO GIARDINO (COLLEGAMENTI RIPRISTINATI) */}
+        <div className="rounded-3xl md:rounded-[2.5rem] border border-stone-200/80 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-xl space-y-8 md:space-y-12">
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">I Semi del Nostro Giardino</span>
+            <h3 className="text-2xl md:text-3xl font-bold font-serif text-stone-900">I Presidi e i Benefici del Tempio Biologico</h3>
+            <p className="text-stone-600 text-xs md:text-sm font-light font-serif">Soluzioni di valore focalizzate sul benessere quotidiano, sulla sovranità energetica e sulla cura ecologica.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* 1. Efficientamento Energetico */}
+            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Energia & Autonomia</span>
+                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Efficientamento Energetico, Pannelli Solari & Green Sharing</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Sistemi fotovoltaici avanzati e comunità energetiche rinnovabili per azzerare la dipendenza dalle fluttuazioni di mercato e condividere valore pulito.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex flex-wrap items-center justify-between gap-2 text-xs font-serif">
+                <span className="text-stone-500">Autonomia & Condivisione</span>
+                <div className="flex items-center gap-3">
+                  <a href="https://www.pefpower.it/it/home" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                    Approfondimento <ExternalLink className="w-3 h-3" />
+                  </a>
+                  <a href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                    PDF <FileText className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Oli Essenziali */}
+            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Tempio Biologico</span>
+                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Oli Essenziali e Aromaterapia Evolutiva</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Estratti botanici puri di grado terapeutico per sostenere l'equilibrio emotivo, purificare gli ambienti domestici e nutrire la persona.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Purezza botanica & Olfattiva</span>
+                <a href="https://www.doterra.com/ME/it_ME" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Esplora l'Essenza <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* 3. Microorganismi Effettivi */}
+            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Cura della Terra</span>
+                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Microorganismi Effettivi per la Casa e il Suolo</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Soluzioni simbiotiche ecologiche per rivitalizzare i terreni, favorire la crescita delle piante e detergere la casa senza tossine.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Simbiosi & Ecologia</span>
+                <a href="http://ecopassaparola.it" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Metodo Simbiotico <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* 4. Integrazione Minerale */}
+            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Salute Cellulare</span>
+                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Integrazione Minerale per l'Equilibrio Acido-Basico</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Supporto minerale mirato al bilanciamento del pH corporeo e al ripristino dell'omeostasi cellulare profonda.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Omeostasi & Benessere</span>
+                <a href="https://www.viafarmaciaonline.it/pascoe-basenpulver-polvere-100-g.html" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Approfondimento <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* 5. Protocolli con Diossido di Cloro */}
+            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Protocolli di Purificazione</span>
+                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Protocolli Avanzati con Diossido di Cloro</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Soluzioni e presidi per la sanificazione profonda, l'igiene e la rimozione di agenti patogeni secondo i protocolli dedicati.
+                </p>
+                
+                <div className="pt-3 border-t border-stone-200/60 space-y-2">
+                  <span className="text-[11px] font-bold font-serif text-stone-800 uppercase tracking-wider block">Documentazione Ufficiale:</span>
+                  <div className="flex flex-col gap-1.5 text-xs font-serif">
+                    <a href="https://drive.google.com/file/d/1QPdv3uQhn6_o2QGcU09Jiul9-npp2nYx/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium truncate">
+                      <FileText className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Salute Proibita (Andreas Kalcker)
+                    </a>
+                    <a href="https://drive.google.com/file/d/17k4qLja8LkfJOU2K38n0jY7ynPhXzdYJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium truncate">
+                      <FileText className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Cos'è il Diossido di Cloro (CDS)
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Igiene & Sicurezza</span>
+                <a href="https://dioxitube.com/w/fARnr15iVu8zKpJysQhmZ2" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Protocollo <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* 6. Consapevolezza con Tradetector */}
+            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
+              <div className="space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Analisi & Visione</span>
+                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Consapevolezza Economica e Monitoraggio dei Trend</h4>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">
+                  Strumenti di analisi evoluta dei mercati e dei dati finanziari per sviluppare lucidità strategica e indipendenza decisionale.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
+                <span className="text-stone-500">Chiarezza & Trend</span>
+                <a href="https://www.tradetector.net/" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
+                  Tradetector <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
         {/* DASHBOARD INTERATTIVA (REATTORE RADIALE CON NODI LUMINOSI) */}
         <div className="rounded-3xl md:rounded-[2.5rem] border border-stone-800 bg-[#12100e] p-6 sm:p-8 md:p-12 text-stone-100 shadow-2xl space-y-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
