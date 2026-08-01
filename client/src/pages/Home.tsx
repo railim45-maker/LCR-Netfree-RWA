@@ -21,7 +21,7 @@ export default function Home() {
               href="/tokenizzazione"
               className="inline-flex items-center gap-1 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 hover:bg-amber-100 transition-colors font-serif font-semibold shadow-xs text-[11px] sm:text-xs"
             >
-              ✦ Tokenizzazione
+              ✦ Tokenizzazione RWA
             </Link>
             <Link 
               href="/netfree"
@@ -45,8 +45,8 @@ export default function Home() {
             La Strada che Conduce a Casa
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif px-2">
-            Hai presente quella sensazione di camminare a tentoni, con la costante paura di sbagliare strada, mentre il peso delle bollette, del lavoro e delle preoccupazioni sembra schiacciarti ogni giorno di più? Ti hanno fatto credere che la vita sia una lotta solitaria e che non ci sia via d'uscita. <br /><br />
-            <strong className="text-stone-900 font-medium">Non è così.</strong> Quella che hai trovato adesso non è una semplice sosta: è la strada. È la via d'uscita da un sistema che ti vuole esausto, e conduce esattamente là dove meriti di arrivare.
+            Non sei capitato qui per caso. Se senti il peso di un sistema basato sulla scarsità e sulla fatica solitaria, sappi che esiste un'altra via: un ambiente strutturato, familiare e protetto dove l'economia incontra il dono e la cura reciproca. <br /><br />
+            <strong className="text-stone-900 font-medium">Questa è la mappa per ritrovare l'equilibrio.</strong> Un percorso pensato per rimettere al centro la dignità umana, l'abbondanza circolare e la piena sovranità.
           </p>
         </div>
 
@@ -67,19 +67,19 @@ export default function Home() {
           </div>
           <div className="text-center pt-2 px-2">
             <p className="text-xs text-stone-500 font-serif italic">
-              "Il punto non è arricchirsi isolandosi dagli altri, ma capire il potenziale pazzesco della cura collettiva."
+              "Il punto non è arricchirsi isolandosi dagli altri, ma riscoprire la forza e il potenziale della cura collettiva."
             </p>
           </div>
         </div>
 
-        {/* LE 4 TAPPE / I PILASTRI */}
+        {/* IL NUOVO PERCORSO / I PILASTRI AGGIORNATI */}
         <div className="space-y-6 md:space-y-8">
           
           <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">I</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Primo Passo: Mettere i Piedi a Terra</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Primo Pilastro: Fondamenta e Tokenizzazione RWA</h3>
               </div>
               <Link 
                 href="/tokenizzazione" 
@@ -89,7 +89,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Il primo blocco, quando si è stanchi, è la paura di non potersi permettere un cambiamento o di dover rischiare soldi che servono per la spesa. La strada non ti chiede alcun capitale iniziale. Grazie a un meccanismo basato sulla tokenizzazione e sul sostegno di chi ha creduto prima di te nel progetto, il tuo ingresso nel sistema è protetto. Non parti con un esborso economico: parti in equilibrio.
+              Partiamo dalla concretezza e dalla protezione economica. Attraverso la tokenizzazione di asset reali (RWA) e modelli economici alternativi, creiamo le basi per svincolarci dalla pressione finanziaria immediata, offrendo un ingresso sicuro e radicato nella materia solida.
             </p>
           </div>
 
@@ -97,14 +97,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">II</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Secondo Passo: Camminare Insieme (Il Net-Free)</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Secondo Pilastro: L'Economia del Dono e la Rete Net-Free</h3>
               </div>
               <Link href="/netfree" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold w-fit">
                 NetFree Deep Dive <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
             <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Una volta alleggerito il passo dalla pressione finanziaria, impariamo a muoverci in modo nuovo. Dimentica il mondo là fuori fatto di competizione e solitudine. Qui ti affidiamo un seme pulito. La regola è semplice e profondamente umana: ti prendi cura del tuo spazio e aiuti sei persone a fare lo stesso. È una catena di cura e di abbondanza condivisa.
+              Abbandoniamo la competizione e le logiche commerciali aggressive. Nel sistema Net-Free ci prendiamo cura del nostro spazio e accompagniamo la nostra cerchia in un flusso circolare di abbondanza, dove il valore si genera attraverso la cooperazione e la fiducia reciproca.
             </p>
           </div>
 
@@ -112,12 +112,12 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">III</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Terzo Passo: Ritrovare il Tempio Biologico</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Terzo Pilastro: Il Tempio Biologico (Salute e Natura)</h3>
               </div>
               <span className="text-xs font-serif text-stone-500 font-medium">Presidi Ufficiali</span>
             </div>
             <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Quando l'economia smette di essere un assillo costante, l'energia torna a concentrarsi dove serve davvero: nel tuo corpo. La strada ti guida a riscoprire i gesti semplici e veri che restituiscono vitalità alla materia: un'acqua pura che disseta davvero, la terra che si rigenera e la sovranità energetica che alleggerisce la tua casa.
+              Riconnettiamo l'energia vitale al corpo attraverso protocolli di benessere consapevoli, permacultura, acqua pura e autonomia energetica. Restituire armonia al corpo e all'ambiente circostante significa ritrovare la nostra integrità originaria.
             </p>
           </div>
 
@@ -125,14 +125,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">IV</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Quarto Passo: La Piena Sovranità (L'Accademia)</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Quarto Pilastro: Sovranità e Accademia Uomo Naturale</h3>
               </div>
               <Link href="/liberta-legale" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold w-fit">
                 Accademia Uomo Naturale <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
             <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Quando avrai ritrovato le tue forze, quando la tua vita avrà ripreso respiro e stabilità, allora sarai pronto per la tappa più profonda del risveglio: l'Accademia Uomo Naturale. È qui che impari a comprendere la finzione giuridica, a sciogliere le vecchie catene e a riprendere in mano la guida autentica della tua esistenza.
+              Il traguardo della consapevolezza profonda: comprendere la finzione giuridica, sciogliere i vincoli imposti dal sistema esterno e riappropriarsi della piena sovranità e della guida consapevole della propria esistenza.
             </p>
           </div>
 
@@ -142,16 +142,16 @@ export default function Home() {
         <div className="p-6 sm:p-10 md:p-14 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-8">
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Il Modello di Sviluppo</span>
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Dalla Vendita alla Cura del Giardino</h3>
-            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif">Il passaggio strutturale dal vecchio sistema piramidale al Sistema Net-Free fondato sulla comunità e sull'abbondanza circolare.</p>
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Dalla Scarsità alla Cura del Giardino</h3>
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif">Il passaggio strutturale dal vecchio paradigma competitivo al Sistema Net-Free fondato sulla comunità e sull'economia del dono.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             <div className="p-6 md:p-8 rounded-3xl bg-stone-50 border border-stone-200/80 space-y-4">
               <span className="text-xs font-mono uppercase tracking-widest text-stone-500 font-semibold">Vecchio Sistema</span>
-              <h4 className="font-serif font-bold text-lg sm:text-xl text-stone-900">Reclutamento, Pressione, Scarsità</h4>
+              <h4 className="font-serif font-bold text-lg sm:text-xl text-stone-900">Competizione, Pressione, Isolamento</h4>
               <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
-                Una struttura basata sulla competizione solitaria e sulla vendita forzata, dove la fatica aumenta e la libertà si allontana costantemente.
+                Una struttura piramidale basata sulla vendita forzata e sulla lotta solitaria, dove l'energia si esaurisce e la libertà rimane un'illusione.
               </p>
             </div>
 
@@ -159,7 +159,7 @@ export default function Home() {
               <span className="text-xs font-mono uppercase tracking-widest text-amber-800 font-semibold">Sistema Net-Free</span>
               <h4 className="font-serif font-bold text-lg sm:text-xl text-stone-900">Comunità, Dono, Cura, Abbondanza</h4>
               <p className="text-xs sm:text-sm text-stone-700 font-light leading-relaxed">
-                Non ti chiediamo di diventare un venditore. Ti chiediamo di prenderti cura della tua cerchia, accompagnando chi scegli nel percorso di crescita.
+                Un ecosistema familiare e circolare dove ci si sostiene a vicenda, coltivando il proprio spazio e accompagnando la comunità verso la fioritura.
               </p>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function Home() {
         <div className="space-y-6">
           <div className="text-center space-y-2">
             <h3 className="text-2xl font-serif font-bold text-stone-900">I Presidi e le Fonti Esterne</h3>
-            <p className="text-stone-600 text-xs sm:text-sm font-light">Approfondisci i partner ufficiali e i pilastri scientifici che sostengono il Tempio Biologico.</p>
+            <p className="text-stone-600 text-xs sm:text-sm font-light">Approfondisci i partner ufficiali e i pilastri culturali che sostengono il nostro cammino.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
