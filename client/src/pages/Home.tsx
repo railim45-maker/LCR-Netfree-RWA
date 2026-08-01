@@ -72,14 +72,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* IL NUOVO PERCORSO / I PILASTRI AGGIORNATI */}
+        {/* IL NUOVO PERCORSO AGGIORNATO */}
         <div className="space-y-6 md:space-y-8">
           
           <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">I</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Primo Pilastro: Fondamenta e Tokenizzazione RWA</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">1. Le Fondamenta: Tokenizzazione RWA e Protezione</h3>
               </div>
               <Link 
                 href="/tokenizzazione" 
@@ -89,7 +89,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Partiamo dalla concretezza e dalla protezione economica. Attraverso la tokenizzazione di asset reali (RWA) e modelli economici alternativi, creiamo le basi per svincolarci dalla pressione finanziaria immediata, offrendo un ingresso sicuro e radicato nella materia solida.
+              Partiamo dalla concretezza e dalla protezione economica. Attraverso la tokenizzazione di asset reali e modelli strutturati, creiamo le basi per svincolarci dalla pressione finanziaria immediata, offrendo un ingresso sicuro e radicato nella materia solida.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">II</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Secondo Pilastro: L'Economia del Dono e la Rete Net-Free</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">2. Il Cammino: L'Economia del Dono e la Rete Net-Free</h3>
               </div>
               <Link href="/netfree" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold w-fit">
                 NetFree Deep Dive <ArrowRight className="w-3 h-3" />
@@ -112,7 +112,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">III</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Terzo Pilastro: Il Tempio Biologico (Salute e Natura)</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">3. La Cura: Il Tempio Biologico e il Benessere Naturale</h3>
               </div>
               <span className="text-xs font-serif text-stone-500 font-medium">Presidi Ufficiali</span>
             </div>
@@ -125,7 +125,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">IV</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">Il Quarto Pilastro: Sovranità e Accademia Uomo Naturale</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">4. La Meta: Piena Sovranità e Accademia Uomo Naturale</h3>
               </div>
               <Link href="/liberta-legale" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold w-fit">
                 Accademia Uomo Naturale <ArrowRight className="w-3 h-3" />
