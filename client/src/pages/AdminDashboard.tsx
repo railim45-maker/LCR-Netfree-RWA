@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Sparkles, Users, MessageCircle, BarChart3, Bot, Send, CheckCircle2, ShieldCheck, Upload, FileText, Video, Plus, Trash2, ExternalLink } from 'lucide-react';
+import { Sparkles, Users, MessageCircle, BarChart3, Bot, Send, CheckCircle2, ShieldCheck, Upload, FileText, Video, Plus, Trash2, ExternalLink, ArrowLeft } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<'candidati' | 'contenuti' | 'kpi' | 'oracolo'>('contenuti');
@@ -92,7 +93,9 @@ export default function AdminDashboard() {
       <header className="container max-w-6xl mx-auto px-4 md:px-6 pt-6 md:pt-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4 px-6 py-4 rounded-3xl bg-white/90 border border-stone-200/60 shadow-[0_2px_20px_rgba(0,0,0,0.02)] backdrop-blur-xl">
           <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-full bg-amber-50 text-amber-900 flex items-center justify-center font-serif font-bold text-xs border border-amber-200">✦</span>
+            <Link href="/" className="w-8 h-8 rounded-full bg-amber-50 text-amber-900 flex items-center justify-center font-serif font-bold text-xs border border-amber-200 hover:bg-amber-100 transition-colors" title="Torna alla Home">
+              <ArrowLeft className="w-4 h-4" />
+            </Link>
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="font-serif font-bold text-sm text-stone-900">Dashboard Admin • Accesso Totale</h1>
