@@ -72,14 +72,17 @@ export default function TokenizzazionePage() {
 
         </div>
 
-        {/* BOX CONCLUSIVO */}
-        <div className="p-8 rounded-3xl bg-stone-900 text-stone-50 space-y-6 shadow-xl text-center">
-          <h3 className="text-2xl font-serif font-bold">Hai completato le fondamenta?</h3>
-          <p className="text-xs sm:text-sm font-light font-serif text-stone-300 max-w-lg mx-auto leading-relaxed">
-            Una volta compreso il valore della protezione materiale, puoi tornare alla mappa principale per confermare il checkpoint e procedere verso la cerchia di cura.
+        {/* NUOVO BOX LUMINOSO, APERTO E ARMONICO (IN SOSTITUZIONE DEL RIQUADRO SCURO) */}
+        <div className="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-amber-50/80 via-white to-stone-50 border border-amber-200/80 shadow-lg space-y-6 text-center">
+          <span className="inline-flex items-center gap-1.5 text-xs font-serif text-amber-800 bg-amber-100/70 px-3.5 py-1 rounded-full border border-amber-200">
+            ✦ Libertà di Scelta
+          </span>
+          <h3 className="text-2xl font-serif font-bold text-stone-900">Prosegui il tuo cammino con naturalezza</h3>
+          <p className="text-xs sm:text-sm font-light font-serif text-stone-600 max-w-lg mx-auto leading-relaxed">
+            Quando desideri, puoi tornare alla mappa principale per verificare i tuoi progressi o procedere verso i prossimi passi dell'ecosistema.
           </p>
           <div className="pt-2">
-            <Link href="/" className="inline-flex items-center gap-2 bg-amber-400 text-stone-900 hover:bg-amber-300 font-serif font-semibold px-8 py-3.5 rounded-full text-xs transition-all shadow-md">
+            <Link href="/" className="inline-flex items-center gap-2 bg-stone-900 text-stone-50 hover:bg-stone-800 font-serif font-semibold px-8 py-3.5 rounded-full text-xs transition-all shadow-md">
               Torna alla Mappa dei Checkpoint →
             </Link>
           </div>
