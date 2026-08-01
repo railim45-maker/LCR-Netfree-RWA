@@ -1,68 +1,89 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+// 1. IMPORTA QUI IL FILE IN CIMA ALLA TUA SCHERMATA:
+import 'dynamic_section_screen.dart';
 
-class DynamicSectionScreen extends StatelessWidget {
-  final String category;
-  final String title;
-
-  const DynamicSectionScreen({
-    Key? key,
-    required this.category,
-    required this.title,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final supabase = Supabase.instance.client;
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: StreamBuilder<List<Map<String, dynamic>>>(
-        stream: supabase
-            .from('dynamic_admin_contents')
-            .stream(primaryKey: ['id'])
-            .eq('category', category)
-            .eq('is_active', true)
-            .order('created_at', ascending: false),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(
-              child: Text('Nessun contenuto disponibile per $title al momento.'),
-            );
-          }
-
-          final items = snapshot.data!;
-
-          return ListView.builder(
-            padding: const EdgeInsets.all(16.0),
-            itemCount: items.length,
-            itemBuilder: (context, index) {
-              final item = items[index];
-              return Card(
-                margin: const EdgeInsets.symmetric(vertical: 6),
-                child: ListTile(
-                  title: Text(
-                    item['title'] ?? '',
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: Text(item['description'] ?? ''),
-                  trailing: item['content_url'] != null
-                      ? const Icon(Icons.open_in_new, color: Colors.blue)
-                      : null,
-                  onTap: () {
-                    // Se c'è un link (video, documento, ecc.), puoi gestirne l'apertura qui
-                  },
-                ),
-              );
-            },
-          );
-        },
-      ),
-    );
-  }
-}
+// Esempio di utilizzo all'interno di un metodo build o di una lista di pulsanti:
+Column(
+  crossAxisAlignment: CrossAxisAlignment.stretch,
+  children: [
+    ElevatedButton.icon(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const DynamicSectionScreen(
+              category: 'privati',
+              title: 'Area Privati e Asset',
+            ),
+          ),
+        );
+      },
+      icon: const Icon(Icons.person),
+      label: const Text('Area Privati'),
+    ),
+    const SizedBox(height: 10),
+    ElevatedButton.icon(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const DynamicSectionScreen(
+              category: 'aziende',
+              title: 'Area Aziende',
+            ),
+          ),
+        );
+      },
+      icon: const Icon(Icons.business),
+      label: const Text('Area Aziende'),
+    ),
+    const SizedBox(height: 10),
+    ElevatedButton.icon(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const DynamicSectionScreen(
+              category: 'terzo_settore',
+              title: 'Terzo Settore',
+            ),
+          ),
+        );
+      },
+      icon: const Icon(Icons.volunteer_activism),
+      label: const Text('Terzo Settore'),
+    ),
+    const SizedBox(height: 10),
+    ElevatedButton.icon(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const DynamicSectionScreen(
+              category: 'pa',
+              title: 'Pubblica Amministrazione',
+            ),
+          ),
+        );
+      },
+      icon: const Icon(Icons.account_balance),
+      label: const Text('Pubblica Amministrazione'),
+    ),
+    const SizedBox(height: 10),
+    ElevatedButton.icon(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const DynamicSectionScreen(
+              category: 'libri',
+              title: 'Libri e Documentazione',
+            ),
+          ),
+        );
+      },
+      icon: const Icon(Icons.book),
+      label: const Text('Libri'),
+    ),
+  ],
+)
