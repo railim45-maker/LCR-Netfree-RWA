@@ -196,15 +196,44 @@ export default function Home() {
               )}
             </div>
             <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6">
-              Purifica il tempio biologico (acqua, terra, permacultura) e accedi all'Accademia Uomo Naturale per ristabilire la piena sovranità esistenziale.
+              Purifica il tempio biologico (acqua, terra, permacultura) e ristabilisci la piena sovranità esistenziale.
             </p>
             {unlockedLevel >= 4 && (
               <Link href="/liberta-legale" className="bg-stone-900 text-stone-50 text-xs font-serif px-6 py-3 rounded-full hover:bg-stone-800 transition-all font-semibold inline-flex items-center gap-2">
-                Accedi all'Accademia Uomo Naturale <ArrowRight className="w-4 h-4 text-amber-400" />
+                Approfondisci i Protocolli di Sovranità <ArrowRight className="w-4 h-4 text-amber-400" />
               </Link>
             )}
           </div>
 
+        </div>
+
+        {/* SEZIONE: RELAZIONI, ALLEANZE E PRESIDI */}
+        <div className="p-6 sm:p-10 md:p-14 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-8">
+          <div className="text-center space-y-3 max-w-xl mx-auto">
+            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Relazioni e Alleanze</span>
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">I Presidi e la Collaborazione Diretta</h3>
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif">Il cammino si fonda sui rapporti umani autentici e sulla co-creazione strategica sul campo.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+            
+            <div className="p-6 md:p-8 rounded-3xl bg-stone-50 border border-stone-200/80 space-y-4">
+              <span className="text-xs font-mono uppercase tracking-widest text-amber-800 font-semibold">Sovranità e Coscienza</span>
+              <h4 className="font-serif font-bold text-lg sm:text-xl text-stone-900">Dialogo e Sviluppo con Aldo Pironi</h4>
+              <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+                Collaborazione attiva e confronto diretto in corso per definire i protocolli condivisi di sovranità, superamento della finzione giuridica e tutela del tempio biologico.
+              </p>
+            </div>
+
+            <div className="p-6 md:p-8 rounded-3xl bg-emerald-50/50 border border-emerald-200/80 space-y-4">
+              <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-semibold">Ecosistema Net-Free</span>
+              <h4 className="font-serif font-bold text-lg sm:text-xl text-stone-900">Portale Ufficiale LCR</h4>
+              <p className="text-xs sm:text-sm text-stone-700 font-light leading-relaxed">
+                Il canale centrale della community per coordinare i semi digitali, la tokenizzazione RWA e i momenti di incontro collettivo della rete.
+              </p>
+            </div>
+
+          </div>
         </div>
 
       </main>
