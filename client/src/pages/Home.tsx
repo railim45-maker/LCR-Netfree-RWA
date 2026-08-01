@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, ArrowRight, CheckCircle2, Lock, Unlock, ShieldCheck, Leaf, Globe, Compass, Cpu, Layers } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Lock, Unlock, ShieldCheck, Leaf, Globe, Compass, ExternalLink, MessageCircle } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Home() {
@@ -227,7 +227,7 @@ export default function Home() {
 
         </div>
 
-        {/* SEZIONE: RELAZIONI, ALLEANZE E PRESIDI */}
+        {/* SEZIONE: RELAZIONI, ALLEANZE E COLLEGAMENTI UTILI */}
         <div className="p-6 sm:p-10 md:p-14 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-8">
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Relazioni e Alleanze</span>
@@ -251,8 +251,25 @@ export default function Home() {
               <p className="text-xs sm:text-sm text-stone-700 font-light leading-relaxed">
                 Il canale centrale della community per coordinare i semi digitali, la tokenizzazione RWA e i momenti di incontro collettivo della rete.
               </p>
+              <div className="pt-2">
+                <Link href="/netfree" className="inline-flex items-center gap-1.5 text-xs font-serif text-emerald-900 font-semibold hover:underline">
+                  Accedi al Deep Dive Net-Free →
+                </Link>
+              </div>
             </div>
 
+          </div>
+
+          {/* COLLEGAMENTI RAPIDI INCROCIATI TRA LE SEZIONI */}
+          <div className="pt-6 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-serif text-stone-600">
+            <span className="font-medium">Esplora rapidamente le sezioni del portale:</span>
+            <div className="flex items-center gap-3 flex-wrap justify-center">
+              <Link href="/tokenizzazione" className="hover:text-amber-800 transition-colors underline underline-offset-4">✦ Tokenizzazione RWA</Link>
+              <span>•</span>
+              <Link href="/netfree" className="hover:text-emerald-800 transition-colors underline underline-offset-4">🌱 Net-Free Process</Link>
+              <span>•</span>
+              <Link href="/liberta-legale" className="hover:text-stone-900 transition-colors underline underline-offset-4">🛡️ Piena Sovranità</Link>
+            </div>
           </div>
         </div>
 
