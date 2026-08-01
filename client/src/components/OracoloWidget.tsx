@@ -12,20 +12,10 @@ export default function OracoloWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "Benvenuto nel campo. Sono il tuo coach strategico e assistente per l'ecosistema Net-Free e LCR. Come posso aiutarti a chiarire un passaggio, collegare i moduli o sviluppare il tuo progetto oggi?"
+      content: "Benvenuto nel campo di LCR-NetFree. Sono il tuo coach e guida strategica. Come posso aiutarti a orientarti oggi?"
     }
   ]);
   const [isLoading, setIsLoading] = useState(false);
-
-  // Prompt di sistema / Direttiva per allineare il coach al progetto
-  const systemContext = `Sei l'Oracolo e Coach Strategico del progetto LCR-NetFree. 
-  Il tuo compito è assistere Dario (lo sviluppatore e ideatore del progetto) e i visitatori del portale.
-  Conosci profondamente i pilastri del progetto:
-  1. Tokenizzazione RWA (Real World Assets) e Club Deal per la protezione patrimoniale e la stabilità materiale.
-  2. Economia del Dono e il Processo Net-Free (le cerchie di cura, la fioritura circolare, la gestione pulita dello spazio personale).
-  3. Il Tempio Biologico e la Piena Sovranità Esistenziale (ispirato anche al dialogo con Aldo Pironi e alla sovranità giuridica).
-  4. L'approccio olistico, la sincronicità, la frequenza (es. 432Hz) e la visione gilanica di partnership.
-  Rispondi sempre con tono saggio, pragmatico, strategico, accogliente e perfettamente sintonizzato su questa frequenza.`;
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,25 +28,25 @@ export default function OracoloWidget() {
     setIsLoading(true);
 
     try {
-      // Simulazione intelligente di risposta del coach basata sul contesto del progetto
-      // (Qui puoi collegare in seguito un'API backend se desideri un'intelligenza LLM live)
       setTimeout(() => {
-        let reply = "Ho analizzato la tua richiesta all'interno del campo di LCR-NetFree. ";
-        
+        let reply = "";
         const lower = userMessage.toLowerCase();
-        if (lower.includes('token') || lower.includes('rwa') || lower.includes('soldi') || lower.includes('patrimonio')) {
-          reply += "Sul fronte della tokenizzazione RWA, ricorda che l'obiettivo è ancorare la sicurezza a beni reali e tangibili, liberando la famiglia dall'ansia della scarsità attraverso i Club Deal strutturati.";
+
+        if (lower.includes('ciao') || lower.includes('come funziona') || lower.includes('cominciare') || lower.includes('piace') || lower.includes('iniziare')) {
+          reply = "Benvenuto! Questo portale è una mappa evolutiva e un ecosistema che unisce tre grandi pilastri:\n\n1. ✦ **Le Fondamenta (Tokenizzazione RWA):** Per ancorare la sicurezza economica a beni reali e tangibili, liberando la famiglia dall'ansia della scarsità.\n2. 🌱 **Il Processo Net-Free:** Per entrare nella cerchia di cura, praticare l'economia del dono e sostenersi a vicenda senza intermediari parassitari.\n3. 🛡️ **La Piena Sovranità:** Per la tutela del tempio biologico e della consapevolezza.\n\nPuoi seguire i **Checkpoint** nella pagina principale oppure esplorare le sezioni dedicate in alto. Da dove desideri cominciare?";
+        } else if (lower.includes('token') || lower.includes('rwa') || lower.includes('soldi') || lower.includes('patrimonio')) {
+          reply = "La tokenizzazione RWA serve a mettere i piedi a terra: trasforma beni e progetti reali in asset protetti attraverso Club Deal trasparenti, garantendo stabilità materiale e serenità alla famiglia.";
         } else if (lower.includes('netfree') || lower.includes('cerchia') || lower.includes('dono')) {
-          reply += "Per quanto riguarda il processo Net-Free, il fulcro è sempre il presidio del proprio spazio: prima stabilisci la tua radice, poi attivi la cerchia ristretta di cura basata sul mutuo soccorso e sull'economia del dono.";
+          reply = "Il processo Net-Free si sviluppa in 4 tappe: prima presidi il tuo spazio personale, poi attivi la cerchia di cura ristretta, fai circolare l'abbondanza e infine accompagni la comunità verso la fioritura circolare.";
         } else if (lower.includes('sovranità') || lower.includes('legale') || lower.includes('aldo')) {
-          reply += "La piena sovranità passa attraverso il riconoscimento del tempio biologico e il superamento dei vincoli della finzione commerciale. Rimani centrato sui principi naturali e sul dialogo con i presidi di coscienza.";
+          reply = "La piena sovranità è la meta finale del cammino: significa riconoscere il valore del tempio biologico (acqua, terra, permacultura) e superare i vincoli della finzione commerciale.";
         } else {
-          reply += "Ricorda di mantenere la visione frattale: ogni passo (dalla centratura energetica alla protezione materiale, fino alla cerchia) si sostiene a vicenda in armonia con la frequenza del progetto.";
+          reply = "Comprendo perfettamente la tua direzione. Per procedere al meglio, ti consiglio di verificare i checkpoint nella Mappa principale o di esplorare i link in alto dedicati a RWA e Net-Free. Vuoi approfondire un aspetto in particolare?";
         }
 
         setMessages([...newMessages, { role: 'assistant', content: reply }]);
         setIsLoading(false);
-      }, 800);
+      }, 700);
 
     } catch (error) {
       setMessages([...newMessages, { role: 'assistant', content: "C'è stata una piccola interferenza nel campo energetico. Riprova a formulare la domanda." }]);
@@ -76,7 +66,7 @@ export default function OracoloWidget() {
           <span>Oracolo & AI Coach</span>
         </button>
       ) : (
-        <div className="w-[340px] sm:w-[400px] h-[500px] rounded-3xl bg-stone-900 text-stone-50 shadow-2xl border border-stone-700/80 flex flex-col backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200 overflow-hidden">
+        <div className="w-[340px] sm:w-[400px] h-[520px] rounded-3xl bg-stone-900 text-stone-50 shadow-2xl border border-stone-700/80 flex flex-col backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200 overflow-hidden">
           
           {/* Header della Chat */}
           <div className="p-4 bg-stone-800/90 border-b border-stone-700/60 flex items-center justify-between">
@@ -98,7 +88,7 @@ export default function OracoloWidget() {
           </div>
 
           {/* Storico Messaggi */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 font-serif text-xs">
+          <div className="flex-1 p-4 overflow-y-auto space-y-3 font-serif text-xs whitespace-pre-line">
             {messages.map((msg, index) => (
               <div 
                 key={index} 
@@ -109,7 +99,7 @@ export default function OracoloWidget() {
                     <Bot className="w-3 h-3" />
                   </div>
                 )}
-                <div className={`p-3 rounded-2xl max-w-[80%] leading-relaxed ${
+                <div className={`p-3 rounded-2xl max-w-[85%] leading-relaxed ${
                   msg.role === 'user' 
                     ? 'bg-amber-400 text-stone-900 font-medium rounded-tr-none' 
                     : 'bg-stone-800 text-stone-200 border border-stone-700/60 rounded-tl-none'
@@ -137,7 +127,7 @@ export default function OracoloWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Chiedi al coach del progetto..."
+              placeholder="Chiedi come funziona o esplora il progetto..."
               className="flex-1 bg-stone-900 border border-stone-700 rounded-xl px-4 py-2.5 text-stone-100 text-xs font-serif focus:outline-none focus:border-amber-400 transition-colors"
             />
             <button
