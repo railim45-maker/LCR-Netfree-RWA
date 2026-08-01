@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Leaf, Globe } from 'lucide-react';
+import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Leaf, Globe, Compass } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Home() {
@@ -45,8 +45,8 @@ export default function Home() {
             La Strada che Conduce a Casa
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif px-2">
-            Non sei capitato qui per caso. Se senti il peso di un sistema basato sulla scarsità e sulla fatica solitaria, sappi che esiste un'altra via: un ambiente strutturato, familiare e protetto dove l'economia incontra il dono e la cura reciproca. <br /><br />
-            <strong className="text-stone-900 font-medium">Questa è la mappa per ritrovare l'equilibrio.</strong> Un percorso pensato per rimettere al centro la dignità umana, l'abbondanza circolare e la piena sovranità.
+            Non sei capitato qui per caso. Se senti il richiamo di un'esistenza autentica e vuoi liberarti dal logoramento di un sistema basato sulla scarsità, questo è il tuo spazio di risonanza. <br /><br />
+            <strong className="text-stone-900 font-medium">Un ambiente strutturato, familiare e protetto</strong> dove la centratura interiore incontra la concretezza della materia e l'abbondanza circolare.
           </p>
         </div>
 
@@ -72,14 +72,29 @@ export default function Home() {
           </div>
         </div>
 
-        {/* IL NUOVO PERCORSO AGGIORNATO */}
+        {/* IL PERCORSO BASATO SULLA CONSAPEVOLEZZA ENERGETICA */}
         <div className="space-y-6 md:space-y-8">
           
           <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">I</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">1. Le Fondamenta: Tokenizzazione RWA e Protezione</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">1. Consapevolezza Energetica e Allineamento del Campo</h3>
+              </div>
+              <span className="text-xs font-serif text-amber-900 font-semibold bg-amber-50 px-3 py-1 rounded-full border border-amber-200 w-fit">
+                Punto di Partenza
+              </span>
+            </div>
+            <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
+              Si parte dall'ascolto interiore e dalla centratura energetica. Prima di agire nella materia, occorre interrogare il campo, riconoscere i segnali di sincronicità e uscire dalla nebbia del caos esterno per ritrovare la propria frequenza originaria.
+            </p>
+          </div>
+
+          <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">II</span>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">2. Radicamento e Protezione: Tokenizzazione RWA</h3>
               </div>
               <Link 
                 href="/tokenizzazione" 
@@ -89,22 +104,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Partiamo dalla concretezza e dalla protezione economica. Attraverso la tokenizzazione di asset reali e modelli strutturati, creiamo le basi per svincolarci dalla pressione finanziaria immediata, offrendo un ingresso sicuro e radicato nella materia solida.
-            </p>
-          </div>
-
-          <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">II</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">2. Il Cammino: L'Economia del Dono e la Rete Net-Free</h3>
-              </div>
-              <Link href="/netfree" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold w-fit">
-                NetFree Deep Dive <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
-            <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Abbandoniamo la competizione e le logiche commerciali aggressive. Nel sistema Net-Free ci prendiamo cura del nostro spazio e accompagniamo la nostra cerchia in un flusso circolare di abbondanza, dove il valore si genera attraverso la cooperazione e la fiducia reciproca.
+              Una volta allineata l'energia, la si radica nella terra e nella materia solida. La tokenizzazione di asset reali non è speculazione, ma lo scudo protettivo che mette al sicuro le basi materiali, liberandoti dall'ansia della sopravvivenza immediata.
             </p>
           </div>
 
@@ -112,12 +112,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">III</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">3. La Cura: Il Tempio Biologico e il Benessere Naturale</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">3. Il Cammino Circolare: Economia del Dono e Net-Free</h3>
               </div>
-              <span className="text-xs font-serif text-stone-500 font-medium">Presidi Ufficiali</span>
+              <Link href="/netfree" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold w-fit">
+                NetFree Deep Dive <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
             <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Riconnettiamo l'energia vitale al corpo attraverso protocolli di benessere consapevoli, permacultura, acqua pura e autonomia energetica. Restituire armonia al corpo e all'ambiente circostante significa ritrovare la nostra integrità originaria.
+              Ci si muove insieme in una cerchia di cura reciproca. Abbandoniamo la competizione solitaria per abbracciare l'abbondanza circolare: ci si prende cura del proprio spazio e si accompagnano sei persone nel cammino di fioritura.
             </p>
           </div>
 
@@ -125,14 +127,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 sm:gap-4">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">IV</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">4. La Meta: Piena Sovranità e Accademia Uomo Naturale</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">4. Il Tempio Biologico e la Piena Sovranità</h3>
               </div>
               <Link href="/liberta-legale" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold w-fit">
                 Accademia Uomo Naturale <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
             <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Il traguardo della consapevolezza profonda: comprendere la finzione giuridica, sciogliere i vincoli imposti dal sistema esterno e riappropriarsi della piena sovranità e della guida consapevole della propria esistenza.
+              Il traguardo integrato. Il corpo fisico torna a essere un tempio pulito grazie a permacultura, acqua pura e autonomia, mentre la coscienza giuridica ed esistenziale (Accademia Uomo Naturale) recide i vincoli esterni per ristabilire la piena sovranità.
             </p>
           </div>
 
