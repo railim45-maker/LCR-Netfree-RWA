@@ -4,6 +4,7 @@ import TokenizzazionePage from "@/pages/TokenizzazionePage";
 import NetFreePage from "@/pages/NetFreePage";
 import LibertaLegalePage from "@/pages/LibertaLegalePage";
 import OracoloWidget from "@/components/OracoloWidget";
+import PergamenaPage from "@/pages/PergamenaPage";
 
 function Router() {
   return (
@@ -13,6 +14,7 @@ function Router() {
         <Route path="/tokenizzazione" component={TokenizzazionePage} />
         <Route path="/netfree" component={NetFreePage} />
         <Route path="/liberta-legale" component={LibertaLegalePage} />
+        <Route path="/pergamena" component={PergamenaPage} />
       </Switch>
       {/* L'Oracolo fluttua permanentemente su ogni pagina del sito */}
       <OracoloWidget />
