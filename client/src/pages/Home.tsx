@@ -35,7 +35,7 @@ export default function Home() {
       {/* SFONDO LUMINOSO E GRADIENTI ARMONICI */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[1200px] h-[400px] md:h-[700px] bg-gradient-to-b from-amber-100/30 via-emerald-50/20 to-transparent blur-[120px] md:blur-[150px] rounded-full pointer-events-none z-0" />
 
-      {/* HEADER DI NAVIGAZIONE */}
+      {/* HEADER DI NAVIGAZIONE GLOBALE */}
       <header className="container max-w-5xl mx-auto px-4 md:px-6 pt-6 md:pt-12 relative z-10">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-4 md:px-6 py-3 md:py-4 rounded-3xl sm:rounded-full bg-white/90 border border-stone-200/60 shadow-[0_2px_20px_rgba(0,0,0,0.02)] backdrop-blur-xl">
           <div className="flex items-center gap-2 md:gap-3">
@@ -286,6 +286,8 @@ export default function Home() {
               <Link href="/liberta-legale" className="hover:text-stone-900 transition-colors underline underline-offset-4">🛡️ Piena Sovranità</Link>
               <span>•</span>
               <Link href="/pergamena" className="hover:text-amber-900 transition-colors underline underline-offset-4 font-semibold">📜 Pergamena d'Impegno</Link>
+              <span>•</span>
+              <Link href="/admin" className="text-amber-800 hover:text-stone-900 transition-colors font-mono font-bold bg-amber-50 px-2.5 py-1 rounded border border-amber-200">⚙️ Admin</Link>
             </div>
           </div>
         </div>
