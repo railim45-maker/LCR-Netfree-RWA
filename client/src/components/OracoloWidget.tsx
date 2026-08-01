@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles, X, Send, Bot, User } from 'lucide-react';
+import { LCRKnowledgeBase } from '@/data/knowledgeBase';
 
 interface Message {
   role: 'assistant' | 'user';
@@ -12,7 +13,7 @@ export default function OracoloWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "Benvenuto nel campo di LCR-NetFree. Sono il tuo coach e guida strategica. Come posso aiutarti a orientarti oggi?"
+      content: "Benvenuto nel campo di LCR-NetFree. Sono il tuo coach e guida strategica, connesso ai registri e ai documenti dell'ecosistema. Come posso aiutarti a orientarti oggi?"
     }
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -32,16 +33,25 @@ export default function OracoloWidget() {
         let reply = "";
         const lower = userMessage.toLowerCase();
 
-        if (lower.includes('ciao') || lower.includes('come funziona') || lower.includes('cominciare') || lower.includes('piace') || lower.includes('iniziare')) {
-          reply = "Benvenuto! Questo portale è una mappa evolutiva e un ecosistema che unisce tre grandi pilastri:\n\n1. ✦ **Le Fondamenta (Tokenizzazione RWA):** Per ancorare la sicurezza economica a beni reali e tangibili, liberando la famiglia dall'ansia della scarsità.\n2. 🌱 **Il Processo Net-Free:** Per entrare nella cerchia di cura, praticare l'economia del dono e sostenersi a vicenda senza intermediari parassitari.\n3. 🛡️ **La Piena Sovranità:** Per la tutela del tempio biologico e della consapevolezza.\n\nPuoi seguire i **Checkpoint** nella pagina principale oppure esplorare le sezioni dedicate in alto. Da dove desideri cominciare?";
+        // Ricerca semantica all'interno della Knowledge Base (stile NotebookLM)
+        const matchedDoc = LCRKnowledgeBase.find(item => 
+          lower.includes(item.categoria.toLowerCase()) || 
+          lower.includes(item.titolo.toLowerCase().split(' ')[0]) ||
+          item.contenuto.toLowerCase().includes(lower.slice(0, 5))
+        );
+
+        if (matchedDoc) {
+          reply = `Ho interrogato i registri interni per [${matchedDoc.titolo}] (${matchedDoc.categoria}):\n\n"${matchedDoc.contenuto}"\n\nDesideri approfondire questo aspetto o collegarlo a un altro checkpoint della mappa?`;
+        } else if (lower.includes('ciao') || lower.includes('come funziona') || lower.includes('cominciare') || lower.includes('iniziare')) {
+          reply = "Benvenuto! Questo portale è una mappa evolutiva e un ecosistema che unisce tre grandi pilastri:\n\n1. ✦ **Le Fondamenta (Tokenizzazione RWA):** Per ancorare la sicurezza economica a beni reali e tangibili, liberando la famiglia dall'ansia della scarsità.\n2. 🌱 **Il Processo Net-Free:** Per entrare nella cerchia di cura, praticare l'economia del dono e sostenersi a vicenda senza intermediari parassitari.\n3. 🛡️ **La Piena Sovranità:** Per la tutela del tempio biologico e della consapevolezza.\n\nPuoi seguire i **Checkpoint** nella pagina principale, sottoscrivere la **Pergamena d'Impegno** oppure esplorare le sezioni in alto. Da dove desideri cominciare?";
         } else if (lower.includes('token') || lower.includes('rwa') || lower.includes('soldi') || lower.includes('patrimonio')) {
           reply = "La tokenizzazione RWA serve a mettere i piedi a terra: trasforma beni e progetti reali in asset protetti attraverso Club Deal trasparenti, garantendo stabilità materiale e serenità alla famiglia.";
         } else if (lower.includes('netfree') || lower.includes('cerchia') || lower.includes('dono')) {
           reply = "Il processo Net-Free si sviluppa in 4 tappe: prima presidi il tuo spazio personale, poi attivi la cerchia di cura ristretta, fai circolare l'abbondanza e infine accompagni la comunità verso la fioritura circolare.";
-        } else if (lower.includes('sovranità') || lower.includes('legale') || lower.includes('aldo')) {
-          reply = "La piena sovranità è la meta finale del cammino: significa riconoscere il valore del tempio biologico (acqua, terra, permacultura) e superare i vincoli della finzione commerciale.";
+        } else if (lower.includes('sovranità') || lower.includes('legale') || lower.includes('aldo') || lower.includes('autodeterminazione')) {
+          reply = "La piena sovranità è la meta finale del cammino: significa riconoscere il valore del tempio biologico (acqua, terra, permacultura), superare i vincoli della finzione commerciale e applicare i principi di autodeterminazione e legge naturale.";
         } else {
-          reply = "Comprendo perfettamente la tua direzione. Per procedere al meglio, ti consiglio di verificare i checkpoint nella Mappa principale o di esplorare i link in alto dedicati a RWA e Net-Free. Vuoi approfondire un aspetto in particolare?";
+          reply = "Ho analizzato la tua richiesta nel campo di LCR-NetFree. Tutti i registri e i documenti di autodeterminazione sono sincronizzati. Ti consiglio di verificare i checkpoint nella Mappa principale o di sottoscrivere la Pergamena Patto. Vuoi approfondire un argomento specifico?";
         }
 
         setMessages([...newMessages, { role: 'assistant', content: reply }]);
@@ -76,7 +86,7 @@ export default function OracoloWidget() {
               </div>
               <div>
                 <h4 className="font-serif font-bold text-xs text-stone-100">Oracolo & AI Coach</h4>
-                <p className="text-[10px] text-emerald-400 font-mono">● Connesso al Campo LCR</p>
+                <p className="text-[10px] text-emerald-400 font-mono">● Connesso al Campo LCR & NotebookLM</p>
               </div>
             </div>
             <button 
@@ -116,7 +126,7 @@ export default function OracoloWidget() {
             {isLoading && (
               <div className="flex gap-2.5 items-center text-stone-400 italic text-[11px]">
                 <div className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-                <span>L'Oracolo sta interrogando il campo...</span>
+                <span>L'Oracolo sta interrogando i documenti e il campo...</span>
               </div>
             )}
           </div>
@@ -127,7 +137,7 @@ export default function OracoloWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Chiedi come funziona o esplora il progetto..."
+              placeholder="Chiedi informazioni sui documenti o sul progetto..."
               className="flex-1 bg-stone-900 border border-stone-700 rounded-xl px-4 py-2.5 text-stone-100 text-xs font-serif focus:outline-none focus:border-amber-400 transition-colors"
             />
             <button
