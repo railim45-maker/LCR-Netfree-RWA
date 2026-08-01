@@ -1,14 +1,14 @@
 import { Switch, Route } from "wouter";
-import Home from "./pages/Home";
-import NetFreeDeepDive from "./pages/NetFreeDeepDive";
+import Home from "@/pages/Home";
+import TokenizzazionePage from "@/pages/TokenizzazionePage"; // <-- 1. IMPORTA IL FILE
+import NetFreePage from "@/pages/nefreedive";
 
-export default function App() {
+function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/netfree" component={NetFreeDeepDive} />
-      {/* Fallback di sicurezza direttamente sulla Home */}
-      <Route component={Home} />
+      <Route path="/tokenizzazione" component={TokenizzazionePage} /> {/* <-- 2. REGISTRA LA ROTTA */}
+      <Route path="/netfree" component={NetFreePage} />
     </Switch>
   );
 }
