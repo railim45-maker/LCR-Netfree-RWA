@@ -40,17 +40,20 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-4 md:px-6 py-3 md:py-4 rounded-3xl sm:rounded-full bg-white/90 border border-stone-200/60 shadow-[0_2px_20px_rgba(0,0,0,0.02)] backdrop-blur-xl">
           <div className="flex items-center gap-2 md:gap-3">
             <span className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center text-[10px] md:text-xs border border-amber-200/60 font-serif flex-shrink-0">✦</span>
-            <span className="font-bold text-[10px] sm:text-xs uppercase tracking-wider md:tracking-widest text-stone-600 font-serif text-center sm:text-left">Il Giardino Luminoso • NetFree LCR</span>
+            <span className="font-bold text-[10px] sm:text-xs uppercase tracking-wider md:tracking-widest text-stone-600 font-serif text-center sm:text-left">NetFree LCR • Portale Ufficiale</span>
           </div>
-          <nav className="flex items-center gap-2 sm:gap-3 text-xs font-medium w-full sm:w-auto justify-center flex-wrap">
-            <Link href="/tokenizzazione" className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 hover:bg-amber-100 font-serif font-semibold text-[11px]">
-              ✦ Tokenizzazione RWA
+          <nav className="flex items-center gap-2 sm:gap-2.5 text-xs font-medium w-full sm:w-auto justify-center flex-wrap">
+            <Link href="/tokenizzazione" className="px-3 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 hover:bg-amber-100 font-serif font-semibold text-[11px]">
+              ✦ RWA
             </Link>
-            <Link href="/netfree" className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200/80 hover:bg-emerald-100 font-serif font-semibold text-[11px]">
-              🌱 NetFree Deep Dive
+            <Link href="/netfree" className="px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200/80 hover:bg-emerald-100 font-serif font-semibold text-[11px]">
+              🌱 Net-Free
             </Link>
-            <Link href="/liberta-legale" className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-stone-100 text-stone-900 border border-stone-300 hover:bg-stone-200 font-serif font-semibold text-[11px]">
+            <Link href="/liberta-legale" className="px-3 py-1.5 rounded-full bg-stone-100 text-stone-900 border border-stone-300 hover:bg-stone-200 font-serif font-semibold text-[11px]">
               🛡️ Sovranità
+            </Link>
+            <Link href="/pergamena" className="px-3.5 py-1.5 rounded-full bg-amber-900 text-amber-50 hover:bg-amber-800 font-serif font-semibold text-[11px] shadow-sm">
+              📜 Pergamena Patto
             </Link>
           </nav>
         </div>
@@ -59,20 +62,27 @@ export default function Home() {
       {/* CONTENUTO PRINCIPALE */}
       <main className="container max-w-4xl mx-auto px-4 md:px-6 space-y-16 md:space-y-24 relative z-10">
         
-        {/* INTRODUZIONE E CRUSCOTTO */}
+        {/* INTRODUZIONE: DALL'INFORMAZIONE ALL'ALLEANZA */}
         <div className="text-center space-y-6 pt-4 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-amber-50/70 border border-amber-200/70 text-amber-900 text-[11px] md:text-xs font-medium tracking-wide shadow-sm font-serif">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" /> Architettura dell'Ecosistema e Frequenza 432Hz
+            <Sparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" /> Dalla Conoscenza alla Responsabilità Condivisa
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-stone-900 tracking-tight leading-[1.15]">
-            La Mappa del Tuo Cammino Evolutivo
+            La Mappa, il Cammino e il Patto
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif px-2">
-            Un sistema integrato che unisce l'economia del dono, la protezione patrimoniale attraverso i Real World Assets e la piena sovranità esistenziale. Ogni passo sblocca un livello di consapevolezza superiore.
+            Questo non è un sito di sola consultazione. Esplora le informazioni e i video informativi, supera i checkpoint di consapevolezza e, quando senti il richiamo del campo, sottoscrivi la <strong>Pergamena d'Impegno</strong> per entrare ufficialmente nell'alleanza.
           </p>
 
+          {/* CTA VERSO LA PERGAMENA */}
+          <div className="pt-2">
+            <Link href="/pergamena" className="inline-flex items-center gap-2 bg-stone-900 text-stone-50 hover:bg-stone-800 font-serif font-semibold px-7 py-3.5 rounded-full text-xs transition-all shadow-xl">
+              📜 Vai alla Sottoscrizione della Pergamena d'Impegno →
+            </Link>
+          </div>
+
           {/* CRUSCOTTO DI CONTEGGIO E PROGRESSO */}
-          <div className="p-5 rounded-3xl bg-white border border-stone-200/80 shadow-md space-y-3 max-w-md mx-auto">
+          <div className="p-5 rounded-3xl bg-white border border-stone-200/80 shadow-md space-y-3 max-w-md mx-auto mt-6">
             <div className="flex items-center justify-between text-xs font-serif font-semibold text-stone-700">
               <span className="flex items-center gap-1.5"><Compass className="w-4 h-4 text-amber-700" /> Stato del Grimorio</span>
               <span>{completedCount} di 4 Checkpoint Superati</span>
@@ -219,9 +229,14 @@ export default function Home() {
               Purifica il tempio biologico (acqua, terra, permacultura) e ristabilisci la piena sovranità esistenziale e giuridica.
             </p>
             {unlockedLevel >= 4 && (
-              <Link href="/liberta-legale" className="bg-stone-900 text-stone-50 text-xs font-serif px-6 py-3 rounded-full hover:bg-stone-800 transition-all font-semibold inline-flex items-center gap-2">
-                Approfondisci i Protocolli di Sovranità <ArrowRight className="w-4 h-4 text-amber-400" />
-              </Link>
+              <div className="flex items-center gap-3 flex-wrap">
+                <Link href="/liberta-legale" className="bg-stone-900 text-stone-50 text-xs font-serif px-6 py-3 rounded-full hover:bg-stone-800 transition-all font-semibold inline-flex items-center gap-2">
+                  Approfondisci i Protocolli di Sovranità <ArrowRight className="w-4 h-4 text-amber-400" />
+                </Link>
+                <Link href="/pergamena" className="bg-amber-900 text-amber-50 hover:bg-amber-800 text-xs font-serif px-6 py-3 rounded-full transition-all font-semibold inline-flex items-center gap-2">
+                  📜 Sottoscrivi la Pergamena Patto
+                </Link>
+              </div>
             )}
           </div>
 
@@ -269,6 +284,8 @@ export default function Home() {
               <Link href="/netfree" className="hover:text-emerald-800 transition-colors underline underline-offset-4">🌱 Net-Free Process</Link>
               <span>•</span>
               <Link href="/liberta-legale" className="hover:text-stone-900 transition-colors underline underline-offset-4">🛡️ Piena Sovranità</Link>
+              <span>•</span>
+              <Link href="/pergamena" className="hover:text-amber-900 transition-colors underline underline-offset-4 font-semibold">📜 Pergamena d'Impegno</Link>
             </div>
           </div>
         </div>
