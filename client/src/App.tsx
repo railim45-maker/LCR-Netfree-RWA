@@ -1,7 +1,7 @@
 import { Switch, Route } from "wouter";
 import Home from "@/pages/Home";
 import TokenizzazionePage from "@/pages/TokenizzazionePage";
-import NetFreePage from "@/pages/NetFreePage"; // <-- Assicurati che il nome del file corrispondi esattamente (es. NetFreePage o nefreedive)
+import NetFreePage from "@/pages/nefreedive"; // <-- Punta al file esistente nefreedive.tsx
 
 function Router() {
   return (
