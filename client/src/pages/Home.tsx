@@ -1,15 +1,39 @@
-import React from 'react';
-import { Sparkles, ArrowRight, ExternalLink, ShieldCheck, Leaf, Globe, Compass } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Sparkles, ArrowRight, CheckCircle2, Lock, Unlock, ShieldCheck, Leaf, Globe } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Home() {
+  // Stato dei checkpoint evolutivi (salvati nel browser)
+  const [unlockedLevel, setUnlockedLevel] = useState<number>(() => {
+    const saved = localStorage.getItem('lcr_unlocked_level');
+    return saved ? parseInt(saved, 10) : 1;
+  });
+
+  const [checkpointChecked, setCheckpointChecked] = useState<Record<number, boolean>>(() => {
+    const saved = localStorage.getItem('lcr_checkpoints');
+    return saved ? JSON.parse(saved) : { 1: false, 2: false, 3: false, 4: false };
+  });
+
+  useEffect(() => {
+    localStorage.setItem('lcr_unlocked_level', unlockedLevel.toString());
+    localStorage.setItem('lcr_checkpoints', JSON.stringify(checkpointChecked));
+  }, [unlockedLevel, checkpointChecked]);
+
+  const handleCheckpoint = (level: number) => {
+    const updatedChecks = { ...checkpointChecked, [level]: true };
+    setCheckpointChecked(updatedChecks);
+    if (level >= unlockedLevel && level < 5) {
+      setUnlockedLevel(level + 1);
+    }
+  };
+
   return (
     <div className="min-h-screen relative text-stone-800 space-y-16 md:space-y-28 pb-24 md:pb-40 overflow-hidden bg-[#fcfbf9]">
       
-      {/* SFONDO LUMINOSO E GRADIENTI ARMONICI RESPONSIVE */}
+      {/* SFONDO LUMINOSO E GRADIENTI ARMONICI */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[1200px] h-[400px] md:h-[700px] bg-gradient-to-b from-amber-100/30 via-emerald-50/20 to-transparent blur-[120px] md:blur-[150px] rounded-full pointer-events-none z-0" />
 
-      {/* HEADER DI NAVIGAZIONE CON ACCESSI RAPIDI */}
+      {/* HEADER DI NAVIGAZIONE */}
       <header className="container max-w-5xl mx-auto px-4 md:px-6 pt-6 md:pt-12 relative z-10">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-4 md:px-6 py-3 md:py-4 rounded-3xl sm:rounded-full bg-white/90 border border-stone-200/60 shadow-[0_2px_20px_rgba(0,0,0,0.02)] backdrop-blur-xl">
           <div className="flex items-center gap-2 md:gap-3">
@@ -17,16 +41,10 @@ export default function Home() {
             <span className="font-bold text-[10px] sm:text-xs uppercase tracking-wider md:tracking-widest text-stone-600 font-serif text-center sm:text-left">Il Giardino Luminoso • NetFree LCR</span>
           </div>
           <nav className="flex items-center gap-2 sm:gap-3 text-xs font-medium w-full sm:w-auto justify-center">
-            <Link 
-              href="/tokenizzazione"
-              className="inline-flex items-center gap-1 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 hover:bg-amber-100 transition-colors font-serif font-semibold shadow-xs text-[11px] sm:text-xs"
-            >
+            <Link href="/tokenizzazione" className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 hover:bg-amber-100 font-serif font-semibold text-[11px]">
               ✦ Tokenizzazione RWA
             </Link>
-            <Link 
-              href="/netfree"
-              className="inline-flex items-center gap-1 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200/80 hover:bg-emerald-100 transition-colors font-serif font-semibold shadow-xs text-[11px] sm:text-xs"
-            >
+            <Link href="/netfree" className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200/80 hover:bg-emerald-100 font-serif font-semibold text-[11px]">
               🌱 NetFree Deep Dive
             </Link>
           </nav>
@@ -38,222 +56,155 @@ export default function Home() {
         
         {/* INTRODUZIONE */}
         <div className="text-center space-y-4 md:space-y-6 pt-4 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-amber-50/70 border border-amber-200/70 text-amber-900 text-[11px] md:text-xs font-medium tracking-wide md:tracking-widest shadow-sm font-serif">
+          <div className="inline-flex items-center gap-2 px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-amber-50/70 border border-amber-200/70 text-amber-900 text-[11px] md:text-xs font-medium tracking-wide shadow-sm font-serif">
             <Sparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" /> La Via della Libertà e della Cura
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-stone-900 tracking-tight leading-[1.15]">
-            La Strada che Conduce a Casa
+            La Mappa del Tuo Cammino Evolutivo
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif px-2">
-            Non sei capitato qui per caso. Se senti il richiamo di un'esistenza autentica e vuoi liberarti dal logoramento di un sistema basato sulla scarsità, questo è il tuo spazio di risonanza. <br /><br />
-            <strong className="text-stone-900 font-medium">Un ambiente strutturato, familiare e protetto</strong> dove la centratura interiore incontra la concretezza della materia e l'abbondanza circolare.
+            Questo portale risponde al tuo passo. Supera i checkpoint di consapevolezza per sbloccare i moduli successivi della tua evoluzione verso la piena sovranità.
           </p>
         </div>
 
-        {/* VIDEO DI SPIEGAZIONE INCORCORPORATO */}
-        <div className="p-4 sm:p-6 md:p-6 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-2xl space-y-4">
-          <div className="text-center space-y-2 pb-2">
-            <span className="text-[10px] sm:text-xs uppercase tracking-[2px] sm:tracking-[3px] text-amber-800 font-serif font-semibold">Verso l'Abbondanza Condivisa</span>
-            <h3 className="text-xl md:text-2xl font-serif font-bold text-stone-900">Il Video di Presentazione della Via</h3>
-          </div>
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-stone-950">
-            <iframe
-              src="https://www.youtube.com/embed/bhG1fel_lq4"
-              title="Verso l'Abbondanza Condivisa - Presentazione Ufficiale"
-              className="absolute top-0 left-0 w-full h-full border-0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          <div className="text-center pt-2 px-2">
-            <p className="text-xs text-stone-500 font-serif italic">
-              "Il punto non è arricchirsi isolandosi dagli altri, ma riscoprire la forza e il potenziale della cura collettiva."
-            </p>
-          </div>
-        </div>
-
-        {/* IL PERCORSO BASATO SULLA CONSAPEVOLEZZA ENERGETICA */}
-        <div className="space-y-6 md:space-y-8">
-          
-          <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">I</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">1. Consapevolezza Energetica e Allineamento del Campo</h3>
-              </div>
-              <span className="text-xs font-serif text-amber-900 font-semibold bg-amber-50 px-3 py-1 rounded-full border border-amber-200 w-fit">
-                Punto di Partenza
-              </span>
-            </div>
-            <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Si parte dall'ascolto interiore e dalla centratura energetica. Prima di agire nella materia, occorre interrogare il campo, riconoscere i segnali di sincronicità e uscire dalla nebbia del caos esterno per ritrovare la propria frequenza originaria.
-            </p>
-          </div>
-
-          <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">II</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">2. Radicamento e Protezione: Tokenizzazione RWA</h3>
-              </div>
-              <Link 
-                href="/tokenizzazione" 
-                className="text-xs font-serif text-amber-900 hover:text-amber-950 inline-flex items-center gap-1.5 font-semibold bg-amber-50 px-4 py-2 rounded-full border border-amber-200 transition-all hover:shadow-sm w-fit"
-              >
-                Esplora la Tokenizzazione <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-            <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Una volta allineata l'energia, la si radica nella terra e nella materia solida. La tokenizzazione di asset reali non è speculazione, ma lo scudo protettivo che mette al sicuro le basi materiali, liberandoti dall'ansia della sopravvivenza immediata.
-            </p>
-          </div>
-
-          <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">III</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">3. Il Cammino Circolare: Economia del Dono e Net-Free</h3>
-              </div>
-              <Link href="/netfree" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold w-fit">
-                NetFree Deep Dive <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
-            <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Ci si muove insieme in una cerchia di cura reciproca. Abbandoniamo la competizione solitaria per abbracciare l'abbondanza circolare: ci si prende cura del proprio spazio e si accompagnano sei persone nel cammino di fioritura.
-            </p>
-          </div>
-
-          <div className="p-6 sm:p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-4 relative overflow-hidden transition-all hover:border-amber-300">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200/60 flex items-center justify-center font-bold text-sm font-serif shadow-sm flex-shrink-0">IV</span>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-serif text-stone-900">4. Il Tempio Biologico e la Piena Sovranità</h3>
-              </div>
-              <Link href="/liberta-legale" className="text-xs font-serif text-amber-900 hover:underline inline-flex items-center gap-1 font-semibold w-fit">
-                Accademia Uomo Naturale <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
-            <p className="text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed font-light font-serif sm:pl-14">
-              Il traguardo integrato. Il corpo fisico torna a essere un tempio pulito grazie a permacultura, acqua pura e autonomia, mentre la coscienza giuridica ed esistenziale (Accademia Uomo Naturale) recide i vincoli esterni per ristabilire la piena sovranità.
-            </p>
-          </div>
-
-        </div>
-
-        {/* SEZIONE: IL MODELLO DI SVILUPPO */}
-        <div className="p-6 sm:p-10 md:p-14 rounded-3xl md:rounded-[2.5rem] bg-white border border-stone-200/80 shadow-xl space-y-8">
-          <div className="text-center space-y-3 max-w-xl mx-auto">
-            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Il Modello di Sviluppo</span>
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-stone-900">Dalla Scarsità alla Cura del Giardino</h3>
-            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif">Il passaggio strutturale dal vecchio paradigma competitivo al Sistema Net-Free fondato sulla comunità e sull'economia del dono.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-            <div className="p-6 md:p-8 rounded-3xl bg-stone-50 border border-stone-200/80 space-y-4">
-              <span className="text-xs font-mono uppercase tracking-widest text-stone-500 font-semibold">Vecchio Sistema</span>
-              <h4 className="font-serif font-bold text-lg sm:text-xl text-stone-900">Competizione, Pressione, Isolamento</h4>
-              <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
-                Una struttura piramidale basata sulla vendita forzata e sulla lotta solitaria, dove l'energia si esaurisce e la libertà rimane un'illusione.
-              </p>
-            </div>
-
-            <div className="p-6 md:p-8 rounded-3xl bg-amber-50/50 border border-amber-200/80 space-y-4">
-              <span className="text-xs font-mono uppercase tracking-widest text-amber-800 font-semibold">Sistema Net-Free</span>
-              <h4 className="font-serif font-bold text-lg sm:text-xl text-stone-900">Comunità, Dono, Cura, Abbondanza</h4>
-              <p className="text-xs sm:text-sm text-stone-700 font-light leading-relaxed">
-                Un ecosistema familiare e circolare dove ci si sostiene a vicenda, coltivando il proprio spazio e accompagnando la comunità verso la fioritura.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* COLLEGAMENTI E MATERIALI ESTERNI */}
+        {/* IL CAMMINO A TAPPE (TO-DO LIST EVOLUTIVA) */}
         <div className="space-y-6">
-          <div className="text-center space-y-2">
-            <h3 className="text-2xl font-serif font-bold text-stone-900">I Presidi e le Fonti Esterne</h3>
-            <p className="text-stone-600 text-xs sm:text-sm font-light">Approfondisci i partner ufficiali e i pilastri culturali che sostengono il nostro cammino.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <div className="p-6 md:p-8 rounded-3xl bg-white border border-stone-200 shadow-lg space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-800 flex items-center justify-center border border-amber-200">
-                  <Leaf className="w-5 h-5" />
-                </div>
-                <h4 className="font-serif font-bold text-lg text-stone-900">Accademia Uomo Naturale</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Il percorso ufficiale guidato da Aldo Piromalli per comprendere la finzione giuridica e recuperare la piena sovranità.
-                </p>
+          
+          {/* TAPPA 1 */}
+          <div className={`p-6 sm:p-8 rounded-3xl bg-white border transition-all ${unlockedLevel >= 1 ? 'border-amber-300 shadow-xl' : 'border-stone-200 opacity-60'}`}>
+            <div className="flex items-center justify-between gap-3 mb-4">
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 flex items-center justify-center font-bold font-serif text-sm">1</span>
+                <h3 className="text-lg md:text-xl font-bold font-serif text-stone-900">Consapevolezza Energetica e Campo</h3>
               </div>
-              <a 
-                href="https://www.accademiauomonaturale.it" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-amber-900 hover:text-amber-950 pt-2"
+              {checkpointChecked[1] ? (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> Superato
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                  <Unlock className="w-3.5 h-3.5" /> Attivo
+                </span>
+              )}
+            </div>
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6">
+              Ascolta il campo, sintonizzati sulla frequenza del progetto e riconosci la risonanza con i valori della cura e dell'abbondanza.
+            </p>
+            {!checkpointChecked[1] && (
+              <button 
+                onClick={() => handleCheckpoint(1)}
+                className="bg-stone-900 text-stone-50 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-stone-800 transition-all shadow-md"
               >
-                Visita Accademia <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
-            <div className="p-6 md:p-8 rounded-3xl bg-white border border-stone-200 shadow-lg space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-800 flex items-center justify-center border border-amber-200">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <h4 className="font-serif font-bold text-lg text-stone-900">Presidio Acqua Pura</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Le ricerche e i protocolli del Dott. Roberto Favata per restituire all'acqua la sua originaria memoria e vitalità biologica.
-                </p>
-              </div>
-              <span className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-stone-500 pt-2">
-                Protocollo Ufficiale Net-Free
-              </span>
-            </div>
-
-            <div className="p-6 md:p-8 rounded-3xl bg-white border border-stone-200 shadow-lg space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-800 flex items-center justify-center border border-amber-200">
-                  <Globe className="w-5 h-5" />
-                </div>
-                <h4 className="font-serif font-bold text-lg text-stone-900">Portale Net-Free LCR</h4>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Il canale ufficiale della community per rimanere aggiornati sui semi digitali e sui momenti di incontro collettivo.
-                </p>
-              </div>
-              <a 
-                href="https://netfreelcr.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-serif font-semibold text-amber-900 hover:text-amber-950 pt-2"
-              >
-                Vai al Portale Ufficiale <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
+                Conferma Checkpoint di Centratura ✓
+              </button>
+            )}
           </div>
-        </div>
 
-        {/* CONCLUSIONE E CALL TO ACTION */}
-        <div className="p-6 sm:p-10 md:p-12 rounded-3xl md:rounded-[2.5rem] border border-amber-200/80 bg-gradient-to-br from-amber-50/70 via-white to-emerald-50/40 space-y-6 text-center shadow-xl backdrop-blur-md">
-          <h3 className="text-xl sm:text-2xl font-bold font-serif text-stone-900">Sei pronto a fare il primo passo?</h3>
-          <p className="text-sm sm:text-base text-stone-600 max-w-xl mx-auto font-light leading-relaxed font-serif italic px-2">
-            "Non sei più solo a brancolare nel buio. C'è una mappa, c'è un metodo d'amore e ci sono persone pronte a camminare al tuo fianco."
-          </p>
-          <div className="pt-3 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 px-2">
-            <Link 
-              href="/tokenizzazione"
-              className="w-full sm:w-auto bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-8 sm:px-9 py-3.5 sm:py-4 rounded-full text-xs md:text-sm inline-flex items-center justify-center gap-2.5 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif"
-            >
-              ✦ Scopri la Tokenizzazione <ArrowRight className="w-4 h-4 text-amber-400" />
-            </Link>
-            <Link 
-              href="/netfree"
-              className="w-full sm:w-auto bg-emerald-800 hover:bg-emerald-900 text-stone-50 font-medium px-8 sm:px-9 py-3.5 sm:py-4 rounded-full text-xs md:text-sm inline-flex items-center justify-center gap-2.5 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif"
-            >
-              🌱 Esplora NetFree Deep Dive <ArrowRight className="w-4 h-4 text-amber-300" />
-            </Link>
+          {/* TAPPA 2 */}
+          <div className={`p-6 sm:p-8 rounded-3xl bg-white border transition-all ${unlockedLevel >= 2 ? 'border-amber-300 shadow-xl' : 'border-stone-200 opacity-60'}`}>
+            <div className="flex items-center justify-between gap-3 mb-4">
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 flex items-center justify-center font-bold font-serif text-sm">2</span>
+                <h3 className="text-lg md:text-xl font-bold font-serif text-stone-900">Radicamento e Protezione (Tokenizzazione RWA)</h3>
+              </div>
+              {unlockedLevel < 2 ? (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-stone-400 bg-stone-100 px-3 py-1 rounded-full border border-stone-200">
+                  <Lock className="w-3.5 h-3.5" /> Bloccato
+                </span>
+              ) : checkpointChecked[2] ? (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> Superato
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                  <Unlock className="w-3.5 h-3.5" /> Attivo
+                </span>
+              )}
+            </div>
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6">
+              Comprendi il valore della materia solida e della protezione economica attraverso i modelli di tokenizzazione e Club Deal.
+            </p>
+            {unlockedLevel >= 2 && !checkpointChecked[2] && (
+              <div className="flex items-center gap-3 flex-wrap">
+                <Link href="/tokenizzazione" className="bg-amber-100 text-amber-900 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-amber-200 transition-all font-semibold">
+                  Esplora la Tokenizzazione →
+                </Link>
+                <button 
+                  onClick={() => handleCheckpoint(2)}
+                  className="bg-stone-900 text-stone-50 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-stone-800 transition-all shadow-md"
+                >
+                  Conferma Checkpoint Fondamenta ✓
+                </button>
+              </div>
+            )}
           </div>
+
+          {/* TAPPA 3 */}
+          <div className={`p-6 sm:p-8 rounded-3xl bg-white border transition-all ${unlockedLevel >= 3 ? 'border-amber-300 shadow-xl' : 'border-stone-200 opacity-60'}`}>
+            <div className="flex items-center justify-between gap-3 mb-4">
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 flex items-center justify-center font-bold font-serif text-sm">3</span>
+                <h3 className="text-lg md:text-xl font-bold font-serif text-stone-900">Il Cammino Circolare (Economia del Dono e Net-Free)</h3>
+              </div>
+              {unlockedLevel < 3 ? (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-stone-400 bg-stone-100 px-3 py-1 rounded-full border border-stone-200">
+                  <Lock className="w-3.5 h-3.5" /> Bloccato
+                </span>
+              ) : checkpointChecked[3] ? (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> Superato
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                  <Unlock className="w-3.5 h-3.5" /> Attivo
+                </span>
+              )}
+            </div>
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6">
+              Entra nella cerchia di cura, supera la competizione e sperimenta l'abbondanza circolare accompagnando la tua comunità.
+            </p>
+            {unlockedLevel >= 3 && !checkpointChecked[3] && (
+              <div className="flex items-center gap-3 flex-wrap">
+                <Link href="/netfree" className="bg-emerald-100 text-emerald-900 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-emerald-200 transition-all font-semibold">
+                  Deep Dive Net-Free →
+                </Link>
+                <button 
+                  onClick={() => handleCheckpoint(3)}
+                  className="bg-stone-900 text-stone-50 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-stone-800 transition-all shadow-md"
+                >
+                  Conferma Checkpoint Cerchia ✓
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* TAPPA 4 */}
+          <div className={`p-6 sm:p-8 rounded-3xl bg-white border transition-all ${unlockedLevel >= 4 ? 'border-amber-300 shadow-xl' : 'border-stone-200 opacity-60'}`}>
+            <div className="flex items-center justify-between gap-3 mb-4">
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 flex items-center justify-center font-bold font-serif text-sm">4</span>
+                <h3 className="text-lg md:text-xl font-bold font-serif text-stone-900">Il Tempio Biologico e la Piena Sovranità</h3>
+              </div>
+              {unlockedLevel < 4 ? (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-stone-400 bg-stone-100 px-3 py-1 rounded-full border border-stone-200">
+                  <Lock className="w-3.5 h-3.5" /> Bloccato
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1 text-xs font-serif text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                  <Unlock className="w-3.5 h-3.5" /> Meta Finale
+                </span>
+              )}
+            </div>
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6">
+              Purifica il tempio biologico (acqua, terra, permacultura) e accedi all'Accademia Uomo Naturale per ristabilire la piena sovranità esistenziale.
+            </p>
+            {unlockedLevel >= 4 && (
+              <Link href="/liberta-legale" className="bg-stone-900 text-stone-50 text-xs font-serif px-6 py-3 rounded-full hover:bg-stone-800 transition-all font-semibold inline-flex items-center gap-2">
+                Accedi all'Accademia Uomo Naturale <ArrowRight className="w-4 h-4 text-amber-400" />
+              </Link>
+            )}
+          </div>
+
         </div>
 
       </main>
