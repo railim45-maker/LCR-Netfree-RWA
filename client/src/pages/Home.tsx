@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, ArrowRight, CheckCircle2, Lock, Unlock, ShieldCheck, Leaf, Globe } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Lock, Unlock, ShieldCheck, Leaf, Globe, Compass } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Home() {
@@ -27,6 +27,10 @@ export default function Home() {
     }
   };
 
+  // Calcolo dei checkpoint completati per il contatore
+  const completedCount = Object.values(checkpointChecked).filter(Boolean).length;
+  const progressPercentage = (completedCount / 4) * 100;
+
   return (
     <div className="min-h-screen relative text-stone-800 space-y-16 md:space-y-28 pb-24 md:pb-40 overflow-hidden bg-[#fcfbf9]">
       
@@ -40,7 +44,7 @@ export default function Home() {
             <span className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center text-[10px] md:text-xs border border-amber-200/60 font-serif flex-shrink-0">✦</span>
             <span className="font-bold text-[10px] sm:text-xs uppercase tracking-wider md:tracking-widest text-stone-600 font-serif text-center sm:text-left">Il Giardino Luminoso • NetFree LCR</span>
           </div>
-          <nav className="flex items-center gap-2 sm:gap-3 text-xs font-medium w-full sm:w-auto justify-center">
+          <nav className="flex items-center gap-2 sm:gap-3 text-xs font-medium w-full sm:w-auto justify-center flex-wrap">
             <Link href="/tokenizzazione" className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 hover:bg-amber-100 font-serif font-semibold text-[11px]">
               ✦ Tokenizzazione RWA
             </Link>
@@ -54,8 +58,8 @@ export default function Home() {
       {/* CONTENUTO PRINCIPALE */}
       <main className="container max-w-4xl mx-auto px-4 md:px-6 space-y-16 md:space-y-24 relative z-10">
         
-        {/* INTRODUZIONE */}
-        <div className="text-center space-y-4 md:space-y-6 pt-4 max-w-2xl mx-auto">
+        {/* INTRODUZIONE E CONTEGGIO AVANZAMENTO */}
+        <div className="text-center space-y-6 pt-4 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-amber-50/70 border border-amber-200/70 text-amber-900 text-[11px] md:text-xs font-medium tracking-wide shadow-sm font-serif">
             <Sparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" /> La Via della Libertà e della Cura
           </div>
@@ -65,6 +69,20 @@ export default function Home() {
           <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif px-2">
             Questo portale risponde al tuo passo. Supera i checkpoint di consapevolezza per sbloccare i moduli successivi della tua evoluzione verso la piena sovranità.
           </p>
+
+          {/* CRUSCOTTO DI CONTEGGIO E PROGRESSO */}
+          <div className="p-5 rounded-3xl bg-white border border-stone-200/80 shadow-md space-y-3 max-w-md mx-auto">
+            <div className="flex items-center justify-between text-xs font-serif font-semibold text-stone-700">
+              <span className="flex items-center gap-1.5"><Compass className="w-4 h-4 text-amber-700" /> Stato del Grimorio</span>
+              <span>{completedCount} di 4 Checkpoint Superati</span>
+            </div>
+            <div className="w-full bg-stone-100 h-2.5 rounded-full overflow-hidden border border-stone-200/50">
+              <div 
+                className="bg-amber-600 h-full transition-all duration-500 rounded-full"
+                style={{ width: `${progressPercentage}%` }}
+              />
+            </div>
+          </div>
         </div>
 
         {/* IL CAMMINO A TAPPE (TO-DO LIST EVOLUTIVA) */}
@@ -93,7 +111,7 @@ export default function Home() {
             {!checkpointChecked[1] && (
               <button 
                 onClick={() => handleCheckpoint(1)}
-                className="bg-stone-900 text-stone-50 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-stone-800 transition-all shadow-md"
+                className="bg-stone-900 text-stone-50 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-stone-800 transition-all shadow-md cursor-pointer"
               >
                 Conferma Checkpoint di Centratura ✓
               </button>
@@ -131,7 +149,7 @@ export default function Home() {
                 </Link>
                 <button 
                   onClick={() => handleCheckpoint(2)}
-                  className="bg-stone-900 text-stone-50 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-stone-800 transition-all shadow-md"
+                  className="bg-stone-900 text-stone-50 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-stone-800 transition-all shadow-md cursor-pointer"
                 >
                   Conferma Checkpoint Fondamenta ✓
                 </button>
@@ -170,7 +188,7 @@ export default function Home() {
                 </Link>
                 <button 
                   onClick={() => handleCheckpoint(3)}
-                  className="bg-stone-900 text-stone-50 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-stone-800 transition-all shadow-md"
+                  className="bg-stone-900 text-stone-50 text-xs font-serif px-5 py-2.5 rounded-full hover:bg-stone-800 transition-all shadow-md cursor-pointer"
                 >
                   Conferma Checkpoint Cerchia ✓
                 </button>
