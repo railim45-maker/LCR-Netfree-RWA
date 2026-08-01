@@ -1,501 +1,96 @@
-import { Link } from "wouter";
-import { ArrowRight, Sparkles, TreePine, ExternalLink, FileText, Droplets, Award, TrendingUp, ShieldCheck, Leaf, Globe } from "lucide-react";
-import { useState } from "react";
+import React from 'react';
+import { ArrowLeft, Sparkles, CheckCircle2, Users, HeartHandshake, Shield, Compass } from 'lucide-react';
+import { Link } from 'wouter';
 
-export default function NetFreeDeepDive() {
-  const [activeFocusLevel, setActiveFocusLevel] = useState(1);
-  const [lensLevels, setLensLevels] = useState([
-    { level: 1, maxSteps: 1, currentSteps: 0, currentRad: 170, displayDots: 6, label: "Livello 1 (Radice)", countNum: "1", peopleCount: "1 Persona (Tu)", desc: "Il Seme iniziale / Origine del flusso" },
-    { level: 2, maxSteps: 6, currentSteps: 0, currentRad: 190, displayDots: 36, label: "Livello 2 (Propagazione)", countNum: "6", peopleCount: "6 Persone", desc: "Il cerchio ristretto di cura diretta" },
-    { level: 3, maxSteps: 6, currentSteps: 0, currentRad: 210, displayDots: 108, label: "Livello 3 (Sviluppo)", countNum: "36", peopleCount: "36 Nodi", desc: "Prima propagazione organica nei bio-distretti" },
-    { level: 4, maxSteps: 6, currentSteps: 0, currentRad: 220, displayDots: 180, label: "Livello 4 (Espansione)", countNum: "216", peopleCount: "216 Nodi", desc: "Rete interconnessa di distretto" },
-    { level: 5, maxSteps: 6, currentSteps: 0, currentRad: 230, displayDots: 240, label: "Livello 5 (Foresta)", countNum: "1.296", peopleCount: "1.296 Nodi", desc: "Comunità estesa e autonoma" },
-    { level: 6, maxSteps: 6, currentSteps: 0, currentRad: 240, displayDots: 300, label: "Livello 6 (Sintropia)", countNum: "7.776", peopleCount: "7.776 Nodi", desc: "Coerenza diffusa su vasta scala" },
-    { level: 7, maxSteps: 6, currentSteps: 0, currentRad: 250, displayDots: 360, label: "Livello 7 (Corona)", countNum: "46.656+", peopleCount: "46.656+ Nodi", desc: "Ecosistema frattale completo" }
-  ]);
-
-  // Colori ad altissima visibilità e brillantezza per evitare nodi spenti
-  const chakraColors = ['#F59E0B', '#D97706', '#10B981', '#06B6D4', '#3B82F6', '#8B5CF6', '#FFFFFF'];
-  const cx = 240;
-  const cy = 240;
-
-  const injectLensStep = (amount: number) => {
-    setLensLevels(prevLevels => {
-      let newLevels = prevLevels.map(lvl => ({ ...lvl }));
-      let newFocus = activeFocusLevel;
-
-      for (let k = 0; k < amount; k++) {
-        let target = newLevels.find(s => s.currentSteps < s.maxSteps);
-        if (!target) break;
-
-        target.currentSteps++;
-
-        if (target.currentSteps === target.maxSteps && newFocus === target.level && newFocus < 7) {
-          newFocus++;
-        }
-      }
-      setActiveFocusLevel(newFocus);
-      return newLevels;
-    });
-  };
-
-  const injectFullLensLevel = () => {
-    let target = lensLevels.find(s => s.currentSteps < s.maxSteps);
-    if (!target) return;
-    let rimasti = target.maxSteps - target.currentSteps;
-    injectLensStep(rimasti);
-  };
-
-  const hardResetLens = () => {
-    setLensLevels(prev => prev.map(s => ({ ...s, currentSteps: 0 })));
-    setActiveFocusLevel(1);
-  };
-
+export default function NetFreePage() {
   return (
-    <div className="min-h-screen relative text-stone-800 space-y-16 md:space-y-24 pb-24 md:pb-40 overflow-hidden bg-[#fcfbf9]">
+    <div className="min-h-screen relative text-stone-800 space-y-16 md:space-y-28 pb-24 md:pb-40 overflow-hidden bg-[#fcfbf9]">
       
-      {/* SFONDO LUMINOSO E GRADIENTI ARMONICI RESPONSIVE */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[1200px] h-[400px] md:h-[700px] bg-gradient-to-b from-amber-100/40 via-emerald-50/30 to-transparent blur-[120px] md:blur-[150px] rounded-full pointer-events-none z-0" />
+      {/* SFONDO LUMINOSO E GRADIENTI ARMONICI */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[1200px] h-[400px] md:h-[700px] bg-gradient-to-b from-emerald-100/30 via-amber-50/20 to-transparent blur-[120px] md:blur-[150px] rounded-full pointer-events-none z-0" />
 
-      {/* HEADER DI NAVIGAZIONE FLUIDO */}
+      {/* HEADER DI NAVIGAZIONE INTERNA */}
       <header className="container max-w-5xl mx-auto px-4 md:px-6 pt-6 md:pt-12 relative z-10">
-        <div className="flex items-center justify-between px-4 md:px-6 py-3 md:py-4 rounded-full bg-white/90 border border-stone-200/60 shadow-[0_2px_20px_rgba(0,0,0,0.02)] backdrop-blur-xl">
-          <div className="flex items-center gap-2 md:gap-3">
-            <span className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center text-[10px] md:text-xs border border-amber-200/60 font-serif">✦</span>
-            <span className="font-bold text-[10px] md:text-xs uppercase tracking-wider md:tracking-widest text-stone-600 font-serif truncate max-w-[180px] sm:max-w-none">Il Giardino Luminoso • Netfree</span>
-          </div>
-          <nav className="flex items-center gap-4 text-xs font-medium">
-            <Link href="/" className="text-stone-500 hover:text-stone-950 cursor-pointer transition-colors font-serif whitespace-nowrap">
-              ← Home
-            </Link>
-          </nav>
+        <div className="flex items-center justify-between px-4 md:px-6 py-3 md:py-4 rounded-3xl sm:rounded-full bg-white/90 border border-stone-200/60 shadow-[0_2px_20px_rgba(0,0,0,0.02)] backdrop-blur-xl">
+          <Link href="/" className="inline-flex items-center gap-2 text-xs font-serif text-stone-600 hover:text-stone-900 transition-colors">
+            <ArrowLeft className="w-4 h-4" /> Torna alla Mappa Principale
+          </Link>
+          <span className="font-bold text-[10px] sm:text-xs uppercase tracking-wider text-emerald-800 font-serif">
+            🌱 NetFree Deep Dive • Il Processo
+          </span>
         </div>
       </header>
 
       {/* CONTENUTO PRINCIPALE */}
-      <main className="container max-w-5xl mx-auto px-4 md:px-6 space-y-12 md:space-y-20 relative z-10">
+      <main className="container max-w-4xl mx-auto px-4 md:px-6 space-y-16 md:space-y-24 relative z-10">
         
-        {/* TITOLO E INTRODUZIONE */}
-        <div className="text-center space-y-4 md:space-y-6 pt-4 md:pt-6 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-amber-50/80 border border-amber-200 text-amber-900 text-[11px] md:text-xs font-medium tracking-wide md:tracking-widest shadow-sm font-serif">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" /> Non Beneficenza, ma Abbondanza Circolare per Tutti
+        {/* INTRODUZIONE */}
+        <div className="text-center space-y-4 md:space-y-6 pt-4 max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-medium font-serif shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" /> L'Economia del Dono e della Cura
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold font-serif text-stone-900 tracking-tight leading-[1.15]">
-            Netfree LCR & Tempio Biologico
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-stone-900 tracking-tight leading-[1.15]">
+            Il Processo Net-Free: Chiarezza e Operatività
           </h1>
-          <p className="text-sm sm:text-base md:text-xl text-stone-600 leading-relaxed font-light font-serif italic px-2">
-            "La libertà non si attende: si raggiunge matematicamente evolvendo e applicando la propensione al cambiamento."
+          <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif px-2">
+            Dimentica le pressioni commerciali e le dinamiche competitive del vecchio mondo. Qui il processo è disegnato per essere naturale, trasparente e alla portata di chiunque voglia prendersi cura della propria cerchia.
           </p>
         </div>
 
-        {/* MANIFESTO ETICO: NON SIAMO UN ENTE DI BENEFICIENZA */}
-        <div className="rounded-3xl md:rounded-[2.5rem] border border-amber-300 bg-gradient-to-br from-amber-50 via-white to-stone-50 p-6 sm:p-8 md:p-12 shadow-xl space-y-6">
-          <div className="flex items-center gap-3">
-            <span className="w-10 h-10 rounded-2xl bg-amber-200 text-amber-900 flex items-center justify-center font-bold flex-shrink-0">
-              <TrendingUp className="w-5 h-5 text-amber-800" />
-            </span>
-            <div>
-              <span className="text-[10px] sm:text-xs uppercase tracking-[2px] text-amber-900 font-serif font-bold">Principio Fondamentale</span>
-              <h3 className="text-xl md:text-2xl font-serif font-bold text-stone-900">Promuoviamo l'Abbondanza, noi in primis</h3>
+        {/* I PASSI OPERATIVI DEL PROCESSO */}
+        <div className="space-y-6">
+          
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-stone-200/80 shadow-xl space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-900 border border-emerald-200 flex items-center justify-center font-bold font-serif text-sm">1</span>
+              <h3 className="text-lg md:text-xl font-bold font-serif text-stone-900">Il Presidio dello Spazio Personale</h3>
             </div>
-          </div>
-          <p className="text-stone-700 text-sm md:text-base font-light leading-relaxed font-serif">
-            Mettiamo subito in chiaro una regola cardine: <strong>noi non siamo un ente di beneficenza</strong>. La carità perpetua la dipendenza e la scarsità. Noi creiamo e promuoviamo l'abbondanza per tutti, <em>noi in primis</em>, attraverso un modello economico e biologico solido, trasparente e basato sul valore reale. Il passaggio dalla fatica alla libertà richiede un atto di responsabilità: la matematica del network premia la propensione al cambiamento, l'impegno costante e la cura autentica della propria cerchia.
-          </p>
-        </div>
-
-        {/* TABELLA COMPARATIVA DEI POSSIBILI GUADAGNI SU 5 NETWORK */}
-        <div className="rounded-3xl md:rounded-[2.5rem] border border-stone-200 bg-white p-6 sm:p-8 md:p-12 shadow-xl space-y-6">
-          <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">Simulazione Economica</span>
-            <h3 className="text-xl md:text-2xl font-serif font-bold text-stone-900">Tabella Comparativa dei Possibili Guadagni su 5 Livelli</h3>
-            <p className="text-stone-600 text-xs md:text-sm font-light font-serif">
-              Un confronto chiaro basato sul modello di propagazione a 6 nodi per livello (valori di simulazione orientativi per dimostrare la sostenibilità del network).
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif sm:pl-13 leading-relaxed">
+              Il primo dovere verso se stessi e la comunità è l'equilibrio del proprio spazio. Prima di guidare gli altri, impari a stabilizzare la tua posizione e a fare tuoi i principi di base della sostenibilità e della protezione economica.
             </p>
           </div>
 
-          <div className="overflow-x-auto pt-2">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-stone-200 text-stone-500 font-mono text-[11px] uppercase tracking-wider bg-stone-50">
-                  <th className="py-3 px-4 rounded-l-xl">Livello Network</th>
-                  <th className="py-3 px-4">Nodi Attivi</th>
-                  <th className="py-3 px-4">Valore Medio per Nodo</th>
-                  <th className="py-3 px-4 rounded-r-xl">Potenziale Flusso Complessivo Stimato</th>
-                </tr>
-              </thead>
-              <tbody className="text-xs sm:text-sm font-serif divide-y divide-stone-100">
-                <tr className="hover:bg-amber-50/40 transition-colors">
-                  <td className="py-4 px-4 font-bold text-amber-900">Livello 1 (Radice)</td>
-                  <td className="py-4 px-4 font-mono font-semibold">1 Persona</td>
-                  <td className="py-4 px-4 font-mono text-stone-600">Base Iniziale</td>
-                  <td className="py-4 px-4 text-stone-700 font-semibold font-mono">Attivazione Flusso Personale</td>
-                </tr>
-                <tr className="hover:bg-amber-50/40 transition-colors">
-                  <td className="py-4 px-4 font-bold text-amber-900">Livello 2 (Propagazione)</td>
-                  <td className="py-4 px-4 font-mono font-semibold">6 Persone</td>
-                  <td className="py-4 px-4 font-mono text-stone-600">Standard di Cura</td>
-                  <td className="py-4 px-4 text-emerald-700 font-semibold font-mono">Copertura Spese Primarie & Benessere</td>
-                </tr>
-                <tr className="hover:bg-amber-50/40 transition-colors">
-                  <td className="py-4 px-4 font-bold text-amber-900">Livello 3 (Sviluppo)</td>
-                  <td className="py-4 px-4 font-mono font-semibold">36 Nodi</td>
-                  <td className="py-4 px-4 font-mono text-stone-600">Crescita Organica</td>
-                  <td className="py-4 px-4 text-emerald-700 font-semibold font-mono">Autonomia Finanziaria di Distretto</td>
-                </tr>
-                <tr className="hover:bg-amber-50/40 transition-colors">
-                  <td className="py-4 px-4 font-bold text-amber-900">Livello 4 (Espansione)</td>
-                  <td className="py-4 px-4 font-mono font-semibold">216 Nodi</td>
-                  <td className="py-4 px-4 font-mono text-stone-600">Moltiplicazione Valore</td>
-                  <td className="py-4 px-4 text-amber-700 font-semibold font-mono">Solidità e Sovranità Materiale Avanzata</td>
-                </tr>
-                <tr className="hover:bg-amber-50/40 transition-colors">
-                  <td className="py-4 px-4 font-bold text-amber-900">Livello 5 (Foresta)</td>
-                  <td className="py-4 px-4 font-mono font-semibold">1.296 Nodi</td>
-                  <td className="py-4 px-4 font-mono text-stone-600">Ecosistema Completo</td>
-                  <td className="py-4 px-4 text-amber-800 font-bold font-mono">Abbondanza Circolare Piena e Diffusa</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* SEZIONE: EDIFICAZIONE DELL'ESPERTO - DOTT. ROBERTO FAVATA */}
-        <div className="rounded-3xl md:rounded-[2.5rem] border border-amber-200 bg-gradient-to-br from-amber-50/70 via-white to-stone-50 p-6 sm:p-8 md:p-14 shadow-xl space-y-6 md:space-y-8">
-          <div className="flex items-center gap-3">
-            <span className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold flex-shrink-0">
-              <Award className="w-5 h-5 text-amber-700" />
-            </span>
-            <div>
-              <span className="text-[10px] sm:text-xs uppercase tracking-[2px] sm:tracking-[3px] text-amber-800 font-serif font-semibold">Ascoltiamo l'Esperto</span>
-              <h3 className="text-xl md:text-2xl font-serif font-bold text-stone-900">Il Protocollo di Depurazione e l'Acqua Alcalina del Dott. Roberto Favata</h3>
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-stone-200/80 shadow-xl space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-900 border border-emerald-200 flex items-center justify-center font-bold font-serif text-sm">2</span>
+              <h3 className="text-lg md:text-xl font-bold font-serif text-stone-900">L'Attivazione della Cerchia di Cura</h3>
             </div>
-          </div>
-
-          <p className="text-stone-700 text-sm md:text-base font-light leading-relaxed font-serif">
-            Il <strong>Dott. Roberto Favata</strong> rappresenta un punto di riferimento fondamentale nella ricerca sulla biofisica dell'acqua, sulla nutrizione cellulare e sui processi di depurazione profonda dell'organismo. Con anni di studi clinici, ricerche sul campo e divulgazione scientifica indipendente, il Dott. Favata ha dimostrato come la qualità dell'acqua che introduciamo nel corpo non sia semplicemente una questione di filtrazione chimica, ma di ripristino energetico e strutturale. Grazie alle sue interviste e alle schede tecniche di approfondimento, comprendiamo come l'acqua alcalina rivitalizzata costituisca il primo pilastro del Tempio Biologico.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 pt-2">
-            <a href="https://www.youtube.com/watch?v=elbOEII7-zo" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group">
-              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Intervista Dott. Favata (Parte 1)</span>
-              <ExternalLink className="w-4 h-4 text-amber-700 flex-shrink-0 ml-2" />
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=Di3BtfUqJwg" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group">
-              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Intervista Dott. Favata (Parte 2)</span>
-              <ExternalLink className="w-4 h-4 text-amber-700 flex-shrink-0 ml-2" />
-            </a>
-
-            <a href="https://www.essenzanaturae.it/wp-content/uploads/2024/12/WS-M70-Sz_-2-3v-RMN_-scheda_-Rev-27-12-2024-1.pdf" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-amber-400 shadow-sm transition-all flex items-center justify-between group">
-              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-amber-900">Documento Tecnico di Approfondimento (PDF)</span>
-              <FileText className="w-4 h-4 text-amber-700 flex-shrink-0 ml-2" />
-            </a>
-          </div>
-        </div>
-
-        {/* SEZIONE: MEMORIA DELL'ACQUA */}
-        <div className="rounded-3xl md:rounded-[2.5rem] border border-emerald-200 bg-gradient-to-br from-emerald-50/70 via-white to-stone-50 p-6 sm:p-8 md:p-14 shadow-xl space-y-6 md:space-y-8">
-          <div className="flex items-center gap-3">
-            <span className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold flex-shrink-0">
-              <Droplets className="w-5 h-5 text-emerald-700" />
-            </span>
-            <div>
-              <span className="text-[10px] sm:text-xs uppercase tracking-[2px] sm:tracking-[3px] text-emerald-800 font-serif font-semibold">Approfondimento Biofisico</span>
-              <h3 className="text-xl md:text-2xl font-serif font-bold text-stone-900">La Memoria e la Rimembranza dell'Acqua</h3>
-            </div>
-          </div>
-
-          <p className="text-stone-700 text-sm md:text-base font-light leading-relaxed font-serif">
-            L'acqua possiede una struttura in grado di registrare, conservare e trasmettere informazioni biofisiologiche. Attraverso il seminario di approfondimento e il materiale documentario dedicato, esploriamo le evidenze scientifiche che spiegano come l'acqua informata e rivitalizzata agisca direttamente sulla coerenza cellulare dell'organismo umano.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 pt-2">
-            <a href="https://www.omeopatia.org/download/seminario-rey/ELIA-Dell-acqua-la-rimembranza.pdf" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group">
-              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-emerald-800">Seminario: "Dell'Acqua la Rimembranza" (PDF)</span>
-              <FileText className="w-4 h-4 text-emerald-700 flex-shrink-0 ml-2" />
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=DZJbFmkUh2g" target="_blank" rel="noopener noreferrer" className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 hover:border-emerald-400 shadow-sm transition-all flex items-center justify-between group">
-              <span className="text-xs font-serif font-semibold text-stone-800 group-hover:text-emerald-800">Video di Approfondimento sulla Memoria dell'Acqua</span>
-              <ExternalLink className="w-4 h-4 text-emerald-700 flex-shrink-0 ml-2" />
-            </a>
-          </div>
-        </div>
-
-        {/* I SEMI E I PRESIDI DEL NOSTRO GIARDINO (COLLEGAMENTI RIPRISTINATI) */}
-        <div className="rounded-3xl md:rounded-[2.5rem] border border-stone-200/80 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-xl space-y-8 md:space-y-12">
-          <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs uppercase tracking-[3px] text-amber-800 font-serif font-semibold">I Semi del Nostro Giardino</span>
-            <h3 className="text-2xl md:text-3xl font-bold font-serif text-stone-900">I Presidi e i Benefici del Tempio Biologico</h3>
-            <p className="text-stone-600 text-xs md:text-sm font-light font-serif">Soluzioni di valore focalizzate sul benessere quotidiano, sulla sovranità energetica e sulla cura ecologica.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* 1. Efficientamento Energetico */}
-            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Energia & Autonomia</span>
-                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Efficientamento Energetico, Pannelli Solari & Green Sharing</h4>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Sistemi fotovoltaici avanzati e comunità energetiche rinnovabili per azzerare la dipendenza dalle fluttuazioni di mercato e condividere valore pulito.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex flex-wrap items-center justify-between gap-2 text-xs font-serif">
-                <span className="text-stone-500">Autonomia & Condivisione</span>
-                <div className="flex items-center gap-3">
-                  <a href="https://www.pefpower.it/it/home" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                    Approfondimento <ExternalLink className="w-3 h-3" />
-                  </a>
-                  <a href="https://www.pefpower.it/public/download/informatives/greensharing.pdf" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                    PDF <FileText className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* 2. Oli Essenziali */}
-            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Tempio Biologico</span>
-                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Oli Essenziali e Aromaterapia Evolutiva</h4>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Estratti botanici puri di grado terapeutico per sostenere l'equilibrio emotivo, purificare gli ambienti domestici e nutrire la persona.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
-                <span className="text-stone-500">Purezza botanica & Olfattiva</span>
-                <a href="https://www.doterra.com/ME/it_ME" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Esplora l'Essenza <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-
-            {/* 3. Microorganismi Effettivi */}
-            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Cura della Terra</span>
-                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Microorganismi Effettivi per la Casa e il Suolo</h4>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Soluzioni simbiotiche ecologiche per rivitalizzare i terreni, favorire la crescita delle piante e detergere la casa senza tossine.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
-                <span className="text-stone-500">Simbiosi & Ecologia</span>
-                <a href="http://ecopassaparola.it" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Metodo Simbiotico <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-
-            {/* 4. Integrazione Minerale */}
-            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Salute Cellulare</span>
-                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Integrazione Minerale per l'Equilibrio Acido-Basico</h4>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Supporto minerale mirato al bilanciamento del pH corporeo e al ripristino dell'omeostasi cellulare profonda.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
-                <span className="text-stone-500">Omeostasi & Benessere</span>
-                <a href="https://www.viafarmaciaonline.it/pascoe-basenpulver-polvere-100-g.html" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Approfondimento <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-
-            {/* 5. Protocolli con Diossido di Cloro */}
-            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Protocolli di Purificazione</span>
-                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Protocolli Avanzati con Diossido di Cloro</h4>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Soluzioni e presidi per la sanificazione profonda, l'igiene e la rimozione di agenti patogeni secondo i protocolli dedicati.
-                </p>
-                
-                <div className="pt-3 border-t border-stone-200/60 space-y-2">
-                  <span className="text-[11px] font-bold font-serif text-stone-800 uppercase tracking-wider block">Documentazione Ufficiale:</span>
-                  <div className="flex flex-col gap-1.5 text-xs font-serif">
-                    <a href="https://drive.google.com/file/d/1QPdv3uQhn6_o2QGcU09Jiul9-npp2nYx/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium truncate">
-                      <FileText className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Salute Proibita (Andreas Kalcker)
-                    </a>
-                    <a href="https://drive.google.com/file/d/17k4qLja8LkfJOU2K38n0jY7ynPhXzdYJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-amber-800 hover:underline inline-flex items-center gap-1.5 font-medium truncate">
-                      <FileText className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Cos'è il Diossido di Cloro (CDS)
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
-                <span className="text-stone-500">Igiene & Sicurezza</span>
-                <a href="https://dioxitube.com/w/fARnr15iVu8zKpJysQhmZ2" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Protocollo <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-
-            {/* 6. Consapevolezza con Tradetector */}
-            <div className="p-6 md:p-8 rounded-3xl md:rounded-[2rem] bg-[#fcfbf9] border border-stone-200/80 shadow-sm space-y-4 hover:border-amber-300 transition-all flex flex-col justify-between">
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Analisi & Visione</span>
-                <h4 className="text-lg md:text-xl font-bold font-serif text-stone-900">Consapevolezza Economica e Monitoraggio dei Trend</h4>
-                <p className="text-sm text-stone-600 font-light leading-relaxed">
-                  Strumenti di analisi evoluta dei mercati e dei dati finanziari per sviluppare lucidità strategica e indipendenza decisionale.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-serif">
-                <span className="text-stone-500">Chiarezza & Trend</span>
-                <a href="https://www.tradetector.net/" target="_blank" rel="noopener noreferrer" className="text-amber-800 font-semibold hover:underline inline-flex items-center gap-1">
-                  Tradetector <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* DASHBOARD INTERATTIVA (REATTORE RADIALE CON NODI LUMINOSI) */}
-        <div className="rounded-3xl md:rounded-[2.5rem] border border-stone-800 bg-[#12100e] p-6 sm:p-8 md:p-12 text-stone-100 shadow-2xl space-y-8 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-stone-900 border border-stone-800 text-amber-400 text-[10px] font-mono tracking-widest">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-              MATRICE FRATTALE DEL GIARDINO LUMINOSO
-            </div>
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-serif tracking-tight">
-              REATTORE CONCENTRICO E SCHEMA AD ALBERO A PIANI
-            </h3>
-            <p className="text-stone-300 text-xs font-light font-serif">
-              Visualizza in tempo reale il popolamento della comunità basato sulla cura di ~6 persone per nodo. Colori ad alta visibilità.
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif sm:pl-13 leading-relaxed">
+              Non cerchi "clienti" da spremere, ma entri in connessione con una cerchia ristretta di persone di fiducia. Condividi il percorso con chi avverte lo stesso bisogno di uscire dalla ruota della scarsità e desidera costruire stabilità.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-2">
-            <button onClick={() => injectLensStep(1)} className="px-4 py-2.5 bg-amber-500/30 hover:bg-amber-500/40 border border-amber-400/60 rounded-xl text-xs font-mono font-bold text-amber-200 tracking-wider transition-all cursor-pointer shadow-lg">
-              [ +1 Passo ]
-            </button>
-            <button onClick={injectFullLensLevel} className="px-4 py-2.5 bg-stone-900 hover:bg-stone-800 border border-stone-700 rounded-xl text-xs font-mono text-cyan-300 transition-all cursor-pointer">
-              ++ Satura Orbita
-            </button>
-            <button onClick={hardResetLens} className="px-4 py-2.5 bg-red-500/20 hover:bg-red-500/30 border border-red-500/40 rounded-xl text-xs font-mono text-red-300 transition-all cursor-pointer">
-              Reset
-            </button>
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-stone-200/80 shadow-xl space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-900 border border-emerald-200 flex items-center justify-center font-bold font-serif text-sm">3</span>
+              <h3 className="text-lg md:text-xl font-bold font-serif text-stone-900">Il Flusso dell'Abbondanza Circolare</h3>
+            </div>
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif sm:pl-13 leading-relaxed">
+              Le risorse e il sostegno circolano all'interno della cerchia secondo i parametri dell'economia del dono. Ciascuno sostiene il proprio compagno di strada, azzerando le frizioni e generando un circolo virtuoso di mutuo soccorso.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-2">
-            
-            {/* REATTORE RADIALE SVG CON NODI ALTAMENTE VISIBILI */}
-            <div className="lg:col-span-6 bg-stone-950/80 border border-stone-800 rounded-2xl p-4 flex flex-col items-center justify-center relative shadow-inner overflow-x-auto min-h-[420px]">
-              <div className="absolute top-3 left-4 text-[9px] font-mono text-stone-300 uppercase tracking-widest flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Reattore Concentrico (Luminoso)
-              </div>
-              <svg width="420" height="420" className="block overflow-visible mt-4 flex-shrink-0">
-                <circle cx={cx} cy={cy} r="9" fill="#ffffff" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,1))' }} />
-
-                {lensLevels.map(lvl => {
-                  let radius = lvl.level < activeFocusLevel ? 15 + (lvl.level * 18) : (lvl.level === activeFocusLevel ? 150 : 150 + ((lvl.level - activeFocusLevel) * 20));
-                  const isFocused = lvl.level === activeFocusLevel;
-
-                  return (
-                    <g key={lvl.level}>
-                      <circle
-                        cx={cx}
-                        cy={cy}
-                        r={radius}
-                        fill="none"
-                        stroke={isFocused ? '#78716c' : '#44403c'}
-                        strokeWidth={isFocused ? '1.2' : '0.5'}
-                      />
-                      {Array.from({ length: Math.min(lvl.displayDots, 72) }).map((_, i) => {
-                        const angle = (i * 2 * Math.PI) / Math.min(lvl.displayDots, 72);
-                        const nodeX = cx + radius * Math.cos(angle);
-                        const nodeY = cy + radius * Math.sin(angle);
-                        const macroSector = Math.min(Math.floor((i / Math.min(lvl.displayDots, 72)) * 6), 5);
-                        const dotColor = chakraColors[macroSector];
-                        const nodePositionInSubsector = i % 6;
-                        const isActive = nodePositionInSubsector < lvl.currentSteps || lvl.level < activeFocusLevel;
-                        const dotRadius = isFocused ? 5 : (lvl.level < activeFocusLevel ? 2.5 : 1.5);
-
-                        return (
-                          <circle
-                            key={i}
-                            cx={nodeX}
-                            cy={nodeY}
-                            r={dotRadius}
-                            fill={isActive ? dotColor : '#292524'}
-                            stroke={isActive ? '#ffffff' : '#44403c'}
-                            strokeWidth={isActive ? '0.4' : '0.2'}
-                            style={isActive ? { filter: `drop-shadow(0 0 6px ${dotColor})` } : undefined}
-                          />
-                        );
-                      })}
-                    </g>
-                  );
-                })}
-              </svg>
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-stone-200/80 shadow-xl space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-900 border border-emerald-200 flex items-center justify-center font-bold font-serif text-sm">4</span>
+              <h3 className="text-lg md:text-xl font-bold font-serif text-stone-900">La Moltiplicazione e la Fioritura</h3>
             </div>
-
-            {/* ALBERO A PIANI */}
-            <div className="lg:col-span-6 bg-stone-950/80 border border-stone-800 rounded-2xl p-4 sm:p-5 backdrop-blur-md flex flex-col justify-between space-y-3">
-              <div className="flex justify-between items-center border-b border-stone-800 pb-2">
-                <span className="text-[10px] font-bold text-stone-300 uppercase tracking-wider font-mono flex items-center gap-1.5">
-                  <TreePine className="w-3.5 h-3.5 text-amber-400" /> Schema ad Albero
-                </span>
-                <span className="text-[9px] font-mono bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">
-                  GERARCHICO
-                </span>
-              </div>
-
-              <div className="space-y-2 font-mono text-xs max-h-[420px] overflow-y-auto pr-1">
-                {lensLevels.map((lvl) => {
-                  const isFocused = lvl.level === activeFocusLevel;
-                  const isPast = lvl.level < activeFocusLevel;
-                  const isCompleted = lvl.currentSteps === lvl.maxSteps;
-                  const borderColor = chakraColors[lvl.level - 1];
-
-                  return (
-                    <div 
-                      key={lvl.level}
-                      className={`p-3 bg-stone-900/90 rounded-xl border border-stone-800 space-y-1.5 transition-all border-l-4 ${isPast || isFocused ? 'opacity-100' : 'opacity-60'}`}
-                      style={{ borderLeftColor: borderColor }}
-                    >
-                      <div className="flex justify-between items-center gap-2">
-                        <div className="flex items-center gap-2">
-                          <span className="px-2 py-0.5 bg-stone-950 text-amber-300 font-bold rounded text-[11px] border border-amber-500/30">
-                            [{lvl.countNum}]
-                          </span>
-                          <span className={`font-bold ${isFocused ? 'text-white' : 'text-stone-200'} text-xs font-serif truncate max-w-[130px] sm:max-w-none`}>
-                            {lvl.label} ➔ <span className="text-amber-400 font-semibold">{lvl.peopleCount}</span>
-                          </span>
-                        </div>
-                        <span className={`text-[10px] px-2 py-0.5 rounded whitespace-nowrap ${isCompleted ? 'bg-amber-950 text-amber-300 border border-amber-500/30' : 'bg-stone-950 text-stone-300'}`}>
-                          {lvl.currentSteps}/{lvl.maxSteps}
-                        </span>
-                      </div>
-                      <p className="text-[10px] text-stone-300 font-light pl-6 font-serif">{lvl.desc}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif sm:pl-13 leading-relaxed">
+              Una volta che la cerchia è stabilizzata, il processo si ripete organicamente: ogni componente sostiene a sua volta la propria cerchia, estendendo la rete della fioritura senza alcuna imposizione gerarchica piramidale.
+            </p>
           </div>
 
         </div>
 
-        {/* CONCLUSIONE E NAVIGAZIONE */}
-        <div className="p-8 sm:p-12 rounded-3xl md:rounded-[2.5rem] border border-amber-200 bg-gradient-to-br from-amber-50/80 via-white to-emerald-50/40 space-y-6 text-center shadow-xl backdrop-blur-md">
-          <h3 className="text-xl md:text-2xl font-bold font-serif text-stone-900">Il Giardino Condiviso</h3>
-          <p className="text-sm md:text-base text-stone-600 max-w-2xl mx-auto font-light leading-relaxed font-serif italic">
-            "La matematica della libertà è certa: propensione al cambiamento, abbondanza generata in primis e cura circolare."
+        {/* SEZIONE SINTESI OPERATIVA */}
+        <div className="p-8 rounded-3xl bg-emerald-900 text-stone-50 space-y-6 shadow-xl text-center">
+          <h3 className="text-2xl font-serif font-bold">Pronto a occuparti del tuo spazio?</h3>
+          <p className="text-xs sm:text-sm font-light font-serif text-emerald-100 max-w-lg mx-auto leading-relaxed">
+            Il processo è semplice perché segue la legge naturale delle cose: ci si prende cura di ciò che è vicino, si crea stabilità e si condivide il metodo con chi è pronto a riceverlo.
           </p>
           <div className="pt-2">
-            <Link href="/" className="w-full sm:w-auto bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-8 py-3.5 rounded-full text-xs md:text-sm inline-flex items-center justify-center gap-2 shadow-lg transition-all transform hover:scale-105 cursor-pointer font-serif">
-              ← Torna alla Home <ArrowRight className="w-4 h-4" />
+            <Link href="/" className="inline-flex items-center gap-2 bg-white text-emerald-900 hover:bg-emerald-50 font-serif font-semibold px-8 py-3.5 rounded-full text-xs transition-all shadow-md">
+              Torna alla Mappa e Verifica i Checkpoint →
             </Link>
           </div>
         </div>
