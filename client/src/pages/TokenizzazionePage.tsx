@@ -46,7 +46,7 @@ export default function TokenizzazionePage() {
               <h3 className="text-lg md:text-xl font-bold font-serif text-stone-900">Ancoraggio agli Asset Reali (RWA)</h3>
             </div>
             <p className="text-stone-600 text-xs sm:text-sm font-light font-serif sm:pl-13 leading-relaxed">
-              Ogni token digitale emesso rappresenta una quota di valore reale e tangibile nel mondo fisico: beni, progetti strutturali o immobiliari che possiedono un valore intrinseco e non fluttuano sul nulla.
+              Ogni token digitale emesso rappresenta una quota di valore reale e tangibile nel mondo fisico: beni, progetti strutturali o immobiliari che possiedono un valore intrinseco e non fluttuano sul nulla speculativo.
             </p>
           </div>
 
