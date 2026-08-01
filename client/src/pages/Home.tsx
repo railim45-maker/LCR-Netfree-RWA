@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, ArrowRight, CheckCircle2, Lock, Unlock, ShieldCheck, Leaf, Globe, Compass } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Lock, Unlock, ShieldCheck, Leaf, Globe, Compass, Cpu, Layers } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Home() {
-  // Stato dei checkpoint evolutivi (salvati nel browser)
   const [unlockedLevel, setUnlockedLevel] = useState<number>(() => {
     const saved = localStorage.getItem('lcr_unlocked_level');
     return saved ? parseInt(saved, 10) : 1;
@@ -27,7 +26,6 @@ export default function Home() {
     }
   };
 
-  // Calcolo dei checkpoint completati per il contatore
   const completedCount = Object.values(checkpointChecked).filter(Boolean).length;
   const progressPercentage = (completedCount / 4) * 100;
 
@@ -51,6 +49,9 @@ export default function Home() {
             <Link href="/netfree" className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200/80 hover:bg-emerald-100 font-serif font-semibold text-[11px]">
               🌱 NetFree Deep Dive
             </Link>
+            <Link href="/liberta-legale" className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-stone-100 text-stone-900 border border-stone-300 hover:bg-stone-200 font-serif font-semibold text-[11px]">
+              🛡️ Sovranità
+            </Link>
           </nav>
         </div>
       </header>
@@ -58,16 +59,16 @@ export default function Home() {
       {/* CONTENUTO PRINCIPALE */}
       <main className="container max-w-4xl mx-auto px-4 md:px-6 space-y-16 md:space-y-24 relative z-10">
         
-        {/* INTRODUZIONE E CONTEGGIO AVANZAMENTO */}
+        {/* INTRODUZIONE E CRUSCOTTO */}
         <div className="text-center space-y-6 pt-4 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-amber-50/70 border border-amber-200/70 text-amber-900 text-[11px] md:text-xs font-medium tracking-wide shadow-sm font-serif">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" /> La Via della Libertà e della Cura
+            <Sparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" /> Architettura dell'Ecosistema e Frequenza 432Hz
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-stone-900 tracking-tight leading-[1.15]">
             La Mappa del Tuo Cammino Evolutivo
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed font-light font-serif px-2">
-            Questo portale risponde al tuo passo. Supera i checkpoint di consapevolezza per sbloccare i moduli successivi della tua evoluzione verso la piena sovranità.
+            Un sistema integrato che unisce l'economia del dono, la protezione patrimoniale attraverso i Real World Assets e la piena sovranità esistenziale. Ogni passo sblocca un livello di consapevolezza superiore.
           </p>
 
           {/* CRUSCOTTO DI CONTEGGIO E PROGRESSO */}
@@ -82,6 +83,7 @@ export default function Home() {
                 style={{ width: `${progressPercentage}%` }}
               />
             </div>
+            <p className="text-[11px] text-stone-500 font-serif italic">Traccia le tappe per completare la configurazione dell'ecosistema.</p>
           </div>
         </div>
 
@@ -105,8 +107,8 @@ export default function Home() {
                 </span>
               )}
             </div>
-            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6">
-              Ascolta il campo, sintonizzati sulla frequenza del progetto e riconosci la risonanza con i valori della cura e dell'abbondanza.
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6 leading-relaxed">
+              Ascolta il campo, sintonizzati sulla frequenza del progetto e riconosci la risonanza con i valori della cura e dell'abbondanza. Interroga le dinamiche energetiche ed elimina le frizioni mentali legate alla sopravvivenza.
             </p>
             {!checkpointChecked[1] && (
               <button 
@@ -139,8 +141,8 @@ export default function Home() {
                 </span>
               )}
             </div>
-            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6">
-              Comprendi il valore della materia solida e della protezione economica attraverso i modelli di tokenizzazione e Club Deal.
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6 leading-relaxed">
+              Comprendi il valore della materia solida e della protezione economica attraverso i modelli di tokenizzazione e Club Deal. Ancoraggio patrimoniale protetto per liberare la famiglia dall'ansia della scarsità.
             </p>
             {unlockedLevel >= 2 && !checkpointChecked[2] && (
               <div className="flex items-center gap-3 flex-wrap">
@@ -178,8 +180,8 @@ export default function Home() {
                 </span>
               )}
             </div>
-            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6">
-              Entra nella cerchia di cura, supera la competizione e sperimenta l'abbondanza circolare accompagnando la tua comunità.
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6 leading-relaxed">
+              Entra nella cerchia di cura, supera la competizione e sperimenta l'abbondanza circolare accompagnando la tua comunità senza intermediari parassitari.
             </p>
             {unlockedLevel >= 3 && !checkpointChecked[3] && (
               <div className="flex items-center gap-3 flex-wrap">
@@ -213,8 +215,8 @@ export default function Home() {
                 </span>
               )}
             </div>
-            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6">
-              Purifica il tempio biologico (acqua, terra, permacultura) e ristabilisci la piena sovranità esistenziale.
+            <p className="text-stone-600 text-xs sm:text-sm font-light font-serif mb-6 leading-relaxed">
+              Purifica il tempio biologico (acqua, terra, permacultura) e ristabilisci la piena sovranità esistenziale e giuridica.
             </p>
             {unlockedLevel >= 4 && (
               <Link href="/liberta-legale" className="bg-stone-900 text-stone-50 text-xs font-serif px-6 py-3 rounded-full hover:bg-stone-800 transition-all font-semibold inline-flex items-center gap-2">
