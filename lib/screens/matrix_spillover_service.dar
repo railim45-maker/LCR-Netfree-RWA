@@ -1,0 +1,29 @@
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+class MatrixSpilloverService {
+  static final _supabase = Supabase.instance.client;
+
+  /// Trova la posizione disponibile nella matrice del 6 con logica di spillover
+  static Future<String?> findSpilloverPlacement(String sponsorId) async {
+    // 1. Controlla quanti utenti diretti ha lo sponsor
+    final directReferrals = await _supabase
+        .from('profiles')
+        .select('id')
+        .eq('sponsor_id', sponsorId);
+
+    if (directReferrals.length < 6) {
+      // C'è ancora spazio nella prima linea del 6
+      return sponsorId;
+    } else {
+      // 2. Spillover: la matrice è piena, scendiamo al primo sotto-membro disponibile (ampiezza)
+      for (var referral in directReferrals) {
+        String subSponsorId = referral['id'];
+        String? nextAvailable = await findSpilloverPlacement(subSponsorId);
+        if (nextAvailable != null) {
+          return nextAvailable;
+        }
+      }
+    }
+    return sponsorId;
+  }
+}
