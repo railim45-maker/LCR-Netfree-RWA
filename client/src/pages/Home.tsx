@@ -74,6 +74,19 @@ export default function Home() {
             Questo non è un sito di sola consultazione. Esplora le informazioni e i video informativi, supera i checkpoint di consapevolezza e, quando senti il richiamo del campo, sottoscrivi la <strong>Pergamena d'Impegno</strong> per entrare ufficialmente nell'alleanza.
           </p>
 
+          {/* COLLEGAMENTO UFFICIALE GOOGLE DRIVE INSERITO IN HOME PAGE */}
+          <div className="pt-2">
+            <a 
+              href="https://drive.google.com/file/d/1g4-iFdkPIOoL_UqGD9HKlL6Mr0_Mxvtr/view?usp=drive_link" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-amber-900 border border-amber-300 hover:bg-amber-50 font-serif font-semibold px-6 py-3 rounded-full text-xs transition-all shadow-sm"
+            >
+              <span>📁 Apri Documentazione e Risorse Ufficiali (Drive)</span>
+              <ExternalLink className="w-3.5 h-3.5 text-amber-700" />
+            </a>
+          </div>
+
           {/* CTA VERSO LA PERGAMENA */}
           <div className="pt-2">
             <Link href="/pergamena" className="inline-flex items-center gap-2 bg-stone-900 text-stone-50 hover:bg-stone-800 font-serif font-semibold px-7 py-3.5 rounded-full text-xs transition-all shadow-xl">
